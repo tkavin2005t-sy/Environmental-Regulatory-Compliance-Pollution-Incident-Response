@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_row">
+    <sp_row action="DELETE">
+        <aria_label/>
+        <class_name/>
+        <order>6</order>
+        <semantic_tag/>
+        <sp_column/>
+        <sp_container display_value="Environmental Compliance Home - Container 1">d2fe805921b203107f443754fb88d4f4</sp_container>
+        <sys_class_name>sp_row</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-18 05:09:45</sys_created_on>
+        <sys_id>e6b9989d21f203107f443754fb88d4ce</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>6</sys_name>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>sp_row_e6b9989d21f203107f443754fb88d4ce</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-18 07:05:57</sys_updated_on>
+    </sp_row>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</application>
+        <file_path/>
+        <instance_id>57b1043093560750fb38f8284dba10f5</instance_id>
+        <instance_name>dlt-hck-8017-0040</instance_name>
+        <name>sp_row_e6b9989d21f203107f443754fb88d4ce</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_row"><sp_row action="INSERT_OR_UPDATE"><aria_label/><class_name/><order>6</order><semantic_tag/><sp_column/><sp_container display_value="Environmental Compliance Home - Container 1">d2fe805921b203107f443754fb88d4f4</sp_container><sys_class_name>sp_row</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-18 05:09:45</sys_created_on><sys_id>e6b9989d21f203107f443754fb88d4ce</sys_id><sys_mod_count>6</sys_mod_count><sys_name>6</sys_name><sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package><sys_policy/><sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope><sys_update_name>sp_row_e6b9989d21f203107f443754fb88d4ce</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-18 07:05:57</sys_updated_on></sp_row></record_update>]]></payload>
+        <payload_hash>1227159083</payload_hash>
+        <record_name>6</record_name>
+        <reverted_from/>
+        <source>be139e0524ea03107f443d2e73d3b944</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-18 07:05:57</sys_created_on>
+        <sys_id>5454f8dd21f603107f443754fb88d421</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a013b0ecdc0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-18 07:05:57</sys_updated_on>
+        <type>Row</type>
+        <update_guid>5854f8dd8bf60310a9a3da4d3540d420</update_guid>
+        <update_guid_history>5854f8dd8bf60310a9a3da4d3540d420:1227159083,c153381d6cf60310976c8e588a09c022:-527607063,e303b0d95af6031050471a6e6f8e17a8:2012594087,6ca2309999f6031095a67c7f72b08623:257827941,fc62f459d5f6031068df1c497182cd64:2012594087,4191f4d52ef6031035b0d8bd3bd8ce8f:257827941,2eb9989d36f20310e9816ba3d4b96cd0:-1496938205</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="6">1cb04599217a03107f443754fb88d494</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-18 08:00:00</sys_created_on>
+        <sys_db_object display_value="" name="sp_row">sp_row</sys_db_object>
+        <sys_id>1be55a201f724ce38f049e569d61d1c1</sys_id>
+        <sys_metadata>e6b9989d21f203107f443754fb88d4ce</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>6</sys_name>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_scope_delete display_value="">57bcfbaf4a844eb88d8c57ea65d55310</sys_scope_delete>
+        <sys_update_name>sp_row_e6b9989d21f203107f443754fb88d4ce</sys_update_name>
+        <sys_update_version display_value="sp_row_e6b9989d21f203107f443754fb88d4ce">5454f8dd21f603107f443754fb88d421</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-18 08:00:00</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

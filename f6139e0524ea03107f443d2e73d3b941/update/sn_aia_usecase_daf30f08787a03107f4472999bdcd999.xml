@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_usecase">
+    <sn_aia_usecase action="INSERT_OR_UPDATE">
+        <advanced_mode>false</advanced_mode>
+        <applicability_script><![CDATA[/** 
+ * Function to process inputs related to ServiceNow change request operations 
+ * 
+ * @param {Object} inputs - The input parameters object 
+ * @param {string} inputs.objective - The purpose or goal of the operation 
+ * @param {string} inputs.execution_plan_id - Unique identifier for the execution plan 
+ * @param {Object} inputs.context - Context information about the ServiceNow change request 
+ * @param {string} inputs.context.url - The URL of the change request in Service Operations Workspace 
+ * @param {string} inputs.context.table - The ServiceNow table name (e.g., 'change_request') 
+ * @param {string} inputs.context.record_sys_id - The sys ID of the record 
+ * @param {string} inputs.context.route - The route type (e.g., 'record') 
+ * @param {string} inputs.context.additional_context - Additional contextual information in JSON format 
+ * @param {string} inputs.context.experience - The UI experience name (e.g., 'Service Operations Workspace') 
+ * @param {string} inputs.context.number - The request number 
+ * @param {string} inputs.context.portal - The portal ID 
+ * @param {string} inputs.context.device_type - The device type from which the experience is accessed, e.g.'mweb' 
+ * @param {string} inputs.context.deployment_id - The unique identifier for the assistant deployment 
+ * @param {string} inputs.context.assistant_type - The type of assistant, e.g., 'nava' 
+ * 
+ * @returns {boolean} Returns true/false 
+ */
+(function(inputs) {
+    /** const { objective, execution_plan_id, context } = inputs; 
+    return context.table == 'incident' ; */
+    return false;
+})(inputs);]]></applicability_script>
+        <base_plan>1. Fetch the environmental pollution complaint details including complaint title, complaint type, pollution category, pollution source, description, district, landmark, number of people affected, risk level, and current status.
+
+2. Validate the complaint information and identify any missing or inconsistent details that require clarification.
+
+3. Analyze the complaint details and determine the environmental risk level based on pollution category, severity, affected population, and suspected regulatory violation.
+
+4. Update the complaint record with the assessed risk level and appropriate compliance status.
+
+5. Assign or initiate the appropriate inspection process based on the complaint location, pollution category, risk level, and regulatory requirements.
+
+6. Track the complaint status through investigation, inspection, compliance action, and resolution.
+
+7. Provide the citizen with a clear summary of the complaint status, actions taken, and next steps.</base_plan>
+        <condition/>
+        <context_processing_script><![CDATA[/*
+ * Available Variables:
+ *
+ * - user_utterance: The user input or message that initiated the use case.
+ *          This represents the user's natural language query or command
+ *          received during the conversation.
+ *
+ * - usecase_id: The unique identifier of the use case being executed.
+ *          Can be used to reference use case configurations, metadata,
+ *          or to apply specific context-handling logic.
+ *
+ * - context: An object containing contextual information for the use case.
+ *          It always includes a "pageContext" and may include a "triggerContext",
+ *          depending on how and from where the use case was invoked.
+ *
+ *          Behavior by invocation type:
+ *          ---------------------------------
+ *          - When invoked via the startAiAgentConversation API:
+ *                If a "contextMemory" parameter is passed in the API request,
+ *                it will be available as the "triggerContext".
+ *                The "pageContext" is always present in this call,
+ *                regardless of the invocation type (standalone or workflow-based).
+ *                Example:
+ *                    {
+ *                        pageContext: { ... },
+ *                        triggerContext: { ... } // Derived from contextMemory (if passed)
+ *                    }
+ *
+ *          - When invoked as part of a workflow or chained use case:
+ *                The "pageContext" and "triggerContext" available here may represent
+ *                the state carried forward from a previous execution step.
+ *                This script can modify, enrich, or restructure these contexts
+ *                before passing them to the downstream agent(s).
+ *
+ *          - When executed directly (standalone use case execution):
+ *                The "pageContext" will always be available (even if empty),
+ *                and "triggerContext" will only be populated if explicitly
+ *                provided through the API call.
+ *
+ * Return Format:
+ * ----------------
+ * This script must return an updated context object to be passed to
+ * the next stage (typically the agent or workflow step):
+ *    { pageContext: {}, triggerContext: {} }
+ *
+ * Example:
+ * ----------------
+ * return {
+ *     pageContext: {
+ *         ...context.pageContext,
+ *         usecaseProcessed: true
+ *     },
+ *     triggerContext: {
+ *         ...context.triggerContext,
+ *         lastModifiedBy: "usecase_context_script"
+ *     }
+ * };
+ */
+(function(user_utterance, usecase_id, context) {
+    return {
+        pageContext: context?.pageContext,
+        triggerContext: context?.triggerContext
+    };
+})(user_utterance, usecase_id, context);
+]]></context_processing_script>
+        <description>This workflow manages environmental pollution complaints from initial registration through validation, risk assessment, inspection, status updates, and resolution. It uses AI agents and record operations to analyze complaint details, determine risk, assign the appropriate inspection process, update complaint status, and provide clear resolution guidance.</description>
+        <execution_mode>copilot</execution_mode>
+        <internal_name>global.x_snc_environmen_0.Environmental Pollution Complaint Resolution Workflow</internal_name>
+        <name>Environmental Pollution Complaint Resolution Workflow</name>
+        <parent/>
+        <record_type>custom</record_type>
+        <root_usecase_id/>
+        <source_id/>
+        <strategy display_value="ReActive Planner">b264c470ff1022106c36ffffffffff67</strategy>
+        <sys_class_name>sn_aia_usecase</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-14 20:21:11</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>daf30f08787a03107f4472999bdcd999</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Environmental Pollution Complaint Resolution Workflow</sys_name>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>sn_aia_usecase_daf30f08787a03107f4472999bdcd999</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-14 20:21:11</sys_updated_on>
+        <team display_value="Environmental Pollution Complaint Resolution Workflow">daf34708787a03107f4472999bdcd997</team>
+    </sn_aia_usecase>
+</record_update>

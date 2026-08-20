@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_module">
+    <sys_ui_module action="DELETE">
+        <active>true</active>
+        <application display_value="Environmental Risk">8f695d0ff0ea03107f4476c906d678f5</application>
+        <filter/>
+        <name>Environmental Risks</name>
+        <order/>
+        <path/>
+        <path_relative_to_root>false</path_relative_to_root>
+        <roles>x_snc_environmen_0.environmental_risk_user</roles>
+        <sys_class_name>sys_ui_module</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-11 10:01:46</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>df699d0ff0ea03107f4476c906d6789b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Environmental Risks</sys_name>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>sys_ui_module_df699d0ff0ea03107f4476c906d6789b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-11 10:01:46</sys_updated_on>
+        <table>x_snc_environmen_0_environmental_risk</table>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+    </sys_ui_module>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</application>
+        <file_path/>
+        <instance_id>57b1043093560750fb38f8284dba10f5</instance_id>
+        <instance_name>dlt-hck-8017-0040</instance_name>
+        <name>sys_ui_module_df699d0ff0ea03107f4476c906d6789b</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_module"><sys_ui_module action="INSERT_OR_UPDATE"><active>true</active><application display_value="Environmental Risk">8f695d0ff0ea03107f4476c906d678f5</application><filter/><name>Environmental Risks</name><order/><path/><path_relative_to_root>false</path_relative_to_root><roles>x_snc_environmen_0.environmental_risk_user</roles><sys_class_name>sys_ui_module</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-11 10:01:46</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>df699d0ff0ea03107f4476c906d6789b</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Environmental Risks</sys_name><sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package><sys_policy/><sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope><sys_update_name>sys_ui_module_df699d0ff0ea03107f4476c906d6789b</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-11 10:01:46</sys_updated_on><table>x_snc_environmen_0_environmental_risk</table><uncancelable>false</uncancelable><view_name/></sys_ui_module></record_update>]]></payload>
+        <payload_hash>-2043000250</payload_hash>
+        <record_name>Environmental Risks</record_name>
+        <reverted_from/>
+        <source>be139e0524ea03107f443d2e73d3b944</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-11 10:01:46</sys_created_on>
+        <sys_id>ef699d0ff0ea03107f4476c906d6789f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19ff045614f0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-11 10:01:46</sys_updated_on>
+        <type>Module</type>
+        <update_guid>ef699d0f7eea0310c76da5f0c9e1359e</update_guid>
+        <update_guid_history>ef699d0f7eea0310c76da5f0c9e1359e:-2043000250</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-13 06:32:21</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_module">sys_ui_module</sys_db_object>
+        <sys_id>642a342505164142b6f807eff29faeb1</sys_id>
+        <sys_metadata>df699d0ff0ea03107f4476c906d6789b</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Environmental Risks</sys_name>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_scope_delete display_value="">57bcfbaf4a844eb88d8c57ea65d55310</sys_scope_delete>
+        <sys_update_name>sys_ui_module_df699d0ff0ea03107f4476c906d6789b</sys_update_name>
+        <sys_update_version display_value="sys_ui_module_df699d0ff0ea03107f4476c906d6789b">ef699d0ff0ea03107f4476c906d6789f</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-13 06:32:21</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

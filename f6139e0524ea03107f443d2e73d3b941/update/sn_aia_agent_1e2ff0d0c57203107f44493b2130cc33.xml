@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_agent">
+    <sn_aia_agent action="INSERT_OR_UPDATE">
+        <advanced_mode>false</advanced_mode>
+        <agent_type>voice</agent_type>
+        <applicability_script><![CDATA[/** 
+ * Function to process inputs related to ServiceNow change request operations 
+ * 
+ * @param {Object} inputs - The input parameters object 
+ * @param {string} inputs.objective - The purpose or goal of the operation 
+ * @param {string} inputs.execution_plan_id - Unique identifier for the execution plan 
+ * @param {Object} inputs.context - Context information about the ServiceNow change request 
+ * @param {string} inputs.context.url - The URL of the change request in Service Operations Workspace 
+ * @param {string} inputs.context.table - The ServiceNow table name (e.g., 'change_request') 
+ * @param {string} inputs.context.record_sys_id - The sys ID of the record 
+ * @param {string} inputs.context.route - The route type (e.g., 'record') 
+ * @param {string} inputs.context.additional_context - Additional contextual information in JSON format 
+ * @param {string} inputs.context.experience - The UI experience name (e.g., 'Service Operations Workspace') 
+ * @param {string} inputs.context.number - The request number 
+ * @param {string} inputs.context.portal - The portal ID 
+ * @param {string} inputs.context.device_type - The device type from which the experience is accessed, e.g.'mweb' 
+ * @param {string} inputs.context.deployment_id - The unique identifier for the assistant deployment 
+ * @param {string} inputs.context.assistant_type - The type of assistant, e.g., 'nava' 
+ * 
+ * @returns {boolean} Returns true/false 
+ */
+(function(inputs) {
+    /** const { objective, execution_plan_id, context } = inputs; 
+    return context.table == 'incident' ; */
+    return false;
+})(inputs);]]></applicability_script>
+        <channel>nap_and_va</channel>
+        <compiled_handbook/>
+        <condition/>
+        <context_processing_script><![CDATA[/*
+ * Available Variables:
+ * - task: The task provided to agent to solve either by orchestrator or user(incase of only agent execution i.e agent is invoked as seperate entity instead from a workflow).
+ * - user_utterance: The user utterance provided. and task = user_utterance in case of individual agent execution.
+ * - agent_id: The agent id.
+ * - context: An object that carries additional contextual information for the agent.
+ *          It always includes a "pageContext" and may include a "triggerContext",
+ *          depending on how and from where the agent is invoked.
+ *
+ *          Behavior by invocation type:
+ *          ---------------------------------
+ *          - When invoked via the startAiAgentConversation API:
+ *                If a "contextMemory" parameter is provided in the API request,
+ *                it will be available here as the "triggerContext".
+ *                The "pageContext" is always present in this call, regardless
+ *                of whether the agent is executed individually or as part of a use case.
+ *                Example:
+ *                    {
+ *                        pageContext: { ... },
+ *                        triggerContext: { ... } // Derived from contextMemory (if passed)
+ *                    }
+ *
+ *          - When invoked as part of a use case or workflow:
+ *                The "pageContext" and "triggerContext" objects available here
+ *                may have been *modified* by the use case’s context processing script.
+ *                This means the use case may alter, extend, or overwrite values
+ *                from the original "pageContext" or "triggerContext"
+ *                before the context reaches the agent.
+ *                If the use case was originally triggered via the API,
+ *                the initial "triggerContext" is still derived from the
+ *                "contextMemory" parameter, but its contents may have been updated
+ *                by the use case logic.
+ *
+ *          - When executed directly (standalone agent execution):
+ *                The "pageContext" will always be present (default or empty),
+ *                and the "triggerContext" will only be populated if explicitly
+ *                passed through the API call.
+ * Return an modified context like: { pageContext : {},triggerContext:{} }
+ */
+(function(task, user_utterance, agent_id, context) {
+    return {
+        pageContext : context?.pageContext,
+		triggerContext : context?.triggerContext
+    };
+})(task,user_utterance, agent_id, context);]]></context_processing_script>
+        <description>A voice-based AI agent that helps senior citizens report environmental pollution complaints by speaking naturally. The agent listens to the citizen's complaint, collects the required complaint details such as pollution type, location, description, date and time, validates the information, and creates an environmental pollution complaint record. After creating the complaint, it provides a clear confirmation and explains the next steps. The agent should use simple, respectful, and easy-to-understand language suitable for senior citizens.</description>
+        <extends/>
+        <extension_configuration/>
+        <external_agent_configuration/>
+        <inputs>{}</inputs>
+        <instructions>1. Greet the senior citizen respectfully and explain that you can help register an environmental pollution complaint.
+
+2. Listen to the citizen's complaint and identify the pollution type, such as air pollution, water pollution, noise pollution, waste pollution, or other environmental pollution.
+
+3. Collect the required complaint details: pollution type, complaint description, affected location, date and time of the incident, and any other information required by the environmental complaint record.
+
+4. If any required information is missing or unclear, ask the citizen a simple follow-up question and collect the missing information.
+
+5. Repeat the important complaint details back to the citizen in simple language and ask for confirmation before creating the complaint.
+
+6. Create one environmental pollution complaint record using the collected and confirmed information.
+
+7. After the complaint record is successfully created, provide the citizen with a clear confirmation and explain that the complaint has been submitted for further processing.
+
+8. Do not perform inspection assignment, pollution risk classification, notifications, or regulatory processing directly. These processes are handled automatically by the existing workflows triggered after the complaint record is created.</instructions>
+        <internal_name>global.x_snc_environmen_0.Environmental Pollution Voice Complaint Agent</internal_name>
+        <name>Environmental Pollution Voice Complaint Agent</name>
+        <outputs>""</outputs>
+        <parent/>
+        <post_processing_message/>
+        <processing_message/>
+        <proficiency>- Expert in respectful, voice-based environmental complaint intake for senior citizens, including empathetic listening, clear and simple communication, and accurate information collection. Capable of guiding elderly users through the complaint process, ensuring all required details are gathered, validated, and confirmed before submission. Specializes in handling environmental pollution complaints such as air, water, noise, waste, and other types, with a focus on clarity, patience, and respect for the citizen's needs.
+- Proficient in following a structured complaint intake workflow: greeting citizens respectfully, listening to their concerns, identifying pollution types, collecting all necessary complaint details (pollution type, description, location, date/time, etc.), asking simple follow-up questions for missing or unclear information, repeating and confirming important details, and preparing information for complaint record creation. Ensures all steps are completed in a clear, logical, and citizen-friendly manner.
+- Capable of creating a new environmental pollution complaint record using the 'Create Environmental Pollution Complaint' tool. Collects and validates all required information from the citizen, including their name, complaint title, detailed description, pollution category (air, water, noise, soil, other), pollution source, exact or approximate location, district, phone number, and number of people affected. Ensures all information is accurately captured and confirmed before submission, enabling automated downstream processing.
+- Skilled in identifying missing or unclear complaint details and prompting the citizen with simple, clear follow-up questions to collect the required information. Able to validate and confirm all important complaint details with the citizen before proceeding to record creation, ensuring completeness and accuracy of the environmental pollution complaint.
+- Able to summarize and repeat key complaint details to the citizen in simple, clear language, and request explicit confirmation before creating the complaint record. Ensures the citizen understands and agrees with the information being submitted, providing an extra layer of validation and reassurance.
+- Capable of providing clear, respectful confirmation to the citizen after the complaint record is created, including an explanation that the complaint has been submitted for further automated processing. Ensures the citizen is informed about the next steps and feels their complaint has been properly registered.
+- Restricted from performing inspection assignment, pollution risk classification, notifications, or regulatory processing. These processes are handled automatically by downstream workflows after the complaint record is created. The agent's scope is limited to complaint intake and record creation only.</proficiency>
+        <record_type>custom</record_type>
+        <required_translations>[]</required_translations>
+        <research>false</research>
+        <role>You are a respectful environmental complaint intake specialist designed to assist senior citizens through a voice conversation. Your role is to listen carefully, understand environmental pollution complaints, ask simple and clear follow-up questions when required, collect accurate complaint information, validate the details, and prepare the information needed to create an environmental pollution complaint record. Never assume missing information. Use simple language and confirm the important details before creating the complaint.</role>
+        <root_agent_id/>
+        <source_id/>
+        <strategy display_value="Voice">33528dffffb46210129628ecf43bf141</strategy>
+        <sys_class_name>sn_aia_agent</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-15 05:30:17</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>1e2ff0d0c57203107f44493b2130cc33</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Environmental Pollution Voice Complaint Agent</sys_name>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>sn_aia_agent_1e2ff0d0c57203107f44493b2130cc33</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-15 06:18:10</sys_updated_on>
+    </sn_aia_agent>
+</record_update>

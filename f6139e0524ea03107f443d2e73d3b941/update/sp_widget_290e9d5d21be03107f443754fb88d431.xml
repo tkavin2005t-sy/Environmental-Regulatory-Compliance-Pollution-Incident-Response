@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function() {
+
+    var c = this;
+
+
+    // =========================
+    // NEW INSPECTION
+    // =========================
+
+    c.newInspection = function() {
+
+        window.location.href =
+            '?id=sc_cat_item&sys_id=f990cfdd213e43107f443754fb88d400';
+
+    };
+
+
+    // =========================
+    // SEARCH
+    // =========================
+
+    c.search = function() {
+
+        c.server.update();
+
+    };
+
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.ec-inspections {
+  background: #f5f9f8;
+  padding: 24px;
+  border-radius: 16px;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 18px rgba(0, 70, 60, 0.08);
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+.inspection-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.inspection-header h2 {
+  margin: 0;
+  color: #075e54;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.inspection-header p {
+  margin: 6px 0 0;
+  color: #6b7d79;
+  font-size: 14px;
+}
+
+
+/* =========================
+   NEW INSPECTION BUTTON
+   ========================= */
+
+.new-inspection-btn {
+  background: #087f6c;
+  color: #ffffff;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.new-inspection-btn:hover {
+  background: #056356;
+  transform: translateY(-1px);
+}
+
+.new-inspection-btn span {
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+
+/* =========================
+   SEARCH
+   ========================= */
+
+.inspection-toolbar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.search-box {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #d6e4e1;
+  border-radius: 10px;
+  padding: 0 14px;
+}
+
+.search-icon {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.search-box input {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 14px 0;
+  font-size: 15px;
+  background: transparent;
+}
+
+.search-btn {
+  background: #e6f4f0;
+  color: #075e54;
+  border: 1px solid #b9ddd5;
+  padding: 0 22px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.search-btn:hover {
+  background: #d4eee8;
+}
+
+
+/* =========================
+   TABLE
+   ========================= */
+
+.inspection-table-wrapper {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow-x: auto;
+  box-shadow: 0 2px 10px rgba(0, 70, 60, 0.06);
+}
+
+.inspection-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 850px;
+}
+
+
+/* Table Header */
+
+.inspection-table th {
+  background: #eaf6f3;
+  color: #075e54;
+  text-align: left;
+  padding: 14px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  border-bottom: 1px solid #d7e5e1;
+}
+
+
+/* Table Data */
+
+.inspection-table td {
+  padding: 14px 16px;
+  color: #40534f;
+  font-size: 13px;
+  border-bottom: 1px solid #edf2f0;
+}
+
+.inspection-table tbody tr:hover {
+  background: #f7fbfa;
+}
+
+
+/* =========================
+   CLICKABLE INSPECTION ID
+   ========================= */
+
+.inspection-link {
+  color: #007e73;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.inspection-link:hover {
+  color: #005e55;
+  text-decoration: underline;
+}
+
+
+/* =========================
+   STATUS
+   ========================= */
+
+.status-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: #e7f5ef;
+  color: #087f6c;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+/* =========================
+   NO RECORDS
+   ========================= */
+
+.no-records {
+  text-align: center;
+  padding: 40px !important;
+  color: #7b8d89 !important;
+  font-size: 14px !important;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>ec_inspections_list</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>EC Inspections List</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+
+    // =========================
+    // INSPECTION TABLE
+    // =========================
+
+    var tableName = 'x_snc_environmen_0_inspection';
+    var gr = new GlideRecord(tableName);
+
+
+    // =========================
+    // SEARCH
+    // =========================
+
+    if (input && input.searchText) {
+
+        var searchText = input.searchText.trim();
+
+        if (searchText) {
+
+            var qc = gr.addQuery(
+                'number',
+                'CONTAINS',
+                searchText
+            );
+
+            // Search by complaint
+            qc.addOrCondition(
+                'complaint.complaint_title',
+                'CONTAINS',
+                searchText
+            );
+
+            // Search by complaint location
+            qc.addOrCondition(
+                'complaint.location',
+                'CONTAINS',
+                searchText
+            );
+
+            // Search by pollution category
+            qc.addOrCondition(
+                'complaint.pollution_category',
+                'CONTAINS',
+                searchText
+            );
+
+            // Search by status
+            qc.addOrCondition(
+                'inspection_status',
+                'CONTAINS',
+                searchText
+            );
+        }
+    }
+
+
+    // =========================
+    // LATEST INSPECTIONS FIRST
+    // =========================
+
+    gr.orderByDesc('sys_created_on');
+
+
+    // =========================
+    // LIMIT
+    // =========================
+
+    gr.setLimit(50);
+
+    gr.query();
+
+
+    // =========================
+    // DATA ARRAY
+    // =========================
+
+    data.inspections = [];
+
+
+    // =========================
+    // READ RECORDS
+    // =========================
+
+    while (gr.next()) {
+
+        var inspection = {};
+
+        // =========================
+        // INSPECTION SYS ID
+        // =========================
+
+        inspection.sys_id = gr.getUniqueValue();
+
+
+        // =========================
+        // INSPECTION NUMBER
+        // =========================
+
+        inspection.number =
+            gr.getDisplayValue('number');
+
+
+        // =========================
+        // COMPLAINT REFERENCE
+        // =========================
+
+        var complaintGR = null;
+
+        if (gr.isValidField('complaint') &&
+            !gr.complaint.nil()) {
+
+            complaintGR =
+                gr.complaint.getRefRecord();
+
+        }
+
+
+        // =========================
+        // LOCATION
+        // From Complaint
+        // =========================
+
+        inspection.location = '';
+
+        if (complaintGR &&
+            complaintGR.isValidRecord() &&
+            complaintGR.isValidField('location')) {
+
+            inspection.location =
+                complaintGR.getDisplayValue('location');
+
+        }
+
+
+        // =========================
+        // INSPECTION TYPE
+        // From Complaint Pollution Category
+        // =========================
+
+        inspection.type = '';
+
+        if (complaintGR &&
+            complaintGR.isValidRecord() &&
+            complaintGR.isValidField('pollution_category')) {
+
+            inspection.type =
+                complaintGR.getDisplayValue(
+                    'pollution_category'
+                );
+
+        }
+
+
+        // =========================
+        // INSPECTOR
+        // From Assigned Inspector
+        // =========================
+
+        inspection.inspector = '';
+
+        if (gr.isValidField('assigned_inspector') &&
+            !gr.assigned_inspector.nil()) {
+
+            inspection.inspector =
+                gr.getDisplayValue(
+                    'assigned_inspector'
+                );
+
+        }
+        // Fallback to Inspector if needed
+        else if (gr.isValidField('inspector') &&
+                 !gr.inspector.nil()) {
+
+            inspection.inspector =
+                gr.getDisplayValue('inspector');
+
+        }
+
+
+        // =========================
+        // INSPECTION STATUS
+        // =========================
+
+        inspection.status = '';
+
+        if (gr.isValidField('inspection_status')) {
+
+            inspection.status =
+                gr.getDisplayValue(
+                    'inspection_status'
+                );
+
+        }
+        else if (gr.isValidField('status')) {
+
+            inspection.status =
+                gr.getDisplayValue('status');
+
+        }
+
+
+        // =========================
+        // INSPECTION DATE
+        // =========================
+
+        inspection.date = '';
+
+        if (gr.isValidField('inspection_date')) {
+
+            inspection.date =
+                gr.getDisplayValue(
+                    'inspection_date'
+                );
+
+        }
+
+
+        // =========================
+        // ADD RECORD
+        // =========================
+
+        data.inspections.push(inspection);
+
+    }
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-18 10:08:10</sys_created_on>
+        <sys_id>290e9d5d21be03107f443754fb88d431</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>EC Inspections List</sys_name>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>sp_widget_290e9d5d21be03107f443754fb88d431</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-19 03:54:44</sys_updated_on>
+        <template><![CDATA[<div class="ec-inspections">
+
+  <!-- Header -->
+  <div class="inspection-header">
+    <div>
+      <h2>Environmental Inspections</h2>
+      <p>Monitor and manage environmental compliance inspections</p>
+    </div>
+
+    <button class="new-inspection-btn" ng-click="c.newInspection()">
+      <span>＋</span> New Inspection
+    </button>
+  </div>
+
+
+  <!-- Search -->
+  <div class="inspection-toolbar">
+
+    <div class="search-box">
+      <span class="search-icon">]]>🔍<![CDATA[</span>
+
+      <input
+        type="text"
+        ng-model="c.searchText"
+        placeholder="Search inspections..."
+        ng-keypress="$event.which === 13 && c.search()"
+      />
+    </div>
+
+    <button
+      class="search-btn"
+      ng-click="c.search()">
+      Search
+    </button>
+
+  </div>
+
+
+  <!-- Inspection Table -->
+  <div class="inspection-table-wrapper">
+
+    <table class="inspection-table">
+
+      <thead>
+        <tr>
+          <th>Inspection ID</th>
+          <th>Location</th>
+          <th>Inspection Type</th>
+          <th>Inspector</th>
+          <th>Status</th>
+          <th>Inspection Date</th>
+        </tr>
+      </thead>
+
+
+      <tbody>
+
+        <!-- Records -->
+        <tr ng-repeat="inspection in data.inspections">
+
+          <!-- CLICKABLE INSPECTION NUMBER -->
+          <td>
+            <a
+              class="inspection-link"
+              ng-href="?id=form&table=x_snc_environmen_0_inspection&sys_id={{inspection.sys_id}}">
+              {{inspection.number}}
+            </a>
+          </td>
+
+          <td>
+            {{inspection.location || '-'}}
+          </td>
+
+          <td>
+            {{inspection.type || '-'}}
+          </td>
+
+          <td>
+            {{inspection.inspector || '-'}}
+          </td>
+
+          <td>
+            <span
+              class="status-badge"
+              ng-if="inspection.status">
+              {{inspection.status}}
+            </span>
+
+            <span ng-if="!inspection.status">
+              -
+            </span>
+          </td>
+
+          <td>
+            {{inspection.date || '-'}}
+          </td>
+
+        </tr>
+
+
+        <!-- No Records -->
+        <tr ng-if="!data.inspections || data.inspections.length === 0">
+
+          <td colspan="6" class="no-records">
+            No inspections found
+          </td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>290e9d5d21be03107f443754fb88d431</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-18 10:08:10</sys_created_on>
+        <sys_id>610e9d5d21be03107f443754fb88d435</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-18 10:08:10</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

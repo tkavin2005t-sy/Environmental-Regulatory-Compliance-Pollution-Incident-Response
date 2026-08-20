@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri/>
+        <enforce_acl/>
+        <http_method>POST</http_method>
+        <name>Create Complaint</name>
+        <operation_script><![CDATA[(function process(request, response) {
+
+    var requestBody = request.body.data;
+
+    var complaint = new GlideRecord('x_snc_environmen_0_complaint');
+
+    complaint.initialize();
+
+    complaint.complaint_title = requestBody.complaint_title;
+    complaint.description = requestBody.description;
+    complaint.complaint_type = requestBody.complaint_type;
+    complaint.pollution_category = requestBody.pollution_category;
+    complaint.location = requestBody.location;
+    complaint.complaint_source = "voice";
+
+    if (requestBody.citizen_name) {
+        complaint.citizen_name = requestBody.citizen_name;
+    }
+
+    if (requestBody.phone_number) {
+        complaint.phone_number = requestBody.phone_number;
+    }
+
+    if (requestBody.email_address) {
+        complaint.email_address = requestBody.email_address;
+    }
+
+    var sys_id = complaint.insert();
+
+    if (sys_id) {
+
+        response.setStatus(201);
+
+        response.setBody({
+            success: true,
+            message: "Environmental complaint created successfully",
+            complaint_number: complaint.number,
+            sys_id: sys_id
+        });
+
+    } else {
+
+        response.setStatus(500);
+
+        response.setBody({
+            success:false,
+            message:"Unable to create complaint"
+        });
+
+    }
+
+})(request, response);]]></operation_script>
+        <operation_uri>/api/x_snc_environmen_0/environmental_complaint/complaint</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/complaint</relative_path>
+        <request_example/>
+        <requires_acl_authorization>true</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <requires_snc_internal_role>false</requires_snc_internal_role>
+        <short_description/>
+        <support_trailing_slash>false</support_trailing_slash>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-18 04:13:58</sys_created_on>
+        <sys_id>f91a4cd9217203107f443754fb88d435</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Create Complaint</sys_name>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>sys_ws_operation_f91a4cd9217203107f443754fb88d435</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-18 04:13:58</sys_updated_on>
+        <web_service_definition display_value="Environmental Complaint API">1a58c019217203107f443754fb88d46b</web_service_definition>
+        <web_service_version/>
+    </sys_ws_operation>
+</record_update>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="par_visualization">
+    <par_visualization action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <certified>false</certified>
+        <description>Visualizes pollution complaints based on their geographical location.</description>
+        <macroponent display_value="Geomap">9c8c44bd78fe5918950e0db8e286211d</macroponent>
+        <name>Pollution Complaint Map</name>
+        <properties>{"mapSysId":"04197a82d7301200bd4a4ebfae6103bd","showDataLabels":true,"showLegend":true,"showPercentageOfTotalInTooltip":true,"legendPosition":"bottom","newReporting":false,"enableAddZerosAtApi":true,"additionalGroupByConfig":null,"showHeader":true,"showTotalAggregate":false,"showSubAggregate":false,"showFirstGroupAggregate":false,"showSecondGroupAggregate":false,"hideMatrixAggregate":false,"lineClamp":1,"headerTitleAlignment":"start","wrapTitle":false,"showLoadingIndicator":false,"showHeaderSeparator":false,"contextMenuActions":[],"headingLevel":2,"showBorder":true,"bareBorder":false,"telemetry":null,"showDataPassthrough":false,"refreshRequest":"","showAdditionalGroupBySelector":false,"allowAdditionalGroupByPerMetric":false,"dataPassthrough":null,"sortByOrder":"desc","showChange":false,"showChangePercentage":false,"showTarget":false,"showForecast":false,"showForecastRange":false,"showTrend":false,"showConfidenceBand":false,"showGapPercentage":false,"showSparkline":false,"showMetricLabel":false,"showThreshold":false,"showComment":false,"followFilters":true,"showFilterIcon":true,"enableRealTimeUpdate":false,"enableDrilldown":true,"enableClickAndStay":false,"showDataTable":false,"enableCustomEmptyState":false,"emptyStateIllustration":"no-data","emptyStateHeading":"No data available.","emptyStateHeadingLevel":3,"emptyStateContent":"There are no scores available for the selected criteria. Contact your admin for more info.","emptyStateAlignment":"vertical-centered","hideDevSettings":false,"configPropModifiers":{},"showMaximumRange":false,"allowChangeDateRange":false,"showDateRangeByDefault":false,"applyDateRange":false,"numberOfPeriods":3,"showAbsolutePeriod":false,"autoAggregatePeriods":false,"scoreType":null,"showChangeFrom":"previous","useCurrentDateForEnd":false,"period":"M","useDataCache":false,"cacheExpirationTime":0,"showCacheTime":true,"dateFormat":"default","showRefresh":true,"showExportOptions":true,"showFilterAsSeparateSeries":false,"userInfo":"@context.session.user","sharedContext":null,"colors":{},"filterConfigurations":[],"componentId":"4tzo36qd","filterPerMetric":[],"sortBy":"value","colorConfig":{"type":"default"},"description":"Visualizes pollution complaints based on their geographical location.","chartInteractionAction":"goToData","dataSources":[{"isDatabaseView":false,"allowRealTime":true,"label":"Complaint","sourceType":"table","tableOrViewName":"x_snc_environmen_0_complaint","filterQuery":"map_locationISNOTEMPTY^latitudeISNOTEMPTY^longitudeISNOTEMPTY^pollution_category=air_pollution","preferredVisualizations":["d24d53f60350de7a652caf3188a46ed2"],"id":"dGFibGV4X3NuY19lbnZpcm9ubWVuXzBfY29tcGxhaW50MTc4NjM0MzUzMDA1Mw==","dataCategories":["trend","group","simple"]}],"groupBy":null,"metrics":[{"dataSource":"dGFibGV4X3NuY19lbnZpcm9ubWVuXzBfY29tcGxhaW50MTc4NjM0MzUzMDA1Mw==","id":"ZEdGaWJHVjRYM051WTE5bGJuWnBjbTl1YldWdVh6QmZZMjl0Y0d4aGFXNTBNVGM0TmpNME16VXpNREExTXc9PTE3ODYzNDM1MzE3NDY=","aggregateFunction":"COUNT","numberFormat":{"customFormat":false},"axisId":"primary"}]}</properties>
+        <requested_by/>
+        <required_translations>[{"comment":"","message":"Complaint","code":"PAR_COMPONENT.654f9f6ea46603107f44e52873f60017"},{"comment":"","message":"Visualizes pollution complaints based on their geographical location.","code":"PAR_COMPONENT.654f9f6ea46603107f44e52873f60017"},{"comment":"","message":"No data available.","code":"PAR_COMPONENT.654f9f6ea46603107f44e52873f60017"},{"comment":"","message":"There are no scores available for the selected criteria. Contact your admin for more info.","code":"PAR_COMPONENT.654f9f6ea46603107f44e52873f60017"}]</required_translations>
+        <scheduled_count>0</scheduled_count>
+        <sys_class_name>par_visualization</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-10 06:29:34</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>global</sys_domain_path>
+        <sys_id>654f9f6ea46603107f44e52873f60017</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>Pollution Complaint Map</sys_name>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>par_visualization_654f9f6ea46603107f44e52873f60017</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-18 10:17:14</sys_updated_on>
+        <type>map</type>
+    </par_visualization>
+</record_update>

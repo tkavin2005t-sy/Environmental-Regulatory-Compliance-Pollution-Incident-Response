@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="5cad32e3c0a603107f44ce324722fee6" label="Environmental Risk" max_length="40" name="x_snc_environmen_0_environmental_risk" type="collection">
+        <element label="Pollution Source" max_length="40" name="pollution_source" type="string"/>
+        <element label="Risk Description" max_length="40" name="risk_description" type="string"/>
+        <element label="Pollution catergory" max_length="40" name="pollution_catergory" type="string"/>
+        <element label="Complaint" max_length="32" name="complaint" reference="x_snc_environmen_0_complaint" type="reference"/>
+        <element choice="1" label="Risk status" max_length="40" name="risk_status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Closed" sequence="3" value="closed"/>
+                <element inactive_on_update="false" label="Under assesment" sequence="1" value="under_assesment"/>
+                <element inactive_on_update="false" label="Open" sequence="0" value="open"/>
+                <element inactive_on_update="false" label="Mitigated" sequence="2" value="mitigated"/>
+            </choice>
+        </element>
+        <element choice="3" label="Risk level" max_length="40" name="risk_level" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="High" sequence="0" value="high"/>
+                <element inactive_on_update="false" label="Medium" sequence="1" value="medium"/>
+                <element inactive_on_update="false" label="low" sequence="2" value="low"/>
+            </choice>
+        </element>
+        <element label="Location" max_length="40" name="location" type="string"/>
+        <index name="index">
+            <element name="complaint"/>
+        </index>
+    </element>
+</database>

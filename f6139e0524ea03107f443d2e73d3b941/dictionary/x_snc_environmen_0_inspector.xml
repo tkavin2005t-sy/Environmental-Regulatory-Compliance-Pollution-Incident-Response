@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="db90229991a203107f441961e66ff882" label="Inspector" max_length="40" name="x_snc_environmen_0_inspector" type="collection">
+        <element label="Region" max_length="40" name="region" type="string"/>
+        <element label="Inspector ID" max_length="40" name="inspector_id" type="string"/>
+        <element choice="3" label="Expertise" max_length="255" name="enterprise" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Chemical Leakage" sequence="3" value="chemical_leakage"/>
+                <element inactive_on_update="false" label="General" sequence="0" value="general"/>
+                <element inactive_on_update="false" label="Water Pollution" sequence="4" value="water_pollution"/>
+                <element inactive_on_update="false" label="Noise Pollution" sequence="1" value="noise_pollution"/>
+                <element inactive_on_update="false" label="Air Pollution" sequence="5" value="air_pollution"/>
+                <element inactive_on_update="false" label="Industrial Waste" sequence="2" value="industrial_waste"/>
+            </choice>
+        </element>
+        <element choice="3" label="Availability Status" max_length="40" name="availability_status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Offline" sequence="3" value="offline"/>
+                <element inactive_on_update="false" label="On Leave" sequence="2" value="on_leave"/>
+                <element inactive_on_update="false" label="On Inspection" sequence="1" value="on_inspection"/>
+                <element inactive_on_update="false" label="Available" sequence="0" value="available"/>
+            </choice>
+        </element>
+        <element display="true" label="Inspector Name" max_length="40" name="inspector_name" type="string"/>
+        <element label="Email Address" max_length="40" name="email_address" type="string"/>
+        <element choice="3" label="Department" max_length="255" name="department" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="General Environmental" sequence="0" value="general_environmental"/>
+                <element inactive_on_update="false" label="Air Pollution" sequence="4" value="air_pollution"/>
+                <element inactive_on_update="false" label="Water Pollution" sequence="3" value="water_pollution"/>
+                <element inactive_on_update="false" label="Industrial Waste" sequence="2" value="industrial_waste"/>
+                <element inactive_on_update="false" label="Noise Pollution" sequence="1" value="noise_pollution"/>
+                <element inactive_on_update="false" label="Chemical Leakage" sequence="0" value="Chemical Leakage"/>
+                <element inactive_on_update="false" label="General" sequence="0" value="General"/>
+            </choice>
+        </element>
+        <element label="Years of Experience" max_length="40" name="years_of_experience" type="integer"/>
+        <element label="Contact Number" max_length="40" name="contact_number" type="phone_number_e164"/>
+        <element label="user" max_length="32" name="user" reference="sys_user" type="reference"/>
+        <index name="index">
+            <element name="user"/>
+        </index>
+    </element>
+</database>

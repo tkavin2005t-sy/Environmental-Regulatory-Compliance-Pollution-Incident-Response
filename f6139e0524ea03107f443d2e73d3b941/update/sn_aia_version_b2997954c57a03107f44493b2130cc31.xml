@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_version">
+    <sn_aia_version action="INSERT_OR_UPDATE">
+        <condition/>
+        <instructions>1. Collect complaint details
+Collect the citizen's reported pollution type, location, description, date and time of occurrence, and contact information.
+
+2. Validate complaint information
+Check that the required complaint details are available and identify any missing or inconsistent information.
+
+3. Identify pollution incident
+Analyze the complaint description and classify the reported environmental issue such as air pollution, water pollution, waste pollution, noise pollution, or other environmental violations.
+
+4. Create or update complaint record
+Create a complaint record in the Environmental Compliance application and store the validated incident information.
+
+5. Initiate environmental risk assessment
+Evaluate the reported incident and initiate an environmental risk assessment when the complaint indicates a potential environmental impact or regulatory violation.
+
+6. Initiate inspection
+Create or trigger an inspection request when field verification is required and assign the inspection to an appropriate inspector.
+
+7. Confirm and guide the citizen
+Provide confirmation that the complaint has been recorded and explain the next steps in the investigation, inspection, compliance, and resolution process.</instructions>
+        <state>published</state>
+        <sys_class_name>sn_aia_version</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-15 09:34:45</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>b2997954c57a03107f44493b2130cc31</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>V1</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>sn_aia_version_b2997954c57a03107f44493b2130cc31</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-15 09:34:45</sys_updated_on>
+        <target_id>d398f9d0c57a03107f44493b2130cc14</target_id>
+        <target_table>sn_aia_agent</target_table>
+        <version_name>V1</version_name>
+        <version_number>1</version_number>
+    </sn_aia_version>
+</record_update>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_decision_multi_result">
+    <sys_decision_multi_result action="INSERT_OR_UPDATE">
+        <decision_table display_value="Inspection Outcome Decision">65ca28c6d02203107f442ed909dd8413</decision_table>
+        <label>Recommended Action: Schedule Site Inspection</label>
+        <result_elements/>
+        <sys_class_name>sys_decision_multi_result</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-08 06:16:36</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>c4294dc2d06603107f442ed909dd84e9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Recommended Action: Schedule Site Inspection</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>sys_decision_multi_result_c4294dc2d06603107f442ed909dd84e9</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-08 06:16:36</sys_updated_on>
+    </sys_decision_multi_result>
+    <sys_variable_value action="delete_multiple" query="document_key=c4294dc2d06603107f442ed909dd84e9"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_decision_multi_result</document>
+        <document_key>c4294dc2d06603107f442ed909dd84e9</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-08 06:16:36</sys_created_on>
+        <sys_id>8c294dc2d06603107f442ed909dd84e9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-08 06:16:36</sys_updated_on>
+        <value>Schedule Site Inspection</value>
+        <variable display_value="Recommended Action">e6cae406d06203107f442ed909dd842a</variable>
+    </sys_variable_value>
+</record_update>

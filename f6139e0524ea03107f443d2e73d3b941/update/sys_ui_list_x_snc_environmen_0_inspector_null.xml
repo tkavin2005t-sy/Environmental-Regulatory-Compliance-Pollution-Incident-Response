@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_list parent="" relationship="" sys_domain="global" table="x_snc_environmen_0_inspector" version="2" view="">
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>availability_status</element>
+            <list_id display_value="x_snc_environmen_0_inspector" element="NULL" name="x_snc_environmen_0_inspector" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">628d93e5a82203107f44c5b727ce25f0</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>0</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-07 03:48:04</sys_created_on>
+            <sys_id>ea8d93e5a82203107f44c5b727ce25f2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-07 03:48:04</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>contact_number</element>
+            <list_id display_value="x_snc_environmen_0_inspector" element="NULL" name="x_snc_environmen_0_inspector" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">628d93e5a82203107f44c5b727ce25f0</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>1</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-07 03:48:04</sys_created_on>
+            <sys_id>a68dd3e5a82203107f44c5b727ce2563</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-07 03:48:04</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>department</element>
+            <list_id display_value="x_snc_environmen_0_inspector" element="NULL" name="x_snc_environmen_0_inspector" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">628d93e5a82203107f44c5b727ce25f0</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>2</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-07 03:48:04</sys_created_on>
+            <sys_id>2e8dd3e5a82203107f44c5b727ce2563</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-07 03:48:04</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>email_address</element>
+            <list_id display_value="x_snc_environmen_0_inspector" element="NULL" name="x_snc_environmen_0_inspector" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">628d93e5a82203107f44c5b727ce25f0</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>3</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-07 03:48:04</sys_created_on>
+            <sys_id>a28dd3e5a82203107f44c5b727ce2564</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-07 03:48:04</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>enterprise</element>
+            <list_id display_value="x_snc_environmen_0_inspector" element="NULL" name="x_snc_environmen_0_inspector" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">628d93e5a82203107f44c5b727ce25f0</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>4</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-07 03:48:04</sys_created_on>
+            <sys_id>2a8dd3e5a82203107f44c5b727ce2564</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-07 03:48:04</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>inspector_id</element>
+            <list_id display_value="x_snc_environmen_0_inspector" element="NULL" name="x_snc_environmen_0_inspector" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">628d93e5a82203107f44c5b727ce25f0</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>5</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-07 03:48:04</sys_created_on>
+            <sys_id>ae8dd3e5a82203107f44c5b727ce2564</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-07 03:48:04</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>inspector_name</element>
+            <list_id display_value="x_snc_environmen_0_inspector" element="NULL" name="x_snc_environmen_0_inspector" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">628d93e5a82203107f44c5b727ce25f0</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>6</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-07 03:48:04</sys_created_on>
+            <sys_id>268dd3e5a82203107f44c5b727ce2565</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-07 03:48:04</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>region</element>
+            <list_id display_value="x_snc_environmen_0_inspector" element="NULL" name="x_snc_environmen_0_inspector" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">628d93e5a82203107f44c5b727ce25f0</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>7</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-07 03:48:04</sys_created_on>
+            <sys_id>aa8dd3e5a82203107f44c5b727ce2565</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-07 03:48:04</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>years_of_experience</element>
+            <list_id display_value="x_snc_environmen_0_inspector" element="NULL" name="x_snc_environmen_0_inspector" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">628d93e5a82203107f44c5b727ce25f0</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>8</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-07 03:48:05</sys_created_on>
+            <sys_id>228dd3e5a82203107f44c5b727ce2566</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-07 03:48:05</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element/>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <name>x_snc_environmen_0_inspector</name>
+            <parent/>
+            <position/>
+            <relationship/>
+            <sum>false</sum>
+            <sys_class_name>sys_ui_list</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-07 03:48:04</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>628d93e5a82203107f44c5b727ce25f0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_snc_environmen_0_inspector</sys_name>
+            <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+            <sys_update_name>sys_ui_list_x_snc_environmen_0_inspector_null</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-07 03:48:04</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_list>
+    </sys_ui_list>
+</record_update>

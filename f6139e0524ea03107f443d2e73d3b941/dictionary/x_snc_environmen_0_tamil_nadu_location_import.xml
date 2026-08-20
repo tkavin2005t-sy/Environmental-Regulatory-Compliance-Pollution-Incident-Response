@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="fef564bcfdb243107f44ed6bc0951202" extends="sys_import_set_row" label="Tamil Nadu Location Import" max_length="40" name="x_snc_environmen_0_tamil_nadu_location_import" type="collection">
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Zip / Postal Code" label="Zip / Postal Code" max_length="40" name="u_zip___postal_code" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Longitude" label="Longitude" max_length="40" name="u_longitude" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Latitude" label="Latitude" max_length="40" name="u_latitude" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Name" label="Name" max_length="40" name="u_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=City" label="City" max_length="40" name="u_city" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Country" label="Country" max_length="40" name="u_country" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=State / Province" label="State / Province" max_length="40" name="u_state___province" type="string"/>
+    </element>
+</database>

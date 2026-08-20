@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="par_dashboard_widget">
+    <par_dashboard_widget action="INSERT_OR_UPDATE">
+        <canvas display_value="">138f1532dd6203107f44e9a1e7f430d6</canvas>
+        <component display_value="Filter">226449101138d0dff1abe0e1566c8b2a</component>
+        <component_props>{"filterId":"1jvmar3b25cujq9s2jjc","filterName":"Pollution Category","filterCustomId":"","filterComponentType":"singleselect","datasource":{"type":"table","payload":{"field":"pollution_category","fieldType":"choice","table":"x_snc_environmen_0_complaint","primaryKey":"sys_id"}},"targets":[{"type":"table","payload":{"field":"pollution_category","table":"x_snc_environmen_0_complaint","primaryKey":"sys_id"}}],"defaultSelectedItems":[],"defaultSelectedDateRange":{"range":""},"dateFilterView":"calendar-reldates","sort":"ASC","filterElementType":"pill","isShowSelectedValueInPill":true,"filterElementLayout":"vertical","enableClearFilter":true,"primaryActionLabel":"Apply","maxElements":500,"filterConfigurations":"@state.parFilters","cascadeScope":"578f1532dd6203107f44e9a1e7f430d2","isDashboard":true,"isGroup":false,"value":[],"showHeader":false}</component_props>
+        <h>4</h>
+        <name/>
+        <required_translations>[{"comment":"","message":"Pollution Category","code":"PAR_DASHBOARD.138f1532dd6203107f44e9a1e7f430d6.78c43d3edde203107f44e9a1e7f430ba"},{"comment":"","message":"Apply","code":"PAR_DASHBOARD.138f1532dd6203107f44e9a1e7f430d6.78c43d3edde203107f44e9a1e7f430ba"}]</required_translations>
+        <stored_component/>
+        <sys_class_name>par_dashboard_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-10 17:22:41</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>78c43d3edde203107f44e9a1e7f430ba</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>par_dashboard_widget_78c43d3edde203107f44e9a1e7f430ba</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-13 11:06:46</sys_updated_on>
+        <visualization/>
+        <w>12</w>
+        <widget_props/>
+        <x>4</x>
+        <y>0</y>
+    </par_dashboard_widget>
+</record_update>

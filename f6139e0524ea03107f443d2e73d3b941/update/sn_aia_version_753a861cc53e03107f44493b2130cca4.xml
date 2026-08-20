@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_version">
+    <sn_aia_version action="INSERT_OR_UPDATE">
+        <condition/>
+        <instructions>Review environmental pollution and compliance records.
+Identify abnormal pollution levels, high-risk incidents, or regulatory concerns.
+Check pending inspections, approvals, and compliance actions against their due dates and SLA requirements.
+Detect delayed or overdue approvals and determine the severity of the delay.
+Identify the responsible authority and determine whether escalation is required.
+Initiate the appropriate escalation and notification for delayed or high-risk compliance issues.
+Record the monitoring result, escalation reason, and recommended next action.</instructions>
+        <state>published</state>
+        <sys_class_name>sn_aia_version</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-15 10:47:19</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>753a861cc53e03107f44493b2130cca4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>V1</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>sn_aia_version_753a861cc53e03107f44493b2130cca4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-15 10:47:19</sys_updated_on>
+        <target_id>3dd94698c53e03107f44493b2130cccb</target_id>
+        <target_table>sn_aia_agent</target_table>
+        <version_name>V1</version_name>
+        <version_number>1</version_number>
+    </sn_aia_version>
+</record_update>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_portal">
+    <sp_portal action="INSERT_OR_UPDATE">
+        <alternate_portal/>
+        <communication_channels/>
+        <css_variables>$brand-primary:#167C78;
+$body-bg:#F4F8F7;
+$state-success-text:#2E8B57;
+$sp-homepage-bg:#fff;
+$sp-navbar-divider-color:#2A5D57;
+$text-color:#243A38;
+$sp-logo-margin-y:.5rem;
+$navbar-inverse-link-hover-color:#FFFFFF;
+$panel-bg:#FFFFFF;
+$brand-success:#2E8B57;
+$navbar-inverse-bg:#163F3B;
+$brand-warning:#E6A23C;
+$brand-danger:#D9534F;
+$sp-tagline-color:#717171;
+$navbar-inverse-link-color:#D8F3DC;
+$brand-info:#3A9FA3;
+$link-color:#087F8C;
+$sp-logo-margin-x:1rem;
+$btn-default-bg:#167C78;
+$text-muted:#6B7C7A;
+</css_variables>
+        <dark_theme/>
+        <default>false</default>
+        <embeddable_macroponents/>
+        <enable_ais>false</enable_ais>
+        <enable_certificate_based_authentication>false</enable_certificate_based_authentication>
+        <enable_embeddables>false</enable_embeddables>
+        <enable_favorites>false</enable_favorites>
+        <hide_portal_name>false</hide_portal_name>
+        <homepage display_value="environmental_compliance_home">5efe805921b203107f443754fb88d47f</homepage>
+        <icon/>
+        <inactive>false</inactive>
+        <kb_knowledge_base/>
+        <kb_knowledge_page/>
+        <login_page display_value="environmental_login">0d0ad61121f643107f443754fb88d472</login_page>
+        <logo/>
+        <logo_alt_text>Environmental Compliance Portal</logo_alt_text>
+        <notfound_page/>
+        <quick_start_config/>
+        <rtl_enabled>false</rtl_enabled>
+        <sc_catalog/>
+        <sc_catalog_page/>
+        <sc_category_page/>
+        <search_application/>
+        <search_results_configuration/>
+        <sp_chat_queue/>
+        <sp_rectangle_menu display_value="Environmental Compliance Menu">b35d1a5921f643107f443754fb88d4e2</sp_rectangle_menu>
+        <sys_class_name>sp_portal</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 03:51:03</sys_created_on>
+        <sys_id>eb9cf23cfd3a83107f44ed6bc09512d1</sys_id>
+        <sys_mod_count>30</sys_mod_count>
+        <sys_name>Environmental Compliance Portal</sys_name>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>sp_portal_eb9cf23cfd3a83107f44ed6bc09512d1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-18 19:36:49</sys_updated_on>
+        <theme/>
+        <title>Environmental Compliance Portal</title>
+        <ts_index_group/>
+        <url_suffix>environmental_compliance</url_suffix>
+    </sp_portal>
+    <sys_translated_text action="delete_multiple" query="documentkey=eb9cf23cfd3a83107f44ed6bc09512d1"/>
+</record_update>

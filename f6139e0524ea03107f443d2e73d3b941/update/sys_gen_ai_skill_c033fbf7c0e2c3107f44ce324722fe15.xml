@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_gen_ai_skill">
+    <sys_gen_ai_skill action="INSERT_OR_UPDATE">
+        <skill_description>An AI voice assistant that helps citizens, especially senior citizens, report environmental pollution complaints in their preferred language. The assistant collects the complaint details through a natural voice conversation, converts the spoken input into text, translates the information into English for standardized processing, confirms the captured details with the citizen, and prepares the information for environmental complaint registration in ServiceNow.</skill_description>
+        <skill_document>4433fbf7c0e2c3107f44ce324722fe12</skill_document>
+        <skill_name>Environmental Pollution Voice Complaint Assistant</skill_name>
+        <skill_table>sn_aia_skill_metadata</skill_table>
+        <sys_class_name>sys_gen_ai_skill</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-14 05:09:01</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>c033fbf7c0e2c3107f44ce324722fe15</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>sys_gen_ai_skill_c033fbf7c0e2c3107f44ce324722fe15</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-14 05:09:01</sys_updated_on>
+    </sys_gen_ai_skill>
+    <sys_translated_text action="delete_multiple" query="documentkey=c033fbf7c0e2c3107f44ce324722fe15"/>
+</record_update>

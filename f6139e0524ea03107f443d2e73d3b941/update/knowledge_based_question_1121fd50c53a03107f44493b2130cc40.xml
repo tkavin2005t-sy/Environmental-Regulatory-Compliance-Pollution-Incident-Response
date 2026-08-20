@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="knowledge_based_question">
+    <knowledge_based_question action="INSERT_OR_UPDATE">
+        <category>others</category>
+        <input_format_description/>
+        <input_format_example/>
+        <input_type>text</input_type>
+        <input_validation_pattern/>
+        <keyword>favorite_color</keyword>
+        <question>What is your favorite color?</question>
+        <sys_class_name>knowledge_based_question</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-15 08:59:10</sys_created_on>
+        <sys_id>1121fd50c53a03107f44493b2130cc40</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>What is your favorite color?</sys_name>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>knowledge_based_question_1121fd50c53a03107f44493b2130cc40</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-15 08:59:10</sys_updated_on>
+    </knowledge_based_question>
+</record_update>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_agent_tool_m2m">
+    <sn_aia_agent_tool_m2m action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <agent display_value="Environmental Compliance Monitoring AI Agent">3dd94698c53e03107f44493b2130cccb</agent>
+        <description>Read and analyze environmental complaint, compliance, inspection, and approval records to identify pollution risks, pending actions, overdue approvals, SLA breaches, and compliance issues. Return the relevant record details, status, due dates, and responsible authority information for monitoring and escalation decisions.</description>
+        <display_mode>inline</display_mode>
+        <display_output>true</display_output>
+        <document_status/>
+        <entity>sn_aia_agent</entity>
+        <entity_id>3dd94698c53e03107f44493b2130cccb</entity_id>
+        <execution_mode>copilot</execution_mode>
+        <inputs>[{"name":"crudInputs","value":{"operation":"lookup","table":{"value":"x_snc_environmen_0_complaint","displayValue":"Complaint"},"query":"status=open","returnFields":[{"name":"complaint_title","label":"Complaint Title","type":"string","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"id":"complaint_title","sublabel":"complaint_title"},{"name":"complaint_type","label":"Complaint Type","type":"choice","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"id":"complaint_type","sublabel":"complaint_type"},{"name":"description","label":"Description","type":"html","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"id":"description","sublabel":"description"},{"name":"location","label":"Location","type":"string","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"id":"location","sublabel":"location"},{"name":"pollution_source","label":"Pollution Source","type":"choice","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"id":"pollution_source","sublabel":"pollution_source"},{"name":"compliance_status","label":"Compliance Status","type":"choice","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"id":"compliance_status","sublabel":"compliance_status"},{"name":"risk_level","label":"Risk Level","type":"choice","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"id":"risk_level","sublabel":"risk_level"},{"name":"severity","label":"Severity","type":"choice","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"id":"severity","sublabel":"severity"},{"name":"status","label":"Status","type":"choice","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"id":"status","sublabel":"status"},{"name":"suspected_regulation_violated","label":"Suspected Regulation Violated","type":"choice","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"id":"suspected_regulation_violated","sublabel":"suspected_regulation_violated"},{"name":"contact_number","label":"Contact Number","type":"phone_number_e164","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"id":"contact_number","sublabel":"contact_number"},{"name":"sys_updated_on","label":"Updated","type":"glide_date_time","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"id":"sys_updated_on","sublabel":"sys_updated_on"},{"name":"sys_created_on","label":"Created","type":"glide_date_time","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"id":"sys_created_on","sublabel":"sys_created_on"}],"limit":"20","orderBy":"sys_created_on","sortType":"z_to_a"},"description":"CRUD Input Variables. These are already pre-defined. Under no circumstances should you prompt the user for this information or attempt to change these values."}]</inputs>
+        <max_auto_executions>10</max_auto_executions>
+        <name>Monitor Environmental Compliance Records</name>
+        <output_transformation_strategy>none</output_transformation_strategy>
+        <post_message/>
+        <post_processing_script/>
+        <pre_message/>
+        <pre_run>false</pre_run>
+        <requires_text_refined_message>false</requires_text_refined_message>
+        <requires_widget_transformation>true</requires_widget_transformation>
+        <should_display_refined_message>false</should_display_refined_message>
+        <sys_class_name>sn_aia_agent_tool_m2m</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-15 11:06:18</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>c09e4218c57e03107f44493b2130cc6c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Monitor Environmental Compliance Records</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>sn_aia_agent_tool_m2m_c09e4218c57e03107f44493b2130cc6c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-15 11:06:18</sys_updated_on>
+        <timeout/>
+        <tool display_value="Monitor Environmental Compliance Records">738e4218c57e03107f44493b2130cc67</tool>
+        <tool_attributes>{}</tool_attributes>
+        <transformation_instructions/>
+        <widgets>db0e858eff62b210f465ffffffffff2c</widgets>
+    </sn_aia_agent_tool_m2m>
+</record_update>

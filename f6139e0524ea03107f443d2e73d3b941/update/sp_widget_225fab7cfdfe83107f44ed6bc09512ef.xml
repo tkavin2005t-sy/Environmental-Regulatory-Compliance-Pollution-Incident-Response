@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>environmental_compliance_kpi</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Environmental Compliance KPI</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+
+    // ==========================================
+    // COMPLAINT TABLE
+    // ==========================================
+
+    var COMPLAINT_TABLE = 'x_snc_environmen_0_complaint';
+
+
+    // ==========================================
+    // 1. TOTAL COMPLAINTS
+    // ==========================================
+
+    var total = new GlideAggregate(COMPLAINT_TABLE);
+    total.addAggregate('COUNT');
+    total.query();
+
+    data.totalComplaints = 0;
+
+    if (total.next()) {
+        data.totalComplaints =
+            parseInt(total.getAggregate('COUNT'), 10) || 0;
+    }
+
+
+    // ==========================================
+    // 2. HIGH RISK COMPLAINTS
+    // ==========================================
+
+    var highRisk = new GlideAggregate(COMPLAINT_TABLE);
+
+    highRisk.addQuery('risk_level', 'High');
+    highRisk.addAggregate('COUNT');
+    highRisk.query();
+
+    data.highRisk = 0;
+
+    if (highRisk.next()) {
+        data.highRisk =
+            parseInt(highRisk.getAggregate('COUNT'), 10) || 0;
+    }
+
+
+    // ==========================================
+    // 3. COMPLIANT COMPLAINTS
+    // ==========================================
+
+    var resolved = new GlideAggregate(COMPLAINT_TABLE);
+
+    resolved.addQuery('compliance_status', 'compliant');
+    resolved.addAggregate('COUNT');
+    resolved.query();
+
+    data.resolvedCases = 0;
+
+    if (resolved.next()) {
+        data.resolvedCases =
+            parseInt(resolved.getAggregate('COUNT'), 10) || 0;
+    }
+
+
+    // ==========================================
+    // 3A. COMPLETION PERCENTAGE
+    // ==========================================
+
+    data.completionPercentage = 0;
+
+    if (data.totalComplaints > 0) {
+
+        data.completionPercentage =
+            Math.round(
+                (data.resolvedCases / data.totalComplaints) * 100
+            );
+    }
+
+
+    // ==========================================
+    // INSPECTION TABLE
+    // ==========================================
+
+    var INSPECTION_TABLE =
+        'x_snc_environmen_0_inspection';
+
+
+    // ==========================================
+    // 4. INSPECTION STATUS
+    // ==========================================
+
+    data.activeInspections = 0;
+    data.completedInspections = 0;
+    data.pendingInspections = 0;
+
+
+    var inspection =
+        new GlideRecord(INSPECTION_TABLE);
+
+    inspection.query();
+
+
+    while (inspection.next()) {
+
+        var status =
+            inspection.getValue('inspection_status');
+
+
+        // ======================================
+        // ACTIVE
+        // Assigned + In Progress
+        // ======================================
+
+        if (
+            status == 'assigned' ||
+            status == 'in_progress'
+        ) {
+
+            data.activeInspections++;
+
+        }
+
+
+        // ======================================
+        // COMPLETED
+        // Completed + Closed
+        // ======================================
+
+        else if (
+            status == 'completed' ||
+            status == 'closed'
+        ) {
+
+            data.completedInspections++;
+
+        }
+
+
+        // ======================================
+        // PENDING
+        // Re-Inspection Required
+        // ======================================
+
+        else if (
+            status == 're_inspection_required'
+        ) {
+
+            data.pendingInspections++;
+
+        }
+
+    }
+
+
+    // ==========================================
+    // 5. TOTAL INSPECTIONS
+    // ==========================================
+
+    data.totalWorkOrders =
+        data.activeInspections +
+        data.completedInspections +
+        data.pendingInspections;
+
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 07:26:08</sys_created_on>
+        <sys_id>225fab7cfdfe83107f44ed6bc09512ef</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>Environmental Compliance KPI</sys_name>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>sp_widget_225fab7cfdfe83107f44ed6bc09512ef</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 17:19:19</sys_updated_on>
+        <template><![CDATA[<div style="display:grid; grid-template-columns:repeat(4,1fr); gap:16px; padding:20px; background:#f4f8f7;">
+
+  <!-- TOTAL COMPLAINTS -->
+  <div style="background:#fff; padding:20px; border-radius:12px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,.10); border-left:5px solid #007f73;">
+    
+    <div style="font-size:14px; color:#607d7a; font-weight:600;">
+      TOTAL COMPLAINTS
+    </div>
+
+    <div style="font-size:32px; font-weight:bold; color:#007f73; margin-top:8px;">
+      {{data.totalComplaints}}
+    </div>
+
+    <div style="font-size:12px; color:#777; margin-top:4px;">
+      Reported incidents
+    </div>
+
+  </div>
+
+
+  <!-- HIGH RISK -->
+  <div style="background:#fff; padding:20px; border-radius:12px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,.10); border-left:5px solid #e67e22;">
+    
+    <div style="font-size:14px; color:#607d7a; font-weight:600;">
+      HIGH RISK
+    </div>
+
+    <div style="font-size:32px; font-weight:bold; color:#e67e22; margin-top:8px;">
+      {{data.highRisk}}
+    </div>
+
+    <div style="font-size:12px; color:#777; margin-top:4px;">
+      Requires attention
+    </div>
+
+  </div>
+
+
+  <!-- ACTIVE INSPECTIONS -->
+  <div style="background:#fff; padding:20px; border-radius:12px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,.10); border-left:5px solid #2980b9;">
+    
+    <div style="font-size:14px; color:#607d7a; font-weight:600;">
+      ACTIVE INSPECTIONS
+    </div>
+
+    <div style="font-size:32px; font-weight:bold; color:#2980b9; margin-top:8px;">
+      {{data.activeInspections}}
+    </div>
+
+    <div style="font-size:12px; color:#777; margin-top:4px;">
+      Currently assigned
+    </div>
+
+  </div>
+
+
+  <!-- COMPLETION PERCENTAGE -->
+  <div style="background:#fff; padding:20px; border-radius:12px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,.10); border-left:5px solid #27ae60;">
+    
+    <div style="font-size:14px; color:#607d7a; font-weight:600;">
+      COMPLETION %
+    </div>
+
+    <div style="font-size:32px; font-weight:bold; color:#27ae60; margin-top:8px;">
+      {{data.completionPercentage}}%
+    </div>
+
+    <div style="font-size:12px; color:#777; margin-top:4px;">
+      Complaints successfully resolved
+    </div>
+
+  </div>
+
+</div>]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>225fab7cfdfe83107f44ed6bc09512ef</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 07:26:09</sys_created_on>
+        <sys_id>ae5fa3bcfdfe83107f44ed6bc095123e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 07:26:09</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

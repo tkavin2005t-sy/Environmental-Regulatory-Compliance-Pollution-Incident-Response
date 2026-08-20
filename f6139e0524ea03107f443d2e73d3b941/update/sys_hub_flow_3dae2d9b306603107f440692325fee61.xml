@@ -1,0 +1,1396 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <allow_high_security_roles>false</allow_high_security_roles>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=295617000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>29000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Automatically predicts pollution risk for new complaints and initiates the appropriate inspection and compliance process.</description>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source/>
+        <internal_name>ai_pollution_risk_automatio</internal_name>
+        <label_cache>[{"name":"Created_1.table_name","label":"Trigger - Record Created➛Complaint Table","reference":"x_snc_environmen_0_complaint","reference_display":"Complaint","type":"table_name","base_type":"table_name","usedInstances":{"cfc59f3e-f506-41b8-97a7-f8ecca6a68c4":["parenttable"],"f1c07ef6-4fb5-4d1e-abbb-9c78163dbccf":["parenttable"]},"attributes":{"test_input_hidden":"true"}},{"name":"Created_1.run_start_date_time","label":"Trigger - Record Created➛Run Start Date/Time","type":"glide_date_time","base_type":"glide_date_time","choices":[{"order":0.0}],"usedInstances":{"854228e9-2aeb-4582-8cea-4c2a6cc3a264":["inspection_date"],"5caa01d5-f2bd-4bd2-b900-36b2148b996c":["inspection_date"],"c2e9e2de-bf15-4a7a-ab74-92c5fffe1e75":["inspection_date"]},"attributes":{"test_input_hidden":"true"}},{"name":"Created_1.current","label":"Trigger - Record Created➛Complaint Record","reference":"x_snc_environmen_0_complaint","reference_display":"Complaint","type":"reference","base_type":"reference","usedInstances":{"854228e9-2aeb-4582-8cea-4c2a6cc3a264":["complaint","assigned_inspector"],"6a9d5ac5-6dc8-4ec5-a2bb-14d877298b25":["record"],"5caa01d5-f2bd-4bd2-b900-36b2148b996c":["complaint"],"b42e24cb-7844-4217-b7b1-766a9ce153dc":["record"],"040d828c-a137-4c02-b89f-3a8420fa10ae":["record"],"126cc34a-ef4e-48eb-a1a9-79a3480f1d1b":["complaint"],"ddaab484-2c7d-45ca-b1c7-0cfeca452ac0":["input_record"],"c2e9e2de-bf15-4a7a-ab74-92c5fffe1e75":["complaint"],"1de8c6ca-0e71-42d3-a41b-129790650f08":["record"],"66537407-73dd-40e3-829b-658dddca0a78":["record"],"cfc59f3e-f506-41b8-97a7-f8ecca6a68c4":["parentrecord"],"f1c07ef6-4fb5-4d1e-abbb-9c78163dbccf":["parentrecord"],"9c2de0db-d9f0-4b98-a13e-85f4fdf49dba":["record"]},"attributes":{}},{"name":"20687d54-56e9-430f-8667-8f68fb1d22b8.item.predicted_value","label":"2➛Prediction Results➛predicted_value","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"1a4d30df-632d-4847-8331-12e51ad48217":["condition"],"de9ed27c-fb6b-431e-81ca-752001b0c2a3":["condition"],"126cc34a-ef4e-48eb-a1a9-79a3480f1d1b":["risk_level"],"876f43eb-0b21-47f8-90ca-cc4d06a3fe75":["condition"]},"attributes":{}},{"name":"Created_1.current.assigned_inspector","label":"Trigger - Record Created➛Complaint Record➛Assigned Inspector","reference":"x_snc_environmen_0_inspector","reference_display":"Inspector","type":"reference","base_type":"reference","parent_table_name":"x_snc_environmen_0_complaint","column_name":"assigned_inspector","usedInstances":{"5caa01d5-f2bd-4bd2-b900-36b2148b996c":["assigned_inspector"],"c2e9e2de-bf15-4a7a-ab74-92c5fffe1e75":["assigned_inspector"],"854228e9-2aeb-4582-8cea-4c2a6cc3a264":["assigned_inspector"]}},{"name":"Created_1.current.pollution_source","label":"Trigger - Record Created➛Complaint Record➛Pollution Source","reference":"","reference_display":"Pollution Source","type":"choice","base_type":"choice","parent_table_name":"x_snc_environmen_0_complaint","column_name":"pollution_source","choices":[{"sequence":0.0,"label":"Factory","used":false,"reference":false,"image":"","rawLabel":"Factory","selected":false,"missing":false,"value":"factory","parameters":{"name":"x_snc_environmen_0_complaint","dependent_values":[""],"dependent_values_map":{"":"Factory"}}},{"sequence":0.0,"label":"Generator","used":false,"reference":false,"image":"","rawLabel":"Generator","selected":false,"missing":false,"value":"Generator","parameters":{"name":"x_snc_environmen_0_complaint","dependent_values":[""],"dependent_values_map":{"":"Generator"}}},{"sequence":0.0,"label":"Road Dust","used":false,"reference":false,"image":"","rawLabel":"Road Dust","selected":false,"missing":false,"value":"Road Dust","parameters":{"name":"x_snc_environmen_0_complaint","dependent_values":[""],"dependent_values_map":{"":"Road Dust"}}},{"sequence":1.0,"label":"Construction Site","used":false,"reference":false,"image":"","rawLabel":"Construction Site","selected":false,"missing":false,"value":"construction_site","parameters":{"name":"x_snc_environmen_0_complaint","dependent_values":[""],"dependent_values_map":{"":"Construction Site"}}},{"sequence":2.0,"label":"Vehicle","used":false,"reference":false,"image":"","rawLabel":"Vehicle","selected":false,"missing":false,"value":"vehicle","parameters":{"name":"x_snc_environmen_0_complaint","dependent_values":[""],"dependent_values_map":{"":"Vehicle"}}},{"sequence":3.0,"label":"Residential Area","used":false,"reference":false,"image":"","rawLabel":"Residential Area","selected":false,"missing":false,"value":"residential_area","parameters":{"name":"x_snc_environmen_0_complaint","dependent_values":[""],"dependent_values_map":{"":"Residential Area"}}},{"sequence":4.0,"label":"Commercial Building","used":false,"reference":false,"image":"","rawLabel":"Commercial Building","selected":false,"missing":false,"value":"commercial_building","parameters":{"name":"x_snc_environmen_0_complaint","dependent_values":[""],"dependent_values_map":{"":"Commercial Building"}}},{"sequence":5.0,"label":"River","used":false,"reference":false,"image":"","rawLabel":"River","selected":false,"missing":false,"value":"river","parameters":{"name":"x_snc_environmen_0_complaint","dependent_values":[""],"dependent_values_map":{"":"River"}}},{"sequence":6.0,"label":"Agriculture","used":false,"reference":false,"image":"","rawLabel":"Agriculture","selected":false,"missing":false,"value":"agriculture","parameters":{"name":"x_snc_environmen_0_complaint","dependent_values":[""],"dependent_values_map":{"":"Agriculture"}}},{"sequence":7.0,"label":"Unknown","used":false,"reference":false,"image":"","rawLabel":"Unknown","selected":false,"missing":false,"value":"unknown","parameters":{"name":"x_snc_environmen_0_complaint","dependent_values":[""],"dependent_values_map":{"":"Unknown"}}}],"usedInstances":{"126cc34a-ef4e-48eb-a1a9-79a3480f1d1b":["pollution_source"]}},{"name":"Created_1.current.pollution_category","label":"Trigger - Record Created➛Complaint Record➛Pollution Category","reference":"","reference_display":"Pollution Category","type":"choice","base_type":"choice","parent_table_name":"x_snc_environmen_0_complaint","column_name":"pollution_category","choices":[{"sequence":0.0,"label":"Air Pollution","used":false,"reference":false,"image":"","rawLabel":"Air Pollution","selected":false,"missing":false,"value":"air_pollution","parameters":{"name":"x_snc_environmen_0_complaint","dependent_values":[""],"dependent_values_map":{"":"Air Pollution"}}},{"sequence":1.0,"label":"Water Pollution","used":false,"reference":false,"image":"","rawLabel":"Water Pollution","selected":false,"missing":false,"value":"water_pollution","parameters":{"name":"x_snc_environmen_0_complaint","dependent_values":[""],"dependent_values_map":{"":"Water Pollution"}}},{"sequence":2.0,"label":"Noise Pollution","used":false,"reference":false,"image":"","rawLabel":"Noise Pollution","selected":false,"missing":false,"value":"noise_pollution","parameters":{"name":"x_snc_environmen_0_complaint","dependent_values":[""],"dependent_values_map":{"":"Noise Pollution"}}},{"sequence":3.0,"label":"Soil Pollution","used":false,"reference":false,"image":"","rawLabel":"Soil Pollution","selected":false,"missing":false,"value":"soil_pollution","parameters":{"name":"x_snc_environmen_0_complaint","dependent_values":[""],"dependent_values_map":{"":"Soil Pollution"}}},{"sequence":4.0,"label":"Industrial Waste","used":false,"reference":false,"image":"","rawLabel":"Industrial Waste","selected":false,"missing":false,"value":"industrial_waste","parameters":{"name":"x_snc_environmen_0_complaint","dependent_values":[""],"dependent_values_map":{"":"Industrial Waste"}}},{"sequence":5.0,"label":"Chemical Leakage","used":false,"reference":false,"image":"","rawLabel":"Chemical Leakage","selected":false,"missing":false,"value":"chemical_leakage","parameters":{"name":"x_snc_environmen_0_complaint","dependent_values":[""],"dependent_values_map":{"":"Chemical Leakage"}}},{"sequence":6.0,"label":"Plastic Waste","used":false,"reference":false,"image":"","rawLabel":"Plastic Waste","selected":false,"missing":false,"value":"plastic_waste","parameters":{"name":"x_snc_environmen_0_complaint","dependent_values":[""],"dependent_values_map":{"":"Plastic Waste"}}},{"sequence":7.0,"label":"Illegal Dumping","used":false,"reference":false,"image":"","rawLabel":"Illegal Dumping","selected":false,"missing":false,"value":"illegal_dumping","parameters":{"name":"x_snc_environmen_0_complaint","dependent_values":[""],"dependent_values_map":{"":"Illegal Dumping"}}},{"sequence":8.0,"label":"Other / Unknown","used":false,"reference":false,"image":"","rawLabel":"Other / Unknown","selected":false,"missing":false,"value":"other_unknown","parameters":{"name":"x_snc_environmen_0_complaint","dependent_values":[""],"dependent_values_map":{"":"Other / Unknown"}}}],"usedInstances":{"126cc34a-ef4e-48eb-a1a9-79a3480f1d1b":["pollution_catergory"]}},{"name":"ddaab484-2c7d-45ca-b1c7-0cfeca452ac0.prediction_results","label":"1 - Classification Prediction➛Prediction Results","reference_display":"Prediction Results","type":"array.object","base_type":"array.object","usedInstances":{},"attributes":{"uiTypeLabel":"Array.Object","co_type_name":"FD034885f4b68310104b1e307ef5fc1d56","child_label":"Prediction Results","child_type_label":"Object","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"array.object","child_type":"object","child_name":"Prediction_Results","child_uiUniqueId":"906fe9d0-0db7-4272-b801-22381ed65ac8","uiUniqueId":"76029cd9-d069-4854-b18b-7cd04a9820a6"}},{"name":"Created_1.current.location","label":"Trigger - Record Created➛Complaint Record➛Location","reference":"","reference_display":"Location","type":"string","base_type":"string","parent_table_name":"x_snc_environmen_0_complaint","column_name":"location","choices":[{"order":0.0}],"usedInstances":{"126cc34a-ef4e-48eb-a1a9-79a3480f1d1b":["location"]}},{"name":"38b8b949-9018-4f0e-9c36-e4e24b5b0954.item.predicted_value","label":"2➛Prediction Results➛predicted_value","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","choices":[{"order":0.0}],"usedInstances":{"eff2ab0f-c218-41a4-9cb6-c640d4ab6719":["condition"]},"attributes":{"":""}},{"name":"ddaab484-2c7d-45ca-b1c7-0cfeca452ac0.pred_message","label":"1 - Classification Prediction➛Prediction Message","reference_display":"Prediction Message","type":"string","base_type":"string","usedInstances":{},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"d2d543b6-4801-4be9-a9a7-c4b53ce24928"}}]</label_cache>
+        <master_snapshot>16315713302643107f440692325fee04</master_snapshot>
+        <master_snapshot_digest/>
+        <name>AI Pollution Risk Automatio</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id>6558ab0ad0ea43107f442ed909dd8452</remote_trigger_id>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>draft</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-12 06:12:58</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>3dae2d9b306603107f440692325fee61</sys_id>
+        <sys_mod_count>148</sys_mod_count>
+        <sys_name>AI Pollution Risk Automatio</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>sys_hub_flow_3dae2d9b306603107f440692325fee61</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-18 14:03:49</sys_updated_on>
+        <type>flow</type>
+        <updation_source/>
+        <version>2</version>
+        <version_record>ddf3561521b643107f443754fb88d43f</version_record>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=3dae2d9b306603107f440692325fee61"/>
+    <sys_variable_value action="delete_multiple" query="document_key=3dae2d9b306603107f440692325fee61"/>
+    <sys_flow_record_trigger action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition table="x_snc_environmen_0_complaint">^EQ<item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </condition>
+        <name/>
+        <on_delete>false</on_delete>
+        <on_insert>true</on_insert>
+        <on_update>false</on_update>
+        <published_version/>
+        <run_flow_in>background</run_flow_in>
+        <run_on_extended>false</run_on_extended>
+        <run_when_setting>both</run_when_setting>
+        <run_when_user_list/>
+        <run_when_user_setting>any</run_when_user_setting>
+        <sys_class_name>sys_flow_record_trigger</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-08 17:52:12</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>6558ab0ad0ea43107f442ed909dd8452</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-08 17:52:12</sys_updated_on>
+        <table>x_snc_environmen_0_complaint</table>
+        <trigger_definition/>
+    </sys_flow_record_trigger>
+    <sys_trigger_runner_mapping action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <data>{"run_on_extended":"false","run_flow_in":"background","run_when_user_list":[],"run_when_setting":"both","run_when_user_setting":"any"}</data>
+        <identifier>3dae2d9b306603107f440692325fee61</identifier>
+        <identifier_type>flow</identifier_type>
+        <runner>FDTriggerRunner</runner>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-15 16:19:58</sys_created_on>
+        <sys_id>3a56d390c5f643107f44493b2130cc41</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 17:42:50</sys_updated_on>
+        <trigger display_value="">6558ab0ad0ea43107f442ed909dd8452</trigger>
+    </sys_trigger_runner_mapping>
+    <sys_trigger_runner_mapping action="delete_multiple" query="identifier=3dae2d9b306603107f440692325fee61^sys_idNOT IN3a56d390c5f643107f44493b2130cc41"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=3dae2d9b306603107f440692325fee61"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=3dae2d9b306603107f440692325fee61^sys_idNOT INf9ae2d9b306603107f440692325fee64"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>3dae2d9b306603107f440692325fee61</id>
+        <name>AI Pollution Risk Automatio</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-12 06:12:58</sys_created_on>
+        <sys_id>f9ae2d9b306603107f440692325fee64</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-12 06:12:58</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=f9ae2d9b306603107f440692325fee64"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=3dae2d9b306603107f440692325fee61^sys_idNOT IN16ce21db306603107f440692325fee7a,62ce21db306603107f440692325feebc"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=document_id,uiTypeLabel=Document ID</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent>table_name</dependent>
+        <dependent_on_field>table_name</dependent_on_field>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">document_id</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>200</max_length>
+        <model display_value="AI Pollution Risk Automatio">3dae2d9b306603107f440692325fee61</model>
+        <model_id>3dae2d9b306603107f440692325fee61</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_3dae2d9b306603107f440692325fee61</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-12 06:13:33</sys_created_on>
+        <sys_id>16ce21db306603107f440692325fee7a</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-12 13:23:37</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>true</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=16ce21db306603107f440692325fee7a"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name,uiTypeLabel=Table Name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>200</max_length>
+        <model display_value="AI Pollution Risk Automatio">3dae2d9b306603107f440692325fee61</model>
+        <model_id>3dae2d9b306603107f440692325fee61</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_3dae2d9b306603107f440692325fee61</name>
+        <next_element/>
+        <order>101</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-12 06:13:34</sys_created_on>
+        <sys_id>62ce21db306603107f440692325feebc</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-12 13:23:37</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=62ce21db306603107f440692325feebc"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=3dae2d9b306603107f440692325fee61"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=3dae2d9b306603107f440692325fee61"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=3dae2d9b306603107f440692325fee61^sys_idNOT IN82ce6d5b306603107f440692325feeca"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="AI Pollution Risk Automatio">3dae2d9b306603107f440692325fee61</flow>
+        <generation_source/>
+        <name>Created</name>
+        <published_version/>
+        <remote_sys_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-12 06:13:32</sys_created_on>
+        <sys_id>82ce6d5b306603107f440692325feeca</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-12 15:14:46</sys_updated_on>
+        <trigger_definition display_value="Created">798916a0c31322002841b63b12d3ae7c</trigger_definition>
+        <trigger_inputs>H4sIAAAAAAAA/9VYXW/iOBT9K1GedqWOlA8opW+ztKOtNDvVArP7UHUjJ7bBWmMziZOWGfW/73U+IOSDQgmz9KnFNva5x+eee83DD5Mjn3Dz2pwinxPzwmRCkVAgPl0tCQwrPewJtNBzCyQwUjJcmdcqjMmFSUO5mJLFkiMFiyniEQzKEJPQvLYvzATxmExW0R2GneD76Tb5nmY+DZ+fvUgEHhEJC6VYEOFZXiD1poAFlmEWwf+rv/LVo9JUMGcch0SY1w+PF+YShXCA0of/qEwxjSCgARo6xApc23Ucy3KuerZ/6fq2g11ELAs2rLJRQawaSNmES54VEZjgNRM1vkKC8L3gq/WKuY4j5WaBniP2HXa/svQ6SgB7QLK59Ucv5yIbDuaSBeR+qZgU2UiGM5uUPF6ILxl+zSKhKOaqYBFG4gj2I0sNWYPIEdHJXD6NiwM/MZFGl09yGSC+/oSUCpkfKxJpwinjQL2XcRPJOEzRj29H9+Mb7++P09Hvt2NvfDuZju9G09sb8yWNy/sW6x0zhDkWLwvnZX31nxjh6QUWV+8pptILiYKQLdXHQLGkEODLxUbUIykwS+mpCTsopqJtYRc07FK2ZbVqOyidWOj7n9s/6zLOBg8T8OUlQpigFgH7tCTgcuQN0FQDCeXodkk5H9lHyz3L+p/UnPvTW8X8hISKPCU9hLFXYglyHzbWIUpM+M3mPBhnsxnon4llrKJX1Z3F9vKqgsNYwBe89X3UdZzStubvM4sAzQOk44R8izPSP4A30YKqHD/9nB8wjoUhhRHEIXCkDLhmozjMSEFqadC7BZrlRMPGnASqpA36NSp/+oNFEROzUjBtWNIFdTB8VUZUeO8xGB67TPH6lSSVeCqpfnCe2zalPqGONdBZbluuT21rYPURxa5lBU4pz+tgWlGqimBOku+HZXuUSpXvcftVinPwVjlX9pJysp0HBQlaIrmpjLqBZncEzdHQKuboHuSOa1lmwzfb6twVWsctAsIJgm/gIsZ9WoA9/JFy+QS+e7w3UhmSWShjgaumpI8wGPzdWnEaV/RR8O9uFJsVxi/5pf56bg65uZRC1kisOvBGl9r+kPSIBZboghv6/eHQD5BD6eByQBy74o0bGI3Y3oUnvnLtSZNu2vyxUchJk/4PcMYjANZc8mCAx/tjLsxGd8zm3ocPPs3h7QxQQ49rp6vZ4YwzTIq5brO9dnSyye9jM55eDYO+PRgEA3jxQMbTHvGR3XP6aDi4dK/6lYyvQdkFUzUw81PeQdEqSoG0uMHXbOq8XvinlG1ElNLl6Ogann4dZeeVyqe+ISP1Fxkaml3jbrPQmBAohunD+FQ1Xap5rZoDkt9gfAuJ7gy/SPGhAd0JH2ICXgr7ENeC7Nx6j4qiku1LOPp1RnpX/SF1m/2IDpv8aAOmHebZ9yJ7SiFpFVVTU7JvYiaN+d3aRbwhtyoyKbcXO/qfrkixOyfFOR0p7tE9V5GLrU/St4B9R/UubUI6K3pSEE/SRttm1Mh/miTY8FeGmhPglkOXDScbGsYJ60rWPdeqHgwbefNzsoKm76RKyo00YMIIfwotp6lqFd10+7YmeID6fbel0x5W39ZNgF7Be/Y17mCJJE2K21noDtu3umdjqSsl1LYi9ixinUbdXMmOi7qxlr0W9fFVatcvAw0ozrT+PP4HNrwWuucfAAA=</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>record_create</trigger_type>
+        <updation_source/>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=3dae2d9b306603107f440692325fee61^sys_idNOT IN8d38359330a603107f440692325fee5c,22bf179f306643107f440692325fee5d,62f0142330ea43107f440692325fee1d,a4b5deafc02203107f44ce324722fe8b,2fb55f63c0aa03107f44ce324722fe4b,7957676fc02e03107f44ce324722fede,da5f9f6fc0ea03107f44ce324722fe54"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Classification Prediction">8f92d8a377121010b981ea8797106194</action_type>
+        <action_type_parent/>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>8f92d8a377121010b981ea8797106194</compiled_snapshot>
+        <display_text/>
+        <flow display_value="AI Pollution Risk Automatio">3dae2d9b306603107f440692325fee61</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-12 06:54:42</sys_created_on>
+        <sys_id>8d38359330a603107f440692325fee5c</sys_id>
+        <sys_mod_count>13</sys_mod_count>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-16 12:53:59</sys_updated_on>
+        <ui_id>ddaab484-2c7d-45ca-b1c7-0cfeca452ac0</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/8VV227bOBT8lUDPlsGbaSlvixgBArQNkLR96UU44sUhSksqRSXxGvn3pS625NbdpkDavgjg8JCcmcMRP+wiI6PzSBOWJAvNkmVCMcJoQTniUhK0FDnKSRrNogI2KlSaomp85pQonQzoPdimhXe7C6fAK5nhuWicU4V/egrz0tSVhe37oSwg4s5YGeaj8w+fZlEFLuzrlYvOd99MPZeYhVzZUHrVMju72TM7zddvqxaVpWg2gWNm9uCrYZfVMHN2tQozYVFLjc4i9ehVIVXgpMHWahZtoJDgS7eNzr1rAhD0y+vCbg8Vd6bwveYNPNbm33AwJW2dVkGkGPw4DLPBqx7WK/BwG3YWvnEH60ojVN3bI5WGxvqLKdYXXFfelEW/xENuexuEkUFWu0tpm03xprcnOmw0aVFTBzKqavW2CgY5+vaufLjZs700RWfNMGlLAfYwAu+dyRvf8tpFjXl7yvUePu27sqor3EBVmWKdVa68N915gf5mvrZhMNe2fAg8a7Mu5iBazfPQEZhfBnzVwe/BmdaA12GbsHgW1R68EatR29SYxrwrzNdGXbUXD3JQEiiNKehFzECROGepiAnWhMt0mfCcRU9hx219YaGuRz9DQ7OvTetG7+5wVta3pF0inKn8P4HxvRose5oNQRQ6JTIBulxi0t73PE2wgmSZLjHiOM3Hi12HNraau+EYREKBQ7rIKSIchcgsNWOIp4SShVaKqu8zubHZY1YXYviq4t64sgj2Zyhb2zIHm4HJqtL252XO1F9CQ5Q0nee/HOlnSNxH+nbQ+EPVQ5zHSB2H+WaCD1HGvyvKwcZ6pHsq1a9fnU0EvXDAj4//AxnXtwqcuLs0yspJY7KhMz/4BUw7dfwDmPbqd8X/KOEkRZxySmLCqIwZT3UMWvA4T5aS54imjOU/TTh0Kf7YIERle3c+C6ggN9b4bQ+KdqnRRkDnjndgCuU+X998W/hQui+dpNMrfv1XIgG44ooKSgjBGDEJBIiUCWdISobHUPmyKia/kBd4tp9x9j7jb8vq7M13XIZgh9ipdSd+GuurAzqEmvx/qAfkOalm6C890H/1YR5tPs7kaPQfSWQqKQWc4zjRiscMoTROhRIxxQxjznAicvWCb+6n/wBV8TZv/goAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=8d38359330a603107f440692325fee5c"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="AI Pollution Risk Automatio">3dae2d9b306603107f440692325fee61</flow>
+        <generation_source/>
+        <order>7</order>
+        <parent_ui_id>de9ed27c-fb6b-431e-81ca-752001b0c2a3</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-12 14:26:59</sys_created_on>
+        <sys_id>22bf179f306643107f440692325fee5d</sys_id>
+        <sys_mod_count>21</sys_mod_count>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-18 14:03:39</sys_updated_on>
+        <ui_id>b42e24cb-7844-4217-b7b1-766a9ce153dc</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVXW/aMBT9K8jPCCVAUcvbBEKa1LVSO/HSdZaxL2DNcTJ/UBjiv+86cSCCqqVTX9B48/3yOcf3kKctkYIMSR9Ekt6kA95Le71uknSv++ls0JulXdFjAClpE80ywEoDPDcCzyumfAhstyMDzIGgaYd7Y0C73Q7zQtpCsc00lmGEL6USmCfDp+c2KZjBiQ4MGW6PUudCUmwGCksfakzHGN2mCGeRc58hLirr4G3sHMdM6+sYM9gU4KRJm8DagRaAQOZMWWiTjGnBXG42ZOiMxwCSFvdabfYVS6ldRTRjayv/4M39JNTNAZnxKML+SKNAVXg+Zo494mTuvNnrlUsOttJEwJx55UbNWFVwXziZ66rFsZmqu3PlM31XKUL2Axrv4S2CgCLwDMgrWvPHZf7yUIOcSF1KEimqnDO1PzHnjJx5F+BsCSgoNc5YUUi9oIXJV7JsRihZZ6Hw0Jmr/AXvtHKhO4wH3B1UlXUmGB+X4SkzMpD4hmOwedcmdmNHill7oIIa0t8+IKmIRQq0VKGUgJabEJq5kYX7gletIALftePSz67e2jB+c1ioxszD4q+p1ZyCXkmTa6ROE4pE8UnDHpzs/6iR+pgRzoBZG+F7+fyvw45eOIndNntbd1UiOuHq05xwfUlOiDQu3grvGSDpvvkX29ikcudtY/mtY87bHz5JesIHYajUK7BOLlig8tNI+4sqWIGqajIQ0mentvjnOR/z0BlMaw9NJChhX6FeGwiCkR3QSoojE8VkaxqT+0/KpzkpHSTl74L89N98WZ7/Aj5eCZdQCQAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=22bf179f306643107f440692325fee5d"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="AI Pollution Risk Automatio">3dae2d9b306603107f440692325fee61</flow>
+        <generation_source/>
+        <order>10</order>
+        <parent_ui_id>876f43eb-0b21-47f8-90ca-cc4d06a3fe75</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-12 18:02:10</sys_created_on>
+        <sys_id>62f0142330ea43107f440692325fee1d</sys_id>
+        <sys_mod_count>21</sys_mod_count>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-18 14:03:46</sys_updated_on>
+        <ui_id>040d828c-a137-4c02-b89f-3a8420fa10ae</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVXW/aMBT9K8jPCCVAUcvbBEKa1LVSO/HSVZZj34A1x8lsh8IQ/33XiQMRoJZKfUHj7X7Z51yfQ162RAoyJkMQUXwXj/ggHgz6UdS/HcbJaJDEfTFgADHpEs0ywE4DPDcC4xVTpU9stxMDzIGgcY+XxoB2ux3WhbSFYpt5aMMMX0olsE7GL69dUjCDJzowZLw9Kl0KSbEEFLY+NZiOMbpN4WOR8zJDXFQ2yfswOQ2VzvcpVnDIw4mjLoG1Ay0AgaRMWeiSjGnBXG42ZOxMiQkkLR612uw7llK7mmjG1lb+xZuHke9LAZnxsIR9SMOC6nQ6ZY4948nclWa/r1xysPVOBKSsVG7SztUNj4WTua5HHEtUM52rMtMP9UbI/oDWe5QWQUDheXrkNa30eZm/PTUgZ1JXKwkUVc6Z2kfMOSOT0nk4WwIKqh1nrCikXtDC5CtZDSOUrLdQGPRSlb/hnVYudI9xj7uHW2W9GeanVXrOjPQkfuAxOLzrEruxE8WsPVDBHdI/pUdSEwsUaLWFagW0UoIf5kYW7htetYIAfNcNok9u3lMYvzsIqnXmQfhrajWnoFfS5Bqp04giUXxSr4MT/U9apc8Z4QKYjRF+Vs9/Hnbwwknuvj3beagLwQk3X+aE22tyQqBx9Vb4yABR/92/2JaSKs3blviNtL+pghWoX2UUDQSCPtX8+abPqf8CjI36ZxKUsGdAN9IHb0EHtCZxJP9Q7MxDcf8x+DIPxKOo+l2RE/6bb8LrP2G4GH8KCQAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=62f0142330ea43107f440692325fee1d"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="AI Pollution Risk Automatio">3dae2d9b306603107f440692325fee61</flow>
+        <generation_source/>
+        <order>4</order>
+        <parent_ui_id>1a4d30df-632d-4847-8331-12e51ad48217</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-13 03:42:01</sys_created_on>
+        <sys_id>a4b5deafc02203107f44ce324722fe8b</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-16 12:53:59</sys_updated_on>
+        <ui_id>9c2de0db-d9f0-4b98-a13e-85f4fdf49dba</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVXW/aMBT9K5WfoygBilreJhDSpK6V2omXrrKMfQPWHCezHQpD/PddJw5E0HVU6gsab/fLPuf6HPK8JVKQERmASNLbdMj7ab/fS5LezSCdD/vztCf6DCAlEdEsB+w0wAsjMF4xVfnEdjs2wBwImsa8Mga02+2wLqQtFdvMQhtm+FIqgXUyen6JSMkMnujAkNH2qHQuJMXmoLD1scV0jNFtSh+Lglc54qKyTd6FyUmoXH2dYAWHPJw0iQisHWgBCCRjykJEcqYFc4XZkJEzFSaQtHjQarPvWErtGqI5W1v5G28eJL4vA2TGwxL2IQ0LatLZhDn2hCdzV5n9vgrJwTY7EZCxSrlxN9c0PJROFroZcWyu2ulCVbm+bzZC9gd03qOyCAJKz9Mjb2hlT8vi9bEFOZW6XkmgqArO1D5izhk5r5yHsyWgoN5xzspS6gUtTbGS9TBCyeOFwiDOVPGKd1q50DHjHneMW2XxFPOTOj1jRnoS3/AYHN5FxG7sWDFrD1Rwh/RX5ZE0xAIFWm+hXgGtleCHuZGl+4JXrSAA30VB9PPr9xTGbw+C6px5EP6aWs0p6JU0hUbqNKFIFJ/U6+BE/+NO6WNGOANma4Tv9fO/DTt44SR31529um8KwQnXn+aEm0tyQqBx8Vb4lwGS3rt/sR0l1Zq3HfEbaX9SBStQP6ok6YulXCxPRf+Xro/p/wyUrf6nEpSwb8BuxQ/ehA5oQ+PIAKF4NQvF/efg01yQDpP6d0Fe+G++Ci9/AJq1/ycMCQAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=a4b5deafc02203107f44ce324722fe8b"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent/>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="AI Pollution Risk Automatio">3dae2d9b306603107f440692325fee61</flow>
+        <generation_source/>
+        <order>11</order>
+        <parent_ui_id>876f43eb-0b21-47f8-90ca-cc4d06a3fe75</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-13 08:21:51</sys_created_on>
+        <sys_id>2fb55f63c0aa03107f44ce324722fe4b</sys_id>
+        <sys_mod_count>13</sys_mod_count>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-18 14:03:46</sys_updated_on>
+        <ui_id>126cc34a-ef4e-48eb-a1a9-79a3480f1d1b</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1US0/bQBD+K2jPseVXHJNbBeVEQQLEhYK13h0nq67X7u46kEb57531IwRKVCr1UKTmlJn95vHNzOe7DRGczEnKITg+DlMWh3EcBUGUJWGRxkUY8ZhCWJAJUbQCRK6obMGg3f1BB6urRlKh7Nc2CGK+2ZxooBZ4Hvqs1RqU3W4ftDDfcgkrkCMqCtJsxqeJN03h2EvioPSyNJ15WZlmZRHyKCoyX1io/EYDF8xl7EpitqaWsrWiVjnDSnpR6/XB4v5LsMO+yGDqVjN4T3iPxGBZYyb0HA4aESNzDoZp0ewHcU5pkWSJF7EZ95Ipo14RspkXsBIYTaYRZUFHPa/AGLqAMZex1LamT1M3oHAVXBhcwfr2/0b+lY2wpZAcC5P53f2ENFSjeHAuZL559fRe9UlagETomQDJzRtytOvG2bge3L2FfjOD/3wIvhkej26Hx1pz11Q4IfBkQXHAbkoqDUxIRRWnFndD5la36MCR8ksl1zvEEi8MkxKHfTLiB5YP06D7OXQJSJJBj9iZ+XCrvbs8pZZeY35mWz1A2bIWDCl14+FQ0lbak31fD7jsdteHWFrIMbqWbaUu+uGQXYJRGuhpDTYBjWPr+u/JldfL+vFqbPJMqG4uA1F3O3JnUWu1KFrr2tkQkFBhnryiTSPUIm90vRJdsJOhv5Bo+KWsH93FiYXyKXN9+zhb6p+h/7Rz31ItHIkvmAaDtxNi1uZEUmOeqeAM8++t66QnNlDIuyl0I8i7o3DB3W1/wlIrGBrfTsZPfQjB9OCxQfJ8W3s5nz/3T7lRLAe1ErpWSD0P9gxLZe4k8es36fM+5uiqx/yhSn7f+KiSm+4g3iYyCuW173w/9uiifxgEEvwtgWQfSRoDjQ+vjUOKuP8J0SkkAP4IAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=2fb55f63c0aa03107f44ce324722fe4b"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Send Notification">0d8dd9f10f11101051218e8ebc767e27</action_type>
+        <action_type_parent display_value="Send Notification">7eda5d710f11101051218e8ebc767ec1</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>0d8dd9f10f11101051218e8ebc767e27</compiled_snapshot>
+        <display_text/>
+        <flow display_value="AI Pollution Risk Automatio">3dae2d9b306603107f440692325fee61</flow>
+        <generation_source/>
+        <order>8</order>
+        <parent_ui_id>de9ed27c-fb6b-431e-81ca-752001b0c2a3</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-13 09:38:44</sys_created_on>
+        <sys_id>7957676fc02e03107f44ce324722fede</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-18 14:03:39</sys_updated_on>
+        <ui_id>66537407-73dd-40e3-829b-658dddca0a78</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/9WWyW7bMBCGX8XQ2TK02ZJzK2wECJClcNJcgkCgyGFMlFpCUU5cw+/eoSTvztqmQI8cbv/8M5+ou4UlmHViBSxibMhdh7uu67hO3/XcCCJIaDgIwYusrpWRFHClAporhuMZkZUJLBYjBUQDi90erZSCTC+XOM9EWUgyv22XYYROhWQ4b53c3Xetgig8UYOyThZ7U++VJEkCEpdOVpr2Nep5YcYsp1WKumKxCp63O8ftTOdsjDO4ychxuxY8a8gYoA5OZAldKyUZIzpX83UEk2ZXmdwEpiLTTaIpeS7FL7zZ98w6DpgZbU1YD+PWoCbMx0STa60qqiu19isXFMrGEwacVFKPtmPNgqtCizxrtmiSyNXuXFZpdtk4Yq0P2KpHVaIIKEyiRjlejlnw62n+NFmJPBVZbUmboswpkesR0VqJpNJGzsKqxM0xt5vwcb9BQr0wJUUhsoe4UPlM1Peh+rT3IHHQ4zJ/QpmleMh6hJpUe1gJ0jvF+LgO3xIlTN4XeAxuNnf+yMRjBWemj5jrhP7QoXbo9X07cCixk4glNkk83g+CQTRIXGvZtcp5OZKkLDeOYanix8ok3PjXOhXXZtdOx3XDmc1UiUJ/Q3kzaP1Zdlu2Ive1Rva9Td9unbnh6zkuMxpDNhMqz9Cu2InRHOwc024HmI22pj7G2ztkrni7qbvsuOwWuYPY+fbezmUz0QLnfRC4plOP8BY5/xFvbVp/DtyO17u87bj9T3CjSZLwBIa2m1BqByFEduSR0Ia+Q33u+Y4T8k/g9hZkwevdu/WAZbkWXFBSF3GDmTuEcOB7PnUG4Pj4zeBBQLHtg9DzOAzIIWoXwESVdiai/Nn5nktZmRM7l7vHf/DNezuLFYN79xxProVxg8Qui5OteIui/zqKDXmfefqw3jAz5YSUCBk3rfUCn3u5/WVWX1KyAzDhHKj5qeECJMMejOs9X/KO8msgik5PzU2mhg2tu7DvFBaRxzsOYN8u59exfnPYUyXouLUlNgfEPFcpMR1RZ7j/iQiGLoS+F9nDgYefCPD7dsJ833bxkwFAgHvsa17k+9/AgKOX7woAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=7957676fc02e03107f44ce324722fede"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Send Notification">0d8dd9f10f11101051218e8ebc767e27</action_type>
+        <action_type_parent/>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>0d8dd9f10f11101051218e8ebc767e27</compiled_snapshot>
+        <display_text/>
+        <flow display_value="AI Pollution Risk Automatio">3dae2d9b306603107f440692325fee61</flow>
+        <generation_source/>
+        <order>5</order>
+        <parent_ui_id>1a4d30df-632d-4847-8331-12e51ad48217</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-13 09:03:49</sys_created_on>
+        <sys_id>da5f9f6fc0ea03107f44ce324722fe54</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-16 12:53:59</sys_updated_on>
+        <ui_id>1de8c6ca-0e71-42d3-a41b-129790650f08</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/9WWXU/bMBSG/0rl66ZKnJakvZtAaEgMJti4Qchy7OPWmusExyl0Ff99dhJKUj4GbEzaZY7t8/Ge89i53CDJ0QyNo5TzqYhCEUVRGIWTCEcppJCxZC+BOEVDpOkS3E6dWykko1bm2llXVFXenALDNMEJCzGEcRQmYjxmEONxgrEAEG4rl2Wh6PqiPfFZzheDM1n+GHzNlaq8v8FJ3zlbSMUNaDS7vBqighqXggWDZpudpdfWoGgGym3difN0aXZdeKsBAS4Qg9Z03Po469hzw31a8RDBrQXNweUjqCphiJZUc2pzs0YzaypnMED5qVbr7Y6F1Nb5Q37vbSl/uqAxHnbizlC5LmEF2hJYUqkIZW2K2z2kFfdxbeKAWnruQjNbGWjisEUuGZSNdhwErZTd79qaDadF7aM+YmmmXsqE5apa6pNGSCoEMAucCAmKk1yT+gzaBrufAWepSpc8FF40L0OjkThf5DdbgQ+lruVt9VI5o2r7Jc6BGrY49JF8D30GQ0StNTKrrC9o02/sDPkYPrL89kw7QcHS17ikRSH1nBQmX8k6BVfncjRX7mMkVH7jMi/lXI8aGUau0XR06OwHtfmCGull++LcuMP3EXdmqgRLWlmId0BEbpbUT0RdYX3su5bXFRzVUz6NIIlxGkz3MAvGEE+CjMdxEEUZA6AgMI/Q3dA3al/Rsmxb0gwLua68dKjuRKs5aTTxiZJaPX+YGVnYT66qFbRK3w3vrwr+Ema4c1UYYA6MziWx2ey76feDEY1YZZwC9u7u8c3wdvJ/n5LatrnNaTfHlnaes6ruveQ7vB+0K4Ojgwfio5eJby3vQf4Zuv8+0bvwfgilfR63HPTV7gPZ1/vjkOywxd27FU9DFiR4EgfjkNEgS3kW0AyLyXi8l+5lH8tW+vIThh/mtuPzga9bUmpGQK+kybWTi4TEieMmRzaXbx+z/c7S23h7RZr3vH2rp+zptFvkHtmOu2cHJ81CCxx+I3DNpD7BWxr+R7xt37o/Ba6ndZ+3ntr/BDeWZZnIYBq4p8s9ZQmkQep+IgOYhCwWOA7dX+Q7cHsOsqtf7PtOp+0KAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=da5f9f6fc0ea03107f44ce324722fe54"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=3dae2d9b306603107f440692325fee61"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=3dae2d9b306603107f440692325fee61^sys_idNOT IN84676e5b30ae03107f440692325fee27,06705863302e43107f440692325fee33,5f67629b30ae03107f440692325fee70,6f1ed7d730a243107f440692325fee6f"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">cc676e5b30ae03107f440692325fee26</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="AI Pollution Risk Automatio">3dae2d9b306603107f440692325fee61</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="For Each">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-12 10:20:48</sys_created_on>
+        <sys_id>84676e5b30ae03107f440692325fee27</sys_id>
+        <sys_mod_count>35</sys_mod_count>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-15 17:06:49</sys_updated_on>
+        <ui_id>20687d54-56e9-430f-8667-8f68fb1d22b8</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/61STW/bMAz9Lzonhu24aZNbgaFAD12BruhlKAxaohOhsqTpI6ln+L+Psp1s6Hknm4/U43skB2ZisDH4V3PvvTxotv/5vmJSJ4z+B6ahQ7ZnMmDn2YqdQMUUD4MQAE11V61LfivW1Q2HdVPw23XOW+RQ3ZTA88w6FJIHaXTt0EcV/DgSi5DeKujf/gsZP0olHC7SLThSHNCx/fAlFXqLtYIGFfV8QW6cSJakoLDYiXZX5Du+KbebMs/Lu6potpumKMUGUGyp7vLycRnFl8kkdgrdlZc+SUWZrxh+BtQCqVELyuOKdaAFBON6tg8uEuAQxLNW/bXiKHUgOpZqP738TdxFnqfCFskRxzl5DetlpjPMj0ZyfLZpWDMSoFHLG25U7PT3WX7aBrZA07xsg5DoiQ9t0pxULJLaH0dzfrk0fJB68rckleGgrhGE4GQTA/q0BlTYEVHdgbVSH2rrzElOj0lLlx0UBVmrzJmapiPMYNpyRiOC7IHwbxP8Bk4mF09EQ4/HyX39K6a+s49FcT2bpgLPnbThnuhOuIgb39MVz0x+PgyBXHpq+Jqwx8vtp0RPS5b8X+hs3EeS+hcb/wArk284RQMAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">6891d8e3302e43107f440692325fee32</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="AI Pollution Risk Automatio">3dae2d9b306603107f440692325fee61</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>9</order>
+        <outputs_assigned/>
+        <parent_ui_id>20687d54-56e9-430f-8667-8f68fb1d22b8</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-12 17:59:58</sys_created_on>
+        <sys_id>06705863302e43107f440692325fee33</sys_id>
+        <sys_mod_count>46</sys_mod_count>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-18 14:03:46</sys_updated_on>
+        <ui_id>876f43eb-0b21-47f8-90ca-cc4d06a3fe75</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VXU/bMBT9K5Wf0ygfTWj7hoqQkNiYAPEyUHTjD2rhxJntULqq/33XSVqq0Ymh8bi3+tzre8858VE3RLeuaZ291afWyseazL8/BETWHsPfG1JDxcmcUF0z6aSuiw4IyDOo1hcuxOhSr0bX0j6NvmmlWt+EdSZto2B9904bXUrFDB/2NmBwuuOGzDe/lSTDKSICEc9oTNMkT5MoSqaTuMzTMk5YChxSHKig5ApbFzvCo8sOCf6oxK0bj1tnZP04nC+HKTc7UBvmWcVRQPiL4zXjyEeAsjwgFdQMnDbrPWI4sKtavQJLWTscR3zzi5U/cWGSZb5RcJRIeV/cH4vBvh4WZ+AAqbTUtWZopUstKbe9OYwLaJVbHGJ9w1XTGd1dcVCq3W2t2qr+2jtC9gN2XwuR1iIJ3nilnvqgQ9ws9ep6x/Jc1p0rQ1FpCmp/Aofela3zfDaEK17hoKKCpkFHi8boZ9ldRi5V+KjwEAqlV7jUv8MQqCceorEQniN+1sF3YKRX8QXH4OWeZglW0qJ7szgObeJkGxC7tgsF1r6KRHeLH62n2EsexBW9P/4KNbJxp7j5mQ86tsHbCBy8/s0mifLpCcsm4yzns/EkjcR4mucn46nIp6KMWZKU01A6XoWN4UxSx1nR3d5u79soShlqexuXT5v7sXzNIBNZHGXH8zXJj+XrSLI+GKrknVD5L/qXmYqi6H+o/jlU0hZ9FAZt3fJPzNSDD1C/c+81lRap3XrsYvfv4wtrfFySHkIrbZ68qFds+wtP1FChxwYAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">9767629b30ae03107f440692325fee70</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="AI Pollution Risk Automatio">3dae2d9b306603107f440692325fee61</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>3</order>
+        <outputs_assigned/>
+        <parent_ui_id>20687d54-56e9-430f-8667-8f68fb1d22b8</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-12 10:21:01</sys_created_on>
+        <sys_id>5f67629b30ae03107f440692325fee70</sys_id>
+        <sys_mod_count>40</sys_mod_count>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-18 14:03:39</sys_updated_on>
+        <ui_id>1a4d30df-632d-4847-8331-12e51ad48217</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VXU/bMBT9K5Wf0ygfTWj7hkBok7YxAeKFoejGdloLJ878AXRV//uu89EiqLSh8bi3+Pje63NOjpMtUc62zpobdWqMWDVkeXcfENF4DJ+3pIGakyWhqmHCCtWQgDyCdB7bbpMon5+wbDbNcr6YztKoms7z/GQ6r/J5VcYsScp5KCyvw1ZzJqjlrOi6d7sfLopStharNU5kwrQSNrcfPpiuhWSaD7Ja0KjGck2W21dbguG5C8iqLI4ymiZ5mkRRMp/FZZ6WccJS4LMcB0ooucTSsxd+HLHIbloPGatFsxrWX4bW6xFUmnkqSRQQ/mx5wziSqEAaHpAaGgZW6Q1ZWu0Q0BzYZSM3+4q1aCxOI7722Yhf3E+KIl9ZcdRFeb+7XxaDyz1cnYMFpOKodXoopWslKDe9I4xX4KQ9e4n1BZdtp7JrsVDKsVtJVzffejPIfsD4UhFxBknw1iv13Ach1fVaPV2NLC9E07kybEpFQe5XYNG70lnPZ0u45DUOKmpoW3S0aLV6FF0zcqnDlcRFWEn1hIf6bIdAPfEQjYXwAvHzDr4FLbyKrzgGmzELpjBUi3bU1h1OdgExG3MmwZiDRjS3+Ok8w17xoK3o7fEt3aBTPPiRDzJ2wdtbVXTA4Wp9wvhOroR5mHxXUrohVa+uyfGi90W+iqCKFzQ+HnlIj0V+0if5bfBHFe9Jf/yH9A/IX8U/y/6n/5/T72mWYAQtur8AjvMfoA+M/72PeX/o3mwqDHK78djn8d/jNzaYKEFfQk9KP3hVB2z3G9r4JSTFBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">16aa6b5730e643107f440692325fee3c</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="AI Pollution Risk Automatio">3dae2d9b306603107f440692325fee61</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>6</order>
+        <outputs_assigned/>
+        <parent_ui_id>20687d54-56e9-430f-8667-8f68fb1d22b8</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-12 14:19:58</sys_created_on>
+        <sys_id>6f1ed7d730a243107f440692325fee6f</sys_id>
+        <sys_mod_count>50</sys_mod_count>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-18 14:03:46</sys_updated_on>
+        <ui_id>de9ed27c-fb6b-431e-81ca-752001b0c2a3</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Vy27bMBD8lZRnW9DDUmzfggQBCjRNkQS5tKmwIimbCCWqfNhxDf97lno4RpKiDZpDD72Jw93lzHJW3BLlbOOsuVEnxohFTeZf70ZE1B7D7y2poeJkTqiqmbBC1WREViCdx7bbOMymxyydjNOMz8aTJCzH0yw7Hk/LbFoWEYvjYhoIy6ug0ZwJajnL2+zd7sM3F4YJk2r9/T3qLMViidSYMI2Eze2/y5AuhWSa941uQGN/Lddkvn22JRgKmEFaplGY0iTOkjgM4+kkKrKkiGKWAJ9kWFBCwSWGnh7c0CuXZjeNh4zVol7060996vUAKs08lTgcEf5gec04kihBGj4iFdQMrNIbMrfaIaA5sMtabvYRS1FbrEZ87IMRP7mvFIY+suSoi/Jud7/M++vq4PIMLCAVR63TfShdKkG56TrCeAlO2tNDrAu4bFqVbYqFQg7ZSrqq/tw1g+wLDO5AxBkkwRuv1HPvhZTXS7W+Gliei7rtSr8pFQW5X4HF3hXOej5bwiWvsFBeQdNgR/NGq5Vok5FLFSwkLoISHYWH+mkLgHriATYWgnPEz1r4FrTwKi6wDCajF0xuqBbNoK09nOxGxGzMqQRjnjRic/MfzjPsFPfa8q49PqUtdIIHr3gvYzd6Oed5CzwN+wW62lVHV8LcH31RUrreV88m7ldhb7N9GUIZzWj0uu0hec32R52bX5p/UPKWCYh+MwE98kcjkKb/J+CvJ8DTLMAImrdvE5bzP6F3HIE7b/Xu0H2zqTDI7cZjH4cX0W9s0FGCHkJrpe+9qids9whXUplwWwcAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=3dae2d9b306603107f440692325fee61^sys_idNOT IN395d9e57302e03107f440692325feeeb,f19d63db30e643107f440692325fee0f,2b2f6b5f30e643107f440692325feecf"/>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>3dae2d9b306603107f440692325fee61</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{ddaab484-2c7d-45ca-b1c7-0cfeca452ac0.prediction_results}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-12 09:36:57</sys_created_on>
+        <sys_id>395d9e57302e03107f440692325feeeb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-12 09:36:57</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>89b5047f-ebec-49c5-b95a-208da9df2adf</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>3dae2d9b306603107f440692325fee61</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{ddaab484-2c7d-45ca-b1c7-0cfeca452ac0.prediction_results}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-12 15:27:34</sys_created_on>
+        <sys_id>f19d63db30e643107f440692325fee0f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-12 15:27:34</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>c0e435ed-f630-40ef-b30d-8451e5efa9a3</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>3dae2d9b306603107f440692325fee61</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{ddaab484-2c7d-45ca-b1c7-0cfeca452ac0.prediction_results}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-12 15:34:31</sys_created_on>
+        <sys_id>2b2f6b5f30e643107f440692325feecf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-12 15:34:31</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>33a11323-6fb0-4380-adc2-040936476c47</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_flow_variable action="delete_multiple" query="model=3dae2d9b306603107f440692325fee61"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_3dae2d9b306603107f440692325fee61</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-12 06:13:34</sys_created_on>
+        <sys_id>6ece21db306603107f440692325feec2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-12 06:13:34</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>current</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_3dae2d9b306603107f440692325fee61</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-12 06:13:34</sys_created_on>
+        <sys_id>a2ce21db306603107f440692325feeb6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-12 06:13:34</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_3dae2d9b306603107f440692325fee61"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_3dae2d9b306603107f440692325fee61"/>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <allow_high_security_roles>false</allow_high_security_roles>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>29000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Automatically predicts pollution risk for new complaints and initiates the appropriate inspection and compliance process.</description>
+        <flow_priority>MEDIUM</flow_priority>
+        <internal_name>ai_pollution_risk_automatio</internal_name>
+        <label_cache>[{"name":"ddaab484-2c7d-45ca-b1c7-0cfeca452ac0.pred_message","label":"1 - Classification Prediction➛Prediction Message","reference_display":"Prediction Message","type":"string","base_type":"string","usedInstances":{},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"d2d543b6-4801-4be9-a9a7-c4b53ce24928"}},{"name":"38b8b949-9018-4f0e-9c36-e4e24b5b0954.item.predicted_value","label":"2➛Prediction Results➛predicted_value","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","choices":[{"order":0.0}],"usedInstances":{"eff2ab0f-c218-41a4-9cb6-c640d4ab6719":["condition"]},"attributes":{"":""}},{"name":"Created_1.current.location","label":"Trigger - Record Created➛Complaint Record➛Location","reference":"","reference_display":"Location","type":"string","base_type":"string","parent_table_name":"x_snc_environmen_0_complaint","column_name":"location","choices":[{"order":0.0}],"usedInstances":{"126cc34a-ef4e-48eb-a1a9-79a3480f1d1b":["location"]}},{"name":"ddaab484-2c7d-45ca-b1c7-0cfeca452ac0.prediction_results","label":"1 - Classification Prediction➛Prediction Results","reference_display":"Prediction Results","type":"array.object","base_type":"array.object","usedInstances":{},"attributes":{"uiTypeLabel":"Array.Object","co_type_name":"FD034885f4b68310104b1e307ef5fc1d56","child_label":"Prediction Results","child_type_label":"Object","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"array.object","child_type":"object","child_name":"Prediction_Results","child_uiUniqueId":"906fe9d0-0db7-4272-b801-22381ed65ac8","uiUniqueId":"76029cd9-d069-4854-b18b-7cd04a9820a6"}},{"name":"Created_1.current.pollution_category","label":"Trigger - Record Created➛Complaint Record➛Pollution Category","reference":"","reference_display":"Pollution Category","type":"choice","base_type":"choice","parent_table_name":"x_snc_environmen_0_complaint","column_name":"pollution_category","choices":[{"sequence":0.0,"label":"Air Pollution","used":false,"reference":false,"image":"","rawLabel":"Air Pollution","selected":false,"missing":false,"value":"air_pollution","parameters":{"name":"x_snc_environmen_0_complaint","dependent_values":[""],"dependent_values_map":{"":"Air Pollution"}}},{"sequence":1.0,"label":"Water Pollution","used":false,"reference":false,"image":"","rawLabel":"Water Pollution","selected":false,"missing":false,"value":"water_pollution","parameters":{"name":"x_snc_environmen_0_complaint","dependent_values":[""],"dependent_values_map":{"":"Water Pollution"}}},{"sequence":2.0,"label":"Noise Pollution","used":false,"reference":false,"image":"","rawLabel":"Noise Pollution","selected":false,"missing":false,"value":"noise_pollution","parameters":{"name":"x_snc_environmen_0_complaint","dependent_values":[""],"dependent_values_map":{"":"Noise Pollution"}}},{"sequence":3.0,"label":"Soil Pollution","used":false,"reference":false,"image":"","rawLabel":"Soil Pollution","selected":false,"missing":false,"value":"soil_pollution","parameters":{"name":"x_snc_environmen_0_complaint","dependent_values":[""],"dependent_values_map":{"":"Soil Pollution"}}},{"sequence":4.0,"label":"Industrial Waste","used":false,"reference":false,"image":"","rawLabel":"Industrial Waste","selected":false,"missing":false,"value":"industrial_waste","parameters":{"name":"x_snc_environmen_0_complaint","dependent_values":[""],"dependent_values_map":{"":"Industrial Waste"}}},{"sequence":5.0,"label":"Chemical Leakage","used":false,"reference":false,"image":"","rawLabel":"Chemical Leakage","selected":false,"missing":false,"value":"chemical_leakage","parameters":{"name":"x_snc_environmen_0_complaint","dependent_values":[""],"dependent_values_map":{"":"Chemical Leakage"}}},{"sequence":6.0,"label":"Plastic Waste","used":false,"reference":false,"image":"","rawLabel":"Plastic Waste","selected":false,"missing":false,"value":"plastic_waste","parameters":{"name":"x_snc_environmen_0_complaint","dependent_values":[""],"dependent_values_map":{"":"Plastic Waste"}}},{"sequence":7.0,"label":"Illegal Dumping","used":false,"reference":false,"image":"","rawLabel":"Illegal Dumping","selected":false,"missing":false,"value":"illegal_dumping","parameters":{"name":"x_snc_environmen_0_complaint","dependent_values":[""],"dependent_values_map":{"":"Illegal Dumping"}}},{"sequence":8.0,"label":"Other / Unknown","used":false,"reference":false,"image":"","rawLabel":"Other / Unknown","selected":false,"missing":false,"value":"other_unknown","parameters":{"name":"x_snc_environmen_0_complaint","dependent_values":[""],"dependent_values_map":{"":"Other / Unknown"}}}],"usedInstances":{"126cc34a-ef4e-48eb-a1a9-79a3480f1d1b":["pollution_catergory"]}},{"name":"Created_1.current.pollution_source","label":"Trigger - Record Created➛Complaint Record➛Pollution Source","reference":"","reference_display":"Pollution Source","type":"choice","base_type":"choice","parent_table_name":"x_snc_environmen_0_complaint","column_name":"pollution_source","choices":[{"sequence":0.0,"label":"Factory","used":false,"reference":false,"image":"","rawLabel":"Factory","selected":false,"missing":false,"value":"factory","parameters":{"name":"x_snc_environmen_0_complaint","dependent_values":[""],"dependent_values_map":{"":"Factory"}}},{"sequence":0.0,"label":"Generator","used":false,"reference":false,"image":"","rawLabel":"Generator","selected":false,"missing":false,"value":"Generator","parameters":{"name":"x_snc_environmen_0_complaint","dependent_values":[""],"dependent_values_map":{"":"Generator"}}},{"sequence":0.0,"label":"Road Dust","used":false,"reference":false,"image":"","rawLabel":"Road Dust","selected":false,"missing":false,"value":"Road Dust","parameters":{"name":"x_snc_environmen_0_complaint","dependent_values":[""],"dependent_values_map":{"":"Road Dust"}}},{"sequence":1.0,"label":"Construction Site","used":false,"reference":false,"image":"","rawLabel":"Construction Site","selected":false,"missing":false,"value":"construction_site","parameters":{"name":"x_snc_environmen_0_complaint","dependent_values":[""],"dependent_values_map":{"":"Construction Site"}}},{"sequence":2.0,"label":"Vehicle","used":false,"reference":false,"image":"","rawLabel":"Vehicle","selected":false,"missing":false,"value":"vehicle","parameters":{"name":"x_snc_environmen_0_complaint","dependent_values":[""],"dependent_values_map":{"":"Vehicle"}}},{"sequence":3.0,"label":"Residential Area","used":false,"reference":false,"image":"","rawLabel":"Residential Area","selected":false,"missing":false,"value":"residential_area","parameters":{"name":"x_snc_environmen_0_complaint","dependent_values":[""],"dependent_values_map":{"":"Residential Area"}}},{"sequence":4.0,"label":"Commercial Building","used":false,"reference":false,"image":"","rawLabel":"Commercial Building","selected":false,"missing":false,"value":"commercial_building","parameters":{"name":"x_snc_environmen_0_complaint","dependent_values":[""],"dependent_values_map":{"":"Commercial Building"}}},{"sequence":5.0,"label":"River","used":false,"reference":false,"image":"","rawLabel":"River","selected":false,"missing":false,"value":"river","parameters":{"name":"x_snc_environmen_0_complaint","dependent_values":[""],"dependent_values_map":{"":"River"}}},{"sequence":6.0,"label":"Agriculture","used":false,"reference":false,"image":"","rawLabel":"Agriculture","selected":false,"missing":false,"value":"agriculture","parameters":{"name":"x_snc_environmen_0_complaint","dependent_values":[""],"dependent_values_map":{"":"Agriculture"}}},{"sequence":7.0,"label":"Unknown","used":false,"reference":false,"image":"","rawLabel":"Unknown","selected":false,"missing":false,"value":"unknown","parameters":{"name":"x_snc_environmen_0_complaint","dependent_values":[""],"dependent_values_map":{"":"Unknown"}}}],"usedInstances":{"126cc34a-ef4e-48eb-a1a9-79a3480f1d1b":["pollution_source"]}},{"name":"Created_1.current.assigned_inspector","label":"Trigger - Record Created➛Complaint Record➛Assigned Inspector","reference":"x_snc_environmen_0_inspector","reference_display":"Inspector","type":"reference","base_type":"reference","parent_table_name":"x_snc_environmen_0_complaint","column_name":"assigned_inspector","usedInstances":{"5caa01d5-f2bd-4bd2-b900-36b2148b996c":["assigned_inspector"],"c2e9e2de-bf15-4a7a-ab74-92c5fffe1e75":["assigned_inspector"],"854228e9-2aeb-4582-8cea-4c2a6cc3a264":["assigned_inspector"]}},{"name":"20687d54-56e9-430f-8667-8f68fb1d22b8.item.predicted_value","label":"2➛Prediction Results➛predicted_value","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"1a4d30df-632d-4847-8331-12e51ad48217":["condition"],"de9ed27c-fb6b-431e-81ca-752001b0c2a3":["condition"],"126cc34a-ef4e-48eb-a1a9-79a3480f1d1b":["risk_level"],"876f43eb-0b21-47f8-90ca-cc4d06a3fe75":["condition"]},"attributes":{}},{"name":"Created_1.current","label":"Trigger - Record Created➛Complaint Record","reference":"x_snc_environmen_0_complaint","reference_display":"Complaint","type":"reference","base_type":"reference","usedInstances":{"9c2de0db-d9f0-4b98-a13e-85f4fdf49dba":["record"],"854228e9-2aeb-4582-8cea-4c2a6cc3a264":["complaint","assigned_inspector"],"6a9d5ac5-6dc8-4ec5-a2bb-14d877298b25":["record"],"5caa01d5-f2bd-4bd2-b900-36b2148b996c":["complaint"],"b42e24cb-7844-4217-b7b1-766a9ce153dc":["record"],"040d828c-a137-4c02-b89f-3a8420fa10ae":["record"],"126cc34a-ef4e-48eb-a1a9-79a3480f1d1b":["complaint"],"ddaab484-2c7d-45ca-b1c7-0cfeca452ac0":["input_record"],"c2e9e2de-bf15-4a7a-ab74-92c5fffe1e75":["complaint"],"1de8c6ca-0e71-42d3-a41b-129790650f08":["record"],"66537407-73dd-40e3-829b-658dddca0a78":["record"],"cfc59f3e-f506-41b8-97a7-f8ecca6a68c4":["parentrecord"],"f1c07ef6-4fb5-4d1e-abbb-9c78163dbccf":["parentrecord"]},"attributes":{}},{"name":"Created_1.run_start_date_time","label":"Trigger - Record Created➛Run Start Date/Time","type":"glide_date_time","base_type":"glide_date_time","choices":[{"order":0.0}],"usedInstances":{"854228e9-2aeb-4582-8cea-4c2a6cc3a264":["inspection_date"],"5caa01d5-f2bd-4bd2-b900-36b2148b996c":["inspection_date"],"c2e9e2de-bf15-4a7a-ab74-92c5fffe1e75":["inspection_date"]},"attributes":{"test_input_hidden":"true"}},{"name":"Created_1.table_name","label":"Trigger - Record Created➛Complaint Table","reference":"x_snc_environmen_0_complaint","reference_display":"Complaint","type":"table_name","base_type":"table_name","usedInstances":{"cfc59f3e-f506-41b8-97a7-f8ecca6a68c4":["parenttable"],"f1c07ef6-4fb5-4d1e-abbb-9c78163dbccf":["parenttable"]},"attributes":{"test_input_hidden":"true"}}]</label_cache>
+        <master>true</master>
+        <name>AI Pollution Risk Automatio</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="AI Pollution Risk Automatio">3dae2d9b306603107f440692325fee61</parent_flow>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-12 13:23:38</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>16315713302643107f440692325fee04</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-15 16:19:57</sys_updated_on>
+        <type>flow</type>
+        <version>2</version>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=16315713302643107f440692325fee04"/>
+    <sys_variable_value action="delete_multiple" query="document_key=16315713302643107f440692325fee04"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=16315713302643107f440692325fee04"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=16315713302643107f440692325fee04^sys_idNOT IN12315713302643107f440692325fee05"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>16315713302643107f440692325fee04</id>
+        <name>AI Pollution Risk Automatio</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-12 13:23:38</sys_created_on>
+        <sys_id>12315713302643107f440692325fee05</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-12 13:23:38</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=12315713302643107f440692325fee05"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=16315713302643107f440692325fee04^sys_idNOT IN2e315713302643107f440692325fee18,da315713302643107f440692325fee06"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>200</max_length>
+        <model display_value="AI Pollution Risk Automatio">16315713302643107f440692325fee04</model>
+        <model_id>16315713302643107f440692325fee04</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_16315713302643107f440692325fee04</name>
+        <next_element/>
+        <order>101</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-12 13:23:38</sys_created_on>
+        <sys_id>2e315713302643107f440692325fee18</sys_id>
+        <sys_mod_count>19</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-15 16:19:57</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=2e315713302643107f440692325fee18"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=document_id</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent>table_name</dependent>
+        <dependent_on_field>table_name</dependent_on_field>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">document_id</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>200</max_length>
+        <model display_value="AI Pollution Risk Automatio">16315713302643107f440692325fee04</model>
+        <model_id>16315713302643107f440692325fee04</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_16315713302643107f440692325fee04</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-12 13:23:38</sys_created_on>
+        <sys_id>da315713302643107f440692325fee06</sys_id>
+        <sys_mod_count>19</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-15 16:19:57</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>true</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=da315713302643107f440692325fee06"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=16315713302643107f440692325fee04"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=16315713302643107f440692325fee04"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=16315713302643107f440692325fee04^sys_idNOT INea315713302643107f440692325fee2c"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="AI Pollution Risk Automatio">16315713302643107f440692325fee04</flow>
+        <generation_source/>
+        <name>Created</name>
+        <published_version/>
+        <remote_sys_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-12 13:23:39</sys_created_on>
+        <sys_id>ea315713302643107f440692325fee2c</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-12 15:14:48</sys_updated_on>
+        <trigger_definition display_value="Created">798916a0c31322002841b63b12d3ae7c</trigger_definition>
+        <trigger_inputs>H4sIAAAAAAAA/9VYXW/iOBT9K1GedqWOlA8opW+ztKOtNDvVArP7UHUjJ7bBWmMziZOWGfW/73U+IOSDQgmz9KnFNva5x+eee83DD5Mjn3Dz2pwinxPzwmRCkVAgPl0tCQwrPewJtNBzCyQwUjJcmdcqjMmFSUO5mJLFkiMFiyniEQzKEJPQvLYvzATxmExW0R2GneD76Tb5nmY+DZ+fvUgEHhEJC6VYEOFZXiD1poAFlmEWwf+rv/LVo9JUMGcch0SY1w+PF+YShXCA0of/qEwxjSCgARo6xApc23Ucy3KuerZ/6fq2g11ELAs2rLJRQawaSNmES54VEZjgNRM1vkKC8L3gq/WKuY4j5WaBniP2HXa/svQ6SgB7QLK59Ucv5yIbDuaSBeR+qZgU2UiGM5uUPF6ILxl+zSKhKOaqYBFG4gj2I0sNWYPIEdHJXD6NiwM/MZFGl09yGSC+/oSUCpkfKxJpwinjQL2XcRPJOEzRj29H9+Mb7++P09Hvt2NvfDuZju9G09sb8yWNy/sW6x0zhDkWLwvnZX31nxjh6QUWV+8pptILiYKQLdXHQLGkEODLxUbUIykwS+mpCTsopqJtYRc07FK2ZbVqOyidWOj7n9s/6zLOBg8T8OUlQpigFgH7tCTgcuQN0FQDCeXodkk5H9lHyz3L+p/UnPvTW8X8hISKPCU9hLFXYglyHzbWIUpM+M3mPBhnsxnon4llrKJX1Z3F9vKqgsNYwBe89X3UdZzStubvM4sAzQOk44R8izPSP4A30YKqHD/9nB8wjoUhhRHEIXCkDLhmozjMSEFqadC7BZrlRMPGnASqpA36NSp/+oNFEROzUjBtWNIFdTB8VUZUeO8xGB67TPH6lSSVeCqpfnCe2zalPqGONdBZbluuT21rYPURxa5lBU4pz+tgWlGqimBOku+HZXuUSpXvcftVinPwVjlX9pJysp0HBQlaIrmpjLqBZncEzdHQKuboHuSOa1lmwzfb6twVWsctAsIJgm/gIsZ9WoA9/JFy+QS+e7w3UhmSWShjgaumpI8wGPzdWnEaV/RR8O9uFJsVxi/5pf56bg65uZRC1kisOvBGl9r+kPSIBZboghv6/eHQD5BD6eByQBy74o0bGI3Y3oUnvnLtSZNu2vyxUchJk/4PcMYjANZc8mCAx/tjLsxGd8zm3ocPPs3h7QxQQ49rp6vZ4YwzTIq5brO9dnSyye9jM55eDYO+PRgEA3jxQMbTHvGR3XP6aDi4dK/6lYyvQdkFUzUw81PeQdEqSoG0uMHXbOq8XvinlG1ElNLl6Ogann4dZeeVyqe+ISP1Fxkaml3jbrPQmBAohunD+FQ1Xap5rZoDkt9gfAuJ7gy/SPGhAd0JH2ICXgr7ENeC7Nx6j4qiku1LOPp1RnpX/SF1m/2IDpv8aAOmHebZ9yJ7SiFpFVVTU7JvYiaN+d3aRbwhtyoyKbcXO/qfrkixOyfFOR0p7tE9V5GLrU/St4B9R/UubUI6K3pSEE/SRttm1Mh/miTY8FeGmhPglkOXDScbGsYJ60rWPdeqHgwbefNzsoKm76RKyo00YMIIfwotp6lqFd10+7YmeID6fbel0x5W39ZNgF7Be/Y17mCJJE2K21noDtu3umdjqSsl1LYi9ixinUbdXMmOi7qxlr0W9fFVatcvAw0ozrT+PP4HNrwWuucfAAA=</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>record_create</trigger_type>
+        <updation_source/>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=16315713302643107f440692325fee04^sys_idNOT INea315713302643107f440692325fee2a,eeaa6b5730e643107f440692325feeca,cd91d8e3302e43107f440692325feeba,e2f5daefc02203107f44ce324722feda,156b2f2fc06e03107f44ce324722fec1,dd6b2f2fc06e03107f44ce324722fec1,116b2f2fc06e03107f44ce324722fec3,623b9a14c5fe03107f44493b2130cc40,ae3b9a14c5fe03107f44493b2130cc40"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Classification Prediction">8f92d8a377121010b981ea8797106194</action_type>
+        <action_type_parent display_value="Classification Prediction">b951186377121010b981ea87971061a9</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>8f92d8a377121010b981ea8797106194</compiled_snapshot>
+        <display_text/>
+        <flow display_value="AI Pollution Risk Automatio">16315713302643107f440692325fee04</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-12 13:23:39</sys_created_on>
+        <sys_id>ea315713302643107f440692325fee2a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-12 13:23:39</sys_updated_on>
+        <ui_id>ddaab484-2c7d-45ca-b1c7-0cfeca452ac0</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/8VV227bOBT8lUDPlsGbaSlvixgBArQNkLR96UU44sUhSksqRSXxGvn3pS625NbdpkDavgjg8JCcmcMRP+wiI6PzSBOWJAvNkmVCMcJoQTniUhK0FDnKSRrNogI2KlSaomp85pQonQzoPdimhXe7C6fAK5nhuWicU4V/egrz0tSVhe37oSwg4s5YGeaj8w+fZlEFLuzrlYvOd99MPZeYhVzZUHrVMju72TM7zddvqxaVpWg2gWNm9uCrYZfVMHN2tQozYVFLjc4i9ehVIVXgpMHWahZtoJDgS7eNzr1rAhD0y+vCbg8Vd6bwveYNPNbm33AwJW2dVkGkGPw4DLPBqx7WK/BwG3YWvnEH60ojVN3bI5WGxvqLKdYXXFfelEW/xENuexuEkUFWu0tpm03xprcnOmw0aVFTBzKqavW2CgY5+vaufLjZs700RWfNMGlLAfYwAu+dyRvf8tpFjXl7yvUePu27sqor3EBVmWKdVa68N915gf5mvrZhMNe2fAg8a7Mu5iBazfPQEZhfBnzVwe/BmdaA12GbsHgW1R68EatR29SYxrwrzNdGXbUXD3JQEiiNKehFzECROGepiAnWhMt0mfCcRU9hx219YaGuRz9DQ7OvTetG7+5wVta3pF0inKn8P4HxvRose5oNQRQ6JTIBulxi0t73PE2wgmSZLjHiOM3Hi12HNraau+EYREKBQ7rIKSIchcgsNWOIp4SShVaKqu8zubHZY1YXYviq4t64sgj2Zyhb2zIHm4HJqtL252XO1F9CQ5Q0nee/HOlnSNxH+nbQ+EPVQ5zHSB2H+WaCD1HGvyvKwcZ6pHsq1a9fnU0EvXDAj4//AxnXtwqcuLs0yspJY7KhMz/4BUw7dfwDmPbqd8X/KOEkRZxySmLCqIwZT3UMWvA4T5aS54imjOU/TTh0Kf7YIERle3c+C6ggN9b4bQ+KdqnRRkDnjndgCuU+X998W/hQui+dpNMrfv1XIgG44ooKSgjBGDEJBIiUCWdISobHUPmyKia/kBd4tp9x9j7jb8vq7M13XIZgh9ipdSd+GuurAzqEmvx/qAfkOalm6C890H/1YR5tPs7kaPQfSWQqKQWc4zjRiscMoTROhRIxxQxjznAicvWCb+6n/wBV8TZv/goAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=ea315713302643107f440692325fee2a"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="AI Pollution Risk Automatio">16315713302643107f440692325fee04</flow>
+        <generation_source/>
+        <order>8</order>
+        <parent_ui_id>de9ed27c-fb6b-431e-81ca-752001b0c2a3</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-12 15:14:48</sys_created_on>
+        <sys_id>eeaa6b5730e643107f440692325feeca</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-15 12:01:38</sys_updated_on>
+        <ui_id>b42e24cb-7844-4217-b7b1-766a9ce153dc</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVXW/aMBT9K8jPCCVAUcvbBEKa1LVSO/HSdZaxL2DNcTJ/UBjiv+86cSCCqqVTX9B48/3yOcf3kKctkYIMSR9Ekt6kA95Le71uknSv++ls0JulXdFjAClpE80ywEoDPDcCzyumfAhstyMDzIGgaYd7Y0C73Q7zQtpCsc00lmGEL6USmCfDp+c2KZjBiQ4MGW6PUudCUmwGCksfakzHGN2mCGeRc58hLirr4G3sHMdM6+sYM9gU4KRJm8DagRaAQOZMWWiTjGnBXG42ZOiMxwCSFvdabfYVS6ldRTRjayv/4M39JNTNAZnxKML+SKNAVXg+Zo494mTuvNnrlUsOttJEwJx55UbNWFVwXziZ66rFsZmqu3PlM31XKUL2Axrv4S2CgCLwDMgrWvPHZf7yUIOcSF1KEimqnDO1PzHnjJx5F+BsCSgoNc5YUUi9oIXJV7JsRihZZ6Hw0Jmr/AXvtHKhO4wH3B1UlXUmGB+X4SkzMpD4hmOwedcmdmNHill7oIIa0t8+IKmIRQq0VKGUgJabEJq5kYX7gletIALftePSz67e2jB+c1ioxszD4q+p1ZyCXkmTa6ROE4pE8UnDHpzs/6iR+pgRzoBZG+F7+fyvw45eOIndNntbd1UiOuHq05xwfUlOiDQu3grvGSDpvvkX29ikcudtY/mtY87bHz5JesIHYajUK7BOLlig8tNI+4sqWIGqajIQ0mentvjnOR/z0BlMaw9NJChhX6FeGwiCkR3QSoojE8VkaxqT+0/KpzkpHSTl74L89N98WZ7/Aj5eCZdQCQAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=eeaa6b5730e643107f440692325feeca"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="AI Pollution Risk Automatio">16315713302643107f440692325fee04</flow>
+        <generation_source/>
+        <order>12</order>
+        <parent_ui_id>876f43eb-0b21-47f8-90ca-cc4d06a3fe75</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-12 18:04:48</sys_created_on>
+        <sys_id>cd91d8e3302e43107f440692325feeba</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-15 12:01:38</sys_updated_on>
+        <ui_id>040d828c-a137-4c02-b89f-3a8420fa10ae</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVXW/aMBT9K8jPCCVAUcvbBEKa1LVSO/HSVZZj34A1x8lsh8IQ/33XiQMRoJZKfUHj7X7Z51yfQ162RAoyJkMQUXwXj/ggHgz6UdS/HcbJaJDEfTFgADHpEs0ywE4DPDcC4xVTpU9stxMDzIGgcY+XxoB2ux3WhbSFYpt5aMMMX0olsE7GL69dUjCDJzowZLw9Kl0KSbEEFLY+NZiOMbpN4WOR8zJDXFQ2yfswOQ2VzvcpVnDIw4mjLoG1Ay0AgaRMWeiSjGnBXG42ZOxMiQkkLR612uw7llK7mmjG1lb+xZuHke9LAZnxsIR9SMOC6nQ6ZY4948nclWa/r1xysPVOBKSsVG7SztUNj4WTua5HHEtUM52rMtMP9UbI/oDWe5QWQUDheXrkNa30eZm/PTUgZ1JXKwkUVc6Z2kfMOSOT0nk4WwIKqh1nrCikXtDC5CtZDSOUrLdQGPRSlb/hnVYudI9xj7uHW2W9GeanVXrOjPQkfuAxOLzrEruxE8WsPVDBHdI/pUdSEwsUaLWFagW0UoIf5kYW7htetYIAfNcNok9u3lMYvzsIqnXmQfhrajWnoFfS5Bqp04giUXxSr4MT/U9apc8Z4QKYjRF+Vs9/Hnbwwknuvj3beagLwQk3X+aE22tyQqBx9Vb4yABR/92/2JaSKs3blviNtL+pghWoX2UUDQSCPtX8+abPqf8CjI36ZxKUsGdAN9IHb0EHtCZxJP9Q7MxDcf8x+DIPxKOo+l2RE/6bb8LrP2G4GH8KCQAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=cd91d8e3302e43107f440692325feeba"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="AI Pollution Risk Automatio">16315713302643107f440692325fee04</flow>
+        <generation_source/>
+        <order>4</order>
+        <parent_ui_id>1a4d30df-632d-4847-8331-12e51ad48217</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-13 03:43:15</sys_created_on>
+        <sys_id>e2f5daefc02203107f44ce324722feda</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-13 05:39:24</sys_updated_on>
+        <ui_id>9c2de0db-d9f0-4b98-a13e-85f4fdf49dba</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVXW/aMBT9K5WfoygBilreJhDSpK6V2omXrrKMfQPWHCezHQpD/PddJw5E0HVU6gsab/fLPuf6HPK8JVKQERmASNLbdMj7ab/fS5LezSCdD/vztCf6DCAlEdEsB+w0wAsjMF4xVfnEdjs2wBwImsa8Mga02+2wLqQtFdvMQhtm+FIqgXUyen6JSMkMnujAkNH2qHQuJMXmoLD1scV0jNFtSh+Lglc54qKyTd6FyUmoXH2dYAWHPJw0iQisHWgBCCRjykJEcqYFc4XZkJEzFSaQtHjQarPvWErtGqI5W1v5G28eJL4vA2TGwxL2IQ0LatLZhDn2hCdzV5n9vgrJwTY7EZCxSrlxN9c0PJROFroZcWyu2ulCVbm+bzZC9gd03qOyCAJKz9Mjb2hlT8vi9bEFOZW6XkmgqArO1D5izhk5r5yHsyWgoN5xzspS6gUtTbGS9TBCyeOFwiDOVPGKd1q50DHjHneMW2XxFPOTOj1jRnoS3/AYHN5FxG7sWDFrD1Rwh/RX5ZE0xAIFWm+hXgGtleCHuZGl+4JXrSAA30VB9PPr9xTGbw+C6px5EP6aWs0p6JU0hUbqNKFIFJ/U6+BE/+NO6WNGOANma4Tv9fO/DTt44SR31529um8KwQnXn+aEm0tyQqBx8Vb4lwGS3rt/sR0l1Zq3HfEbaX9SBStQP6ok6YulXCxPRf+Xro/p/wyUrf6nEpSwb8BuxQ/ehA5oQ+PIAKF4NQvF/efg01yQDpP6d0Fe+G++Ci9/AJq1/ycMCQAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=e2f5daefc02203107f44ce324722feda"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Send Notification">0d8dd9f10f11101051218e8ebc767e27</action_type>
+        <action_type_parent display_value="Send Notification">7eda5d710f11101051218e8ebc767ec1</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>0d8dd9f10f11101051218e8ebc767e27</compiled_snapshot>
+        <display_text/>
+        <flow display_value="AI Pollution Risk Automatio">16315713302643107f440692325fee04</flow>
+        <generation_source/>
+        <order>5</order>
+        <parent_ui_id>1a4d30df-632d-4847-8331-12e51ad48217</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-13 09:56:27</sys_created_on>
+        <sys_id>156b2f2fc06e03107f44ce324722fec1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-13 09:56:27</sys_updated_on>
+        <ui_id>1de8c6ca-0e71-42d3-a41b-129790650f08</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/9WWXU/bMBSG/0rl66ZKnJakvZtAaEgMJti4Qchy7OPWmusExyl0Ff99dhJKUj4GbEzaZY7t8/Ge89i53CDJ0QyNo5TzqYhCEUVRGIWTCEcppJCxZC+BOEVDpOkS3E6dWykko1bm2llXVFXenALDNMEJCzGEcRQmYjxmEONxgrEAEG4rl2Wh6PqiPfFZzheDM1n+GHzNlaq8v8FJ3zlbSMUNaDS7vBqighqXggWDZpudpdfWoGgGym3difN0aXZdeKsBAS4Qg9Z03Po469hzw31a8RDBrQXNweUjqCphiJZUc2pzs0YzaypnMED5qVbr7Y6F1Nb5Q37vbSl/uqAxHnbizlC5LmEF2hJYUqkIZW2K2z2kFfdxbeKAWnruQjNbGWjisEUuGZSNdhwErZTd79qaDadF7aM+YmmmXsqE5apa6pNGSCoEMAucCAmKk1yT+gzaBrufAWepSpc8FF40L0OjkThf5DdbgQ+lruVt9VI5o2r7Jc6BGrY49JF8D30GQ0StNTKrrC9o02/sDPkYPrL89kw7QcHS17ikRSH1nBQmX8k6BVfncjRX7mMkVH7jMi/lXI8aGUau0XR06OwHtfmCGull++LcuMP3EXdmqgRLWlmId0BEbpbUT0RdYX3su5bXFRzVUz6NIIlxGkz3MAvGEE+CjMdxEEUZA6AgMI/Q3dA3al/Rsmxb0gwLua68dKjuRKs5aTTxiZJaPX+YGVnYT66qFbRK3w3vrwr+Ema4c1UYYA6MziWx2ey76feDEY1YZZwC9u7u8c3wdvJ/n5LatrnNaTfHlnaes6ruveQ7vB+0K4Ojgwfio5eJby3vQf4Zuv8+0bvwfgilfR63HPTV7gPZ1/vjkOywxd27FU9DFiR4EgfjkNEgS3kW0AyLyXi8l+5lH8tW+vIThh/mtuPzga9bUmpGQK+kybWTi4TEieMmRzaXbx+z/c7S23h7RZr3vH2rp+zptFvkHtmOu2cHJ81CCxx+I3DNpD7BWxr+R7xt37o/Ba6ndZ+3ntr/BDeWZZnIYBq4p8s9ZQmkQep+IgOYhCwWOA7dX+Q7cHsOsqtf7PtOp+0KAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=156b2f2fc06e03107f44ce324722fec1"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Send Notification">0d8dd9f10f11101051218e8ebc767e27</action_type>
+        <action_type_parent display_value="Send Notification">7eda5d710f11101051218e8ebc767ec1</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>0d8dd9f10f11101051218e8ebc767e27</compiled_snapshot>
+        <display_text/>
+        <flow display_value="AI Pollution Risk Automatio">16315713302643107f440692325fee04</flow>
+        <generation_source/>
+        <order>9</order>
+        <parent_ui_id>de9ed27c-fb6b-431e-81ca-752001b0c2a3</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-13 09:56:27</sys_created_on>
+        <sys_id>dd6b2f2fc06e03107f44ce324722fec1</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-15 12:01:38</sys_updated_on>
+        <ui_id>66537407-73dd-40e3-829b-658dddca0a78</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/9WWyW7bMBCGX8XQ2TK02ZJzK2wECJClcNJcgkCgyGFMlFpCUU5cw+/eoSTvztqmQI8cbv/8M5+ou4UlmHViBSxibMhdh7uu67hO3/XcCCJIaDgIwYusrpWRFHClAporhuMZkZUJLBYjBUQDi90erZSCTC+XOM9EWUgyv22XYYROhWQ4b53c3Xetgig8UYOyThZ7U++VJEkCEpdOVpr2Nep5YcYsp1WKumKxCp63O8ftTOdsjDO4ychxuxY8a8gYoA5OZAldKyUZIzpX83UEk2ZXmdwEpiLTTaIpeS7FL7zZ98w6DpgZbU1YD+PWoCbMx0STa60qqiu19isXFMrGEwacVFKPtmPNgqtCizxrtmiSyNXuXFZpdtk4Yq0P2KpHVaIIKEyiRjlejlnw62n+NFmJPBVZbUmboswpkesR0VqJpNJGzsKqxM0xt5vwcb9BQr0wJUUhsoe4UPlM1Peh+rT3IHHQ4zJ/QpmleMh6hJpUe1gJ0jvF+LgO3xIlTN4XeAxuNnf+yMRjBWemj5jrhP7QoXbo9X07cCixk4glNkk83g+CQTRIXGvZtcp5OZKkLDeOYanix8ok3PjXOhXXZtdOx3XDmc1UiUJ/Q3kzaP1Zdlu2Ive1Rva9Td9unbnh6zkuMxpDNhMqz9Cu2InRHOwc024HmI22pj7G2ztkrni7qbvsuOwWuYPY+fbezmUz0QLnfRC4plOP8BY5/xFvbVp/DtyO17u87bj9T3CjSZLwBIa2m1BqByFEduSR0Ia+Q33u+Y4T8k/g9hZkwevdu/WAZbkWXFBSF3GDmTuEcOB7PnUG4Pj4zeBBQLHtg9DzOAzIIWoXwESVdiai/Nn5nktZmRM7l7vHf/DNezuLFYN79xxProVxg8Qui5OteIui/zqKDXmfefqw3jAz5YSUCBk3rfUCn3u5/WVWX1KyAzDhHKj5qeECJMMejOs9X/KO8msgik5PzU2mhg2tu7DvFBaRxzsOYN8u59exfnPYUyXouLUlNgfEPFcpMR1RZ7j/iQiGLoS+F9nDgYefCPD7dsJ833bxkwFAgHvsa17k+9/AgKOX7woAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=dd6b2f2fc06e03107f44ce324722fec1"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="AI Pollution Risk Automatio">16315713302643107f440692325fee04</flow>
+        <generation_source/>
+        <order>13</order>
+        <parent_ui_id>876f43eb-0b21-47f8-90ca-cc4d06a3fe75</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-13 09:56:27</sys_created_on>
+        <sys_id>116b2f2fc06e03107f44ce324722fec3</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-15 12:01:38</sys_updated_on>
+        <ui_id>126cc34a-ef4e-48eb-a1a9-79a3480f1d1b</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1US0/bQBD+K2jPseVXHJNbBeVEQQLEhYK13h0nq67X7u46kEb57531IwRKVCr1UKTmlJn95vHNzOe7DRGczEnKITg+DlMWh3EcBUGUJWGRxkUY8ZhCWJAJUbQCRK6obMGg3f1BB6urRlKh7Nc2CGK+2ZxooBZ4Hvqs1RqU3W4ftDDfcgkrkCMqCtJsxqeJN03h2EvioPSyNJ15WZlmZRHyKCoyX1io/EYDF8xl7EpitqaWsrWiVjnDSnpR6/XB4v5LsMO+yGDqVjN4T3iPxGBZYyb0HA4aESNzDoZp0ewHcU5pkWSJF7EZ95Ipo14RspkXsBIYTaYRZUFHPa/AGLqAMZex1LamT1M3oHAVXBhcwfr2/0b+lY2wpZAcC5P53f2ENFSjeHAuZL559fRe9UlagETomQDJzRtytOvG2bge3L2FfjOD/3wIvhkej26Hx1pz11Q4IfBkQXHAbkoqDUxIRRWnFndD5la36MCR8ksl1zvEEi8MkxKHfTLiB5YP06D7OXQJSJJBj9iZ+XCrvbs8pZZeY35mWz1A2bIWDCl14+FQ0lbak31fD7jsdteHWFrIMbqWbaUu+uGQXYJRGuhpDTYBjWPr+u/JldfL+vFqbPJMqG4uA1F3O3JnUWu1KFrr2tkQkFBhnryiTSPUIm90vRJdsJOhv5Bo+KWsH93FiYXyKXN9+zhb6p+h/7Rz31ItHIkvmAaDtxNi1uZEUmOeqeAM8++t66QnNlDIuyl0I8i7o3DB3W1/wlIrGBrfTsZPfQjB9OCxQfJ8W3s5nz/3T7lRLAe1ErpWSD0P9gxLZe4k8es36fM+5uiqx/yhSn7f+KiSm+4g3iYyCuW173w/9uiifxgEEvwtgWQfSRoDjQ+vjUOKuP8J0SkkAP4IAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=116b2f2fc06e03107f44ce324722fec3"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Create Work Order From Task">15b7392477101010d7159b71a9106177</action_type>
+        <action_type_parent display_value="Create Work Order From Task">0bb57da077101010d7159b71a9106186</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>15b7392477101010d7159b71a9106177</compiled_snapshot>
+        <display_text/>
+        <flow display_value="AI Pollution Risk Automatio">16315713302643107f440692325fee04</flow>
+        <generation_source/>
+        <order>6</order>
+        <parent_ui_id>1a4d30df-632d-4847-8331-12e51ad48217</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-15 12:01:37</sys_created_on>
+        <sys_id>623b9a14c5fe03107f44493b2130cc40</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-15 12:01:37</sys_updated_on>
+        <ui_id>cfc59f3e-f506-41b8-97a7-f8ecca6a68c4</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1T72vbMBD9X/TZNnZ+yc63klIYbCu0Xb+UYs7SORHIsivLabOQ/32n2Em7tltW2KcxDAa9e3f37kl3t2VKsjlLpgUfZ6MJ50nsP8mTaVbwBLIkniU8ZQEzUCExG7BonINCI4Fr0J1Ht9uFRXAo8yTax3JP3+2IIlXbaNjcnmaKldKSqrP53X3gG1HAoWXz7avQn0rWUKA+ar4ZNL87iNs0HmydVWY5nD8P6dcHsLbSy0kChk8OjUTSUYJuMWAVGAmutpsjQlPKS6OfgZUyjqoxT35q1Xfql8Zx7JklkhaBffR4zAfrerg8BwckpROuswNVrGolsO1dkVhCp93iJdYTLhunatOn9AP32bXuKvO1t4MdCxxuipCuJRHY+FG99mGQ8npVP14dVF4os3dlCOpagD6ewJF3Ree8ni3r1M0rm3vkjdGosaKOeQVNQ0je2Hqt9l1IdBUtNR2iUtePpK5VSxOB8BNGdAUQXRB+vodvwSo/7hcqQ8m+3TejHjr85B9QlshZOeMQTqYcw4lIR2EBcRJO43GZjaVMOedsF7B20y40tO2zUXRD+UPnx+xtGwzKe499irCqcWckao2DF7vgsGrZb9/tmxdqUdC7+8Wuic56zqlFe0n74JadVvvzll0d5L4/xEf2bPR/z/6FPZMy4QCzOBTjogwnRZaGMCuRfukIOSTIs8lf3LP7H/ZFF1/UBgAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=623b9a14c5fe03107f44493b2130cc40"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Create Work Order From Task">15b7392477101010d7159b71a9106177</action_type>
+        <action_type_parent display_value="Create Work Order From Task">0bb57da077101010d7159b71a9106186</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>15b7392477101010d7159b71a9106177</compiled_snapshot>
+        <display_text/>
+        <flow display_value="AI Pollution Risk Automatio">16315713302643107f440692325fee04</flow>
+        <generation_source/>
+        <order>10</order>
+        <parent_ui_id>de9ed27c-fb6b-431e-81ca-752001b0c2a3</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-15 12:01:37</sys_created_on>
+        <sys_id>ae3b9a14c5fe03107f44493b2130cc40</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-15 12:01:37</sys_updated_on>
+        <ui_id>f1c07ef6-4fb5-4d1e-abbb-9c78163dbccf</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1T72vbMBD9X/TZNnZ+yc63klIYbCu0Xb+UYs7SORHIsivLabOQ/32n2Em7tltW2KcxDAa9e3f37kl3t2VKsjlLpgUfZ6MJ50nsP8mTaVbwBLIkniU8ZQEzUCExG7BonINCI4Fr0J1Ht9uFRXAo8yTax3JP3+2IIlXbaNjcnmaKldKSqrP53X3gG1HAoWXz7avQn0rWUKA+ar4ZNL87iNs0HmydVWY5nD8P6dcHsLbSy0kChk8OjUTSUYJuMWAVGAmutpsjQlPKS6OfgZUyjqoxT35q1Xfql8Zx7JklkhaBffR4zAfrerg8BwckpROuswNVrGolsO1dkVhCp93iJdYTLhunatOn9AP32bXuKvO1t4MdCxxuipCuJRHY+FG99mGQ8npVP14dVF4os3dlCOpagD6ewJF3Ree8ni3r1M0rm3vkjdGosaKOeQVNQ0je2Hqt9l1IdBUtNR2iUtePpK5VSxOB8BNGdAUQXRB+vodvwSo/7hcqQ8m+3TejHjr85B9QlshZOeMQTqYcw4lIR2EBcRJO43GZjaVMOedsF7B20y40tO2zUXRD+UPnx+xtGwzKe499irCqcWckao2DF7vgsGrZb9/tmxdqUdC7+8Wuic56zqlFe0n74JadVvvzll0d5L4/xEf2bPR/z/6FPZMy4QCzOBTjogwnRZaGMCuRfukIOSTIs8lf3LP7H/ZFF1/UBgAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=ae3b9a14c5fe03107f44493b2130cc40"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=16315713302643107f440692325fee04"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=16315713302643107f440692325fee04^sys_idNOT INee315713302643107f440692325fee27,a6315713302643107f440692325fee29,faaa6b5730e643107f440692325feecf,c191d8e3302e43107f440692325feec1"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">cc676e5b30ae03107f440692325fee26</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="AI Pollution Risk Automatio">16315713302643107f440692325fee04</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="For Each">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-12 13:23:39</sys_created_on>
+        <sys_id>ee315713302643107f440692325fee27</sys_id>
+        <sys_mod_count>22</sys_mod_count>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-15 16:19:57</sys_updated_on>
+        <ui_id>20687d54-56e9-430f-8667-8f68fb1d22b8</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/61TwU7jMBD9F5/TKElLob0hEBLSLkiAuKxQNLEnrbWO7bWdlhDl33fcpAFx5pTM88yb916cnpk22Db4F3Ptvdxptv3zljCpI0bvPdPQINsyGbDxLGEHUG2s+14IgGp1tVoU/FIsVhccFlXOLxcZr5HD6qIAnqXWoZA8SKNLh75VwQ8DsQjprYLu9UfI+F4q4XCSbsGR4oCObftvR1LQrnwj6k2ebfiyWC+LLCuuVnm1XlZ5IZaAYk2ECipU1Ho/ef4WQehsLB1y48QZ+DXNPM0oPaKIIksYvgfUAml9DcpjwhrQAoJxHdsG1xLgEMSjVt3csZc6EB2Lve9eftDGPMtiY41kiON4OJflFOkI17cQ4JmoeWjd1Mr3RnL0YxQCa6AAb75iY8OjjQGPIwEqdZ42qm30w5gEmwnOX5CQ1pMItNFolD75qJ/35vh0Vnkn9SmU6VAZDmquIAQnqzZEPT1DhQ0RlQ1YK/WutM4c5GmYtDTpTlGR1socaWm8uCmcbkZKuUJ6R/jtCX4FJ6OL30RDw0PCfOdvFHj/6YVCLP+1UcnobPJQjjHEEe6kDde04ICT3OEt/gsj95wpl54kvETs/vwHxYOObpDkX6GjcX+j+E9s+A8m+VujiwMAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">9767629b30ae03107f440692325fee70</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="AI Pollution Risk Automatio">16315713302643107f440692325fee04</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>3</order>
+        <outputs_assigned/>
+        <parent_ui_id>20687d54-56e9-430f-8667-8f68fb1d22b8</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-12 13:23:39</sys_created_on>
+        <sys_id>a6315713302643107f440692325fee29</sys_id>
+        <sys_mod_count>22</sys_mod_count>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-15 16:19:57</sys_updated_on>
+        <ui_id>1a4d30df-632d-4847-8331-12e51ad48217</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VXU/bMBT9K5Wf0ygfTWj7hkBok7YxAeKFoejGdloLJ878AXRV//uu89EiqLSh8bi3+Pje63NOjpMtUc62zpobdWqMWDVkeXcfENF4DJ+3pIGakyWhqmHCCtWQgDyCdB7bbpMon5+wbDbNcr6YztKoms7z/GQ6r/J5VcYsScp5KCyvw1ZzJqjlrOi6d7sfLopStharNU5kwrQSNrcfPpiuhWSaD7Ja0KjGck2W21dbguG5C8iqLI4ymiZ5mkRRMp/FZZ6WccJS4LMcB0ooucTSsxd+HLHIbloPGatFsxrWX4bW6xFUmnkqSRQQ/mx5wziSqEAaHpAaGgZW6Q1ZWu0Q0BzYZSM3+4q1aCxOI7722Yhf3E+KIl9ZcdRFeb+7XxaDyz1cnYMFpOKodXoopWslKDe9I4xX4KQ9e4n1BZdtp7JrsVDKsVtJVzffejPIfsD4UhFxBknw1iv13Ach1fVaPV2NLC9E07kybEpFQe5XYNG70lnPZ0u45DUOKmpoW3S0aLV6FF0zcqnDlcRFWEn1hIf6bIdAPfEQjYXwAvHzDr4FLbyKrzgGmzELpjBUi3bU1h1OdgExG3MmwZiDRjS3+Ok8w17xoK3o7fEt3aBTPPiRDzJ2wdtbVXTA4Wp9wvhOroR5mHxXUrohVa+uyfGi90W+iqCKFzQ+HnlIj0V+0if5bfBHFe9Jf/yH9A/IX8U/y/6n/5/T72mWYAQtur8AjvMfoA+M/72PeX/o3mwqDHK78djn8d/jNzaYKEFfQk9KP3hVB2z3G9r4JSTFBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">16aa6b5730e643107f440692325fee3c</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="AI Pollution Risk Automatio">16315713302643107f440692325fee04</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>7</order>
+        <outputs_assigned/>
+        <parent_ui_id>20687d54-56e9-430f-8667-8f68fb1d22b8</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-12 15:14:48</sys_created_on>
+        <sys_id>faaa6b5730e643107f440692325feecf</sys_id>
+        <sys_mod_count>25</sys_mod_count>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-15 16:19:57</sys_updated_on>
+        <ui_id>de9ed27c-fb6b-431e-81ca-752001b0c2a3</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Vy27bMBD8lZRnW9DDUmzfggQBCjRNkQS5tKmwIimbCCWqfNhxDf97lno4RpKiDZpDD72Jw93lzHJW3BLlbOOsuVEnxohFTeZf70ZE1B7D7y2poeJkTqiqmbBC1WREViCdx7bbOMymxyydjNOMz8aTJCzH0yw7Hk/LbFoWEYvjYhoIy6ug0ZwJajnL2+zd7sM3F4YJk2r9/T3qLMViidSYMI2Eze2/y5AuhWSa941uQGN/Lddkvn22JRgKmEFaplGY0iTOkjgM4+kkKrKkiGKWAJ9kWFBCwSWGnh7c0CuXZjeNh4zVol7060996vUAKs08lTgcEf5gec04kihBGj4iFdQMrNIbMrfaIaA5sMtabvYRS1FbrEZ87IMRP7mvFIY+suSoi/Jud7/M++vq4PIMLCAVR63TfShdKkG56TrCeAlO2tNDrAu4bFqVbYqFQg7ZSrqq/tw1g+wLDO5AxBkkwRuv1HPvhZTXS7W+Gliei7rtSr8pFQW5X4HF3hXOej5bwiWvsFBeQdNgR/NGq5Vok5FLFSwkLoISHYWH+mkLgHriATYWgnPEz1r4FrTwKi6wDCajF0xuqBbNoK09nOxGxGzMqQRjnjRic/MfzjPsFPfa8q49PqUtdIIHr3gvYzd6Oed5CzwN+wW62lVHV8LcH31RUrreV88m7ldhb7N9GUIZzWj0uu0hec32R52bX5p/UPKWCYh+MwE98kcjkKb/J+CvJ8DTLMAImrdvE5bzP6F3HIE7b/Xu0H2zqTDI7cZjH4cX0W9s0FGCHkJrpe+9qids9whXUplwWwcAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">6891d8e3302e43107f440692325fee32</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="AI Pollution Risk Automatio">16315713302643107f440692325fee04</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>11</order>
+        <outputs_assigned/>
+        <parent_ui_id>20687d54-56e9-430f-8667-8f68fb1d22b8</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-12 18:04:48</sys_created_on>
+        <sys_id>c191d8e3302e43107f440692325feec1</sys_id>
+        <sys_mod_count>23</sys_mod_count>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-15 16:19:57</sys_updated_on>
+        <ui_id>876f43eb-0b21-47f8-90ca-cc4d06a3fe75</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VXU/bMBT9K5Wf0ygfTWj7hoqQkNiYAPEyUHTjD2rhxJntULqq/33XSVqq0Ymh8bi3+tzre8858VE3RLeuaZ291afWyseazL8/BETWHsPfG1JDxcmcUF0z6aSuiw4IyDOo1hcuxOhSr0bX0j6NvmmlWt+EdSZto2B9904bXUrFDB/2NmBwuuOGzDe/lSTDKSICEc9oTNMkT5MoSqaTuMzTMk5YChxSHKig5ApbFzvCo8sOCf6oxK0bj1tnZP04nC+HKTc7UBvmWcVRQPiL4zXjyEeAsjwgFdQMnDbrPWI4sKtavQJLWTscR3zzi5U/cWGSZb5RcJRIeV/cH4vBvh4WZ+AAqbTUtWZopUstKbe9OYwLaJVbHGJ9w1XTGd1dcVCq3W2t2qr+2jtC9gN2XwuR1iIJ3nilnvqgQ9ws9ep6x/Jc1p0rQ1FpCmp/Aofela3zfDaEK17hoKKCpkFHi8boZ9ldRi5V+KjwEAqlV7jUv8MQqCceorEQniN+1sF3YKRX8QXH4OWeZglW0qJ7szgObeJkGxC7tgsF1r6KRHeLH62n2EsexBW9P/4KNbJxp7j5mQ86tsHbCBy8/s0mifLpCcsm4yzns/EkjcR4mucn46nIp6KMWZKU01A6XoWN4UxSx1nR3d5u79soShlqexuXT5v7sXzNIBNZHGXH8zXJj+XrSLI+GKrknVD5L/qXmYqi6H+o/jlU0hZ9FAZt3fJPzNSDD1C/c+81lRap3XrsYvfv4wtrfFySHkIrbZ68qFds+wtP1FChxwYAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=16315713302643107f440692325fee04^sys_idNOT INae315713302643107f440692325fee2c,4991d8e3302e43107f440692325feee3,0991d8e3302e43107f440692325feee4"/>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>16315713302643107f440692325fee04</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{ddaab484-2c7d-45ca-b1c7-0cfeca452ac0.prediction_results}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-12 13:23:39</sys_created_on>
+        <sys_id>ae315713302643107f440692325fee2c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-12 13:23:39</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>89b5047f-ebec-49c5-b95a-208da9df2adf</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>16315713302643107f440692325fee04</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{ddaab484-2c7d-45ca-b1c7-0cfeca452ac0.prediction_results}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-12 18:04:48</sys_created_on>
+        <sys_id>4991d8e3302e43107f440692325feee3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-12 18:04:48</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>c0e435ed-f630-40ef-b30d-8451e5efa9a3</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>16315713302643107f440692325fee04</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{ddaab484-2c7d-45ca-b1c7-0cfeca452ac0.prediction_results}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-12 18:04:48</sys_created_on>
+        <sys_id>0991d8e3302e43107f440692325feee4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-12 18:04:48</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>33a11323-6fb0-4380-adc2-040936476c47</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_flow_variable action="delete_multiple" query="model=16315713302643107f440692325fee04"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_16315713302643107f440692325fee04</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-12 13:23:38</sys_created_on>
+        <sys_id>26315713302643107f440692325fee1e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-12 13:23:38</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>current</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_16315713302643107f440692325fee04</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-12 13:23:38</sys_created_on>
+        <sys_id>5a315713302643107f440692325fee14</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-12 13:23:38</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_16315713302643107f440692325fee04"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_16315713302643107f440692325fee04"/>
+    <sys_hub_flow action="UPDATE">
+        <sys_id>3dae2d9b306603107f440692325fee61</sys_id>
+        <latest_snapshot>16315713302643107f440692325fee04</latest_snapshot>
+        <compiler_build>glide-australia-02-11-2026__patch2-04-17-2026_04-29-2026_2044.zip</compiler_build>
+        <version_record/>
+    </sys_hub_flow>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=3dae2d9b306603107f440692325fee61^sys_idNOT IN2e315713302643107f440692325fee4b"/>
+    <sys_flow_trigger_plan action="INSERT_OR_UPDATE">
+        <binding_strategy>com.snc.process_flow.engine.binding.OncePerRecord</binding_strategy>
+        <plan>{"@class":"com.snc.process_flow.engine.serialization.plan_data.ChunkingPlanData","chunk_data":{"table":"sys_flow_trigger_plan","id":"2e315713302643107f440692325fee4b","name":"plan","plan_signature":null},"plan_data":"CHUNKING_PLAN"}</plan>
+        <plan_id>3dae2d9b306603107f440692325fee61</plan_id>
+        <snapshot>47c037acfdfa03107f44ed6bc0951236</snapshot>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-12 13:23:39</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>2e315713302643107f440692325fee4b</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-13 09:56:29</sys_updated_on>
+        <trigger display_value="">6558ab0ad0ea43107f442ed909dd8452</trigger>
+    </sys_flow_trigger_plan>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=3dae2d9b306603107f440692325fee61"/>
+</record_update>

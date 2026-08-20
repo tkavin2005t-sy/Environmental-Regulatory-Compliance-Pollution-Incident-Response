@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.ec-kpi-grid {&#13;
+  display: grid;&#13;
+  grid-template-columns: repeat(4, 1fr);&#13;
+  gap: 18px;&#13;
+  width: 100%;&#13;
+  padding: 5px 0;&#13;
+}&#13;
+&#13;
+.ec-kpi-card {&#13;
+  background: #ffffff;&#13;
+  border-radius: 14px;&#13;
+  padding: 20px;&#13;
+  min-height: 125px;&#13;
+  display: flex;&#13;
+  align-items: center;&#13;
+  gap: 15px;&#13;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.08);&#13;
+  border: 1px solid #e6eeee;&#13;
+  transition: transform 0.2s ease;&#13;
+}&#13;
+&#13;
+.ec-kpi-card:hover {&#13;
+  transform: translateY(-3px);&#13;
+}&#13;
+&#13;
+.ec-kpi-icon {&#13;
+  width: 50px;&#13;
+  height: 50px;&#13;
+  min-width: 50px;&#13;
+  border-radius: 12px;&#13;
+  display: flex;&#13;
+  align-items: center;&#13;
+  justify-content: center;&#13;
+  font-size: 22px;&#13;
+}&#13;
+&#13;
+.ec-kpi-icon.complaints {&#13;
+  background: #e5f5f1;&#13;
+  color: #087f73;&#13;
+}&#13;
+&#13;
+.ec-kpi-icon.risk {&#13;
+  background: #fff0ed;&#13;
+  color: #e05a47;&#13;
+}&#13;
+&#13;
+.ec-kpi-icon.inspection {&#13;
+  background: #eaf2ff;&#13;
+  color: #2563c7;&#13;
+}&#13;
+&#13;
+.ec-kpi-icon.completion {&#13;
+  background: #edf8ee;&#13;
+  color: #249447;&#13;
+}&#13;
+&#13;
+.ec-kpi-title {&#13;
+  font-size: 14px;&#13;
+  font-weight: 600;&#13;
+  color: #667085;&#13;
+  margin-bottom: 5px;&#13;
+}&#13;
+&#13;
+.ec-kpi-value {&#13;
+  font-size: 30px;&#13;
+  font-weight: 700;&#13;
+  line-height: 1.1;&#13;
+  color: #123b3a;&#13;
+}&#13;
+&#13;
+.ec-kpi-subtitle {&#13;
+  font-size: 11px;&#13;
+  color: #98a2b3;&#13;
+  margin-top: 5px;&#13;
+}&#13;
+&#13;
+@media (max-width: 900px) {&#13;
+  .ec-kpi-grid {&#13;
+    grid-template-columns: repeat(2, 1fr);&#13;
+  }&#13;
+}&#13;
+&#13;
+@media (max-width: 550px) {&#13;
+  .ec-kpi-grid {&#13;
+    grid-template-columns: 1fr;&#13;
+  }&#13;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description>Dynamic KPI cards for Environmental Compliance Dashboard</description>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>ec_dashboard_kpi_cards</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>EC Dashboard KPI Cards</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+
+    // ==============================
+    // TOTAL COMPLAINTS
+    // ==============================
+    var complaintGR = new GlideAggregate('x_snc_environmen_0_complaint');
+    complaintGR.addAggregate('COUNT');
+    complaintGR.query();
+
+    data.total_complaints = 0;
+
+    if (complaintGR.next()) {
+        data.total_complaints = parseInt(
+            complaintGR.getAggregate('COUNT'),
+            10
+        );
+    }
+
+
+    // ==============================
+    // HIGH RISK COMPLAINTS
+    // ==============================
+    var highRiskGR = new GlideAggregate('x_snc_environmen_0_complaint');
+
+    highRiskGR.addQuery('risk_level', 'high');
+    highRiskGR.addAggregate('COUNT');
+    highRiskGR.query();
+
+    data.high_risk = 0;
+
+    if (highRiskGR.next()) {
+        data.high_risk = parseInt(
+            highRiskGR.getAggregate('COUNT'),
+            10
+        );
+    }
+
+
+    // ==============================
+    // TOTAL INSPECTIONS
+    // ==============================
+    var inspectionGR = new GlideAggregate('x_snc_environmen_0_inspection');
+
+    inspectionGR.addAggregate('COUNT');
+    inspectionGR.query();
+
+    var totalInspections = 0;
+
+    if (inspectionGR.next()) {
+        totalInspections = parseInt(
+            inspectionGR.getAggregate('COUNT'),
+            10
+        );
+    }
+
+
+    // ==============================
+    // ACTIVE INSPECTIONS
+    // ==============================
+    var activeInspectionGR = new GlideAggregate(
+        'x_snc_environmen_0_inspection'
+    );
+
+    activeInspectionGR.addQuery(
+        'inspection_status',
+        '!=',
+        'completed'
+    );
+
+    activeInspectionGR.addAggregate('COUNT');
+    activeInspectionGR.query();
+
+    data.active_inspections = 0;
+
+    if (activeInspectionGR.next()) {
+        data.active_inspections = parseInt(
+            activeInspectionGR.getAggregate('COUNT'),
+            10
+        );
+    }
+
+
+    // ==============================
+    // COMPLETION PERCENTAGE
+    // ==============================
+    var completedGR = new GlideAggregate(
+        'x_snc_environmen_0_inspection'
+    );
+
+    completedGR.addQuery(
+        'inspection_status',
+        'completed'
+    );
+
+    completedGR.addAggregate('COUNT');
+    completedGR.query();
+
+    var completedInspections = 0;
+
+    if (completedGR.next()) {
+        completedInspections = parseInt(
+            completedGR.getAggregate('COUNT'),
+            10
+        );
+    }
+
+    if (totalInspections > 0) {
+        data.completion_percentage = Math.round(
+            (completedInspections / totalInspections) * 100
+        );
+    } else {
+        data.completion_percentage = 0;
+    }
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-18 09:12:54</sys_created_on>
+        <sys_id>4f701551213e03107f443754fb88d4d4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>EC Dashboard KPI Cards</sys_name>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>sp_widget_4f701551213e03107f443754fb88d4d4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-18 09:12:54</sys_updated_on>
+        <template><![CDATA[<div class="ec-kpi-grid">
+
+  <div class="ec-kpi-card">
+    <div class="ec-kpi-icon complaints">
+      <i class="fa fa-file-text-o"></i>
+    </div>
+    <div class="ec-kpi-content">
+      <div class="ec-kpi-title">Total Complaints</div>
+      <div class="ec-kpi-value">{{data.total_complaints}}</div>
+      <div class="ec-kpi-subtitle">All reported incidents</div>
+    </div>
+  </div>
+
+  <div class="ec-kpi-card">
+    <div class="ec-kpi-icon risk">
+      <i class="fa fa-warning"></i>
+    </div>
+    <div class="ec-kpi-content">
+      <div class="ec-kpi-title">High Risk</div>
+      <div class="ec-kpi-value">{{data.high_risk}}</div>
+      <div class="ec-kpi-subtitle">Requires immediate attention</div>
+    </div>
+  </div>
+
+  <div class="ec-kpi-card">
+    <div class="ec-kpi-icon inspection">
+      <i class="fa fa-search"></i>
+    </div>
+    <div class="ec-kpi-content">
+      <div class="ec-kpi-title">Active Inspections</div>
+      <div class="ec-kpi-value">{{data.active_inspections}}</div>
+      <div class="ec-kpi-subtitle">Currently ongoing</div>
+    </div>
+  </div>
+
+  <div class="ec-kpi-card">
+    <div class="ec-kpi-icon completion">
+      <i class="fa fa-check-circle"></i>
+    </div>
+    <div class="ec-kpi-content">
+      <div class="ec-kpi-title">Completion</div>
+      <div class="ec-kpi-value">{{data.completion_percentage}}%</div>
+      <div class="ec-kpi-subtitle">Inspections completed</div>
+    </div>
+  </div>
+
+</div>]]></template>
+    </sp_widget>
+</record_update>

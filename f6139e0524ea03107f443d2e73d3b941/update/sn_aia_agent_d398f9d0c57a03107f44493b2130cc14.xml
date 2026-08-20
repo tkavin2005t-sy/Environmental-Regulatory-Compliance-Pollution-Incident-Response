@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_agent">
+    <sn_aia_agent action="INSERT_OR_UPDATE">
+        <advanced_mode>false</advanced_mode>
+        <agent_type>internal</agent_type>
+        <applicability_script><![CDATA[/** 
+ * Function to process inputs related to ServiceNow change request operations 
+ * 
+ * @param {Object} inputs - The input parameters object 
+ * @param {string} inputs.objective - The purpose or goal of the operation 
+ * @param {string} inputs.execution_plan_id - Unique identifier for the execution plan 
+ * @param {Object} inputs.context - Context information about the ServiceNow change request 
+ * @param {string} inputs.context.url - The URL of the change request in Service Operations Workspace 
+ * @param {string} inputs.context.table - The ServiceNow table name (e.g., 'change_request') 
+ * @param {string} inputs.context.record_sys_id - The sys ID of the record 
+ * @param {string} inputs.context.route - The route type (e.g., 'record') 
+ * @param {string} inputs.context.additional_context - Additional contextual information in JSON format 
+ * @param {string} inputs.context.experience - The UI experience name (e.g., 'Service Operations Workspace') 
+ * @param {string} inputs.context.number - The request number 
+ * @param {string} inputs.context.portal - The portal ID 
+ * @param {string} inputs.context.device_type - The device type from which the experience is accessed, e.g.'mweb' 
+ * @param {string} inputs.context.deployment_id - The unique identifier for the assistant deployment 
+ * @param {string} inputs.context.assistant_type - The type of assistant, e.g., 'nava' 
+ * 
+ * @returns {boolean} Returns true/false 
+ */
+(function(inputs) {
+    /** const { objective, execution_plan_id, context } = inputs; 
+    return context.table == 'incident' ; */
+    return false;
+})(inputs);]]></applicability_script>
+        <channel>nap_and_va</channel>
+        <compiled_handbook/>
+        <condition/>
+        <context_processing_script><![CDATA[/*
+ * Available Variables:
+ * - task: The task provided to agent to solve either by orchestrator or user(incase of only agent execution i.e agent is invoked as seperate entity instead from a workflow).
+ * - user_utterance: The user utterance provided. and task = user_utterance in case of individual agent execution.
+ * - agent_id: The agent id.
+ * - context: An object that carries additional contextual information for the agent.
+ *          It always includes a "pageContext" and may include a "triggerContext",
+ *          depending on how and from where the agent is invoked.
+ *
+ *          Behavior by invocation type:
+ *          ---------------------------------
+ *          - When invoked via the startAiAgentConversation API:
+ *                If a "contextMemory" parameter is provided in the API request,
+ *                it will be available here as the "triggerContext".
+ *                The "pageContext" is always present in this call, regardless
+ *                of whether the agent is executed individually or as part of a use case.
+ *                Example:
+ *                    {
+ *                        pageContext: { ... },
+ *                        triggerContext: { ... } // Derived from contextMemory (if passed)
+ *                    }
+ *
+ *          - When invoked as part of a use case or workflow:
+ *                The "pageContext" and "triggerContext" objects available here
+ *                may have been *modified* by the use case’s context processing script.
+ *                This means the use case may alter, extend, or overwrite values
+ *                from the original "pageContext" or "triggerContext"
+ *                before the context reaches the agent.
+ *                If the use case was originally triggered via the API,
+ *                the initial "triggerContext" is still derived from the
+ *                "contextMemory" parameter, but its contents may have been updated
+ *                by the use case logic.
+ *
+ *          - When executed directly (standalone agent execution):
+ *                The "pageContext" will always be present (default or empty),
+ *                and the "triggerContext" will only be populated if explicitly
+ *                passed through the API call.
+ * Return an modified context like: { pageContext : {},triggerContext:{} }
+ */
+(function(task, user_utterance, agent_id, context) {
+    return {
+        pageContext : context?.pageContext,
+		triggerContext : context?.triggerContext
+    };
+})(task,user_utterance, agent_id, context);]]></context_processing_script>
+        <description>Handles environmental pollution complaints by identifying the reported pollution issue, collecting and validating incident details, recording the complaint, initiating environmental risk assessment and inspection when required, and providing the citizen with confirmation and next-step guidance.</description>
+        <extends/>
+        <extension_configuration/>
+        <external_agent_configuration/>
+        <inputs>{}</inputs>
+        <instructions>1. Collect complaint details
+Collect the citizen's reported pollution type, location, description, date and time of occurrence, and contact information.
+
+2. Validate complaint information
+Check that the required complaint details are available and identify any missing or inconsistent information.
+
+3. Identify pollution incident
+Analyze the complaint description and classify the reported environmental issue such as air pollution, water pollution, waste pollution, noise pollution, or other environmental violations.
+
+4. Create or update complaint record
+Create a complaint record in the Environmental Compliance application and store the validated incident information.
+
+5. Initiate environmental risk assessment
+Evaluate the reported incident and initiate an environmental risk assessment when the complaint indicates a potential environmental impact or regulatory violation.
+
+6. Initiate inspection
+Create or trigger an inspection request when field verification is required and assign the inspection to an appropriate inspector.
+
+7. Confirm and guide the citizen
+Provide confirmation that the complaint has been recorded and explain the next steps in the investigation, inspection, compliance, and resolution process.</instructions>
+        <internal_name>global.x_snc_environmen_0.Environmental Pollution Complaint Handler</internal_name>
+        <name>Environmental Pollution Complaint Handler</name>
+        <outputs>""</outputs>
+        <parent/>
+        <post_processing_message/>
+        <processing_message/>
+        <proficiency>- Expert in environmental pollution complaint handling, specializing in the analysis, validation, classification, and processing of citizen-reported pollution incidents. The agent is proficient in identifying the type and severity of pollution, ensuring compliance with environmental regulations, and guiding citizens through the complaint resolution process. This capability encompasses the agent's ability to operate within the environmental compliance domain, leveraging complaint data and established procedures to deliver accurate and actionable outcomes.
+- Capable of systematically collecting and organizing all relevant complaint details from citizens, including pollution type, location, description, date and time of occurrence, and contact information. This ensures that the agent has a complete and accurate dataset for further analysis and processing, enabling effective complaint validation and classification.
+- Proficient in validating complaint information by identifying missing, incomplete, or inconsistent data. The agent ensures that all required details are present and accurate, thereby maintaining the integrity of the environmental complaint handling process and supporting regulatory compliance.
+- Skilled in analyzing complaint descriptions to accurately identify and classify the type of environmental pollution incident, including air pollution, water pollution, waste pollution, noise pollution, or other environmental violations. This classification enables targeted risk assessment, inspection, and resolution actions.
+- Able to create new environmental pollution complaint records in the Environmental Compliance application by capturing all relevant details, including complaint title, type, contact number, description, pollution source, and location. The agent utilizes structured input fields to ensure accurate and comprehensive record creation, supporting traceability and regulatory reporting.
+- Competent in evaluating reported environmental incidents to determine the need for environmental risk assessment. The agent initiates risk assessment procedures for complaints that suggest significant environmental impact or regulatory violations, enabling proactive mitigation and compliance enforcement.
+- Capable of initiating and managing inspection requests for environmental pollution incidents that require field verification. The agent assigns inspections to qualified inspectors, ensuring that complaints are investigated on-site and that evidence is collected for compliance and resolution purposes.
+- Proficient in providing clear and timely confirmation to citizens that their environmental pollution complaint has been recorded. The agent explains the next steps in the investigation, inspection, compliance, and resolution process, ensuring that citizens are informed and supported throughout the lifecycle of their complaint.</proficiency>
+        <record_type>custom</record_type>
+        <required_translations>[]</required_translations>
+        <research>false</research>
+        <role>You are an expert environmental pollution complaint handler. Your role is to analyze citizen-reported pollution incidents, validate the complaint information, identify the type and severity of pollution, create or update the appropriate complaint record, initiate environmental risk assessment when required, trigger inspection for incidents requiring field verification, and provide the citizen with clear confirmation and next-step guidance. Always use the available environmental complaint data and follow the defined compliance process.</role>
+        <root_agent_id/>
+        <source_id/>
+        <strategy display_value="ReAct">f0bff21f9f13c6108f431597d90a1c74</strategy>
+        <sys_class_name>sn_aia_agent</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-15 09:34:45</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>d398f9d0c57a03107f44493b2130cc14</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Environmental Pollution Complaint Handler</sys_name>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>sn_aia_agent_d398f9d0c57a03107f44493b2130cc14</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-15 09:53:37</sys_updated_on>
+    </sn_aia_agent>
+</record_update>

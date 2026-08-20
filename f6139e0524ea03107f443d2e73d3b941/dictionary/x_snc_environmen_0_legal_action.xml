@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="4bacefd0c5ba43107f44493b2130cc35" label="Legal Action" max_length="40" name="x_snc_environmen_0_legal_action" type="collection">
+        <element label="Remarks" max_length="40" name="remarks" type="string"/>
+        <element label="Action Date" max_length="40" name="action_date" type="glide_date"/>
+        <element label="Penalty Amount" max_length="38" name="penalty_amount" type="decimal"/>
+        <element choice="3" label="Action Status" max_length="255" name="action_status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Under Review" sequence="1" value="under_review"/>
+                <element inactive_on_update="false" label="Completed" sequence="2" value="completed"/>
+                <element inactive_on_update="false" label="Cancelled" sequence="3" value="cancelled"/>
+                <element inactive_on_update="false" label="Initiated" sequence="0" value="initiated"/>
+            </choice>
+        </element>
+        <element choice="3" label="Action Type" max_length="40" name="action_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Prosecution" sequence="3" value="prosecution"/>
+                <element inactive_on_update="false" label="Legal Notice" sequence="1" value="legal_notice"/>
+                <element inactive_on_update="false" label="Warning Notice" sequence="0" value="warning_notice"/>
+                <element inactive_on_update="false" label="Fine" sequence="2" value="fine"/>
+            </choice>
+        </element>
+        <element label="Inspection" max_length="32" name="inspection" reference="x_snc_environmen_0_inspection" type="reference"/>
+        <element label="complaint" max_length="32" name="complaint" reference="x_snc_environmen_0_complaint" type="reference"/>
+        <index name="index">
+            <element name="complaint"/>
+        </index>
+        <index name="index2">
+            <element name="inspection"/>
+        </index>
+    </element>
+</database>

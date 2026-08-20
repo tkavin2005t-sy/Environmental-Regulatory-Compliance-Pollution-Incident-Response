@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role">
+    <sys_user_role action="INSERT_OR_UPDATE">
+        <assignable_by/>
+        <can_delegate>true</can_delegate>
+        <description/>
+        <elevated_privilege>false</elevated_privilege>
+        <encryption_context/>
+        <federated_id>TRyswVlt5KlLh9ouJXWQbZWX6h3g9VVbFal1TYEnpbk=</federated_id>
+        <grantable>true</grantable>
+        <includes_roles/>
+        <name>x_snc_environmen_0.complaint_user</name>
+        <scoped_admin>false</scoped_admin>
+        <suffix>complaint_user</suffix>
+        <sys_class_name>sys_user_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-05 10:03:21</sys_created_on>
+        <sys_id>18402e45246e03107f443d2e73d3b9c7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_snc_environmen_0.complaint_user</sys_name>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>sys_user_role_18402e45246e03107f443d2e73d3b9c7</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-05 10:03:21</sys_updated_on>
+    </sys_user_role>
+</record_update>

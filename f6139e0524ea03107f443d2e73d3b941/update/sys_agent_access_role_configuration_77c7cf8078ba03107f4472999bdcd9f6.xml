@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_agent_access_role_configuration">
+    <sys_agent_access_role_configuration action="INSERT_OR_UPDATE">
+        <action>limit_to_roles</action>
+        <agent>daf30f08787a03107f4472999bdcd999</agent>
+        <agent_table>sn_aia_usecase</agent_table>
+        <allow_all_session_roles>false</allow_all_session_roles>
+        <description/>
+        <name>daf30f08787a03107f4472999bdcd999</name>
+        <role_list name="snc_internal">7fcaa702933002009c8579b4f47ffbde</role_list>
+        <sys_class_name>sys_agent_access_role_configuration</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-14 20:37:56</sys_created_on>
+        <sys_id>77c7cf8078ba03107f4472999bdcd9f6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>daf30f08787a03107f4472999bdcd999</sys_name>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>sys_agent_access_role_configuration_77c7cf8078ba03107f4472999bdcd9f6</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-14 20:37:56</sys_updated_on>
+    </sys_agent_access_role_configuration>
+</record_update>

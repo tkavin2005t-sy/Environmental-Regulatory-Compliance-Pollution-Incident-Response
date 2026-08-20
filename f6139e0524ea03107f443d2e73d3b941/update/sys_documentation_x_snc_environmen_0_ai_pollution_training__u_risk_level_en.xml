@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="u_risk_level" label="risk_level" language="en" table="x_snc_environmen_0_ai_pollution_training_">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>u_risk_level</element>
+            <help/>
+            <hint/>
+            <label>risk_level</label>
+            <language>en</language>
+            <name>x_snc_environmen_0_ai_pollution_training_</name>
+            <plural>risk_levels</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-12 04:29:41</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>risk_level</sys_name>
+            <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+            <sys_update_name>sys_documentation_x_snc_environmen_0_ai_pollution_training__u_risk_level_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-12 04:29:41</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

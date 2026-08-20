@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="85aca2d1912603107f441961e66ff8e3" label="Inspection" max_length="40" name="x_snc_environmen_0_inspection" type="collection">
+        <element label="Inspection Date" max_length="40" name="inspection_date" type="glide_date_time"/>
+        <element choice="3" label="Recommended Action" max_length="255" name="recommended_action" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Further Investigation" sequence="5" value="further_investigation"/>
+                <element inactive_on_update="false" label="No Action Required" sequence="0" value="no_action_required"/>
+                <element inactive_on_update="false" label="Issue Warning" sequence="1" value="issue_warning"/>
+                <element inactive_on_update="false" label="Issue Notice" sequence="2" value="issue_notice"/>
+                <element inactive_on_update="false" label="Immediate Closure" sequence="4" value="immediate_closure"/>
+                <element inactive_on_update="false" label="Impose Fine" sequence="3" value="impose_fine"/>
+            </choice>
+        </element>
+        <element label="Complaint" max_length="32" name="complaint" reference="x_snc_environmen_0_complaint" type="reference"/>
+        <element choice="3" label="Inspection Status" max_length="255" name="inspection_status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Assigned" sequence="0" value="assigned"/>
+                <element inactive_on_update="false" label="Closed" sequence="3" value="closed"/>
+                <element inactive_on_update="false" label="In Progress" sequence="1" value="in_progress"/>
+                <element inactive_on_update="false" label="Completed" sequence="2" value="completed"/>
+            </choice>
+        </element>
+        <element label="FSM Task" max_length="32" name="fsm_task" reference="wm_task" type="reference"/>
+        <element label="Assigned Inspector" max_length="32" name="assigned_inspector" reference="x_snc_environmen_0_inspector" type="reference"/>
+        <element label="Inspection Findings" max_length="40" name="inspection_findings" type="html"/>
+        <element choice="3" label="Inspection Outcome" max_length="40" name="inspection_outcome" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Pollution Confirmed" sequence="0" value="pollution_confirmed"/>
+                <element inactive_on_update="false" label="Temporary Closure" sequence="8" value="temporary_closure"/>
+                <element inactive_on_update="false" label="Insufficient Evidence" sequence="2" value="insufficient_evidence"/>
+                <element inactive_on_update="false" label="No Pollution Found" sequence="1" value="no_pollution_found"/>
+                <element inactive_on_update="false" label="Fine Imposed" sequence="6" value="fine_imposed"/>
+                <element inactive_on_update="false" label="Major Violation" sequence="10" value="major_violation"/>
+                <element inactive_on_update="false" label="Under Investigation" sequence="3" value="under_investigation"/>
+                <element inactive_on_update="false" label="Legal Action Recommended" sequence="9" value="legal_action_recommended"/>
+                <element inactive_on_update="false" label="Site Inspection Required" sequence="7" value="site_inspection_required"/>
+                <element inactive_on_update="false" label="Warning Issued" sequence="5" value="warning_issued"/>
+                <element inactive_on_update="false" label="No Action Required" sequence="4" value="no_action_required"/>
+            </choice>
+        </element>
+        <element label="Inspector Remarks" max_length="40" name="inspector_remarks" type="html"/>
+        <element label="Inspector" max_length="32" name="inspector" reference="x_snc_environmen_0_inspector" type="reference"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Inspection Number" max_length="40" name="number" type="string"/>
+        <element label="High Authority" max_length="32" name="high_authority" reference="sys_user" type="reference"/>
+        <index name="index">
+            <element name="assigned_inspector"/>
+        </index>
+        <index name="index2">
+            <element name="complaint"/>
+        </index>
+        <index name="index3">
+            <element name="fsm_task"/>
+        </index>
+        <index name="index4">
+            <element name="high_authority"/>
+        </index>
+        <index name="index5">
+            <element name="inspector"/>
+        </index>
+    </element>
+</database>

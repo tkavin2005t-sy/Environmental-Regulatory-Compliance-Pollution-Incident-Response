@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_agent_tool_m2m">
+    <sn_aia_agent_tool_m2m action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <agent display_value="Environmental Pollution Voice Complaint Assistant 2">12d9e773c0a2c3107f44ce324722fe9c</agent>
+        <description>Creates a new environmental pollution complaint record in ServiceNow after the citizen confirms the complaint details. Use this tool only after collecting the required complaint information, translating it into English, and receiving confirmation from the citizen. Preserve the original-language transcript and the English complaint details when the configured fields are available.</description>
+        <display_mode>inline</display_mode>
+        <display_output>false</display_output>
+        <document_status/>
+        <entity>sn_aia_agent</entity>
+        <entity_id>12d9e773c0a2c3107f44ce324722fe9c</entity_id>
+        <execution_mode>autopilot</execution_mode>
+        <inputs>[{"name":"complaint_title","value":"","description":"The short title of the environmental pollution complaint confirmed by the citizen.","mandatory":false},{"name":"citizen_name","value":"","description":"The full name of the citizen reporting the environmental pollution complaint.","mandatory":false},{"name":"contact_number","value":"","description":"The citizen's contact number for complaint follow-up and communication.","mandatory":false},{"name":"complaint_description","value":"","description":"The complete environmental pollution complaint description provided and confirmed by the citizen.","mandatory":false},{"name":"complaint_type","value":"","description":"The type of environmental pollution reported by the citizen, such as air, water, noise, or waste pollution.","mandatory":false},{"name":"pollution_category","value":"","description":"The pollution category identified from the citizen's environmental complaint.","mandatory":false},{"name":"pollution_source","value":"","description":"The suspected source of the environmental pollution reported by the citizen.","mandatory":false},{"name":"location","value":"","description":"The location where the environmental pollution incident was observed.","mandatory":false},{"name":"district","value":"","description":"The district where the environmental pollution incident occurred.","mandatory":false},{"name":"number_of_people_affected","value":"","description":"The estimated number of people affected by the reported environmental pollution incident.","mandatory":false},{"name":"email_address","value":"","description":"The citizen's email address for complaint acknowledgement and follow-up communication.","mandatory":false},{"name":"crudInputs","value":{"operation":"create","table":{"value":"x_snc_environmen_0_complaint","displayValue":"Complaint"},"fieldValues":[{"field":{"name":"complaint_title","label":"Complaint Title","type":"string","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"id":"complaint_title","sublabel":"complaint_title"},"value":{"fieldValue":"{{complaint_title}}"}},{"field":{"name":"citizen_name","label":"Citizen Name","type":"string","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"id":"citizen_name","sublabel":"citizen_name"},"value":{"fieldValue":"{{citizen_name}}"}},{"field":{"name":"contact_number","label":"Contact Number","type":"phone_number_e164","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"id":"contact_number","sublabel":"contact_number"},"value":{"fieldValue":"{{contact_number}}"}},{"field":{"name":"description","label":"Description","type":"html","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"id":"description","sublabel":"description"},"value":{"fieldValue":"{{complaint_description}}"}},{"field":{"name":"complaint_type","label":"Complaint Type","type":"choice","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"id":"complaint_type","sublabel":"complaint_type"},"value":{"fieldValue":"{{complaint_type}}"}},{"field":{"name":"pollution_category","label":"Pollution Category","type":"choice","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"id":"pollution_category","sublabel":"pollution_category"},"value":{"fieldValue":"{{pollution_category}}"}},{"field":{"name":"pollution_source","label":"Pollution Source","type":"choice","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"id":"pollution_source","sublabel":"pollution_source"},"value":{"fieldValue":"{{pollution_source}}"}},{"field":{"name":"location","label":"Location","type":"string","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"id":"location","sublabel":"location"},"value":{"fieldValue":"{{location}}"}},{"field":{"name":"district","label":"District","type":"string","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"id":"district","sublabel":"district"},"value":{"fieldValue":"{{district}}"}},{"field":{"name":"number_of_people_affected","label":"Number of People Affected","type":"integer","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"id":"number_of_people_affected","sublabel":"number_of_people_affected"},"value":{"fieldValue":"{{number_of_people_affected}}"}},{"field":{"name":"email_address","label":"Email Address","type":"string","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"id":"email_address","sublabel":"email_address"},"value":{"fieldValue":"{{email_address}}"}}]},"description":"CRUD Input Variables. These are already pre-defined. Under no circumstances should you prompt the user for this information or attempt to change these values."}]</inputs>
+        <max_auto_executions>10</max_auto_executions>
+        <name>Create Environmental Complaint Record</name>
+        <output_transformation_strategy>none</output_transformation_strategy>
+        <post_message/>
+        <post_processing_script/>
+        <pre_message/>
+        <pre_run>false</pre_run>
+        <requires_text_refined_message>false</requires_text_refined_message>
+        <requires_widget_transformation>true</requires_widget_transformation>
+        <should_display_refined_message>false</should_display_refined_message>
+        <sys_class_name>sn_aia_agent_tool_m2m</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-14 04:53:36</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>62afefffc0a2c3107f44ce324722fe68</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Create Environmental Complaint Record</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>sn_aia_agent_tool_m2m_62afefffc0a2c3107f44ce324722fe68</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-14 04:53:36</sys_updated_on>
+        <timeout/>
+        <tool display_value="Create Environmental Complaint Record">eeaf6337c0a2c3107f44ce324722fe07</tool>
+        <tool_attributes>{}</tool_attributes>
+        <transformation_instructions/>
+        <widgets>db0e858eff62b210f465ffffffffff2c</widgets>
+    </sn_aia_agent_tool_m2m>
+</record_update>

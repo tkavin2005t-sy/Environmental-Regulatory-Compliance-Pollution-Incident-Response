@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_dictionary action="DELETE" element="compliance_statu0" table="x_snc_environmen_0_complaint">
+        <active>true</active>
+        <array>false</array>
+        <attributes/>
+        <audit>false</audit>
+        <calculation/>
+        <choice>3</choice>
+        <choice_field/>
+        <choice_table/>
+        <column_label>Compliance Status</column_label>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>compliance_statu0</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <internal_type display_value="Choice">choice</internal_type>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <name>x_snc_environmen_0_complaint</name>
+        <next_element/>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option>display_read_only</read_only_option>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_dictionary</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-07 04:45:25</sys_created_on>
+        <sys_id>e2aaa725a8a203107f44c5b727ce257d</sys_id>
+        <sys_name>Compliance Status</sys_name>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>sys_dictionary_x_snc_environmen_0_complaint_compliance_statu0</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-07 05:38:16</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_dictionary>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</application>
+        <file_path/>
+        <instance_id>57b1043093560750fb38f8284dba10f5</instance_id>
+        <instance_name>dlt-hck-8017-0040</instance_name>
+        <name>sys_dictionary_x_snc_environmen_0_complaint_compliance_statu0</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_dictionary action="INSERT_OR_UPDATE" element="compliance_statu0" table="x_snc_environmen_0_complaint"><active>true</active><array>false</array><attributes/><audit>false</audit><calculation/><choice>3</choice><choice_field/><choice_table/><column_label>Compliance Status</column_label><comments/><create_roles/><default_value/><defaultsort/><delete_roles/><dependent/><dependent_on_field/><display>false</display><dynamic_creation>false</dynamic_creation><dynamic_creation_script/><dynamic_default_value/><dynamic_ref_qual/><element>compliance_statu0</element><element_reference>false</element_reference><foreign_database/><formula/><function_definition/><function_field>false</function_field><internal_type display_value="Choice">choice</internal_type><mandatory>false</mandatory><max_length>40</max_length><name>x_snc_environmen_0_complaint</name><next_element/><primary>false</primary><read_only>false</read_only><read_only_option>display_read_only</read_only_option><read_roles/><reference/><reference_cascade_rule/><reference_floats>false</reference_floats><reference_key/><reference_qual/><reference_qual_condition/><reference_type/><spell_check>false</spell_check><staged>false</staged><sys_class_name>sys_dictionary</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-07 04:45:25</sys_created_on><sys_id>e2aaa725a8a203107f44c5b727ce257d</sys_id><sys_name>Compliance Status</sys_name><sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package><sys_policy/><sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope><sys_update_name>sys_dictionary_x_snc_environmen_0_complaint_compliance_statu0</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-07 05:38:16</sys_updated_on><table_reference>false</table_reference><text_index>false</text_index><unique>false</unique><use_dependent_field>false</use_dependent_field><use_dynamic_default>false</use_dynamic_default><use_reference_qualifier>simple</use_reference_qualifier><virtual>false</virtual><virtual_type>script</virtual_type><widget/><write_roles/><xml_view>false</xml_view></sys_dictionary></record_update>]]></payload>
+        <payload_hash>-358919160</payload_hash>
+        <record_name>Complaint.Compliance Status</record_name>
+        <reverted_from/>
+        <source>be139e0524ea03107f443d2e73d3b944</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-07 05:38:16</sys_created_on>
+        <sys_id>30c6f3ada8e203107f44c5b727ce2539</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19fdabab3130000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-07 05:38:16</sys_updated_on>
+        <type>Dictionary</type>
+        <update_guid>70c6f3ad2ce20310bed3895cd106dc38</update_guid>
+        <update_guid_history>70c6f3ad2ce20310bed3895cd106dc38:-358919160,07aae72514a20310207ee602d276195f:623866413,f2aaa725e8a203101b346ced9ad56eee:1271818482</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-07 06:34:39</sys_created_on>
+        <sys_db_object display_value="" name="sys_dictionary">sys_dictionary</sys_db_object>
+        <sys_id>15ff98d9c5eb46008d0a67238ef016a4</sys_id>
+        <sys_metadata>e2aaa725a8a203107f44c5b727ce257d</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Compliance Status</sys_name>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_parent display_value="Complaint">7495564924ea03107f443d2e73d3b97d</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_scope_delete display_value="">57bcfbaf4a844eb88d8c57ea65d55310</sys_scope_delete>
+        <sys_update_name>sys_dictionary_x_snc_environmen_0_complaint_compliance_statu0</sys_update_name>
+        <sys_update_version display_value="sys_dictionary_x_snc_environmen_0_complaint_compliance_statu0">30c6f3ada8e203107f44c5b727ce2539</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-07 06:34:39</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

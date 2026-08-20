@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_agent_tool_m2m">
+    <sn_aia_agent_tool_m2m action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <agent display_value="Environmental Pollution Voice Complaint Agent">1e2ff0d0c57203107f44493b2130cc33</agent>
+        <description>Creates a new environmental pollution complaint record from information provided by a citizen through the voice assistant. Collects the complaint description, pollution type, location, incident details, and citizen information when required, then creates the complaint record for further automated processing.</description>
+        <display_mode>inline</display_mode>
+        <display_output>false</display_output>
+        <document_status/>
+        <entity>sn_aia_agent</entity>
+        <entity_id>1e2ff0d0c57203107f44493b2130cc33</entity_id>
+        <execution_mode>autopilot</execution_mode>
+        <inputs>[{"name":"citizen_name","value":"","description":"The full name of the citizen making the environmental pollution complaint. Ask the citizen for their name if it is not provided.","mandatory":false},{"name":"complaint_title","value":"","description":"Short title summarizing the environmental complaint.","mandatory":false},{"name":"complaint_description","value":"","description":"Detailed description of the pollution issue reported by the citizen.","mandatory":false},{"name":"pollution_category","value":"","description":"Type of pollution, such as air, water, noise, soil, or other environmental pollution.","mandatory":false},{"name":"pollution_source","value":"","description":"pollution_source","mandatory":false},{"name":"location","value":"","description":"Exact or approximate location where the pollution is occurring.","mandatory":false},{"name":"district","value":"","description":"District where the environmental pollution is occurring.","mandatory":false},{"name":"phone_number","value":"","description":"Phone number provided by the citizen for follow-up contact.","mandatory":false},{"name":"people_affected","value":"","description":"Approximate number of people affected by the pollution incident.","mandatory":false},{"name":"crudInputs","value":{"operation":"create","table":{"value":"x_snc_environmen_0_complaint","displayValue":"Complaint"},"fieldValues":[{"field":{"name":"citizen_name","label":"Citizen Name","type":"string","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"id":"citizen_name","sublabel":"citizen_name"},"value":{"fieldValue":"{{citizen_name}}"}},{"field":{"name":"complaint_title","label":"Complaint Title","type":"string","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"id":"complaint_title","sublabel":"complaint_title"},"value":{"fieldValue":"{{complaint_title}}"}},{"field":{"name":"description","label":"Description","type":"html","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"id":"description","sublabel":"description"},"value":{"fieldValue":"{{complaint_description}}"}},{"field":{"name":"pollution_category","label":"Pollution Category","type":"choice","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"id":"pollution_category","sublabel":"pollution_category"},"value":{"fieldValue":"{{pollution_category}}"}},{"field":{"name":"pollution_source","label":"Pollution Source","type":"choice","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"id":"pollution_source","sublabel":"pollution_source"},"value":{"fieldValue":"{{pollution_source}}"}},{"field":{"name":"location","label":"Location","type":"string","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"id":"location","sublabel":"location"},"value":{"fieldValue":"{{location}}"}},{"field":{"name":"district","label":"District","type":"string","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"id":"district","sublabel":"district"},"value":{"fieldValue":"{{district}}"}},{"field":{"name":"phone_number","label":"Phone Number","type":"phone_number_e164","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"id":"phone_number","sublabel":"phone_number"},"value":{"fieldValue":"{{phone_number}}"}},{"field":{"name":"number_of_people_affected","label":"Number of People Affected","type":"integer","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"id":"number_of_people_affected","sublabel":"number_of_people_affected"},"value":{"fieldValue":"{{people_affected}}"}},{"field":{"name":"complaint_source","label":"Complaint Source","type":"choice","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"id":"complaint_source","sublabel":"complaint_source"},"value":{"fieldValue":"voice_assistant"}}]},"description":"CRUD Input Variables. These are already pre-defined. Under no circumstances should you prompt the user for this information or attempt to change these values."}]</inputs>
+        <max_auto_executions>10</max_auto_executions>
+        <name>Create Environmental Pollution Complaint</name>
+        <output_transformation_strategy>none</output_transformation_strategy>
+        <post_message/>
+        <post_processing_script/>
+        <pre_message/>
+        <pre_run>false</pre_run>
+        <requires_text_refined_message>false</requires_text_refined_message>
+        <requires_widget_transformation>true</requires_widget_transformation>
+        <should_display_refined_message>false</should_display_refined_message>
+        <sys_class_name>sn_aia_agent_tool_m2m</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-15 06:17:51</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>b28c4910c5f203107f44493b2130cc27</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Create Environmental Pollution Complaint</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>sn_aia_agent_tool_m2m_b28c4910c5f203107f44493b2130cc27</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-15 06:17:51</sys_updated_on>
+        <timeout/>
+        <tool display_value="Create Environmental Pollution Complaint">268c0510c5f203107f44493b2130ccdb</tool>
+        <tool_attributes>{}</tool_attributes>
+        <transformation_instructions/>
+        <widgets>db0e858eff62b210f465ffffffffff2c</widgets>
+    </sn_aia_agent_tool_m2m>
+</record_update>

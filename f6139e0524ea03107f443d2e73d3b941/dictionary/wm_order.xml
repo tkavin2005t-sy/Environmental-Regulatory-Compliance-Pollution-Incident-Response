@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true,offline_timestamp_field=offline_device_timestamp" audit="true" db_object_id="35d5d033c02643107f44ce324722fea8" extends="sm_order" label="Work Order" max_length="40" name="wm_order" text_index="true" type="collection">
+        <element label="Related Complaint" max_length="32" name="x_snc_environmen_0_related_complaint" reference="x_snc_environmen_0_complaint" type="reference"/>
+    </element>
+</database>

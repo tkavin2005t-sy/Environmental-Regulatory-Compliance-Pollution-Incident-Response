@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 00:16:01</sys_created_on>
+        <sys_id>759c4e3cfd7283107f44ed6bc09512a1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>.x_snc_environmen_0.environment_inspector</sys_name>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_security_acl display_value="x_snc_environmen_0_inspection">0c9c4afcfd7283107f44ed6bc0951243</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_759c4e3cfd7283107f44ed6bc09512a1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 00:16:01</sys_updated_on>
+        <sys_user_role display_value="x_snc_environmen_0.environment_inspector" name="x_snc_environmen_0.environment_inspector">3919b574fdbe43107f44ed6bc0951259</sys_user_role>
+    </sys_security_acl_role>
+</record_update>

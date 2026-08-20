@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_version">
+    <sn_aia_version action="INSERT_OR_UPDATE">
+        <condition/>
+        <instructions>1. Receive and understand the citizen's environmental pollution complaint.
+2. Preserve the citizen's original complaint information and do not alter or discard the original meaning.
+3. Identify the available environmental incident details such as pollution type, incident description, location, date or time, and any other relevant information provided by the citizen.
+4. If required information is missing, ask the citizen clear and simple follow-up questions to collect the missing details.
+5. Use the English-translated complaint as the standardized complaint description when an English translation is provided.
+6. Summarize the complaint and collected details clearly before creating the complaint record.
+7. Create or prepare the Environmental Pollution Complaint record using the available ServiceNow tools and the information provided by the citizen.
+8. After successful complaint creation, provide the citizen with a confirmation and the generated complaint reference number.
+9. Do not independently determine legal action, penalties, or enforcement decisions. These decisions must be handled by the existing Environmental Compliance business logic and authorized personnel.</instructions>
+        <state>published</state>
+        <sys_class_name>sn_aia_version</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 10:12:27</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>fa659085fdb6c3107f44ed6bc09512a7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>V1</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>sn_aia_version_fa659085fdb6c3107f44ed6bc09512a7</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 10:12:27</sys_updated_on>
+        <target_id>9204d4cdfd76c3107f44ed6bc0951231</target_id>
+        <target_table>sn_aia_agent</target_table>
+        <version_name>V1</version_name>
+        <version_number>1</version_number>
+    </sn_aia_version>
+</record_update>
