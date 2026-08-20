@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_gen_ai_control_setting_data">
+    <sys_gen_ai_control_setting_data action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <additional_settings/>
+        <control_data display_value="TB 80aa6be60bd02210175740976877b294">b5b2ae8c783603107f4472999bdcd9ea</control_data>
+        <control_setting display_value="Offensiveness (Capability)">48f058c57f0b8210ee61def20d866599</control_setting>
+        <description/>
+        <sys_class_name>sys_gen_ai_control_setting_data</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-14 17:55:53</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>35b2ae8c783603107f4472999bdcd9ed</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>MONITOR</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>sys_gen_ai_control_setting_data_35b2ae8c783603107f4472999bdcd9ed</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-14 17:56:49</sys_updated_on>
+        <value>MONITOR</value>
+    </sys_gen_ai_control_setting_data>
+</record_update>

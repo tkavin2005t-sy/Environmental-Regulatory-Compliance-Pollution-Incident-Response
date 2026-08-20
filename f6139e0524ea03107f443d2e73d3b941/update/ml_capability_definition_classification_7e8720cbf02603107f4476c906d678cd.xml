@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="ml_capability_definition_classification">
+    <ml_capability_definition_classification action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <capability display_value="Workflow Classification">877599b3770111107d80204bcd5a994c</capability>
+        <current_solution_version>8</current_solution_version>
+        <dataset_language>en</dataset_language>
+        <fields>complaint_title,location,pollution_category,pollution_source,landmark</fields>
+        <filter/>
+        <groupby_field/>
+        <output_field>risk_level</output_field>
+        <pretrained>false</pretrained>
+        <request_source>api</request_source>
+        <solution_label>AI Pollution Risk Prediction</solution_label>
+        <solution_name>ml_x_snc_x_snc_environmen_0_global_ai_pollution_risk_prediction</solution_name>
+        <solution_parameters/>
+        <solution_properties>{"datasetProperties":{"tableName":"x_snc_environmen_0_complaint","fieldNames":["complaint_title","location","pollution_category","pollution_source","landmark","risk_level","sys_created_on"],"maxRowLimit":300000.0,"fetchDisplayValue":false},"description":"Workflow Classification","inputFieldNames":["complaint_title","location","pollution_category","pollution_source","landmark"],"label":"AI Pollution Risk Prediction","predictedFieldName":"risk_level","processingLanguage":"en","schedulingInfo":{"useCase":"workflow_classification"},"scope":"x_snc_environmen_0","stopwords":["Default English Stopwords"],"tags":["classification","Workflow"],"trainingFrequency":"run_once","trainingPipeline":{"pipelineName":"classification_pipeline_v3","pipelineInput":{"datasets":{"incidents":{"tableName":"x_snc_environmen_0_complaint","fieldNames":["complaint_title","location","pollution_category","pollution_source","landmark","risk_level","sys_created_on"],"maxRowLimit":300000.0,"fetchDisplayValue":false}},"config":{"features":["complaint_title","location","pollution_category","pollution_source","landmark"],"encoder_method":"GUSE-ML","solution_output_field_type_reference":"false","language":"en","class_separator":":","classifier_method":"FeedForward","stopwords":"a, about, above, after, again, against, all, am, an, and, any, are, as, at, b, be, because, been, before, being, below, between, both, but, by, c, can, could, d, did, do, does, doing, down, during, e, each, f, few, for, from, further, g, h, had, has, have, having, he, he\u0027d, he\u0027ll, he\u0027s, her, here, here\u0027s, hers, herself, him, himself, his, how, how\u0027s, i, i\u0027d, i\u0027ll, i\u0027m, i\u0027ve, if, in, into, is, it, it\u0027s, its, itself, j, k, l, let\u0027s, m, me, more, most, my, myself, n, no, nor, not, o, of, off, on, once, only, or, other, ought, our, ours , ourselves, out, over, own, p, q, r, s, same, she, she\u0027d, she\u0027ll, she\u0027s, should, so, some, such, t, than, that, that\u0027s, the, their, theirs, them, themselves, then, there, there\u0027s, these, they, they\u0027d, they\u0027ll, they\u0027re, they\u0027ve, this, those, through, to, too, u, under, until, up, v, very, w, was, we, we\u0027d, we\u0027ll, we\u0027re, we\u0027ve, were, what, what\u0027s, when, when\u0027s, where, where\u0027s, which, while, who, who\u0027s, whom, why, why\u0027s, with, would, x, y, you, you\u0027d, you\u0027ll, you\u0027re, you\u0027ve, your, yours, yourself, yourselves, z, return, hes, heres, hows, im, its, lets, shes, thats, theres, theyll, theyre, theyve, were, whats, whens, wheres, whos, whys, youd, youll, youre, youve, -lrb-, -rrb-, -lsb-, -rsb-, \u0027ll, \u0027s, \u0027m","labels":["risk_level"],"enable_class_separator":"true"}}},"triggered_source":"UI","workflowConfiguration":{"trainingFrequency":"run_once"}}</solution_properties>
+        <stopwords>a6282a25533333008c5bddeeff7b12c3</stopwords>
+        <sys_class_name>ml_capability_definition_classification</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-11 06:27:41</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>7e8720cbf02603107f4476c906d678cd</sys_id>
+        <sys_mod_count>17</sys_mod_count>
+        <sys_name>AI Pollution Risk Prediction</sys_name>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>ml_capability_definition_classification_7e8720cbf02603107f4476c906d678cd</sys_update_name>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2026-08-12 05:38:08</sys_updated_on>
+        <table>x_snc_environmen_0_complaint</table>
+        <training_frequency>run_once</training_frequency>
+        <triggered_source>UI</triggered_source>
+        <word_vector_corpus/>
+    </ml_capability_definition_classification>
+</record_update>

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="inspection_outcome" table="x_snc_environmen_0_inspection" version="3">
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>inspection_outcome</element>
+            <name>x_snc_environmen_0_inspection</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-06 05:53:30</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>inspection_outcome</sys_name>
+            <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+            <sys_update_name>sys_choice_x_snc_environmen_0_inspection_inspection_outcome</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-06 05:53:30</sys_updated_on>
+        </sys_choice_set>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>inspection_outcome</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Pollution Confirmed</label>
+            <language>en</language>
+            <name>x_snc_environmen_0_inspection</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-06 05:53:30</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-06 05:53:30</sys_updated_on>
+            <value>pollution_confirmed</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>inspection_outcome</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>No Pollution Found</label>
+            <language>en</language>
+            <name>x_snc_environmen_0_inspection</name>
+            <sequence>1</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-06 05:53:31</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-06 05:53:31</sys_updated_on>
+            <value>no_pollution_found</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>inspection_outcome</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Insufficient Evidence</label>
+            <language>en</language>
+            <name>x_snc_environmen_0_inspection</name>
+            <sequence>2</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-06 05:53:31</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-06 05:53:31</sys_updated_on>
+            <value>insufficient_evidence</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>inspection_outcome</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Under Investigation</label>
+            <language>en</language>
+            <name>x_snc_environmen_0_inspection</name>
+            <sequence>3</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-06 05:53:31</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-06 05:53:31</sys_updated_on>
+            <value>under_investigation</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>inspection_outcome</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>No Action Required</label>
+            <language>en</language>
+            <name>x_snc_environmen_0_inspection</name>
+            <sequence>4</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-07 09:32:37</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-07 09:32:37</sys_updated_on>
+            <value>no_action_required</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>inspection_outcome</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Warning Issued</label>
+            <language>en</language>
+            <name>x_snc_environmen_0_inspection</name>
+            <sequence>5</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-07 09:32:37</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-07 09:32:37</sys_updated_on>
+            <value>warning_issued</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>inspection_outcome</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Fine Imposed</label>
+            <language>en</language>
+            <name>x_snc_environmen_0_inspection</name>
+            <sequence>6</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-07 09:32:37</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-07 09:32:37</sys_updated_on>
+            <value>fine_imposed</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>inspection_outcome</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Site Inspection Required</label>
+            <language>en</language>
+            <name>x_snc_environmen_0_inspection</name>
+            <sequence>7</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-07 09:32:37</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-07 09:32:37</sys_updated_on>
+            <value>site_inspection_required</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>inspection_outcome</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Temporary Closure</label>
+            <language>en</language>
+            <name>x_snc_environmen_0_inspection</name>
+            <sequence>8</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-07 09:32:37</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-07 09:32:37</sys_updated_on>
+            <value>temporary_closure</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>inspection_outcome</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Legal Action Recommended</label>
+            <language>en</language>
+            <name>x_snc_environmen_0_inspection</name>
+            <sequence>9</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-07 09:32:37</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-07 09:32:37</sys_updated_on>
+            <value>legal_action_recommended</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>inspection_outcome</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Major Violation</label>
+            <language>en</language>
+            <name>x_snc_environmen_0_inspection</name>
+            <sequence>10</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-08 06:01:54</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-08 06:01:54</sys_updated_on>
+            <value>major_violation</value>
+        </sys_choice>
+    </sys_choice>
+</record_update>

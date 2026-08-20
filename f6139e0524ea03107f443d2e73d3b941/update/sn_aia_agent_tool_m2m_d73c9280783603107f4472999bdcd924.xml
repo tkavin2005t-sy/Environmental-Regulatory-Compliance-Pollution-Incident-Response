@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_agent_tool_m2m">
+    <sn_aia_agent_tool_m2m action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <agent display_value="Environmental Pollution Complaint AI Agent">86435ec878b203107f4472999bdcd9be</agent>
+        <description>Creates a new environmental pollution complaint record using the complaint details collected from the citizen.</description>
+        <display_mode>inline</display_mode>
+        <display_output>false</display_output>
+        <document_status/>
+        <entity>sn_aia_agent</entity>
+        <entity_id>86435ec878b203107f4472999bdcd9be</entity_id>
+        <execution_mode>autopilot</execution_mode>
+        <inputs>[{"name":"complaint_title","value":"","description":"The title or short summary of the environmental pollution complaint provided by the citizen.","mandatory":false},{"name":"citizen_name","value":"","description":"Name of the citizen reporting the complaint","mandatory":false},{"name":"complaint_type","value":"","description":"Type of environmental complaint","mandatory":false},{"name":"pollution_category","value":"","description":"Category of pollution such as air, water, noise, or land","mandatory":false},{"name":"pollution_source","value":"","description":"Suspected source of the pollution","mandatory":false},{"name":"complaint_description","value":"","description":"Detailed description of the environmental incident","mandatory":false},{"name":"district","value":"","description":"District where the incident occurred","mandatory":false},{"name":"landmark","value":"","description":"Nearby landmark identifying the incident location","mandatory":false},{"name":"people_affected","value":"","description":"Number of people affected by the pollution incident","mandatory":false},{"name":"contact_number","value":"","description":"Contact number of the citizen","mandatory":false},{"name":"crudInputs","value":{"operation":"create","table":{"value":"x_snc_environmen_0_complaint","displayValue":"Complaint"},"fieldValues":[{"field":{"name":"complaint_title","label":"Complaint Title","type":"string","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"id":"complaint_title","sublabel":"complaint_title"},"value":{"fieldValue":"{{complaint_title}}"}},{"field":{"name":"contact_number","label":"Contact Number","type":"phone_number_e164","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"id":"contact_number","sublabel":"contact_number"},"value":{"fieldValue":"{{contact_number}}"}},{"field":{"name":"pollution_category","label":"Pollution Category","type":"choice","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"id":"pollution_category","sublabel":"pollution_category"},"value":{"fieldValue":"{{pollution_category}}"}},{"field":{"name":"complaint_type","label":"Complaint Type","type":"choice","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"id":"complaint_type","sublabel":"complaint_type"},"value":{"fieldValue":"{{complaint_type}}"}},{"field":{"name":"pollution_source","label":"Pollution Source","type":"choice","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"id":"pollution_source","sublabel":"pollution_source"},"value":{"fieldValue":"{{pollution_source}}"}},{"field":{"name":"description","label":"Description","type":"html","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"id":"description","sublabel":"description"},"value":{"fieldValue":"{{complaint_description}}"}},{"field":{"name":"district","label":"District","type":"string","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"id":"district","sublabel":"district"},"value":{"fieldValue":"{{district}}"}},{"field":{"name":"landmark","label":"Landmark","type":"string","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"id":"landmark","sublabel":"landmark"},"value":{"fieldValue":"{{landmark}}"}},{"field":{"name":"number_of_people_affected","label":"Number of People Affected","type":"integer","referenceTable":null,"referenceTableDefaultField":null,"referenceKey":null,"id":"number_of_people_affected","sublabel":"number_of_people_affected"},"value":{"fieldValue":"{{people_affected}}"}}]},"description":"CRUD Input Variables. These are already pre-defined. Under no circumstances should you prompt the user for this information or attempt to change these values."}]</inputs>
+        <max_auto_executions>10</max_auto_executions>
+        <name>Create Environmental Complaint</name>
+        <output_transformation_strategy>none</output_transformation_strategy>
+        <post_message/>
+        <post_processing_script/>
+        <pre_message/>
+        <pre_run>false</pre_run>
+        <requires_text_refined_message>false</requires_text_refined_message>
+        <requires_widget_transformation>true</requires_widget_transformation>
+        <should_display_refined_message>false</should_display_refined_message>
+        <sys_class_name>sn_aia_agent_tool_m2m</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-14 17:27:35</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>d73c9280783603107f4472999bdcd924</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Create Environmental Complaint</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>sn_aia_agent_tool_m2m_d73c9280783603107f4472999bdcd924</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-14 17:27:35</sys_updated_on>
+        <timeout/>
+        <tool display_value="Create Environmental Complaint">9f3c9280783603107f4472999bdcd91e</tool>
+        <tool_attributes>{}</tool_attributes>
+        <transformation_instructions/>
+        <widgets>db0e858eff62b210f465ffffffffff2c</widgets>
+    </sn_aia_agent_tool_m2m>
+</record_update>

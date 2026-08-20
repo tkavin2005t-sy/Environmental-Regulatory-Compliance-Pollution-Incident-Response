@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function() {
+
+    var c = this;
+
+    /* =========================
+       SEARCH
+       ========================= */
+
+    c.searchText = '';
+
+    c.search = function() {
+        c.server.update();
+    };
+
+
+    /* =========================
+       NEW COMPLAINT
+       ========================= */
+
+    c.newComplaint = function() {
+
+        window.location.href =
+            '?id=environmental_report_pollution' +
+            '&table=x_snc_environmen_0_complaint' +
+            '&sys_id=-1';
+
+    };
+
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.ec-complaints-card {
+  background: #ffffff;
+  border: 1px solid #e3ece9;
+  border-radius: 14px;
+  padding: 24px;
+  margin-top: 18px;
+  box-shadow: 0 4px 16px rgba(0, 70, 60, 0.08);
+}
+
+.ec-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.ec-list-header h2 {
+  margin: 0;
+  color: #075e54;
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.ec-list-header p {
+  margin: 5px 0 0;
+  color: #70817e;
+  font-size: 13px;
+}
+
+.ec-new-btn {
+  border: none;
+  background: #0b8275;
+  color: #ffffff;
+  padding: 11px 18px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.ec-new-btn:hover {
+  background: #075e54;
+}
+
+.ec-new-btn span {
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+.ec-search-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.ec-search-box {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #d6e3df;
+  border-radius: 8px;
+  padding: 0 12px;
+  background: #ffffff;
+}
+
+.ec-search-box input {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 11px 5px;
+  font-size: 13px;
+}
+
+.ec-search-btn {
+  border: 1px solid #c8e3dd;
+  background: #eaf6f3;
+  color: #075e54;
+  padding: 0 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ec-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.ec-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.ec-table th {
+  background: #eff7f5;
+  color: #075e54;
+  text-align: left;
+  padding: 13px 12px;
+  border-bottom: 1px solid #d9e7e3;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.ec-table td {
+  padding: 13px 12px;
+  border-bottom: 1px solid #edf2f1;
+  color: #435653;
+}
+
+.ec-table-row:hover {
+  background: #f8fcfb;
+}
+
+.ec-id {
+  color: #087c70;
+}
+
+.ec-status,
+.ec-priority {
+  display: inline-block;
+  padding: 5px 9px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.status-progress,
+.status-investigation,
+.status-assigned {
+  background: #fff4d8;
+  color: #9a6800;
+}
+
+.status-completed,
+.status-closed,
+.status-resolved {
+  background: #e5f7ed;
+  color: #17834b;
+}
+
+.status-open,
+.status-new {
+  background: #e8f1ff;
+  color: #2567ad;
+}
+
+.priority-high,
+.priority-critical {
+  background: #ffe4e1;
+  color: #c43d32;
+}
+
+.priority-medium {
+  background: #fff1d8;
+  color: #a56b00;
+}
+
+.priority-low {
+  background: #e5f7ed;
+  color: #16834a;
+}
+
+.ec-empty {
+  text-align: center;
+  padding: 35px !important;
+  color: #7c8c89 !important;
+}
+
+.ec-footer {
+  margin-top: 14px;
+  color: #7a8986;
+  font-size: 12px;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>ec_complaints_list</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>EC Complaints List</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+
+    data.complaints = [];
+
+    var gr = new GlideRecord('x_snc_environmen_0_complaint');
+
+    gr.orderByDesc('sys_created_on');
+    gr.setLimit(50);
+    gr.query();
+
+    while (gr.next()) {
+
+        var complaint = {};
+
+        // Complaint number
+        complaint.id = gr.getDisplayValue('number');
+
+        // Complaint type
+        if (gr.isValidField('complaint_type')) {
+            complaint.type = gr.getDisplayValue('complaint_type');
+        } else {
+            complaint.type = '';
+        }
+
+        // Location
+        if (gr.isValidField('location')) {
+            complaint.location = gr.getDisplayValue('location');
+        } else {
+            complaint.location = '';
+        }
+
+        // Priority
+        if (gr.isValidField('priority')) {
+            complaint.priority = gr.getDisplayValue('priority');
+        } else {
+            complaint.priority = '';
+        }
+
+        // Status
+        if (gr.isValidField('status')) {
+            complaint.status = gr.getDisplayValue('status');
+        } else {
+            complaint.status = '';
+        }
+
+        // Created date
+        complaint.created = gr.getDisplayValue('sys_created_on');
+
+
+        // CSS class for priority
+        var priorityText = (complaint.priority || '').toLowerCase();
+
+        if (priorityText.indexOf('high') >= 0 ||
+            priorityText.indexOf('critical') >= 0) {
+
+            complaint.priorityClass = 'high';
+
+        } else if (priorityText.indexOf('medium') >= 0) {
+
+            complaint.priorityClass = 'medium';
+
+        } else {
+
+            complaint.priorityClass = 'low';
+        }
+
+
+        // CSS class for status
+        var statusText = (complaint.status || '').toLowerCase();
+
+        if (statusText.indexOf('progress') >= 0) {
+
+            complaint.statusClass = 'progress';
+
+        } else if (statusText.indexOf('investigation') >= 0) {
+
+            complaint.statusClass = 'investigation';
+
+        } else if (statusText.indexOf('assigned') >= 0) {
+
+            complaint.statusClass = 'assigned';
+
+        } else if (statusText.indexOf('completed') >= 0) {
+
+            complaint.statusClass = 'completed';
+
+        } else if (statusText.indexOf('closed') >= 0) {
+
+            complaint.statusClass = 'closed';
+
+        } else if (statusText.indexOf('resolved') >= 0) {
+
+            complaint.statusClass = 'resolved';
+
+        } else {
+
+            complaint.statusClass = 'new';
+        }
+
+
+        data.complaints.push(complaint);
+    }
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-18 09:55:59</sys_created_on>
+        <sys_id>4f3b151121be03107f443754fb88d476</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>EC Complaints List</sys_name>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>sp_widget_4f3b151121be03107f443754fb88d476</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-18 17:03:53</sys_updated_on>
+        <template><![CDATA[<div class="ec-complaints-card">
+
+  <div class="ec-list-header">
+    <div>
+      <h2>Environmental Complaints</h2>
+      <p>Monitor and manage reported pollution incidents</p>
+    </div>
+
+    <button class="ec-new-btn" ng-click="c.newComplaint()">
+      <span>+</span> New Complaint
+    </button>
+  </div>
+
+  <div class="ec-search-row">
+
+    <div class="ec-search-box">
+      <span>]]>🔍<![CDATA[</span>
+      <input
+        type="text"
+        ng-model="c.searchText"
+        placeholder="Search complaints..."
+      />
+    </div>
+
+    <button
+      class="ec-search-btn"
+      ng-click="c.searchText = c.searchText">
+      Search
+    </button>
+
+  </div>
+
+  <div class="ec-table-wrapper">
+
+    <table class="ec-table">
+
+      <thead>
+        <tr>
+          <th>Complaint ID</th>
+          <th>Complaint Type</th>
+          <th>Location</th>
+          <th>Priority</th>
+          <th>Status</th>
+          <th>Created</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr
+          ng-repeat="item in data.complaints | filter:c.searchText track by $index"
+          class="ec-table-row">
+
+          <td>
+            <strong class="ec-id">
+              {{item.id}}
+            </strong>
+          </td>
+
+          <td>
+            {{item.type}}
+          </td>
+
+          <td>
+            {{item.location}}
+          </td>
+
+          <td>
+            <span
+              class="ec-priority"
+              ng-class="'priority-' + item.priorityClass">
+              {{item.priority}}
+            </span>
+          </td>
+
+          <td>
+            <span
+              class="ec-status"
+              ng-class="'status-' + item.statusClass">
+              {{item.status}}
+            </span>
+          </td>
+
+          <td>
+            {{item.created}}
+          </td>
+
+        </tr>
+
+        <tr ng-if="!data.complaints.length">
+          <td colspan="6" class="ec-empty">
+            No complaints found.
+          </td>
+        </tr>
+
+        <tr
+          ng-if="data.complaints.length && !(data.complaints | filter:c.searchText).length">
+          <td colspan="6" class="ec-empty">
+            No matching complaints found.
+          </td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+  <div class="ec-footer">
+    Showing {{data.complaints.length}} recent complaints
+  </div>
+
+</div>]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>4f3b151121be03107f443754fb88d476</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-18 09:55:59</sys_created_on>
+        <sys_id>873b151121be03107f443754fb88d47a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-18 09:55:59</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

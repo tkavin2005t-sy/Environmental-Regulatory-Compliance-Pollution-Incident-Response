@@ -1,0 +1,637 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function() {
+
+    var c = this;
+
+    // Search Risk Assessments
+    c.search = function() {
+        c.server.update();
+    };
+
+
+    // Clear Search
+    c.clearSearch = function() {
+        c.searchText = '';
+        c.server.update();
+    };
+
+
+    // Add New Risk
+    c.addRisk = function() {
+
+        window.location.href =
+        'sc_cat_item.do?sys_id=<RISK_RECORD_PRODUCER_SYS_ID>';
+
+    };
+
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.risk-page {
+  background: #f5f9f8;
+  padding: 28px;
+  border-radius: 12px;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+.risk-header {
+  background: linear-gradient(135deg, #006b63, #008f83);
+  color: #ffffff;
+  padding: 28px 30px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.brand-title {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.brand-icon {
+  margin-right: 8px;
+}
+
+.brand-subtitle {
+  font-size: 11px;
+  color: #b8f28c;
+  margin-top: 5px;
+  letter-spacing: 1px;
+}
+
+.risk-header h1 {
+  margin: 18px 0 5px;
+  font-size: 28px;
+}
+
+.risk-header p {
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* New Risk */
+.new-risk-btn {
+  background: #b8f28c;
+  color: #075b50;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.new-risk-btn:hover {
+  opacity: 0.9;
+}
+
+/* Toolbar */
+.risk-toolbar {
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-box input {
+  flex: 1;
+  height: 42px;
+  border: 1px solid #d7e5e2;
+  border-radius: 8px;
+  padding: 0 14px;
+  outline: none;
+}
+
+.search-box input:focus {
+  border-color: #008f83;
+}
+
+.search-box button {
+  height: 42px;
+  padding: 0 20px;
+  background: #008f83;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Table Card */
+.risk-card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+}
+
+/* Table */
+.risk-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.risk-table th {
+  background: #eaf5f2;
+  color: #075b50;
+  text-align: left;
+  padding: 15px 14px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.risk-table td {
+  padding: 15px 14px;
+  border-bottom: 1px solid #edf2f1;
+  font-size: 13px;
+  color: #344746;
+}
+
+.risk-row:hover {
+  background: #f7fbfa;
+}
+
+/* Risk ID */
+.risk-id {
+  color: #007f73;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.risk-id:hover {
+  text-decoration: underline;
+}
+
+/* Risk badges */
+.risk-badge,
+.status-badge {
+  display: inline-block;
+  padding: 5px 11px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Risk levels */
+.risk-high {
+  background: #fde2e2;
+  color: #b42318;
+}
+
+.risk-medium {
+  background: #fff0d6;
+  color: #a15c00;
+}
+
+.risk-low {
+  background: #dcf5e8;
+  color: #167447;
+}
+
+/* Status */
+.status-in-progress {
+  background: #e2efff;
+  color: #1769aa;
+}
+
+.status-completed {
+  background: #dcf5e8;
+  color: #167447;
+}
+
+.status-pending {
+  background: #fff0d6;
+  color: #a15c00;
+}
+
+.status-assigned {
+  background: #e8f0ff;
+  color: #4264a8;
+}
+
+/* Empty */
+.empty-state {
+  text-align: center !important;
+  padding: 45px !important;
+  color: #879998 !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+  .risk-page {
+    padding: 15px;
+  }
+
+  .risk-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .new-risk-btn {
+    width: 100%;
+  }
+
+  .search-box {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-box button {
+    width: 100%;
+  }
+
+  .risk-card {
+    overflow-x: auto;
+  }
+
+  .risk-table {
+    min-width: 800px;
+  }
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>ec_risk_assessment_list</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>EC Risk Assessment List</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+
+    /* ==========================================
+       EXISTING ENVIRONMENTAL RISK TABLE
+       ========================================== */
+
+    var TABLE = 'x_snc_environmen_0_environmental_risk';
+
+    var gr = new GlideRecord(TABLE);
+
+    data.risks = [];
+
+
+    /* ==========================================
+       SEARCH
+       ========================================== */
+
+    if (input && input.searchText) {
+
+        var text = input.searchText.trim();
+
+        if (text) {
+
+            var query = null;
+
+            if (gr.isValidField('number')) {
+                query = gr.addQuery('number', 'CONTAINS', text);
+            }
+
+            if (gr.isValidField('risk_type')) {
+
+                if (query) {
+                    query.addOrCondition('risk_type', 'CONTAINS', text);
+                } else {
+                    query = gr.addQuery(
+                        'risk_type',
+                        'CONTAINS',
+                        text
+                    );
+                }
+            }
+
+            if (gr.isValidField('location')) {
+
+                if (query) {
+                    query.addOrCondition(
+                        'location',
+                        'CONTAINS',
+                        text
+                    );
+                } else {
+                    query = gr.addQuery(
+                        'location',
+                        'CONTAINS',
+                        text
+                    );
+                }
+            }
+
+            if (gr.isValidField('risk_level')) {
+
+                if (query) {
+                    query.addOrCondition(
+                        'risk_level',
+                        'CONTAINS',
+                        text
+                    );
+                } else {
+                    query = gr.addQuery(
+                        'risk_level',
+                        'CONTAINS',
+                        text
+                    );
+                }
+            }
+
+            if (gr.isValidField('status')) {
+
+                if (query) {
+                    query.addOrCondition(
+                        'status',
+                        'CONTAINS',
+                        text
+                    );
+                } else {
+                    query = gr.addQuery(
+                        'status',
+                        'CONTAINS',
+                        text
+                    );
+                }
+            }
+        }
+    }
+
+
+    /* ==========================================
+       QUERY RECORDS
+       ========================================== */
+
+    if (gr.isValidField('sys_created_on')) {
+        gr.orderByDesc('sys_created_on');
+    }
+
+    gr.setLimit(50);
+    gr.query();
+
+
+    /* ==========================================
+       BUILD RISK DATA
+       ========================================== */
+
+    while (gr.next()) {
+
+        var risk = {};
+
+
+        /* Risk ID */
+
+        if (gr.isValidField('number')) {
+            risk.number = gr.getDisplayValue('number');
+        } else if (gr.isValidField('risk_id')) {
+            risk.number = gr.getDisplayValue('risk_id');
+        } else {
+            risk.number = gr.getUniqueValue();
+        }
+
+
+        /* Risk Type */
+
+        if (gr.isValidField('risk_type')) {
+            risk.type = gr.getDisplayValue('risk_type');
+        } else if (gr.isValidField('type')) {
+            risk.type = gr.getDisplayValue('type');
+        } else {
+            risk.type = 'Environmental Risk';
+        }
+
+
+        /* Location */
+
+        if (gr.isValidField('location')) {
+            risk.location = gr.getDisplayValue('location');
+        } else if (gr.isValidField('region')) {
+            risk.location = gr.getDisplayValue('region');
+        } else {
+            risk.location = 'Not specified';
+        }
+
+
+        /* Risk Level */
+
+        if (gr.isValidField('risk_level')) {
+            risk.level = gr.getDisplayValue('risk_level');
+        } else if (gr.isValidField('risk')) {
+            risk.level = gr.getDisplayValue('risk');
+        } else {
+            risk.level = 'Not specified';
+        }
+
+
+        /* Status */
+
+        if (gr.isValidField('status')) {
+            risk.status = gr.getDisplayValue('status');
+        } else {
+            risk.status = 'Active';
+        }
+
+
+        /* Assessment Date */
+
+        if (gr.isValidField('assessment_date')) {
+            risk.assessmentDate =
+                gr.getDisplayValue('assessment_date');
+
+        } else if (gr.isValidField('risk_assessment_date')) {
+            risk.assessmentDate =
+                gr.getDisplayValue('risk_assessment_date');
+
+        } else {
+            risk.assessmentDate =
+                gr.getDisplayValue('sys_created_on');
+        }
+
+
+        /* Push record */
+
+        data.risks.push(risk);
+    }
+
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-18 10:29:23</sys_created_on>
+        <sys_id>14e2691921fe03107f443754fb88d45d</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>EC Risk Assessment List</sys_name>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>sp_widget_14e2691921fe03107f443754fb88d45d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-18 16:55:58</sys_updated_on>
+        <template><![CDATA[<div class="risk-page">
+
+  <!-- Header -->
+  <div class="risk-header">
+    <div>
+      <div class="brand-title">
+        <span class="brand-icon">]]>🌿<![CDATA[</span>
+        ENVIRONMENTAL COMPLIANCE
+      </div>
+
+      <div class="brand-subtitle">
+        ENVIRONMENTAL RISK MANAGEMENT
+      </div>
+
+      <h1>Risk Assessment</h1>
+      <p>Identify, assess and manage environmental compliance risks.</p>
+    </div>
+
+    <button class="new-risk-btn" ng-click="c.addRisk()">
+      + New Risk
+    </button>
+  </div>
+
+
+  <!-- Search -->
+  <div class="risk-toolbar">
+
+    <div class="search-box">
+      <span>]]>🔍<![CDATA[</span>
+
+      <input
+        type="text"
+        ng-model="c.searchText"
+        placeholder="Search risk assessments..."
+        ng-keypress="$event.keyCode == 13 && c.search()">
+
+      <button ng-click="c.search()">
+        Search
+      </button>
+    </div>
+
+  </div>
+
+
+  <!-- Risk Table -->
+  <div class="risk-card">
+
+    <table class="risk-table">
+
+      <thead>
+        <tr>
+          <th>Risk ID</th>
+          <th>Risk Type</th>
+          <th>Location</th>
+          <th>Risk Level</th>
+          <th>Status</th>
+          <th>Assessment Date</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <!-- Dynamic records -->
+        <tr
+          ng-if="!data.risks || data.risks.length === 0">
+
+          <td colspan="6" class="empty-state">
+            No risk assessments found
+          </td>
+
+        </tr>
+
+
+        <tr
+          ng-repeat="risk in data.risks track by $index"
+          class="risk-row">
+
+          <!-- Risk ID -->
+          <td>
+            <a
+              href="javascript:void(0)"
+              class="risk-id">
+              {{risk.number}}
+            </a>
+          </td>
+
+
+          <!-- Risk Type -->
+          <td>
+            {{risk.type}}
+          </td>
+
+
+          <!-- Location -->
+          <td>
+            {{risk.location}}
+          </td>
+
+
+          <!-- Risk Level -->
+          <td>
+
+            <span
+              class="risk-badge"
+              ng-class="'risk-' + risk.levelClass">
+
+              {{risk.level}}
+
+            </span>
+
+          </td>
+
+
+          <!-- Status -->
+          <td>
+
+            <span
+              class="status-badge"
+              ng-class="'status-' + risk.statusClass">
+
+              {{risk.status}}
+
+            </span>
+
+          </td>
+
+
+          <!-- Date -->
+          <td>
+            {{risk.date}}
+          </td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>14e2691921fe03107f443754fb88d45d</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-18 10:29:23</sys_created_on>
+        <sys_id>60e2a91921fe03107f443754fb88d48b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-18 10:29:23</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

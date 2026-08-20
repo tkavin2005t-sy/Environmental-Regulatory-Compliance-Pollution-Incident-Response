@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_now_assist_deployment_config_attributes">
+    <sys_now_assist_deployment_config_attributes action="DELETE">
+        <deployment_config display_value="Now Assist Voice Deployment - 1">bb823f37c0e2c3107f44ce324722fe7d</deployment_config>
+        <name>authentication_token</name>
+        <sys_class_name>sys_now_assist_deployment_config_attributes</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-14 05:06:14</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>f382fbb7c0e2c3107f44ce324722fe58</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>authentication_token</sys_name>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>sys_now_assist_deployment_config_attributes_f382fbb7c0e2c3107f44ce324722fe58</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-14 05:06:14</sys_updated_on>
+        <value/>
+    </sys_now_assist_deployment_config_attributes>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</application>
+        <file_path/>
+        <instance_id>57b1043093560750fb38f8284dba10f5</instance_id>
+        <instance_name>dlt-hck-8017-0040</instance_name>
+        <name>sys_now_assist_deployment_config_attributes_f382fbb7c0e2c3107f44ce324722fe58</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_now_assist_deployment_config_attributes"><sys_now_assist_deployment_config_attributes action="INSERT_OR_UPDATE"><deployment_config display_value="Now Assist Voice Deployment - 1">bb823f37c0e2c3107f44ce324722fe7d</deployment_config><name>authentication_token</name><sys_class_name>sys_now_assist_deployment_config_attributes</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-14 05:06:14</sys_created_on><sys_domain>global</sys_domain><sys_id>f382fbb7c0e2c3107f44ce324722fe58</sys_id><sys_mod_count>0</sys_mod_count><sys_name>authentication_token</sys_name><sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package><sys_policy/><sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope><sys_update_name>sys_now_assist_deployment_config_attributes_f382fbb7c0e2c3107f44ce324722fe58</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-14 05:06:14</sys_updated_on><value/></sys_now_assist_deployment_config_attributes></record_update>]]></payload>
+        <payload_hash>1945823950</payload_hash>
+        <record_name>authentication_token</record_name>
+        <reverted_from/>
+        <source>be139e0524ea03107f443d2e73d3b944</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-14 05:06:14</sys_created_on>
+        <sys_id>7f82fbb7c0e2c3107f44ce324722fe5a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19ffea9e5000000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-14 05:06:14</sys_updated_on>
+        <type>Now Assist Deployment Config Attributes</type>
+        <update_guid>7382fbb73be2c3103f4434f1cad6d15a</update_guid>
+        <update_guid_history>7382fbb73be2c3103f4434f1cad6d15a:1945823950</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-14 06:30:55</sys_created_on>
+        <sys_db_object display_value="" name="sys_now_assist_deployment_config_attributes">sys_now_assist_deployment_config_attributes</sys_db_object>
+        <sys_id>a3e27b2f5e7b48c8a9edf1100c2795b9</sys_id>
+        <sys_metadata>f382fbb7c0e2c3107f44ce324722fe58</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>authentication_token</sys_name>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_scope_delete display_value="">57bcfbaf4a844eb88d8c57ea65d55310</sys_scope_delete>
+        <sys_update_name>sys_now_assist_deployment_config_attributes_f382fbb7c0e2c3107f44ce324722fe58</sys_update_name>
+        <sys_update_version display_value="sys_now_assist_deployment_config_attributes_f382fbb7c0e2c3107f44ce324722fe58">7f82fbb7c0e2c3107f44ce324722fe5a</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-14 06:30:55</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

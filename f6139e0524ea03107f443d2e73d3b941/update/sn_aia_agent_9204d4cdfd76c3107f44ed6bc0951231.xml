@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_agent">
+    <sn_aia_agent action="INSERT_OR_UPDATE">
+        <advanced_mode>false</advanced_mode>
+        <agent_type>voice</agent_type>
+        <applicability_script><![CDATA[/** 
+ * Function to process inputs related to ServiceNow change request operations 
+ * 
+ * @param {Object} inputs - The input parameters object 
+ * @param {string} inputs.objective - The purpose or goal of the operation 
+ * @param {string} inputs.execution_plan_id - Unique identifier for the execution plan 
+ * @param {Object} inputs.context - Context information about the ServiceNow change request 
+ * @param {string} inputs.context.url - The URL of the change request in Service Operations Workspace 
+ * @param {string} inputs.context.table - The ServiceNow table name (e.g., 'change_request') 
+ * @param {string} inputs.context.record_sys_id - The sys ID of the record 
+ * @param {string} inputs.context.route - The route type (e.g., 'record') 
+ * @param {string} inputs.context.additional_context - Additional contextual information in JSON format 
+ * @param {string} inputs.context.experience - The UI experience name (e.g., 'Service Operations Workspace') 
+ * @param {string} inputs.context.number - The request number 
+ * @param {string} inputs.context.portal - The portal ID 
+ * @param {string} inputs.context.device_type - The device type from which the experience is accessed, e.g.'mweb' 
+ * @param {string} inputs.context.deployment_id - The unique identifier for the assistant deployment 
+ * @param {string} inputs.context.assistant_type - The type of assistant, e.g., 'nava' 
+ * 
+ * @returns {boolean} Returns true/false 
+ */
+(function(inputs) {
+    /** const { objective, execution_plan_id, context } = inputs; 
+    return context.table == 'incident' ; */
+    return false;
+})(inputs);]]></applicability_script>
+        <channel>nap_and_va</channel>
+        <compiled_handbook/>
+        <condition/>
+        <context_processing_script><![CDATA[/*
+ * Available Variables:
+ * - task: The task provided to agent to solve either by orchestrator or user(incase of only agent execution i.e agent is invoked as seperate entity instead from a workflow).
+ * - user_utterance: The user utterance provided. and task = user_utterance in case of individual agent execution.
+ * - agent_id: The agent id.
+ * - context: An object that carries additional contextual information for the agent.
+ *          It always includes a "pageContext" and may include a "triggerContext",
+ *          depending on how and from where the agent is invoked.
+ *
+ *          Behavior by invocation type:
+ *          ---------------------------------
+ *          - When invoked via the startAiAgentConversation API:
+ *                If a "contextMemory" parameter is provided in the API request,
+ *                it will be available here as the "triggerContext".
+ *                The "pageContext" is always present in this call, regardless
+ *                of whether the agent is executed individually or as part of a use case.
+ *                Example:
+ *                    {
+ *                        pageContext: { ... },
+ *                        triggerContext: { ... } // Derived from contextMemory (if passed)
+ *                    }
+ *
+ *          - When invoked as part of a use case or workflow:
+ *                The "pageContext" and "triggerContext" objects available here
+ *                may have been *modified* by the use case’s context processing script.
+ *                This means the use case may alter, extend, or overwrite values
+ *                from the original "pageContext" or "triggerContext"
+ *                before the context reaches the agent.
+ *                If the use case was originally triggered via the API,
+ *                the initial "triggerContext" is still derived from the
+ *                "contextMemory" parameter, but its contents may have been updated
+ *                by the use case logic.
+ *
+ *          - When executed directly (standalone agent execution):
+ *                The "pageContext" will always be present (default or empty),
+ *                and the "triggerContext" will only be populated if explicitly
+ *                passed through the API call.
+ * Return an modified context like: { pageContext : {},triggerContext:{} }
+ */
+(function(task, user_utterance, agent_id, context) {
+    return {
+        pageContext : context?.pageContext,
+		triggerContext : context?.triggerContext
+    };
+})(task,user_utterance, agent_id, context);]]></context_processing_script>
+        <description>Handles environmental pollution complaints from citizens. Understands the citizen's complaint, collects the required environmental incident details, summarizes the complaint accurately, and assists in creating an Environmental Pollution Complaint record in ServiceNow. The agent must preserve the citizen's original complaint information and use the English-translated complaint for standardized processing.</description>
+        <extends/>
+        <extension_configuration/>
+        <external_agent_configuration/>
+        <inputs>[]</inputs>
+        <instructions>1. Receive and understand the citizen's environmental pollution complaint.
+2. Preserve the citizen's original complaint information and do not alter or discard the original meaning.
+3. Identify the available environmental incident details such as pollution type, incident description, location, date or time, and any other relevant information provided by the citizen.
+4. If required information is missing, ask the citizen clear and simple follow-up questions to collect the missing details.
+5. Use the English-translated complaint as the standardized complaint description when an English translation is provided.
+6. Summarize the complaint and collected details clearly before creating the complaint record.
+7. Create or prepare the Environmental Pollution Complaint record using the available ServiceNow tools and the information provided by the citizen.
+8. After successful complaint creation, provide the citizen with a confirmation and the generated complaint reference number.
+9. Do not independently determine legal action, penalties, or enforcement decisions. These decisions must be handled by the existing Environmental Compliance business logic and authorized personnel.</instructions>
+        <internal_name>global.x_snc_environmen_0.Environmental Pollution Complaint Agent</internal_name>
+        <name>Environmental Pollution Complaint Agent</name>
+        <outputs>""</outputs>
+        <parent/>
+        <post_processing_message/>
+        <processing_message/>
+        <proficiency>- Expert in receiving, understanding, and processing environmental pollution complaints from citizens, ensuring accurate preservation of original complaint information and identification of relevant environmental incident details such as pollution type, description, location, and date/time.
+- Capable of preserving the original complaint information provided by citizens without alteration, ensuring the authenticity and integrity of the reported environmental incident.
+- Proficient in extracting and identifying all relevant environmental incident details from citizen complaints, including pollution type, incident description, location, date/time, and any other pertinent information.
+- Able to identify missing information in complaints and engage citizens with clear, simple follow-up questions to collect necessary details for accurate complaint registration.
+- Skilled in utilizing English-translated complaint descriptions as standardized input when provided, ensuring clarity and consistency in complaint records.
+- Competent in summarizing complaints and collected details clearly and concisely, preparing information for accurate creation of Environmental Pollution Complaint records.
+- Experienced in creating and preparing Environmental Pollution Complaint records using ServiceNow tools, leveraging citizen-provided information to ensure proper registration and documentation.
+- Able to provide citizens with confirmation and a generated complaint reference number upon successful creation of an Environmental Pollution Complaint record.
+- Adheres strictly to role boundaries by not making independent legal, penalty, or enforcement decisions, deferring such actions to Environmental Compliance business logic and authorized personnel.</proficiency>
+        <record_type>custom</record_type>
+        <required_translations/>
+        <research>false</research>
+        <role>You are an Environmental Pollution Complaint Specialist. Your role is to understand pollution complaints reported by citizens, preserve the original complaint information, identify the relevant environmental incident details, collect any missing information required for complaint registration, and prepare accurate information for creating an Environmental Pollution Complaint record. Do not make legal decisions or take enforcement actions independently. Use only the available ServiceNow tools and information.</role>
+        <root_agent_id/>
+        <source_id/>
+        <strategy display_value="Voice">33528dffffb46210129628ecf43bf141</strategy>
+        <sys_class_name>sn_aia_agent</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 10:12:27</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>9204d4cdfd76c3107f44ed6bc0951231</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Environmental Pollution Complaint Agent</sys_name>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>sn_aia_agent_9204d4cdfd76c3107f44ed6bc0951231</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 10:12:37</sys_updated_on>
+    </sn_aia_agent>
+</record_update>

@@ -1,0 +1,1314 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function($scope) {
+    var c = this;
+
+    c.refresh = function() {
+        c.server.update();
+    };
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.ec-dashboard {
+  background: #f4f8f7;
+  padding: 24px;
+  font-family: Arial, sans-serif;
+  color: #163f3b;
+}
+
+/* Header */
+
+.dashboard-header {
+  background: linear-gradient(135deg, #006c63, #087f73);
+  border-radius: 16px;
+  padding: 22px 26px;
+  color: white;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-icon {
+  width: 46px;
+  height: 46px;
+  background: rgba(255,255,255,.15);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.brand h2 {
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.brand span {
+  font-size: 12px;
+  color: #baff58;
+  letter-spacing: 1px;
+}
+
+/* Navigation */
+
+.dashboard-nav {
+  display: flex;
+  gap: 10px;
+  margin-top: 22px;
+  flex-wrap: wrap;
+}
+
+.dashboard-nav a {
+  color: white;
+  text-decoration: none;
+  padding: 9px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.dashboard-nav a:hover,
+.dashboard-nav .active {
+  background: #baff58;
+  color: #16463f;
+}
+
+/* Title */
+
+.page-title {
+  padding: 24px 4px 18px;
+}
+
+.page-title h1 {
+  margin: 0 0 6px;
+  font-size: 27px;
+}
+
+.page-title p {
+  margin: 0;
+  color: #6b7c7a;
+}
+
+/* KPI */
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.kpi-card {
+  background: white;
+  border-radius: 14px;
+  padding: 22px;
+  text-align: center;
+  box-shadow: 0 3px 12px rgba(0,0,0,.07);
+  border-left: 5px solid #168f83;
+}
+
+.kpi-card.risk {
+  border-left-color: #f28b22;
+}
+
+.kpi-card.inspections {
+  border-left-color: #2784c6;
+}
+
+.kpi-card.completion {
+  border-left-color: #22a85b;
+}
+
+.kpi-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #61726f;
+}
+
+.kpi-value {
+  font-size: 31px;
+  font-weight: 700;
+  margin: 9px 0;
+  color: #087f73;
+}
+
+.risk .kpi-value {
+  color: #e77c18;
+}
+
+.inspections .kpi-value {
+  color: #267bb8;
+}
+
+.completion .kpi-value {
+  color: #19a453;
+}
+
+.kpi-sub {
+  font-size: 12px;
+  color: #8a9996;
+}
+
+/* Analytics */
+
+.analytics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.dashboard-card {
+  background: white;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 3px 12px rgba(0,0,0,.06);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.card-header span {
+  font-size: 11px;
+  color: #84918f;
+}
+
+.card-header a {
+  color: #087f73;
+  font-size: 12px;
+}
+
+/* Status */
+
+.status-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  margin-bottom: 8px;
+  background: #f5f8f7;
+  border-radius: 8px;
+}
+
+.status-row strong {
+  color: #087f73;
+}
+
+.total-display {
+  margin-top: 15px;
+  padding: 12px;
+  background: #e9f5f2;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Trend */
+
+.trend-bars {
+  height: 180px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  border-bottom: 1px solid #dce7e4;
+}
+
+.bar-item {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 7px;
+}
+
+.bar {
+  width: 22px;
+  min-height: 5px;
+  background: #168f83;
+  border-radius: 6px 6px 0 0;
+}
+
+.bar-item span {
+  font-size: 11px;
+  color: #6c7b78;
+}
+
+/* Risk */
+
+.risk-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.risk-item {
+  padding: 20px 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.risk-item strong {
+  display: block;
+  font-size: 25px;
+}
+
+.risk-item span {
+  font-size: 12px;
+}
+
+.risk-item.high {
+  background: #fde9e6;
+  color: #d94a3f;
+}
+
+.risk-item.medium {
+  background: #fff2dc;
+  color: #d98a18;
+}
+
+.risk-item.low {
+  background: #e4f5ed;
+  color: #198b58;
+}
+
+/* Inspections */
+
+.inspection-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 5px;
+  border-bottom: 1px solid #edf1f0;
+}
+
+.inspection-row strong {
+  display: block;
+  font-size: 13px;
+}
+
+.inspection-row small {
+  display: block;
+  color: #7d8b89;
+  margin-top: 3px;
+}
+
+.inspection-status {
+  background: #e6f5ed;
+  color: #16804d;
+  padding: 5px 9px;
+  border-radius: 12px;
+  font-size: 10px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 25px;
+  color: #8a9996;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+
+  .kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .analytics-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .ec-dashboard {
+    padding: 12px;
+  }
+
+  .kpi-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-nav {
+    flex-direction: column;
+  }
+/* Notification dropdown */
+.notification-panel {
+  background: #063f3a;
+  border: 1px solid #0b6f64;
+  box-shadow: 0 14px 35px rgba(0, 40, 35, 0.35);
+}
+
+/* Dropdown arrow */
+.notification-panel::before {
+  background: #063f3a;
+  border-left: 1px solid #0b6f64;
+  border-top: 1px solid #0b6f64;
+}
+
+/* Header */
+.notification-header {
+  background: #075f57;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.notification-header strong {
+  color: #ffffff;
+}
+
+.notification-header span {
+  background: #b8ff3d;
+  color: #075f57;
+}
+
+/* Notification item */
+.notification-item {
+  background: #063f3a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.notification-item:hover {
+  background: #0b6f64;
+}
+
+/* Icon */
+.notification-icon {
+  background: rgba(184, 255, 61, 0.15);
+  color: #b8ff3d;
+}
+
+/* Text */
+.notification-content strong {
+  color: #ffffff;
+}
+
+.notification-content small {
+  color: #a9cfca;
+}
+
+/* Empty state */
+.notification-empty {
+  color: #a9cfca;
+  background: #063f3a;
+}
+
+/* Scrollbar */
+.notification-panel::-webkit-scrollbar-thumb {
+  background: #62a9a0;
+}
+  .ec-dashboard .dashboard-nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ec-dashboard .dashboard-nav .notification-area {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.ec-dashboard .dashboard-nav .notification-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 34px;
+  padding: 9px 10px;
+  margin: 0;
+
+  background: transparent;
+  border: 0;
+  color: white;
+
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.ec-dashboard .bell-icon {
+  font-size: 15px;
+  line-height: 16px;
+}
+
+.ec-dashboard .notification-count {
+  margin-left: 4px;
+  font-size: 11px;
+  line-height: 16px;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>ec_dashboard_overview</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>EC Dashboard Overview</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+
+    /* =====================================================
+       EXISTING ENVIRONMENTAL COMPLIANCE TABLES
+       ===================================================== */
+
+    var COMPLAINT_TABLE = 'x_snc_environmen_0_complaint';
+    var INSPECTION_TABLE = 'x_snc_environmen_0_inspection';
+    var RISK_TABLE = 'x_snc_environmen_0_environmental_risk';
+
+
+    /* =====================================================
+       DEFAULT DATA
+       ===================================================== */
+
+    data.totalComplaints = 0;
+    data.inProgress = 0;
+    data.completed = 0;
+    data.closed = 0;
+
+    data.highRisk = 0;
+    data.mediumRisk = 0;
+    data.lowRisk = 0;
+
+    data.activeInspections = 0;
+    data.completion = 0;
+
+    data.trend = [0, 0, 0, 0, 0, 0, 0];
+
+    data.recentInspections = [];
+
+
+    /* =====================================================
+       1. COMPLAINTS
+       ===================================================== */
+
+    var complaint = new GlideRecord(COMPLAINT_TABLE);
+
+    if (complaint.isValid()) {
+
+        complaint.query();
+
+        while (complaint.next()) {
+
+            data.totalComplaints++;
+
+            /*
+             * Use whichever status field already exists.
+             */
+            var complaintStatus = '';
+
+            if (complaint.isValidField('status')) {
+
+                complaintStatus =
+                    complaint.getDisplayValue('status');
+
+            } else if (complaint.isValidField('state')) {
+
+                complaintStatus =
+                    complaint.getDisplayValue('state');
+
+            } else if (complaint.isValidField('complaint_status')) {
+
+                complaintStatus =
+                    complaint.getDisplayValue('complaint_status');
+
+            }
+
+
+            complaintStatus =
+                (complaintStatus || '').toLowerCase();
+
+
+            /* In Progress */
+
+            if (
+                complaintStatus.indexOf('progress') !== -1 ||
+                complaintStatus.indexOf('assigned') !== -1
+            ) {
+
+                data.inProgress++;
+
+            }
+
+
+            /* Completed / Resolved */
+
+            else if (
+                complaintStatus.indexOf('complete') !== -1 ||
+                complaintStatus.indexOf('resolved') !== -1
+            ) {
+
+                data.completed++;
+
+            }
+
+
+            /* Closed */
+
+            else if (
+                complaintStatus.indexOf('closed') !== -1
+            ) {
+
+                data.closed++;
+
+            }
+
+        }
+
+    }
+
+
+    /* =====================================================
+       2. RISK ASSESSMENT
+       ===================================================== */
+
+    var risk = new GlideRecord(RISK_TABLE);
+
+    if (risk.isValid()) {
+
+        risk.query();
+
+        while (risk.next()) {
+
+            var riskValue = '';
+
+            /*
+             * Use existing field if available.
+             */
+
+            if (risk.isValidField('risk_level')) {
+
+                riskValue =
+                    risk.getDisplayValue('risk_level');
+
+            } else if (risk.isValidField('risk')) {
+
+                riskValue =
+                    risk.getDisplayValue('risk');
+
+            } else if (risk.isValidField('risk_rating')) {
+
+                riskValue =
+                    risk.getDisplayValue('risk_rating');
+
+            }
+
+
+            riskValue =
+                (riskValue || '').toLowerCase();
+
+
+            if (riskValue.indexOf('high') !== -1) {
+
+                data.highRisk++;
+
+            }
+
+            else if (riskValue.indexOf('medium') !== -1) {
+
+                data.mediumRisk++;
+
+            }
+
+            else if (riskValue.indexOf('low') !== -1) {
+
+                data.lowRisk++;
+
+            }
+
+        }
+
+    }
+
+
+    /* =====================================================
+       3. INSPECTIONS
+       ===================================================== */
+
+    var inspection = new GlideRecord(INSPECTION_TABLE);
+
+    if (inspection.isValid()) {
+
+        /*
+         * Most recent inspections first.
+         */
+
+        inspection.orderByDesc('sys_created_on');
+        inspection.query();
+
+
+        var inspectionCounter = 0;
+
+
+        while (inspection.next()) {
+
+            /* ---------------------------------------------
+               Recent inspections
+               --------------------------------------------- */
+
+            if (inspectionCounter < 5) {
+
+                var item = {};
+
+                /*
+                 * Inspection Number
+                 */
+
+                if (inspection.isValidField('number')) {
+
+                    item.number =
+                        inspection.getDisplayValue('number');
+
+                } else {
+
+                    item.number = 'Inspection';
+
+                }
+
+
+                /*
+                 * Inspection Type
+                 */
+
+                if (inspection.isValidField('inspection_type')) {
+
+                    item.type =
+                        inspection.getDisplayValue(
+                            'inspection_type'
+                        );
+
+                } else if (inspection.isValidField('type')) {
+
+                    item.type =
+                        inspection.getDisplayValue('type');
+
+                } else {
+
+                    item.type = 'Environmental Inspection';
+
+                }
+
+
+                /*
+                 * Inspection Outcome / Status
+                 */
+
+                if (inspection.isValidField('inspection_outcome')) {
+
+                    item.status =
+                        inspection.getDisplayValue(
+                            'inspection_outcome'
+                        );
+
+                } else if (inspection.isValidField('status')) {
+
+                    item.status =
+                        inspection.getDisplayValue('status');
+
+                } else {
+
+                    item.status = 'Scheduled';
+
+                }
+
+
+                data.recentInspections.push(item);
+
+                inspectionCounter++;
+
+            }
+
+
+            /* ---------------------------------------------
+               Active inspection count
+               --------------------------------------------- */
+
+            var inspectionStatus = '';
+
+
+            if (inspection.isValidField('inspection_outcome')) {
+
+                inspectionStatus =
+                    inspection.getDisplayValue(
+                        'inspection_outcome'
+                    );
+
+            } else if (inspection.isValidField('status')) {
+
+                inspectionStatus =
+                    inspection.getDisplayValue('status');
+
+            }
+
+
+            inspectionStatus =
+                (inspectionStatus || '').toLowerCase();
+
+
+            /*
+             * Completed / Closed inspections are not active.
+             */
+
+            if (
+                inspectionStatus &&
+                inspectionStatus.indexOf('complete') === -1 &&
+                inspectionStatus.indexOf('closed') === -1
+            ) {
+
+                data.activeInspections++;
+
+            }
+
+        }
+
+    }
+
+
+    /* =====================================================
+       4. COMPLETION PERCENTAGE
+       ===================================================== */
+
+    if (data.totalComplaints > 0) {
+
+        data.completion = Math.round(
+            (
+                data.completed +
+                data.closed
+            ) /
+            data.totalComplaints *
+            100
+        );
+
+    } else {
+
+        data.completion = 0;
+
+    }
+
+
+    /*
+     * Keep percentage within 0-100.
+     */
+
+    if (data.completion < 0) {
+
+        data.completion = 0;
+
+    }
+
+    if (data.completion > 100) {
+
+        data.completion = 100;
+
+    }
+
+
+    /* =====================================================
+       5. LAST 7 DAYS COMPLAINT TREND
+       ===================================================== */
+
+    var today = new GlideDateTime();
+
+    /*
+     * Index:
+     * 0 = oldest
+     * 6 = today
+     */
+
+    for (var dayIndex = 0; dayIndex < 7; dayIndex++) {
+
+        var startDate = new GlideDateTime(today);
+
+        startDate.addDaysUTC(-(6 - dayIndex));
+
+
+        var endDate = new GlideDateTime(startDate);
+
+        endDate.addDaysUTC(1);
+
+
+        var trend = new GlideAggregate(COMPLAINT_TABLE);
+
+        if (
+            trend.isValid() &&
+            trend.isValidField('sys_created_on')
+        ) {
+
+            trend.addQuery(
+                'sys_created_on',
+                '>=',
+                startDate.getValue()
+            );
+
+            trend.addQuery(
+                'sys_created_on',
+                '<',
+                endDate.getValue()
+            );
+
+            trend.addAggregate('COUNT');
+
+            trend.query();
+
+
+            if (trend.next()) {
+
+                data.trend[dayIndex] =
+                    parseInt(
+                        trend.getAggregate('COUNT'),
+                        10
+                    ) || 0;
+
+            }
+
+        }
+
+    }
+
+
+    /* =====================================================
+       6. SCALE TREND FOR FRONTEND BAR HEIGHT
+       ===================================================== */
+
+    var maxTrend = 0;
+
+    for (var t = 0; t < data.trend.length; t++) {
+
+        if (data.trend[t] > maxTrend) {
+
+            maxTrend = data.trend[t];
+
+        }
+
+    }
+
+
+    /*
+     * If there are no complaints,
+     * keep all bars at minimum height.
+     */
+
+    if (maxTrend === 0) {
+
+        for (var empty = 0; empty < 7; empty++) {
+
+            data.trend[empty] = 5;
+
+        }
+
+    } else {
+
+        for (var scale = 0; scale < 7; scale++) {
+
+            data.trend[scale] =
+                Math.max(
+                    5,
+                    Math.round(
+                        (
+                            data.trend[scale] /
+                            maxTrend
+                        ) * 130
+                    )
+                );
+
+        }
+
+    }
+	    /* =====================================================
+       7. SYSTEM NOTIFICATIONS
+       ===================================================== */
+
+    data.notifications = [];
+
+    var email = new GlideRecord('sys_email');
+
+    if (email.isValid()) {
+
+        email.addQuery(
+            'subject',
+            'IN',
+            'Inspection Assigned,High Risk Pollution Detected,Medium Risk Pollution Detected'
+        );
+
+        email.orderByDesc('sys_created_on');
+        email.setLimit(10);
+        email.query();
+
+        while (email.next()) {
+
+            var notification = {};
+
+            notification.subject =
+                email.getValue('subject') || 'System Notification';
+
+            notification.created =
+                email.getDisplayValue('sys_created_on');
+
+            notification.recipient =
+                email.getValue('recipients') || '';
+
+            data.notifications.push(notification);
+        }
+    }
+
+    data.notificationCount = data.notifications.length;
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-18 14:57:11</sys_created_on>
+        <sys_id>9f20aa11213a43107f443754fb88d42e</sys_id>
+        <sys_mod_count>27</sys_mod_count>
+        <sys_name>EC Dashboard Overview</sys_name>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>sp_widget_9f20aa11213a43107f443754fb88d42e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-18 18:23:15</sys_updated_on>
+        <template><![CDATA[<div class="ec-dashboard">
+
+  <!-- Header -->
+  <div class="dashboard-header">
+    <div class="brand">
+      <div class="brand-icon">]]>🌿<![CDATA[</div>
+      <div>
+        <h2>ENVIRONMENTAL COMPLIANCE</h2>
+        <span>DASHBOARD OVERVIEW</span>
+      </div>
+    </div>
+
+
+    <div class="dashboard-nav">
+
+      <!-- Dashboard / Overview -->
+      <a
+        class="active"
+        href="?id=environmental_compliance_dashboard_2">
+        Overview
+      </a>
+
+      <!-- Complaints -->
+      <a
+        href="?id=environmental_complaints_1">
+        Complaints
+      </a>
+
+      <!-- Inspections -->
+      <a
+        href="?id=environmental_inspections">
+        Inspections
+      </a>
+
+      <!-- Inspectors -->
+      <a
+        href="?id=environmental_inspectors">
+        Inspectors
+      </a>
+
+      <!-- Risk Assessment -->
+      <a
+        href="?id=environmental_risk">
+        Risk Assessment
+      </a>
+
+      <!-- Legal Actions -->
+      <a
+        href="?id=environmental_legal_actions">
+        Legal Actions
+      </a>
+
+      <!-- Pollution Incident Locations -->
+      <a
+        href="?id=environmental_pollution_locations">
+        Locations
+      </a>
+      <!-- Pollution Incident Locations -->
+      <!-- Notifications -->
+<div class="notification-area">
+
+  <details class="notification-dropdown">
+
+    <summary class="notification-button">
+      ]]>🔔
+<![CDATA[      <span
+        class="notification-count"
+        ng-if="c.data.notificationCount > 0">
+        {{c.data.notificationCount}}
+      </span>
+    </summary>
+
+    <div class="notification-panel">
+
+      <div class="notification-header">
+        <strong>Notifications</strong>
+        <span>{{c.data.notificationCount}}</span>
+      </div>
+
+      <div
+        class="notification-item"
+        ng-repeat="notification in c.data.notifications">
+
+        <div class="notification-icon">]]>🔔<![CDATA[</div>
+
+        <div class="notification-content">
+          <strong>{{notification.subject}}</strong>
+          <small>{{notification.created}}</small>
+        </div>
+
+      </div>
+
+      <div
+        class="notification-empty"
+        ng-if="!c.data.notifications.length">
+        No new notifications.
+      </div>
+
+    </div>
+
+  </details>
+
+</div>
+   
+
+    </div>
+  </div>
+
+
+  <!-- Page Title -->
+  <div class="page-title">
+    <h1>Environmental Compliance Dashboard</h1>
+    <p>
+      Monitor pollution complaints, inspections, risks and compliance activities.
+    </p>
+  </div>
+
+
+  <!-- KPI Cards -->
+  <div class="kpi-grid">
+
+    <div class="kpi-card complaints">
+      <div class="kpi-label">TOTAL COMPLAINTS</div>
+      <div class="kpi-value">{{c.data.totalComplaints}}</div>
+      <div class="kpi-sub">Reported incidents</div>
+    </div>
+
+    <div class="kpi-card risk">
+      <div class="kpi-label">HIGH RISK</div>
+      <div class="kpi-value">{{c.data.highRisk}}</div>
+      <div class="kpi-sub">Requires attention</div>
+    </div>
+
+    <div class="kpi-card inspections">
+      <div class="kpi-label">ACTIVE INSPECTIONS</div>
+      <div class="kpi-value">{{c.data.activeInspections}}</div>
+      <div class="kpi-sub">Currently assigned</div>
+    </div>
+
+    <div class="kpi-card completion">
+      <div class="kpi-label">COMPLETION %</div>
+      <div class="kpi-value">{{c.data.completion}}%</div>
+      <div class="kpi-sub">Complaints successfully resolved</div>
+    </div>
+
+  </div>
+
+
+  <!-- Analytics -->
+  <div class="analytics-grid">
+
+    <!-- Complaint Overview -->
+    <div class="dashboard-card">
+
+      <div class="card-header">
+        <h3>Complaints Overview</h3>
+        <span>Current status distribution</span>
+      </div>
+
+      <div class="status-list">
+
+        <div class="status-row">
+          <span>In Progress</span>
+          <strong>{{c.data.inProgress}}</strong>
+        </div>
+
+        <div class="status-row">
+          <span>Completed</span>
+          <strong>{{c.data.completed}}</strong>
+        </div>
+
+        <div class="status-row">
+          <span>High Risk</span>
+          <strong>{{c.data.highRisk}}</strong>
+        </div>
+
+        <div class="status-row">
+          <span>Closed</span>
+          <strong>{{c.data.closed}}</strong>
+        </div>
+
+      </div>
+
+      <div class="total-display">
+        Total Complaints:
+        <strong>{{c.data.totalComplaints}}</strong>
+      </div>
+
+    </div>
+
+
+    <!-- Complaint Trend -->
+    <div class="dashboard-card">
+
+      <div class="card-header">
+        <h3>Complaints Trend</h3>
+        <span>Current records</span>
+      </div>
+
+      <div class="trend-bars">
+
+        <div class="bar-item">
+          <div class="bar"
+               ng-style="{'height': c.data.trend[0] + 'px'}"></div>
+          <span>Mon</span>
+        </div>
+
+        <div class="bar-item">
+          <div class="bar"
+               ng-style="{'height': c.data.trend[1] + 'px'}"></div>
+          <span>Tue</span>
+        </div>
+
+        <div class="bar-item">
+          <div class="bar"
+               ng-style="{'height': c.data.trend[2] + 'px'}"></div>
+          <span>Wed</span>
+        </div>
+
+        <div class="bar-item">
+          <div class="bar"
+               ng-style="{'height': c.data.trend[3] + 'px'}"></div>
+          <span>Thu</span>
+        </div>
+
+        <div class="bar-item">
+          <div class="bar"
+               ng-style="{'height': c.data.trend[4] + 'px'}"></div>
+          <span>Fri</span>
+        </div>
+
+        <div class="bar-item">
+          <div class="bar"
+               ng-style="{'height': c.data.trend[5] + 'px'}"></div>
+          <span>Sat</span>
+        </div>
+
+        <div class="bar-item">
+          <div class="bar"
+               ng-style="{'height': c.data.trend[6] + 'px'}"></div>
+          <span>Sun</span>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- Risk Distribution -->
+    <div class="dashboard-card">
+
+      <div class="card-header">
+        <h3>Risk Distribution</h3>
+        <span>Environmental risk levels</span>
+      </div>
+
+      <div class="risk-grid">
+
+        <div class="risk-item high">
+          <strong>{{c.data.highRisk}}</strong>
+          <span>High</span>
+        </div>
+
+        <div class="risk-item medium">
+          <strong>{{c.data.mediumRisk}}</strong>
+          <span>Medium</span>
+        </div>
+
+        <div class="risk-item low">
+          <strong>{{c.data.lowRisk}}</strong>
+          <span>Low</span>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- Recent Inspections -->
+    <div class="dashboard-card">
+
+      <div class="card-header">
+        <h3>Recent Inspections</h3>
+
+        <a href="?id=environmental_inspections">
+          View All
+        </a>
+      </div>
+
+      <div class="inspection-list">
+
+        <div
+          class="inspection-row"
+          ng-repeat="inspection in c.data.recentInspections">
+
+          <div>
+            <strong>{{inspection.number}}</strong>
+            <small>{{inspection.type}}</small>
+          </div>
+
+          <span class="inspection-status">
+            {{inspection.status}}
+          </span>
+
+        </div>
+
+        <div
+          class="empty-state"
+          ng-if="!c.data.recentInspections.length">
+          No recent inspections found.
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>9f20aa11213a43107f443754fb88d42e</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-18 14:57:11</sys_created_on>
+        <sys_id>2f20aa11213a43107f443754fb88d432</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-18 14:57:11</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

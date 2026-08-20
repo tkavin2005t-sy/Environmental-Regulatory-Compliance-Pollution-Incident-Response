@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>environmental_inspection_status</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Environmental Inspection Status</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+
+    var TABLE = 'x_snc_environmen_0_inspection';
+
+    data.inspections = [];
+    data.activeInspections = 0;
+    data.completedInspections = 0;
+    data.pendingInspections = 0;
+
+    var gr = new GlideRecord(TABLE);
+    gr.orderByDesc('sys_created_on');
+    gr.setLimit(100);
+    gr.query();
+
+    while (gr.next()) {
+
+        var status = gr.getDisplayValue('inspection_status');
+
+        // Status counts
+        if (
+            status == 'Assigned' ||
+            status == 'In Progress' ||
+            status == 'Work in Progress'
+        ) {
+            data.activeInspections++;
+        }
+        else if (
+            status == 'Completed' ||
+            status == 'Closed Complete' ||
+            status == 'Complete' ||
+            status == 'Closed'
+        ) {
+            data.completedInspections++;
+        }
+        else {
+            data.pendingInspections++;
+        }
+
+        // Inspection record
+        data.inspections.push({
+            sys_id: gr.getUniqueValue(),
+
+            number: gr.getDisplayValue('inspection_number'),
+
+            complaint: gr.getDisplayValue('complaint'),
+
+            inspection_date: gr.getDisplayValue('inspection_date'),
+
+            inspection_findings: gr.getDisplayValue('inspection_findings'),
+
+            inspection_outcome: gr.getDisplayValue('inspection_outcome'),
+
+            inspection_status: gr.getDisplayValue('inspection_status'),
+
+            inspector_remarks: gr.getDisplayValue('inspector_remarks'),
+
+            recommended_action: gr.getDisplayValue('recommended_action'),
+
+            assigned_inspector: gr.getDisplayValue('assigned_inspector')
+        });
+    }
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 08:14:41</sys_created_on>
+        <sys_id>e97a7778fd72c3107f44ed6bc09512c4</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>Environmental Inspection Status</sys_name>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>sp_widget_e97a7778fd72c3107f44ed6bc09512c4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-19 01:51:41</sys_updated_on>
+        <template><![CDATA[<div style="
+    background:#fff;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 3px 10px rgba(0,0,0,.10);
+">
+
+    <!-- HEADER -->
+    <div style="
+        font-size:20px;
+        color:#315f6b;
+        margin-bottom:15px;
+    ">
+        Inspection Status
+    </div>
+
+
+    <!-- ACTIVE INSPECTIONS -->
+    <div style="
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        padding:14px 5px;
+        border-bottom:1px solid #eeeeee;
+    ">
+
+        <div style="display:flex;align-items:center;">
+
+            <span style="
+                width:10px;
+                height:10px;
+                background:#2980b9;
+                border-radius:50%;
+                display:inline-block;
+                margin-right:10px;
+            "></span>
+
+            <span style="
+                font-size:14px;
+                color:#333;
+            ">
+                Active Inspections
+            </span>
+
+        </div>
+
+        <span style="
+            font-size:14px;
+            font-weight:bold;
+            color:#2980b9;
+        ">
+            {{data.activeInspections}}
+        </span>
+
+    </div>
+
+
+    <!-- COMPLETED -->
+    <div style="
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        padding:14px 5px;
+        border-bottom:1px solid #eeeeee;
+    ">
+
+        <div style="display:flex;align-items:center;">
+
+            <span style="
+                width:10px;
+                height:10px;
+                background:#27ae60;
+                border-radius:50%;
+                display:inline-block;
+                margin-right:10px;
+            "></span>
+
+            <span style="
+                font-size:14px;
+                color:#333;
+            ">
+                Completed
+            </span>
+
+        </div>
+
+        <span style="
+            font-size:14px;
+            font-weight:bold;
+            color:#27ae60;
+        ">
+            {{data.completedInspections}}
+        </span>
+
+    </div>
+
+
+    <!-- PENDING -->
+    <div style="
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        padding:14px 5px;
+    ">
+
+        <div style="display:flex;align-items:center;">
+
+            <span style="
+                width:10px;
+                height:10px;
+                background:#e67e22;
+                border-radius:50%;
+                display:inline-block;
+                margin-right:10px;
+            "></span>
+
+            <span style="
+                font-size:14px;
+                color:#333;
+            ">
+                Pending
+            </span>
+
+        </div>
+
+        <span style="
+            font-size:14px;
+            font-weight:bold;
+            color:#e67e22;
+        ">
+            {{data.pendingInspections}}
+        </span>
+
+    </div>
+
+</div>]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>e97a7778fd72c3107f44ed6bc09512c4</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 08:14:41</sys_created_on>
+        <sys_id>bd7a3f78fd72c3107f44ed6bc095123e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 08:14:41</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

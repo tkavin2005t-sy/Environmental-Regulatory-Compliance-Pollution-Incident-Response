@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section action="DELETE" caption="Location" section_id="a2b57255916603107f441961e66ff8ef" sys_domain="global" table="x_snc_environmen_0_complaint" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>location</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-06 06:15:39</sys_created_on>
+            <sys_id>6eb5b255916603107f441961e66ff822</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Location" display_value="Location" name="x_snc_environmen_0_complaint" sys_domain="global" view="Default view">a2b57255916603107f441961e66ff8ef</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-06 06:15:39</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>landmark</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-06 06:15:39</sys_created_on>
+            <sys_id>66b5b255916603107f441961e66ff823</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Location" display_value="Location" name="x_snc_environmen_0_complaint" sys_domain="global" view="Default view">a2b57255916603107f441961e66ff8ef</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-06 06:15:39</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>district</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-06 06:15:39</sys_created_on>
+            <sys_id>2eb5b255916603107f441961e66ff823</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Location" display_value="Location" name="x_snc_environmen_0_complaint" sys_domain="global" view="Default view">a2b57255916603107f441961e66ff8ef</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-06 06:15:39</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>state</element>
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-06 06:15:39</sys_created_on>
+            <sys_id>f2b5b255916603107f441961e66ff824</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Location" display_value="Location" name="x_snc_environmen_0_complaint" sys_domain="global" view="Default view">a2b57255916603107f441961e66ff8ef</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-06 06:15:39</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>latitude</element>
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-06 06:15:39</sys_created_on>
+            <sys_id>bab5b255916603107f441961e66ff824</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Location" display_value="Location" name="x_snc_environmen_0_complaint" sys_domain="global" view="Default view">a2b57255916603107f441961e66ff8ef</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-06 06:15:39</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>longitude</element>
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-06 06:15:39</sys_created_on>
+            <sys_id>72b5b255916603107f441961e66ff825</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Location" display_value="Location" name="x_snc_environmen_0_complaint" sys_domain="global" view="Default view">a2b57255916603107f441961e66ff8ef</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-06 06:15:39</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="DELETE">
+            <caption>Location</caption>
+            <header>false</header>
+            <name>x_snc_environmen_0_complaint</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-06 06:15:39</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>a2b57255916603107f441961e66ff8ef</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_snc_environmen_0_complaint</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+            <sys_update_name>sys_ui_section_a2b57255916603107f441961e66ff8ef</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-06 06:15:39</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</application>
+        <file_path/>
+        <instance_id>57b1043093560750fb38f8284dba10f5</instance_id>
+        <instance_name>dlt-hck-8017-0040</instance_name>
+        <name>sys_ui_section_a2b57255916603107f441961e66ff8ef</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_ui_section caption="Location" section_id="a2b57255916603107f441961e66ff8ef" sys_domain="global" table="x_snc_environmen_0_complaint" version="3" view=""><sys_ui_element action="INSERT_OR_UPDATE"><element>location</element><position>0</position><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-06 06:15:39</sys_created_on><sys_id>6eb5b255916603107f441961e66ff822</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Location" display_value="Location" name="x_snc_environmen_0_complaint" sys_domain="global" view="Default view">a2b57255916603107f441961e66ff8ef</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-06 06:15:39</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>landmark</element><position>1</position><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-06 06:15:39</sys_created_on><sys_id>66b5b255916603107f441961e66ff823</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Location" display_value="Location" name="x_snc_environmen_0_complaint" sys_domain="global" view="Default view">a2b57255916603107f441961e66ff8ef</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-06 06:15:39</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>district</element><position>2</position><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-06 06:15:39</sys_created_on><sys_id>2eb5b255916603107f441961e66ff823</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Location" display_value="Location" name="x_snc_environmen_0_complaint" sys_domain="global" view="Default view">a2b57255916603107f441961e66ff8ef</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-06 06:15:39</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>state</element><position>3</position><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-06 06:15:39</sys_created_on><sys_id>f2b5b255916603107f441961e66ff824</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Location" display_value="Location" name="x_snc_environmen_0_complaint" sys_domain="global" view="Default view">a2b57255916603107f441961e66ff8ef</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-06 06:15:39</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>latitude</element><position>4</position><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-06 06:15:39</sys_created_on><sys_id>bab5b255916603107f441961e66ff824</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Location" display_value="Location" name="x_snc_environmen_0_complaint" sys_domain="global" view="Default view">a2b57255916603107f441961e66ff8ef</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-06 06:15:39</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>longitude</element><position>5</position><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-06 06:15:39</sys_created_on><sys_id>72b5b255916603107f441961e66ff825</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Location" display_value="Location" name="x_snc_environmen_0_complaint" sys_domain="global" view="Default view">a2b57255916603107f441961e66ff8ef</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-06 06:15:39</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_section action="INSERT_OR_UPDATE"><caption>Location</caption><header>false</header><name>x_snc_environmen_0_complaint</name><roles/><sys_class_name>sys_ui_section</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-06 06:15:39</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>a2b57255916603107f441961e66ff8ef</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_snc_environmen_0_complaint</sys_name><sys_overrides/><sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package><sys_policy/><sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope><sys_update_name>sys_ui_section_a2b57255916603107f441961e66ff8ef</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-06 06:15:39</sys_updated_on><sys_user/><title>false</title><view display_value="Default view" name="NULL">Default view</view><view_name/></sys_ui_section></sys_ui_section></record_update>]]></payload>
+        <payload_hash>2051615372</payload_hash>
+        <record_name>Complaint</record_name>
+        <reverted_from/>
+        <source>be139e0524ea03107f443d2e73d3b944</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-06 06:15:39</sys_created_on>
+        <sys_id>fab5b255916603107f441961e66ff827</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19fd5b691c00000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-06 06:15:39</sys_updated_on>
+        <type>Form Layout</type>
+        <update_guid>32b5b25513660310a8dd297b2a561327</update_guid>
+        <update_guid_history>32b5b25513660310a8dd297b2a561327:2051615372</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-07 05:38:18</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_section">sys_ui_section</sys_db_object>
+        <sys_id>75d0f2f410cc46d2bfb380a271d450e4</sys_id>
+        <sys_metadata>a2b57255916603107f441961e66ff8ef</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Location</sys_name>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_parent display_value="Complaint">7495564924ea03107f443d2e73d3b97d</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_scope_delete display_value="">57bcfbaf4a844eb88d8c57ea65d55310</sys_scope_delete>
+        <sys_update_name>sys_ui_section_a2b57255916603107f441961e66ff8ef</sys_update_name>
+        <sys_update_version display_value="sys_ui_section_a2b57255916603107f441961e66ff8ef">fab5b255916603107f441961e66ff827</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-07 05:38:18</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

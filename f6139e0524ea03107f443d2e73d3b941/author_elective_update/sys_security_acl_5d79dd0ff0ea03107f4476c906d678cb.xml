@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl">
+    <sys_security_acl action="DELETE">
+        <active>true</active>
+        <admin_overrides>true</admin_overrides>
+        <advanced>false</advanced>
+        <applies_to/>
+        <condition/>
+        <controlled_by_refs/>
+        <decision_type>allow</decision_type>
+        <description>Default access control on x_snc_environmen_0_environmental_risk</description>
+        <local_or_existing>Existing</local_or_existing>
+        <name>x_snc_environmen_0_environmental_risk</name>
+        <operation display_value="delete">delete</operation>
+        <script/>
+        <security_attribute/>
+        <sys_class_name>sys_security_acl</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-11 10:01:53</sys_created_on>
+        <sys_id>5d79dd0ff0ea03107f4476c906d678cb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_snc_environmen_0_environmental_risk</sys_name>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>sys_security_acl_5d79dd0ff0ea03107f4476c906d678cb</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-11 10:01:53</sys_updated_on>
+        <type display_value="record">record</type>
+    </sys_security_acl>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</application>
+        <file_path/>
+        <instance_id>57b1043093560750fb38f8284dba10f5</instance_id>
+        <instance_name>dlt-hck-8017-0040</instance_name>
+        <name>sys_security_acl_5d79dd0ff0ea03107f4476c906d678cb</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl"><sys_security_acl action="INSERT_OR_UPDATE"><active>true</active><admin_overrides>true</admin_overrides><advanced>false</advanced><applies_to/><condition/><controlled_by_refs/><decision_type>allow</decision_type><description>Default access control on x_snc_environmen_0_environmental_risk</description><local_or_existing>Existing</local_or_existing><name>x_snc_environmen_0_environmental_risk</name><operation display_value="delete">delete</operation><script/><security_attribute/><sys_class_name>sys_security_acl</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-11 10:01:53</sys_created_on><sys_id>5d79dd0ff0ea03107f4476c906d678cb</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_snc_environmen_0_environmental_risk</sys_name><sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package><sys_policy/><sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope><sys_update_name>sys_security_acl_5d79dd0ff0ea03107f4476c906d678cb</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-11 10:01:53</sys_updated_on><type display_value="record">record</type></sys_security_acl></record_update>]]></payload>
+        <payload_hash>1044235463</payload_hash>
+        <record_name>x_snc_environmen_0_environmental_risk</record_name>
+        <reverted_from/>
+        <source>be139e0524ea03107f443d2e73d3b944</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-11 10:01:54</sys_created_on>
+        <sys_id>e179114ff0ea03107f4476c906d6782b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19ff045820b0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-11 10:01:54</sys_updated_on>
+        <type>Access Control</type>
+        <update_guid>d579114fddea0310a92536a601e5602a</update_guid>
+        <update_guid_history>d579114fddea0310a92536a601e5602a:1044235463</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-13 06:32:11</sys_created_on>
+        <sys_db_object display_value="" name="sys_security_acl">sys_security_acl</sys_db_object>
+        <sys_id>3a846a7e4b9e454ca5afcff2df31d0f1</sys_id>
+        <sys_metadata>5d79dd0ff0ea03107f4476c906d678cb</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_snc_environmen_0_environmental_risk</sys_name>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_parent display_value="">fd79114ff0ea03107f4476c906d67868</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_scope_delete display_value="">57bcfbaf4a844eb88d8c57ea65d55310</sys_scope_delete>
+        <sys_update_name>sys_security_acl_5d79dd0ff0ea03107f4476c906d678cb</sys_update_name>
+        <sys_update_version display_value="sys_security_acl_5d79dd0ff0ea03107f4476c906d678cb">e179114ff0ea03107f4476c906d6782b</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-13 06:32:11</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

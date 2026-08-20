@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_skill_metadata">
+    <sn_aia_skill_metadata action="INSERT_OR_UPDATE">
+        <description>A voice-based AI agent that helps senior citizens report environmental pollution complaints by speaking naturally. The agent listens to the citizen's complaint, collects the required complaint details such as pollution type, location, description, date and time, validates the information, and creates an environmental pollution complaint record. After creating the complaint, it provides a clear confirmation and explains the next steps. The agent should use simple, respectful, and easy-to-understand language suitable for senior citizens.</description>
+        <document_id>1e2ff0d0c57203107f44493b2130cc33</document_id>
+        <document_table>sn_aia_agent</document_table>
+        <internal_name>global.x_snc_environmen_0.Environmental Pollution Voice Complaint Agent</internal_name>
+        <name>Environmental Pollution Voice Complaint Agent</name>
+        <sys_class_name>sn_aia_skill_metadata</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-15 06:30:58</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>7e8f4194c5f203107f44493b2130cc42</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Environmental Pollution Voice Complaint Agent</sys_name>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>sn_aia_skill_metadata_7e8f4194c5f203107f44493b2130cc42</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-15 06:30:58</sys_updated_on>
+    </sn_aia_skill_metadata>
+</record_update>

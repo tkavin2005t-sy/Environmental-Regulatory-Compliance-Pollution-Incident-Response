@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="knowledge_based_question">
+    <knowledge_based_question action="INSERT_OR_UPDATE">
+        <category>phone_number</category>
+        <input_format_description>Enter the caller's phone number including the country code.</input_format_description>
+        <input_format_example>+61412345678</input_format_example>
+        <input_type>voice</input_type>
+        <input_validation_pattern>^\+61[0-9]{9}$</input_validation_pattern>
+        <keyword>phone_number</keyword>
+        <question>What is your phone number?</question>
+        <sys_class_name>knowledge_based_question</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-14 06:46:57</sys_created_on>
+        <sys_id>2ee80884c0b6c3107f44ce324722fe42</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>What is your phone number?</sys_name>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>knowledge_based_question_2ee80884c0b6c3107f44ce324722fe42</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-14 06:46:57</sys_updated_on>
+    </knowledge_based_question>
+</record_update>

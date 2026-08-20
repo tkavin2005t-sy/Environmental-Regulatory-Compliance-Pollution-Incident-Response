@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function loginCtrl($scope, $http, $window, $location, spUtil) {
+
+    var c = this;
+
+    c.username = '';
+    c.password = '';
+    c.error = '';
+
+    c.login = function(username, password) {
+
+        c.error = '';
+
+        if (!username || !password) {
+            c.error = 'Please enter username and password.';
+            return;
+        }
+
+        var url = spUtil.getURL({
+            sysparm_type: 'view_form.login'
+        });
+
+        $http({
+            method: 'POST',
+            url: url,
+            data: $.param({
+                sysparm_type: 'login',
+                'ni.nolog.user_password': true,
+                remember_me: false,
+                user_name: username,
+                user_password: password,
+                get_redirect_url: true,
+                sysparm_goto_url: '/sp?id=environmental_compliance_home'
+            }),
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
+        }).then(function(response) {
+
+            var result = response.data;
+
+            if (result && result.status === 'success') {
+
+                $window.location.href =
+                    '/sp?id=environmental_compliance_home';
+
+            } else {
+
+                c.error =
+                    (result && result.message) ||
+                    'Invalid username or password.';
+
+            }
+
+        }, function() {
+
+            c.error = 'Login failed. Please try again.';
+
+        });
+    };
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.ec-login-page {
+  min-height: 620px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  padding: 40px;
+  background: #eef7f4;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+.ec-login-card {
+  width: 390px;
+  min-height: 500px;
+  background: #ffffff;
+  padding: 42px 38px;
+  border-radius: 16px 0 0 16px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.10);
+  text-align: center;
+  z-index: 2;
+}
+
+.ec-logo {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  background: #e4f4ed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.leaf-icon {
+  font-size: 32px;
+}
+
+.ec-login-card h1 {
+  margin: 0;
+  color: #075f55;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.ec-login-card h2 {
+  margin: 3px 0 28px;
+  color: #0a8173;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.welcome {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 700;
+  color: #183b37;
+}
+
+.subtitle {
+  margin: 8px 0 25px;
+  color: #71817e;
+  font-size: 13px;
+}
+
+.form-group {
+  text-align: left;
+  margin-bottom: 17px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 7px;
+  color: #294642;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.form-control {
+  width: 100%;
+  height: 43px;
+  border: 1px solid #d5e2df;
+  border-radius: 7px;
+  padding: 0 12px;
+  font-size: 13px;
+  outline: none;
+}
+
+.form-control:focus {
+  border-color: #0a8979;
+  box-shadow: 0 0 0 2px rgba(10,137,121,0.10);
+}
+
+.login-btn {
+  width: 100%;
+  height: 45px;
+  border: none;
+  border-radius: 7px;
+  background: #078b70;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.login-btn:hover {
+  background: #066f5b;
+}
+
+.forgot-link {
+  display: block;
+  margin-top: 14px;
+  color: #078b70;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.divider {
+  height: 1px;
+  background: #e5ecea;
+  margin: 25px 0 17px;
+}
+
+.admin-text {
+  margin: 0;
+  font-size: 11px;
+  color: #82918e;
+}
+
+.admin-text span {
+  color: #078b70;
+  font-weight: 600;
+}
+
+.ec-image-panel {
+  width: 390px;
+  min-height: 500px;
+  border-radius: 0 16px 16px 0;
+
+  background:
+    linear-gradient(
+      rgba(4,70,61,0.25),
+      rgba(4,70,61,0.55)
+    ),
+    url("https://images.unsplash.com/photo-1500534623283-312aade485b7")
+    center / cover no-repeat;
+
+  display: flex;
+  align-items: flex-end;
+  padding: 35px;
+}
+
+.image-overlay {
+  color: #ffffff;
+}
+
+.image-overlay h3 {
+  font-size: 25px;
+  margin: 0 0 8px;
+  font-weight: 700;
+}
+
+.image-overlay p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+
+  .ec-login-page {
+    padding: 20px;
+  }
+
+  .ec-image-panel {
+    display: none;
+  }
+
+  .ec-login-card {
+    width: 100%;
+    max-width: 390px;
+    border-radius: 16px;
+  }
+
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>ec_login</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>EC Login</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+
+    data.is_logged_in = gs.getSession().isLoggedIn();
+
+    data.portal = $sp.getPortalRecord();
+
+    data.login_page = $sp.getValue('login_page');
+
+    data.forgetMe = false;
+
+    data.multisso_enabled = false;
+
+    data.certAuth = false;
+
+    data.message = '';
+
+    data.success = '';
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-18 14:26:56</sys_created_on>
+        <sys_id>50495e5d21b643107f443754fb88d449</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_name>EC Login</sys_name>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>sp_widget_50495e5d21b643107f443754fb88d449</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-18 21:13:35</sys_updated_on>
+        <template><![CDATA[<div class="ec-login-page">
+
+  <div class="ec-login-card">
+
+    <div class="ec-logo">
+      <span class="leaf-icon">]]>🌿<![CDATA[</span>
+    </div>
+
+    <h1>ENVIRONMENTAL</h1>
+    <h2>COMPLIANCE PORTAL</h2>
+
+    <p class="welcome">Welcome Back!</p>
+    <p class="subtitle">
+      Login to access the environmental compliance portal
+    </p>
+
+    <div class="form-group">
+      <label>Username</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter your username"
+        ng-model="c.username">
+    </div>
+
+    <div class="form-group">
+      <label>Password</label>
+      <input
+        type="password"
+        class="form-control"
+        placeholder="Enter your password"
+        ng-model="c.password">
+    </div>
+
+  <button
+  class="login-btn"
+  type="button"
+  ng-click="c.login(c.username, c.password)">
+  Login
+</button>
+
+<div ng-if="c.error" style="color:#d9534f; margin-top:10px;">
+  {{c.error}}
+</div>
+
+    <div
+      ng-if="c.error"
+      class="login-error">
+      {{c.error}}
+    </div>
+
+    <a class="forgot-link" href="#">
+      Forgot Password?
+    </a>
+
+    <div class="divider"></div>
+
+    <p class="admin-text">
+      Don't have an account?
+      <span>Contact Administrator</span>
+    </p>
+
+  </div>
+
+  <div class="ec-image-panel">
+
+    <div class="image-overlay">
+      <h3>Protect Our Environment</h3>
+      <p>
+        Together for a cleaner and safer tomorrow.
+      </p>
+    </div>
+
+  </div>
+
+</div>]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>50495e5d21b643107f443754fb88d449</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-18 14:26:56</sys_created_on>
+        <sys_id>5c4912dd21b643107f443754fb88d40e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-18 14:26:56</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

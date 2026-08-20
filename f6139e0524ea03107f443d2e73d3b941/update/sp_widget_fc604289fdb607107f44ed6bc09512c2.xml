@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function($scope, $timeout) {
+
+    var c = this;
+
+    function initializeMap() {
+
+        if (typeof L === 'undefined') {
+            loadLeaflet();
+            return;
+        }
+
+        var mapElement =
+            document.getElementById('environment-pollution-map');
+
+        if (!mapElement)
+            return;
+
+        if (mapElement._leaflet_id)
+            return;
+
+        var locations = c.data.locations || [];
+
+        var map = L.map(mapElement).setView(
+            [11.1271, 78.6569],
+            7
+        );
+
+        L.tileLayer(
+            'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+            {
+                attribution: '&copy; OpenStreetMap contributors'
+            }
+        ).addTo(map);
+
+        var bounds = [];
+
+        locations.forEach(function(item) {
+
+            var marker = L.marker([
+                item.latitude,
+                item.longitude
+            ]).addTo(map);
+
+            marker.bindPopup(
+                '<div style="min-width:190px;">' +
+                '<strong>Pollution Incident</strong><br><br>' +
+                '<b>Location:</b> ' +
+                escapeHtml(item.location) +
+                '<br>' +
+                '<b>Complaint:</b> ' +
+                escapeHtml(item.complaint) +
+                '</div>'
+            );
+
+            bounds.push([
+                item.latitude,
+                item.longitude
+            ]);
+        });
+
+        // Automatically zoom to actual database records
+        if (bounds.length > 0) {
+
+            map.fitBounds(bounds, {
+                padding: [30, 30]
+            });
+
+        }
+
+        $timeout(function() {
+            map.invalidateSize();
+        }, 500);
+    }
+
+
+    function loadLeaflet() {
+
+        if (document.getElementById('leaflet-js')) {
+            return;
+        }
+
+        var script = document.createElement('script');
+
+        script.id = 'leaflet-js';
+
+        script.src =
+            'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+
+        script.onload = function() {
+            initializeMap();
+        };
+
+        document.head.appendChild(script);
+    }
+
+
+    function escapeHtml(value) {
+
+        if (!value)
+            return '';
+
+        return String(value)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
+    }
+
+
+    $timeout(function() {
+        initializeMap();
+    }, 500);
+
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.environment-map {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.10);
+    border-left: 5px solid #007f73;
+}
+
+.map-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.map-header h3 {
+    margin: 0;
+    color: #174c48;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.map-header p {
+    margin: 5px 0 0;
+    color: #777;
+    font-size: 13px;
+}
+
+.map-count {
+    background: #e8f5f3;
+    color: #007f73;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+#environment-pollution-map {
+    width: 100%;
+    height: 450px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #dce8e6;
+}	
+.environment-map {
+    width: 100%;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.map-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.map-header h3 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    color: #155e59;
+}
+
+.map-header p {
+    margin: 5px 0 0;
+    color: #6b7280;
+}
+
+.map-count {
+    background: #e6f5f2;
+    color: #087f75;
+    padding: 10px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>environmental_pollution_map</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Environmental Pollution Map</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+
+    data.locations = [];
+
+    var TABLE = 'x_snc_environmen_0_location_coordinates';
+
+    var gr = new GlideRecord(TABLE);
+
+    if (!gr.isValid()) {
+        data.error = 'Location Coordinates table not found';
+        return;
+    }
+
+    gr.query();
+
+    while (gr.next()) {
+
+        // Find latitude field from existing table
+        var latField = '';
+
+        if (gr.isValidField('latitude'))
+            latField = 'latitude';
+        else if (gr.isValidField('lat'))
+            latField = 'lat';
+        else if (gr.isValidField('u_latitude'))
+            latField = 'u_latitude';
+
+        // Find longitude field
+        var lngField = '';
+
+        if (gr.isValidField('longitude'))
+            lngField = 'longitude';
+        else if (gr.isValidField('lng'))
+            lngField = 'lng';
+        else if (gr.isValidField('lon'))
+            lngField = 'lon';
+        else if (gr.isValidField('u_longitude'))
+            lngField = 'u_longitude';
+
+        if (!latField || !lngField)
+            continue;
+
+        var lat = parseFloat(gr.getValue(latField));
+        var lng = parseFloat(gr.getValue(lngField));
+
+        if (isNaN(lat) || isNaN(lng))
+            continue;
+
+        var location = '';
+
+        if (gr.isValidField('location'))
+            location = gr.getDisplayValue('location');
+
+        else if (gr.isValidField('location_name'))
+            location = gr.getDisplayValue('location_name');
+
+        else if (gr.isValidField('u_location'))
+            location = gr.getDisplayValue('u_location');
+
+
+        var complaint = '';
+
+        if (gr.isValidField('complaint'))
+            complaint = gr.getDisplayValue('complaint');
+
+        else if (gr.isValidField('complaint_id'))
+            complaint = gr.getDisplayValue('complaint_id');
+
+        else if (gr.isValidField('u_complaint'))
+            complaint = gr.getDisplayValue('u_complaint');
+
+
+        data.locations.push({
+            latitude: lat,
+            longitude: lng,
+            location: location || 'Environmental Location',
+            complaint: complaint || 'Pollution Incident'
+        });
+    }
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 17:59:48</sys_created_on>
+        <sys_id>fc604289fdb607107f44ed6bc09512c2</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>Environmental Pollution Map</sys_name>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>sp_widget_fc604289fdb607107f44ed6bc09512c2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 19:52:29</sys_updated_on>
+        <template><![CDATA[<link rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+<div class="environment-map">
+
+  <div class="map-header">
+    <div>
+      <h3>Pollution Incident Locations</h3>
+      <p>Live locations from environmental records</p>
+    </div>
+
+    <span class="map-count">
+      {{data.locations.length}} Locations
+    </span>
+  </div>
+
+  <div id="environment-pollution-map"></div>
+
+</div>]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>fc604289fdb607107f44ed6bc09512c2</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 17:59:48</sys_created_on>
+        <sys_id>f4604289fdb607107f44ed6bc09512c6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 17:59:48</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

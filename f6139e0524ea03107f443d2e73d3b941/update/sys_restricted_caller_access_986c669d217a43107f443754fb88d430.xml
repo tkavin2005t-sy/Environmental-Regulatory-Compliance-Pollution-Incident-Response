@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_restricted_caller_access">
+    <sys_restricted_caller_access action="INSERT_OR_UPDATE">
+        <description/>
+        <operation>read</operation>
+        <rca_type>real_rca</rca_type>
+        <source>fd1f4ec347730200ba13a5554ee490c0</source>
+        <source_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</source_scope>
+        <source_table>sp_widget</source_table>
+        <source_type>6</source_type>
+        <status>2</status>
+        <sys_class_name>sys_restricted_caller_access</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-18 15:50:30</sys_created_on>
+        <sys_id>986c669d217a43107f443754fb88d430</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>f6139e0524ea03107f443d2e73d3b941</sys_name>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>sys_restricted_caller_access_986c669d217a43107f443754fb88d430</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-18 15:50:30</sys_updated_on>
+        <target name="x_snc_environmen_0_complaint" target_table="sys_db_object">7495564924ea03107f443d2e73d3b97d</target>
+        <target_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</target_scope>
+        <target_table>sys_db_object</target_table>
+        <target_type>1</target_type>
+    </sys_restricted_caller_access>
+</record_update>

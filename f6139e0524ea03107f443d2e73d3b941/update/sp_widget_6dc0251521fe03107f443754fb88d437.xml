@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function($scope) {
+
+    var c = this;
+
+    c.searchText = '';
+
+    c.search = function() {
+
+        c.server.update({
+            searchText: c.searchText
+        });
+
+    };
+
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.ec-inspector-page {
+    background: #f4f8f7;
+    padding: 32px;
+    font-family: Arial, sans-serif;
+    color: #123f3b;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+}
+
+.page-header h1 {
+    margin: 0;
+    color: #006c63;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.page-header p {
+    margin: 8px 0 0;
+    color: #72817f;
+    font-size: 16px;
+}
+
+.add-btn {
+    background: #087f73;
+    color: white;
+    padding: 14px 22px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.add-btn:hover {
+    background: #00645c;
+    color: white;
+}
+
+
+/* SEARCH */
+
+.search-box {
+    background: white;
+    border: 1px solid #d5e4e1;
+    border-radius: 12px;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.search-icon {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.search-box input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.search-box button {
+    background: #087f73;
+    color: white;
+    border: none;
+    padding: 11px 22px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+/* TABLE */
+
+.table-wrapper {
+    background: white;
+    border-radius: 14px;
+    overflow-x: auto;
+    box-shadow: 0 4px 18px rgba(0,0,0,.06);
+}
+
+.inspector-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 900px;
+}
+
+.inspector-table thead {
+    background: #eaf5f3;
+}
+
+.inspector-table th {
+    text-align: left;
+    padding: 18px 16px;
+    color: #075f58;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.inspector-table td {
+    padding: 18px 16px;
+    border-bottom: 1px solid #edf2f1;
+    color: #435957;
+    font-size: 14px;
+}
+
+.inspector-table tbody tr:hover {
+    background: #f8fbfa;
+}
+
+.inspector-name {
+    font-weight: 600;
+    color: #164d48;
+}
+
+.assigned-count {
+    color: #087f73;
+    font-size: 16px;
+}
+
+
+/* AVAILABILITY */
+
+.availability-badge {
+    display: inline-block;
+    padding: 7px 13px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.availability-badge.available {
+    background: #e6f6ed;
+    color: #16804d;
+}
+
+.availability-badge.inspection {
+    background: #fff3dc;
+    color: #c77a12;
+}
+
+.availability-badge.unavailable {
+    background: #fde8e7;
+    color: #c7473f;
+}
+
+
+/* EMPTY */
+
+.empty-state {
+    text-align: center;
+    padding: 40px !important;
+    color: #899693 !important;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+
+    .ec-inspector-page {
+        padding: 16px;
+    }
+
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>ec_inspectors_list</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>EC Inspectors List</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+
+    var INSPECTOR_TABLE = 'x_snc_environmen_0_inspector';
+    var INSPECTION_TABLE = 'x_snc_environmen_0_inspection';
+
+    data.inspectors = [];
+
+
+    /* =========================
+       INSPECTOR QUERY
+       ========================= */
+
+    var gr = new GlideRecord(INSPECTOR_TABLE);
+
+
+    /* =========================
+       SEARCH
+       ========================= */
+
+    if (input && input.searchText) {
+
+        var text = input.searchText.trim();
+
+        if (text) {
+
+            var q = gr.addQuery(
+                'inspector_name',
+                'CONTAINS',
+                text
+            );
+
+            q.addOrCondition(
+                'inspector_id',
+                'CONTAINS',
+                text
+            );
+
+            q.addOrCondition(
+                'expertise',
+                'CONTAINS',
+                text
+            );
+
+            q.addOrCondition(
+                'region',
+                'CONTAINS',
+                text
+            );
+
+            q.addOrCondition(
+                'availability_status',
+                'CONTAINS',
+                text
+            );
+        }
+    }
+
+
+    /* =========================
+       ORDER
+       ========================= */
+
+    gr.orderBy('inspector_id');
+    gr.setLimit(50);
+    gr.query();
+
+
+    /* =========================
+       BUILD INSPECTOR DATA
+       ========================= */
+
+    while (gr.next()) {
+
+        var inspector = {};
+
+
+        /* Inspector ID */
+
+        inspector.number =
+            gr.getDisplayValue('inspector_id') ||
+            gr.getValue('inspector_id') ||
+            '';
+
+
+        /* Inspector Name */
+
+        inspector.name =
+            gr.getDisplayValue('inspector_name') ||
+            gr.getValue('inspector_name') ||
+            '';
+
+
+        /* Location */
+
+        inspector.location =
+            gr.getDisplayValue('region') ||
+            gr.getValue('region') ||
+            '';
+
+
+        /* Availability */
+
+        inspector.availability =
+            gr.getDisplayValue('availability_status') ||
+            gr.getValue('availability_status') ||
+            '';
+
+
+        /* =========================
+           ASSIGNED INSPECTIONS
+           ========================= */
+
+        inspector.assigned = 0;
+
+        var inspectionGR =
+            new GlideAggregate(INSPECTION_TABLE);
+
+        inspectionGR.addAggregate('COUNT');
+
+        inspectionGR.addQuery(
+            'inspector',
+            gr.getUniqueValue()
+        );
+
+        inspectionGR.query();
+
+        if (inspectionGR.next()) {
+
+            inspector.assigned =
+                parseInt(
+                    inspectionGR.getAggregate('COUNT'),
+                    10
+                ) || 0;
+        }
+
+
+        /* =========================
+           STATUS CLASS
+           ========================= */
+
+        var availability =
+            (inspector.availability || '').toLowerCase();
+
+
+        if (
+            availability.indexOf('inspection') > -1
+        ) {
+
+            inspector.statusClass = 'inspection';
+
+        } else if (
+            availability.indexOf('available') > -1
+        ) {
+
+            inspector.statusClass = 'available';
+
+        } else {
+
+            inspector.statusClass = 'unavailable';
+        }
+
+
+        /* =========================
+           PUSH DATA
+           ========================= */
+
+        data.inspectors.push(inspector);
+    }
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-18 10:20:10</sys_created_on>
+        <sys_id>6dc0251521fe03107f443754fb88d437</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>EC Inspectors List</sys_name>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>sp_widget_6dc0251521fe03107f443754fb88d437</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-19 05:03:04</sys_updated_on>
+        <template><![CDATA[<div class="ec-inspector-page">
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+
+    <div>
+      <h1>Environmental Inspectors</h1>
+      <p>Manage inspectors, expertise and availability</p>
+    </div>
+
+    <a class="add-btn"
+       href="?id=environmental_inspector_form&sys_id=-1">
+      + Add Inspector
+    </a>
+
+  </div>
+
+
+  <!-- SEARCH -->
+  <div class="search-box">
+
+    <span class="search-icon">]]>🔍<![CDATA[</span>
+
+    <input
+      type="text"
+      placeholder="Search inspectors..."
+      ng-model="c.searchText"
+      ng-keyup="$event.keyCode == 13 && c.search()">
+
+    <button ng-click="c.search()">
+      Search
+    </button>
+
+  </div>
+
+
+  <!-- TABLE -->
+  <div class="table-wrapper">
+
+    <table class="inspector-table">
+
+      <thead>
+        <tr>
+          <th>Inspector ID</th>
+          <th>Inspector</th>
+          <th>Location</th>
+          <th>Availability</th>
+          <th>Assigned Inspections</th>
+        </tr>
+      </thead>
+
+
+      <tbody>
+
+        <tr ng-repeat="inspector in c.data.inspectors">
+
+          <!-- INSPECTOR ID -->
+          <td>
+            <strong>
+              {{inspector.number}}
+            </strong>
+          </td>
+
+
+          <!-- INSPECTOR NAME -->
+          <td>
+            <div class="inspector-name">
+              {{inspector.name}}
+            </div>
+          </td>
+
+          <!-- LOCATION -->
+          <td>
+            {{inspector.location}}
+          </td>
+
+
+          <!-- AVAILABILITY -->
+          <td>
+
+            <span
+              class="availability-badge"
+              ng-class="inspector.statusClass">
+
+              {{inspector.availability}}
+
+            </span>
+
+          </td>
+
+
+          <!-- ASSIGNED INSPECTIONS -->
+          <td>
+            <strong class="assigned-count">
+              {{inspector.assigned}}
+            </strong>
+          </td>
+
+        </tr>
+
+
+        <!-- EMPTY -->
+        <tr ng-if="!c.data.inspectors || c.data.inspectors.length === 0">
+
+          <td colspan="6" class="empty-state">
+            No inspectors found.
+          </td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>6dc0251521fe03107f443754fb88d437</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-18 10:20:10</sys_created_on>
+        <sys_id>a5c0251521fe03107f443754fb88d43b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-18 10:20:10</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

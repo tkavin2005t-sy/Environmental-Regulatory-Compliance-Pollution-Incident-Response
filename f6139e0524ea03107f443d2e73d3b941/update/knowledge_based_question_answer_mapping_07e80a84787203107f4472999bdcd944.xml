@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="knowledge_based_question_answer_mapping">
+    <knowledge_based_question_answer_mapping action="INSERT_OR_UPDATE">
+        <answer display_value="Citizen Phone Number for Environmental Complaint">8568c644787203107f4472999bdcd9d5</answer>
+        <question display_value="What is your phone number?">2ee80884c0b6c3107f44ce324722fe42</question>
+        <sys_class_name>knowledge_based_question_answer_mapping</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-14 16:10:31</sys_created_on>
+        <sys_id>07e80a84787203107f4472999bdcd944</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>knowledge_based_question_answer_mapping_07e80a84787203107f4472999bdcd944</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-14 16:10:31</sys_updated_on>
+    </knowledge_based_question_answer_mapping>
+</record_update>

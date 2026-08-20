@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="DELETE">
+        <active>true</active>
+        <advanced_placeholder_dimensions>false</advanced_placeholder_dimensions>
+        <async_load>false</async_load>
+        <async_load_device_type>desktop,tablet,mobile</async_load_device_type>
+        <async_load_trigger>viewport</async_load_trigger>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <placeholder_dimensions>{&#13;	"mobile": {&#13;		"height": "250px",&#13;		"width": "100%"&#13;	},&#13;	"desktop": {&#13;		"height": "250px",&#13;		"width": "100%"&#13;	},&#13;	"tablet": {&#13;		"height": "250px",&#13;		"width": "100%"&#13;	}&#13;}</placeholder_dimensions>
+        <placeholder_dimensions_script><![CDATA[function evaluateConfig(options) { return {	"mobile": {		"height": "250px",		"width": "100%"	},	"desktop": {		"height": "250px",		"width": "100%"	},	"tablet": {		"height": "250px",		"width": "100%"	}}; }]]></placeholder_dimensions_script>
+        <placeholder_template>&lt;!-- 
+	AngularJS template with configurable options.
+	Use the `options` object to control dynamic behavior.
+	Example: Display an element when max row count is 10:
+	&lt;div ng-if="options.maxRowCount === 10"&gt;&lt;/div&gt;
+	The `skeleton-container` class is used for loading placeholders.
+--&gt;
+	&lt;div class="skeleton-container"&gt;
+	&lt;!-- Header Skeleton --&gt;
+	&lt;div class="skeleton-box skeleton-header"&gt;&lt;/div&gt;
+	&lt;!-- Body Skeleton --&gt;
+	&lt;div class="skeleton-box skeleton-line"&gt;&lt;/div&gt;
+	&lt;div class="skeleton-box skeleton-line small"&gt;&lt;/div&gt;
+	&lt;div class="skeleton-box skeleton-line medium"&gt;&lt;/div&gt;
+&lt;/div&gt;</placeholder_template>
+        <preserve_placeholder_size>false</preserve_placeholder_size>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">6e3685d521ba03107f443754fb88d4ba</sp_column>
+        <sp_widget display_value="HTML">8679ef89cb21120000f8d856634c9c4f</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-18 08:24:18</sys_created_on>
+        <sys_id>004685d521ba03107f443754fb88d4c3</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>sp_instance_004685d521ba03107f443754fb88d4c3</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-18 08:24:34</sys_updated_on>
+        <title/>
+        <url/>
+        <widget_parameters><![CDATA[{
+	"html": {
+		"value": "<div style=\"font-family: Arial,sans-serif; background: linear-gradient(135deg,#063f3b 0%,#087f78 100%); color: #fff; padding: 20px 30px; border-radius: 16px; box-shadow: 0 5px 18px rgba(0,70,65,.18);\">\r\n<div style=\"display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;\"><!-- BRAND -->\r\n<div style=\"display: flex; align-items: center; gap: 12px;\">\r\n<div style=\"width: 44px; height: 44px; border-radius: 12px; background: rgba(255,255,255,.14); display: flex; align-items: center; justify-content: center; font-size: 25px;\">]]>🌿<![CDATA[</div>\r\n<div>\r\n<div style=\"font-size: 18px; font-weight: bold; letter-spacing: 1px;\">ENVIRONMENTAL COMPLIANCE</div>\r\n<div style=\"font-size: 12px; color: #b8f28c; letter-spacing: 1.5px; margin-top: 3px;\">DASHBOARD OVERVIEW</div>\r\n</div>\r\n</div>\r\n<!-- NAVIGATION -->\r\n<div style=\"display: flex; align-items: center; gap: 8px; flex-wrap: wrap;\"><a style=\"color: #063f3b; background: #b8f28c; text-decoration: none; font-weight: bold; padding: 10px 15px; border-radius: 8px;\" href=\"?id=environmental_compliance_dashboard\"> Overview </a> <a style=\"color: #fff; text-decoration: none; font-weight: 600; padding: 10px 13px; border-radius: 8px;\" href=\"?id=environmental_compliance_complaints\"> Complaints </a> <a style=\"color: #fff; text-decoration: none; font-weight: 600; padding: 10px 13px; border-radius: 8px;\" href=\"?id=environmental_compliance_inspections\"> Inspections </a> <a style=\"color: #fff; text-decoration: none; font-weight: 600; padding: 10px 13px; border-radius: 8px;\" href=\"?id=environmental_compliance_inspectors\"> Inspectors </a> <a style=\"color: #fff; text-decoration: none; font-weight: 600; padding: 10px 13px; border-radius: 8px;\" href=\"?id=environmental_compliance_risk_assessment\"> Risk Assessment </a> <a style=\"color: #fff; text-decoration: none; font-weight: 600; padding: 10px 13px; border-radius: 8px;\" href=\"?id=environmental_compliance_legal_actions\"> Legal Actions </a> <a style=\"color: #fff; text-decoration: none; font-weight: 600; padding: 10px 13px; border-radius: 8px;\" href=\"?id=environmental_compliance_pollution_locations\"> ]]>📍<![CDATA[ Locations </a></div>\r\n</div>\r\n<!-- DASHBOARD TITLE -->\r\n<div style=\"margin-top: 22px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.18);\">\r\n<div style=\"font-size: 28px; font-weight: bold;\">Environmental Compliance Dashboard</div>\r\n<div style=\"font-size: 14px; color: #d8f3dc; margin-top: 6px;\">Monitor pollution complaints, inspections, risks and compliance activities.</div>\r\n</div>\r\n</div>",
+		"displayValue": "<div style=\"font-family: Arial,sans-serif; background: linear-gradient(135deg,#063f3b 0%,#087f78 100%); color: #fff; padding: 20px 30px; border-radius: 16px; box-shadow: 0 5px 18px rgba(0,70,65,.18);\">\n<div style=\"display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;\"><!-- BRAND -->\n<div style=\"display: flex; align-items: center; gap: 12px;\">\n<div style=\"width: 44px; height: 44px; border-radius: 12px; background: rgba(255,255,255,.14); display: flex; align-items: center; justify-content: center; font-size: 25px;\">]]>🌿<![CDATA[</div>\n<div>\n<div style=\"font-size: 18px; font-weight: bold; letter-spacing: 1px;\">ENVIRONMENTAL COMPLIANCE</div>\n<div style=\"font-size: 12px; color: #b8f28c; letter-spacing: 1.5px; margin-top: 3px;\">DASHBOARD OVERVIEW</div>\n</div>\n</div>\n<!-- NAVIGATION -->\n<div style=\"display: flex; align-items: center; gap: 8px; flex-wrap: wrap;\"><a style=\"color: #063f3b; background: #b8f28c; text-decoration: none; font-weight: bold; padding: 10px 15px; border-radius: 8px;\" href=\"?id=environmental_compliance_dashboard\"> Overview </a> <a style=\"color: #fff; text-decoration: none; font-weight: 600; padding: 10px 13px; border-radius: 8px;\" href=\"?id=environmental_compliance_complaints\"> Complaints </a> <a style=\"color: #fff; text-decoration: none; font-weight: 600; padding: 10px 13px; border-radius: 8px;\" href=\"?id=environmental_compliance_inspections\"> Inspections </a> <a style=\"color: #fff; text-decoration: none; font-weight: 600; padding: 10px 13px; border-radius: 8px;\" href=\"?id=environmental_compliance_inspectors\"> Inspectors </a> <a style=\"color: #fff; text-decoration: none; font-weight: 600; padding: 10px 13px; border-radius: 8px;\" href=\"?id=environmental_compliance_risk_assessment\"> Risk Assessment </a> <a style=\"color: #fff; text-decoration: none; font-weight: 600; padding: 10px 13px; border-radius: 8px;\" href=\"?id=environmental_compliance_legal_actions\"> Legal Actions </a> <a style=\"color: #fff; text-decoration: none; font-weight: 600; padding: 10px 13px; border-radius: 8px;\" href=\"?id=environmental_compliance_pollution_locations\"> ]]>📍<![CDATA[ Locations </a></div>\n</div>\n<!-- DASHBOARD TITLE -->\n<div style=\"margin-top: 22px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.18);\">\n<div style=\"font-size: 28px; font-weight: bold;\">Environmental Compliance Dashboard</div>\n<div style=\"font-size: 14px; color: #d8f3dc; margin-top: 6px;\">Monitor pollution complaints, inspections, risks and compliance activities.</div>\n</div>\n</div>"
+	}
+}]]></widget_parameters>
+    </sp_instance>
+    <sys_translated_text action="DELETE" query="documentkey=004685d521ba03107f443754fb88d4c3"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</application>
+        <file_path/>
+        <instance_id>57b1043093560750fb38f8284dba10f5</instance_id>
+        <instance_name>dlt-hck-8017-0040</instance_name>
+        <name>sp_instance_004685d521ba03107f443754fb88d4c3</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_instance"&gt;&lt;sp_instance action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;advanced_placeholder_dimensions&gt;false&lt;/advanced_placeholder_dimensions&gt;&lt;async_load&gt;false&lt;/async_load&gt;&lt;async_load_device_type&gt;desktop,tablet,mobile&lt;/async_load_device_type&gt;&lt;async_load_trigger&gt;viewport&lt;/async_load_trigger&gt;&lt;class_name/&gt;&lt;color&gt;default&lt;/color&gt;&lt;css/&gt;&lt;glyph/&gt;&lt;id/&gt;&lt;order&gt;1&lt;/order&gt;&lt;placeholder_dimensions&gt;{&amp;#13;	"mobile": {&amp;#13;		"height": "250px",&amp;#13;		"width": "100%"&amp;#13;	},&amp;#13;	"desktop": {&amp;#13;		"height": "250px",&amp;#13;		"width": "100%"&amp;#13;	},&amp;#13;	"tablet": {&amp;#13;		"height": "250px",&amp;#13;		"width": "100%"&amp;#13;	}&amp;#13;}&lt;/placeholder_dimensions&gt;&lt;placeholder_dimensions_script&gt;&lt;![CDATA[function evaluateConfig(options) { return {	"mobile": {		"height": "250px",		"width": "100%"	},	"desktop": {		"height": "250px",		"width": "100%"	},	"tablet": {		"height": "250px",		"width": "100%"	}}; }]]&gt;&lt;/placeholder_dimensions_script&gt;&lt;placeholder_template&gt;&amp;lt;!-- 
+	AngularJS template with configurable options.
+	Use the `options` object to control dynamic behavior.
+	Example: Display an element when max row count is 10:
+	&amp;lt;div ng-if="options.maxRowCount === 10"&amp;gt;&amp;lt;/div&amp;gt;
+	The `skeleton-container` class is used for loading placeholders.
+--&amp;gt;
+	&amp;lt;div class="skeleton-container"&amp;gt;
+	&amp;lt;!-- Header Skeleton --&amp;gt;
+	&amp;lt;div class="skeleton-box skeleton-header"&amp;gt;&amp;lt;/div&amp;gt;
+	&amp;lt;!-- Body Skeleton --&amp;gt;
+	&amp;lt;div class="skeleton-box skeleton-line"&amp;gt;&amp;lt;/div&amp;gt;
+	&amp;lt;div class="skeleton-box skeleton-line small"&amp;gt;&amp;lt;/div&amp;gt;
+	&amp;lt;div class="skeleton-box skeleton-line medium"&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;&lt;/placeholder_template&gt;&lt;preserve_placeholder_size&gt;false&lt;/preserve_placeholder_size&gt;&lt;roles/&gt;&lt;short_description/&gt;&lt;size&gt;md&lt;/size&gt;&lt;sp_column display_value="1"&gt;6e3685d521ba03107f443754fb88d4ba&lt;/sp_column&gt;&lt;sp_widget display_value="HTML"&gt;8679ef89cb21120000f8d856634c9c4f&lt;/sp_widget&gt;&lt;sys_class_name&gt;sp_instance&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-08-18 08:24:18&lt;/sys_created_on&gt;&lt;sys_id&gt;004685d521ba03107f443754fb88d4c3&lt;/sys_id&gt;&lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0"&gt;f6139e0524ea03107f443d2e73d3b941&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Environmental Compliance Scoped App"&gt;f6139e0524ea03107f443d2e73d3b941&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_instance_004685d521ba03107f443754fb88d4c3&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-08-18 08:24:34&lt;/sys_updated_on&gt;&lt;title/&gt;&lt;url/&gt;&lt;widget_parameters&gt;&lt;![CDATA[{
+	"html": {
+		"value": "&lt;div style=\"font-family: Arial,sans-serif; background: linear-gradient(135deg,#063f3b 0%,#087f78 100%); color: #fff; padding: 20px 30px; border-radius: 16px; box-shadow: 0 5px 18px rgba(0,70,65,.18);\"&gt;\r\n&lt;div style=\"display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;\"&gt;&lt;!-- BRAND --&gt;\r\n&lt;div style=\"display: flex; align-items: center; gap: 12px;\"&gt;\r\n&lt;div style=\"width: 44px; height: 44px; border-radius: 12px; background: rgba(255,255,255,.14); display: flex; align-items: center; justify-content: center; font-size: 25px;\"&gt;]]&gt;🌿&lt;![CDATA[&lt;/div&gt;\r\n&lt;div&gt;\r\n&lt;div style=\"font-size: 18px; font-weight: bold; letter-spacing: 1px;\"&gt;ENVIRONMENTAL COMPLIANCE&lt;/div&gt;\r\n&lt;div style=\"font-size: 12px; color: #b8f28c; letter-spacing: 1.5px; margin-top: 3px;\"&gt;DASHBOARD OVERVIEW&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- NAVIGATION --&gt;\r\n&lt;div style=\"display: flex; align-items: center; gap: 8px; flex-wrap: wrap;\"&gt;&lt;a style=\"color: #063f3b; background: #b8f28c; text-decoration: none; font-weight: bold; padding: 10px 15px; border-radius: 8px;\" href=\"?id=environmental_compliance_dashboard\"&gt; Overview &lt;/a&gt; &lt;a style=\"color: #fff; text-decoration: none; font-weight: 600; padding: 10px 13px; border-radius: 8px;\" href=\"?id=environmental_compliance_complaints\"&gt; Complaints &lt;/a&gt; &lt;a style=\"color: #fff; text-decoration: none; font-weight: 600; padding: 10px 13px; border-radius: 8px;\" href=\"?id=environmental_compliance_inspections\"&gt; Inspections &lt;/a&gt; &lt;a style=\"color: #fff; text-decoration: none; font-weight: 600; padding: 10px 13px; border-radius: 8px;\" href=\"?id=environmental_compliance_inspectors\"&gt; Inspectors &lt;/a&gt; &lt;a style=\"color: #fff; text-decoration: none; font-weight: 600; padding: 10px 13px; border-radius: 8px;\" href=\"?id=environmental_compliance_risk_assessment\"&gt; Risk Assessment &lt;/a&gt; &lt;a style=\"color: #fff; text-decoration: none; font-weight: 600; padding: 10px 13px; border-radius: 8px;\" href=\"?id=environmental_compliance_legal_actions\"&gt; Legal Actions &lt;/a&gt; &lt;a style=\"color: #fff; text-decoration: none; font-weight: 600; padding: 10px 13px; border-radius: 8px;\" href=\"?id=environmental_compliance_pollution_locations\"&gt; ]]&gt;📍&lt;![CDATA[ Locations &lt;/a&gt;&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- DASHBOARD TITLE --&gt;\r\n&lt;div style=\"margin-top: 22px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.18);\"&gt;\r\n&lt;div style=\"font-size: 28px; font-weight: bold;\"&gt;Environmental Compliance Dashboard&lt;/div&gt;\r\n&lt;div style=\"font-size: 14px; color: #d8f3dc; margin-top: 6px;\"&gt;Monitor pollution complaints, inspections, risks and compliance activities.&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;/div&gt;",
+		"displayValue": "&lt;div style=\"font-family: Arial,sans-serif; background: linear-gradient(135deg,#063f3b 0%,#087f78 100%); color: #fff; padding: 20px 30px; border-radius: 16px; box-shadow: 0 5px 18px rgba(0,70,65,.18);\"&gt;\n&lt;div style=\"display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;\"&gt;&lt;!-- BRAND --&gt;\n&lt;div style=\"display: flex; align-items: center; gap: 12px;\"&gt;\n&lt;div style=\"width: 44px; height: 44px; border-radius: 12px; background: rgba(255,255,255,.14); display: flex; align-items: center; justify-content: center; font-size: 25px;\"&gt;]]&gt;🌿&lt;![CDATA[&lt;/div&gt;\n&lt;div&gt;\n&lt;div style=\"font-size: 18px; font-weight: bold; letter-spacing: 1px;\"&gt;ENVIRONMENTAL COMPLIANCE&lt;/div&gt;\n&lt;div style=\"font-size: 12px; color: #b8f28c; letter-spacing: 1.5px; margin-top: 3px;\"&gt;DASHBOARD OVERVIEW&lt;/div&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;!-- NAVIGATION --&gt;\n&lt;div style=\"display: flex; align-items: center; gap: 8px; flex-wrap: wrap;\"&gt;&lt;a style=\"color: #063f3b; background: #b8f28c; text-decoration: none; font-weight: bold; padding: 10px 15px; border-radius: 8px;\" href=\"?id=environmental_compliance_dashboard\"&gt; Overview &lt;/a&gt; &lt;a style=\"color: #fff; text-decoration: none; font-weight: 600; padding: 10px 13px; border-radius: 8px;\" href=\"?id=environmental_compliance_complaints\"&gt; Complaints &lt;/a&gt; &lt;a style=\"color: #fff; text-decoration: none; font-weight: 600; padding: 10px 13px; border-radius: 8px;\" href=\"?id=environmental_compliance_inspections\"&gt; Inspections &lt;/a&gt; &lt;a style=\"color: #fff; text-decoration: none; font-weight: 600; padding: 10px 13px; border-radius: 8px;\" href=\"?id=environmental_compliance_inspectors\"&gt; Inspectors &lt;/a&gt; &lt;a style=\"color: #fff; text-decoration: none; font-weight: 600; padding: 10px 13px; border-radius: 8px;\" href=\"?id=environmental_compliance_risk_assessment\"&gt; Risk Assessment &lt;/a&gt; &lt;a style=\"color: #fff; text-decoration: none; font-weight: 600; padding: 10px 13px; border-radius: 8px;\" href=\"?id=environmental_compliance_legal_actions\"&gt; Legal Actions &lt;/a&gt; &lt;a style=\"color: #fff; text-decoration: none; font-weight: 600; padding: 10px 13px; border-radius: 8px;\" href=\"?id=environmental_compliance_pollution_locations\"&gt; ]]&gt;📍&lt;![CDATA[ Locations &lt;/a&gt;&lt;/div&gt;\n&lt;/div&gt;\n&lt;!-- DASHBOARD TITLE --&gt;\n&lt;div style=\"margin-top: 22px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.18);\"&gt;\n&lt;div style=\"font-size: 28px; font-weight: bold;\"&gt;Environmental Compliance Dashboard&lt;/div&gt;\n&lt;div style=\"font-size: 14px; color: #d8f3dc; margin-top: 6px;\"&gt;Monitor pollution complaints, inspections, risks and compliance activities.&lt;/div&gt;\n&lt;/div&gt;\n&lt;/div&gt;"
+	}
+}]]&gt;&lt;/widget_parameters&gt;&lt;/sp_instance&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=004685d521ba03107f443754fb88d4c3"/&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1726914510</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>be139e0524ea03107f443d2e73d3b944</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-18 08:24:34</sys_created_on>
+        <sys_id>c05685d521ba03107f443754fb88d422</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a013f8e6650000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-18 08:24:34</sys_updated_on>
+        <type>Instance</type>
+        <update_guid>085685d58aba0310b1152ad606346f21</update_guid>
+        <update_guid_history>085685d58aba0310b1152ad606346f21:-1726914510,004685d52dba031066a397b9697f55c5:-458371640</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">766689d521ba03107f443754fb88d4c5</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-18 08:25:02</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance">sp_instance</sys_db_object>
+        <sys_id>1fd904b047f245f798eafc70f09d5741</sys_id>
+        <sys_metadata>004685d521ba03107f443754fb88d4c3</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_scope_delete display_value="">57bcfbaf4a844eb88d8c57ea65d55310</sys_scope_delete>
+        <sys_update_name>sp_instance_004685d521ba03107f443754fb88d4c3</sys_update_name>
+        <sys_update_version display_value="sp_instance_004685d521ba03107f443754fb88d4c3">c05685d521ba03107f443754fb88d422</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-18 08:25:02</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

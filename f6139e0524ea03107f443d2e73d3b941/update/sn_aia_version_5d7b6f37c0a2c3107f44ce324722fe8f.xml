@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_version">
+    <sn_aia_version action="INSERT_OR_UPDATE">
+        <condition/>
+        <instructions>1. Greet the citizen and explain that the assistant can help register an environmental pollution complaint through voice.
+2. Allow the citizen to describe the environmental issue naturally in their preferred language.
+3. Capture the citizen's spoken input and convert the speech into text while preserving the original language and meaning.
+4. Translate the captured complaint text into English for standardized processing while retaining the original-language transcript.
+5. Identify the essential complaint information, including pollution type, location, description of the incident, when the issue was observed, and any reported impact on people or the environment.
+6. If any essential information is missing or unclear, ask the citizen a simple follow-up question in the conversation and do not assume the missing information.
+7. Present the interpreted complaint details to the citizen and ask for confirmation before registration.
+8. After the citizen confirms, use the configured ServiceNow complaint-registration tool to create the environmental complaint record.
+9. Preserve the original-language transcript and the English translation in the appropriate complaint fields when supported by the configured data model.
+10. Provide the generated complaint number to the citizen and confirm that the complaint has been registered successfully.
+11. Do not create duplicate complaints when the same complaint has already been registered during the current interaction.
+12. Do not invent pollution details, locations, identities, dates, or other information that the citizen has not provided.</instructions>
+        <state>published</state>
+        <sys_class_name>sn_aia_version</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-14 04:35:13</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>5d7b6f37c0a2c3107f44ce324722fe8f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>V1</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>sn_aia_version_5d7b6f37c0a2c3107f44ce324722fe8f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-14 04:35:13</sys_updated_on>
+        <target_id>12d9e773c0a2c3107f44ce324722fe9c</target_id>
+        <target_table>sn_aia_agent</target_table>
+        <version_name>V1</version_name>
+        <version_number>1</version_number>
+    </sn_aia_version>
+</record_update>

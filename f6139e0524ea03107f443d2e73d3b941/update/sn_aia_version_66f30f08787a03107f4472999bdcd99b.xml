@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_version">
+    <sn_aia_version action="INSERT_OR_UPDATE">
+        <condition/>
+        <instructions>1. Fetch the environmental pollution complaint details including complaint title, complaint type, pollution category, pollution source, description, district, landmark, number of people affected, risk level, and current status.
+
+2. Validate the complaint information and identify any missing or inconsistent details that require clarification.
+
+3. Analyze the complaint details and determine the environmental risk level based on pollution category, severity, affected population, and suspected regulatory violation.
+
+4. Update the complaint record with the assessed risk level and appropriate compliance status.
+
+5. Assign or initiate the appropriate inspection process based on the complaint location, pollution category, risk level, and regulatory requirements.
+
+6. Track the complaint status through investigation, inspection, compliance action, and resolution.
+
+7. Provide the citizen with a clear summary of the complaint status, actions taken, and next steps.</instructions>
+        <state>published</state>
+        <sys_class_name>sn_aia_version</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-14 20:21:11</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>66f30f08787a03107f4472999bdcd99b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>V1</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>sn_aia_version_66f30f08787a03107f4472999bdcd99b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-14 20:21:11</sys_updated_on>
+        <target_id>daf30f08787a03107f4472999bdcd999</target_id>
+        <target_table>sn_aia_usecase</target_table>
+        <version_name>V1</version_name>
+        <version_number>1</version_number>
+    </sn_aia_version>
+</record_update>

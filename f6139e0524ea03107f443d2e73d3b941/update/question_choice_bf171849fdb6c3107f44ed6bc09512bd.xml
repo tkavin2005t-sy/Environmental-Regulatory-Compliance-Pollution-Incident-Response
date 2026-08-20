@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice">
+    <question_choice action="INSERT_OR_UPDATE">
+        <inactive>false</inactive>
+        <order>4</order>
+        <published_ref/>
+        <question display_value="Complaint Type">6f171849fdb6c3107f44ed6bc0951274</question>
+        <sys_class_name>question_choice</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 10:19:54</sys_created_on>
+        <sys_id>bf171849fdb6c3107f44ed6bc09512bd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Waste Disposal</sys_name>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>question_choice_bf171849fdb6c3107f44ed6bc09512bd</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 10:19:54</sys_updated_on>
+        <text>Waste Disposal</text>
+        <value>waste_disposal</value>
+    </question_choice>
+    <fx_price action="delete_multiple" query="id=bf171849fdb6c3107f44ed6bc09512bd"/>
+</record_update>

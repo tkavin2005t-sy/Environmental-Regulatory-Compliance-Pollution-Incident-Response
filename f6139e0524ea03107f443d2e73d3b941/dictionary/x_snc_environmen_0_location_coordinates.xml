@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="d2953b1a98e203107f443c134f53093e" label="Location Coordinates" max_length="40" name="x_snc_environmen_0_location_coordinates" type="collection">
+        <element label="Longitude" max_length="20" name="longitude" type="decimal"/>
+        <element display="true" label="Location" max_length="100" name="location" type="string"/>
+        <element label="Latitude" max_length="20" name="latitude" type="decimal"/>
+        <element label="State" max_length="100" name="state" type="string"/>
+        <element label="District" max_length="100" name="district" type="string"/>
+    </element>
+</database>

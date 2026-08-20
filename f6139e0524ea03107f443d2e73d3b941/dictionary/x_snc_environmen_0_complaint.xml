@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="7495564924ea03107f443d2e73d3b97d" label="Complaint" max_length="40" name="x_snc_environmen_0_complaint" type="collection">
+        <element label="Contact Number" max_length="255" name="contact_number" type="phone_number_e164"/>
+        <element default="False" label="Is Anonymous" max_length="255" name="is_anonymous" type="boolean"/>
+        <element attributes="encode_utf8=false" label="High Authority" max_length="32" name="high_authority" read_only="true" read_only_option="display_read_only" reference="sys_user" type="reference"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" read_only="true" read_only_option="display_read_only" type="string"/>
+        <element choice="3" default="unknown" label="Pollution Source" max_length="255" name="pollution_source" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Factory" sequence="0" value="factory"/>
+                <element inactive_on_update="false" label="Commercial Building" sequence="4" value="commercial_building"/>
+                <element inactive_on_update="false" label="Construction Site" sequence="1" value="construction_site"/>
+                <element inactive_on_update="false" label="River" sequence="5" value="river"/>
+                <element inactive_on_update="false" label="Vehicle" sequence="2" value="vehicle"/>
+                <element inactive_on_update="false" label="Unknown" sequence="7" value="unknown"/>
+                <element inactive_on_update="false" label="Generator" sequence="0" value="Generator"/>
+                <element inactive_on_update="false" label="Road Dust" sequence="0" value="Road Dust"/>
+                <element inactive_on_update="false" label="Agriculture" sequence="6" value="agriculture"/>
+                <element inactive_on_update="false" label="Residential Area" sequence="3" value="residential_area"/>
+            </choice>
+        </element>
+        <element choice="3" label="Risk Level" max_length="40" name="risk_level" read_only="true" read_only_option="display_read_only" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Critical" sequence="3" value="critical"/>
+                <element inactive_on_update="false" label="High" sequence="2" value="high"/>
+                <element inactive_on_update="false" label="Medium" sequence="1" value="medium"/>
+                <element inactive_on_update="false" label="Low" sequence="0" value="low"/>
+            </choice>
+        </element>
+        <element label="State" max_length="40" name="state" type="string"/>
+        <element label="Description" max_length="8000" name="description" type="html"/>
+        <element label="Citizen Name" max_length="100" name="citizen_name" type="string"/>
+        <element choice="3" default="unknown" label="Suspected Regulation Violated" max_length="255" name="suspected_regulation_violated" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Water Pollution Act" sequence="1" value="water_pollution_act"/>
+                <element inactive_on_update="false" label="Unknown" sequence="5" value="unknown"/>
+                <element inactive_on_update="false" label="Plastic Waste Rules" sequence="3" value="plastic_waste_rules"/>
+                <element inactive_on_update="false" label="Noise Pollution Rules" sequence="4" value="noise_pollution_rules"/>
+                <element inactive_on_update="false" label="Hazardous Waste Rules" sequence="2" value="hazardous_waste_rules"/>
+                <element inactive_on_update="false" label="Air Pollution Act" sequence="0" value="air_pollution_act"/>
+            </choice>
+        </element>
+        <element choice="3" label="Complaint Type" max_length="40" name="complaint_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Air Pollution" sequence="0" value="air_pollution"/>
+                <element inactive_on_update="false" label="Chemical Leak" sequence="4" value="chemical_leak"/>
+                <element inactive_on_update="false" label="Noise Pollution" sequence="2" value="noise_pollution"/>
+                <element inactive_on_update="false" label="Other" sequence="5" value="other"/>
+                <element inactive_on_update="false" label="Waste Disposal" sequence="3" value="waste_disposal"/>
+                <element inactive_on_update="false" label="Water Pollution" sequence="1" value="water_pollution"/>
+            </choice>
+        </element>
+        <element label="Assigned Inspector" max_length="32" name="assigned_inspector" read_only="true" read_only_option="display_read_only" reference="x_snc_environmen_0_inspector" type="reference"/>
+        <element label="Inspection" max_length="32" name="inspection" reference="x_snc_environmen_0_inspection" type="reference"/>
+        <element choice="3" label="Government Action" max_length="40" name="government_action" read_only="true" read_only_option="display_read_only" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Fine Imposed" sequence="2" value="fine_imposed"/>
+                <element inactive_on_update="false" label="Legal Notice Issued" sequence="3" value="legal_notice_issued"/>
+                <element inactive_on_update="false" label="Case Closed" sequence="4" value="case_closed"/>
+                <element inactive_on_update="false" label="Inspection Scheduled" sequence="0" value="inspection_scheduled"/>
+                <element inactive_on_update="false" label="Warning Issued" sequence="1" value="warning_issued"/>
+            </choice>
+        </element>
+        <element label="Email Address" max_length="100" name="email_address" type="string"/>
+        <element label="Citizen User" max_length="32" name="citizen_user" reference="sys_user" type="reference"/>
+        <element label="Map Location" max_length="32" name="map_location" reference="x_snc_environmen_0_location_coordinates" type="reference"/>
+        <element display="true" label="Complaint Title" max_length="255" name="complaint_title" type="string"/>
+        <element choice="3" label="Complaint Source" max_length="40" name="complaint_source" read_only="true" read_only_option="display_read_only" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Web Portal" sequence="0" value="web_portal"/>
+            </choice>
+        </element>
+        <element choice="3" default="other_unknown" label="Pollution Category" max_length="255" name="pollution_category" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Chemical Leakage" sequence="5" value="chemical_leakage"/>
+                <element inactive_on_update="false" label="Water Pollution" sequence="1" value="water_pollution"/>
+                <element inactive_on_update="false" label="Air Pollution" sequence="0" value="air_pollution"/>
+                <element inactive_on_update="false" label="Other / Unknown" sequence="8" value="other_unknown"/>
+                <element inactive_on_update="false" label="Industrial Waste" sequence="4" value="industrial_waste"/>
+                <element inactive_on_update="false" label="Illegal Dumping" sequence="7" value="illegal_dumping"/>
+                <element inactive_on_update="false" label="Soil Pollution" sequence="3" value="soil_pollution"/>
+                <element inactive_on_update="false" label="Plastic Waste" sequence="6" value="plastic_waste"/>
+                <element inactive_on_update="false" label="Noise Pollution" sequence="2" value="noise_pollution"/>
+            </choice>
+        </element>
+        <element label="Number of People Affected" max_length="40" name="number_of_people_affected" type="integer"/>
+        <element choice="3" default="medium" label="Severity" max_length="255" name="severity" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Medium" sequence="1" value="medium"/>
+                <element inactive_on_update="false" label="Low" sequence="0" value="low"/>
+                <element inactive_on_update="false" label="High" sequence="2" value="high"/>
+                <element inactive_on_update="false" label="Critical" sequence="3" value="critical"/>
+            </choice>
+        </element>
+        <element label="Longitude" max_length="38" name="longitude" type="decimal"/>
+        <element choice="1" label="Status" max_length="40" name="status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="In Progress" sequence="2" value="in_progress"/>
+                <element inactive_on_update="false" label="Rejected" sequence="6" value="rejected"/>
+                <element inactive_on_update="false" label="Under Investigation" sequence="3" value="under_investigation"/>
+                <element inactive_on_update="false" label="Resolved" sequence="4" value="resolved"/>
+                <element inactive_on_update="false" label="Assigned" sequence="1" value="assigned"/>
+                <element inactive_on_update="false" label="Closed" sequence="5" value="closed"/>
+                <element inactive_on_update="false" label="New" sequence="0" value="new"/>
+            </choice>
+        </element>
+        <element choice="3" default="phone_call" label="Preferred Contact Method" max_length="255" name="preferred_contact_method" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="SMS" sequence="1" value="sms"/>
+                <element inactive_on_update="false" label="Phone Call" sequence="0" value="phone_call"/>
+                <element inactive_on_update="false" label="No Contact Required" sequence="3" value="no_contact_required"/>
+                <element inactive_on_update="false" label="Email" sequence="2" value="email"/>
+            </choice>
+        </element>
+        <element label="Phone Number" max_length="40" name="phone_number" type="phone_number_e164"/>
+        <element label="Repeat Offender" max_length="40" name="repeat_offender" type="boolean"/>
+        <element choice="3" label="Compliance Status" max_length="40" name="compliance_status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Non-Compliant" sequence="3" value="non_compliant"/>
+                <element inactive_on_update="false" label="Compliant" sequence="2" value="compliant"/>
+                <element inactive_on_update="false" label="Pending Review" sequence="0" value="pending_review"/>
+                <element inactive_on_update="false" label="Closed" sequence="4" value="closed"/>
+                <element inactive_on_update="false" label="Under Investigation" sequence="1" value="under_investigation"/>
+            </choice>
+        </element>
+        <element label="Location" max_length="40" name="location" type="string"/>
+        <element label="Latitude" max_length="38" name="latitude" type="decimal"/>
+        <element label="Landmark" max_length="40" name="landmark" type="string"/>
+        <element label="District" max_length="40" name="district" type="string"/>
+        <index name="index">
+            <element name="map_location"/>
+        </index>
+        <index name="index2">
+            <element name="assigned_inspector"/>
+        </index>
+        <index name="index3">
+            <element name="high_authority"/>
+        </index>
+        <index name="index4">
+            <element name="inspection"/>
+        </index>
+        <index name="index5">
+            <element name="citizen_user"/>
+        </index>
+    </element>
+</database>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_version">
+    <sn_aia_version action="INSERT_OR_UPDATE">
+        <condition/>
+        <instructions>1. Greet the senior citizen respectfully and explain that you can help register an environmental pollution complaint.
+
+2. Listen to the citizen's complaint and identify the pollution type, such as air pollution, water pollution, noise pollution, waste pollution, or other environmental pollution.
+
+3. Collect the required complaint details: pollution type, complaint description, affected location, date and time of the incident, and any other information required by the environmental complaint record.
+
+4. If any required information is missing or unclear, ask the citizen a simple follow-up question and collect the missing information.
+
+5. Repeat the important complaint details back to the citizen in simple language and ask for confirmation before creating the complaint.
+
+6. Create one environmental pollution complaint record using the collected and confirmed information.
+
+7. After the complaint record is successfully created, provide the citizen with a clear confirmation and explain that the complaint has been submitted for further processing.
+
+8. Do not perform inspection assignment, pollution risk classification, notifications, or regulatory processing directly. These processes are handled automatically by the existing workflows triggered after the complaint record is created.</instructions>
+        <state>published</state>
+        <sys_class_name>sn_aia_version</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-15 05:30:17</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>b9a18118c57203107f44493b2130cce4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>V1</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>sn_aia_version_b9a18118c57203107f44493b2130cce4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-15 05:30:17</sys_updated_on>
+        <target_id>1e2ff0d0c57203107f44493b2130cc33</target_id>
+        <target_table>sn_aia_agent</target_table>
+        <version_name>V1</version_name>
+        <version_number>1</version_number>
+    </sn_aia_version>
+</record_update>

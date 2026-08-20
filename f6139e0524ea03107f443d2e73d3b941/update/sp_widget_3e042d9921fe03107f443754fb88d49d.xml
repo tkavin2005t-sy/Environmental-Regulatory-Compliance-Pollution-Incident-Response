@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function() {
+
+    var c = this;
+
+    // Search Legal Actions
+    c.search = function() {
+        c.server.update();
+    };
+
+    // Clear search
+    c.clearSearch = function() {
+        c.searchText = '';
+        c.server.update();
+    };
+
+    // New Legal Action
+    c.addAction = function() {
+
+        // We will connect the existing Legal Action
+        // creation form after confirming its exact backend flow.
+
+    };
+
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.legal-page {
+  background: #f5f9f8;
+  padding: 28px;
+  border-radius: 14px;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+.legal-header {
+  background: linear-gradient(135deg, #075e54, #008f83);
+  color: #ffffff;
+  padding: 28px 30px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.legal-brand {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.legal-subtitle {
+  margin-top: 5px;
+  color: #b8f28c;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.legal-header h1 {
+  margin: 18px 0 6px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.legal-header p {
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* New Action */
+.new-action-btn {
+  background: #b8f28c;
+  color: #075e54;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.new-action-btn:hover {
+  opacity: 0.9;
+}
+
+/* Search */
+.legal-toolbar {
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.search-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-area input {
+  flex: 1;
+  height: 42px;
+  border: 1px solid #d6e4e1;
+  border-radius: 8px;
+  padding: 0 14px;
+  font-size: 13px;
+  outline: none;
+}
+
+.search-area input:focus {
+  border-color: #008f83;
+}
+
+.search-area button {
+  height: 42px;
+  padding: 0 20px;
+  background: #008f83;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Table Card */
+.legal-card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow-x: auto;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
+}
+
+/* Table */
+.legal-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 850px;
+}
+
+.legal-table th {
+  background: #eaf5f2;
+  color: #075e54;
+  text-align: left;
+  padding: 15px 14px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.legal-table td {
+  padding: 15px 14px;
+  border-bottom: 1px solid #edf2f1;
+  font-size: 13px;
+  color: #344746;
+}
+
+.legal-table tbody tr:hover {
+  background: #f7fbfa;
+}
+
+/* Action ID */
+.action-id {
+  color: #007f73;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Status */
+.status-badge {
+  display: inline-block;
+  padding: 5px 11px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.status-active {
+  background: #fde8d7;
+  color: #a15c00;
+}
+
+.status-pending {
+  background: #e4efff;
+  color: #1769aa;
+}
+
+.status-completed {
+  background: #dcf5e8;
+  color: #167447;
+}
+
+.status-closed {
+  background: #eeeeee;
+  color: #666666;
+}
+
+.status-in-progress {
+  background: #e2efff;
+  color: #1769aa;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center !important;
+  padding: 45px !important;
+  color: #879896 !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+  .legal-page {
+    padding: 15px;
+  }
+
+  .legal-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .new-action-btn {
+    width: 100%;
+  }
+
+  .search-area {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-area button {
+    width: 100%;
+  }
+
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>ec_legal_actions_list</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>EC Legal Actions List</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+
+    var LEGAL_ACTION_TABLE = 'x_snc_environmen_0_legal_action';
+
+    var gr = new GlideRecord(LEGAL_ACTION_TABLE);
+
+    data.legalActions = [];
+
+
+    // ============================
+    // SEARCH
+    // ============================
+
+    if (input && input.searchText) {
+
+        var searchText = input.searchText.trim();
+
+        if (searchText) {
+
+            var query = gr.addQuery(
+                'action_type',
+                'CONTAINS',
+                searchText
+            );
+
+            query.addOrCondition(
+                'action_status',
+                'CONTAINS',
+                searchText
+            );
+
+            query.addOrCondition(
+                'remarks',
+                'CONTAINS',
+                searchText
+            );
+
+            query.addOrCondition(
+                'complaint.number',
+                'CONTAINS',
+                searchText
+            );
+
+        }
+    }
+
+
+    // Latest legal actions first
+    gr.orderByDesc('action_date');
+
+    // Performance limit
+    gr.setLimit(50);
+
+    gr.query();
+
+
+    // ============================
+    // LOAD DYNAMIC RECORDS
+    // ============================
+
+    while (gr.next()) {
+
+        var action = {};
+
+
+        // Dynamic ID
+        action.number =
+            'LA-' + gr.getUniqueValue().substring(0, 8);
+
+
+        // Complaint reference
+        action.complaint =
+            gr.getDisplayValue('complaint');
+
+
+        // Action Type
+        action.type =
+            gr.getDisplayValue('action_type');
+
+
+        // Authority
+        // Existing table does not have Authority field,
+        // so use Inspection reference as related authority/context.
+        action.authority =
+            gr.getDisplayValue('inspection');
+
+
+        // Status
+        action.status =
+            gr.getDisplayValue('action_status');
+
+
+        // Action Date
+        action.date =
+            gr.getDisplayValue('action_date');
+
+
+        // ============================
+        // STATUS CSS CLASS
+        // ============================
+
+        var status =
+            (action.status || '').toLowerCase();
+
+
+        if (
+            status.indexOf('complete') >= 0 ||
+            status.indexOf('closed') >= 0
+        ) {
+
+            action.statusClass = 'completed';
+
+        } else if (
+            status.indexOf('pending') >= 0
+        ) {
+
+            action.statusClass = 'pending';
+
+        } else if (
+            status.indexOf('active') >= 0
+        ) {
+
+            action.statusClass = 'active';
+
+        } else if (
+            status.indexOf('progress') >= 0
+        ) {
+
+            action.statusClass = 'in-progress';
+
+        } else {
+
+            action.statusClass = 'pending';
+
+        }
+
+
+        data.legalActions.push(action);
+
+    }
+
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-18 10:34:27</sys_created_on>
+        <sys_id>3e042d9921fe03107f443754fb88d49d</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>EC Legal Actions List</sys_name>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>sp_widget_3e042d9921fe03107f443754fb88d49d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-18 10:42:17</sys_updated_on>
+        <template><![CDATA[<div class="legal-page">
+
+  <!-- Header -->
+  <div class="legal-header">
+
+    <div>
+      <div class="legal-brand">
+        ]]>🌿<![CDATA[ ENVIRONMENTAL COMPLIANCE
+      </div>
+
+      <div class="legal-subtitle">
+        LEGAL ACTION MANAGEMENT
+      </div>
+
+      <h1>
+        Legal Actions
+      </h1>
+
+      <p>
+        Track regulatory actions, notices and compliance enforcement activities.
+      </p>
+    </div>
+
+
+    <button 
+      class="new-action-btn"
+      ng-click="c.addAction()">
+
+      + New Action
+
+    </button>
+
+  </div>
+
+
+
+  <!-- Search Section -->
+  <div class="legal-toolbar">
+
+    <div class="search-area">
+
+      <input
+        type="text"
+        ng-model="c.searchText"
+        placeholder="Search legal actions..."
+        ng-keypress="$event.keyCode == 13 && c.search()">
+
+
+      <button ng-click="c.search()">
+        Search
+      </button>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- Legal Actions Table -->
+  <div class="legal-card">
+
+    <table class="legal-table">
+
+      <thead>
+
+        <tr>
+
+          <th>
+            Action ID
+          </th>
+
+          <th>
+            Complaint
+          </th>
+
+          <th>
+            Action Type
+          </th>
+
+          <th>
+            Authority
+          </th>
+
+          <th>
+            Status
+          </th>
+
+          <th>
+            Action Date
+          </th>
+
+        </tr>
+
+      </thead>
+
+
+
+      <tbody>
+
+
+        <!-- Empty State -->
+
+        <tr ng-if="!data.legalActions || data.legalActions.length == 0">
+
+          <td colspan="6" class="empty-state">
+
+            No legal actions found
+
+          </td>
+
+        </tr>
+
+
+
+        <!-- Dynamic Data -->
+
+        <tr 
+          ng-repeat="action in data.legalActions track by $index">
+
+
+          <td>
+
+            <a class="action-id">
+
+              {{action.number}}
+
+            </a>
+
+          </td>
+
+
+
+          <td>
+
+            {{action.complaint}}
+
+          </td>
+
+
+
+          <td>
+
+            {{action.type}}
+
+          </td>
+
+
+
+          <td>
+
+            {{action.authority}}
+
+          </td>
+
+
+
+          <td>
+
+            <span
+              class="status-badge"
+              ng-class="'status-' + action.statusClass">
+
+              {{action.status}}
+
+            </span>
+
+          </td>
+
+
+
+          <td>
+
+            {{action.date}}
+
+          </td>
+
+
+        </tr>
+
+
+      </tbody>
+
+
+    </table>
+
+
+  </div>
+
+
+</div>]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>3e042d9921fe03107f443754fb88d49d</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-18 10:34:27</sys_created_on>
+        <sys_id>72042d9921fe03107f443754fb88d4a1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-18 10:34:27</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

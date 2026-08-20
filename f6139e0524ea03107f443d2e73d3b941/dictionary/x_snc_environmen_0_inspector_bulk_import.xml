@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="2154e3f0fdbe83107f44ed6bc095121d" extends="sys_import_set_row" label="Inspector Bulk Import" max_length="40" name="x_snc_environmen_0_inspector_bulk_import" type="collection">
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Contact Number" label="Contact Number" max_length="40" name="u_contact_number" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Inspector ID" label="Inspector ID" max_length="40" name="u_inspector_id" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Availability Status" label="Availability Status" max_length="40" name="u_availability_status" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Department" label="Department" max_length="40" name="u_department" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Region" label="Region" max_length="40" name="u_region" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Years of Experience" label="Years of Experience" max_length="40" name="u_years_of_experience" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Expertise" label="Expertise" max_length="40" name="u_expertise" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Inspector Name" label="Inspector Name" max_length="40" name="u_inspector_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Email Address" label="Email Address" max_length="40" name="u_email_address" type="string"/>
+    </element>
+</database>

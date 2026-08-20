@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <allow_high_security_roles>false</allow_high_security_roles>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=315168000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>29000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Monitor pending environmental compliance approvals, identify delayed or overdue approvals, and notify the appropriate higher authority for timely escalation.</description>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source/>
+        <internal_name>environmental_approval_escalation_monitor</internal_name>
+        <label_cache>[{"name":"76fb128d-7d62-44c8-a1d6-7389b468e03b.item.approver.email","label":"2 - For Each➛Approval Record➛Approver➛Email","reference":"","reference_display":"Email","type":"email","base_type":"email","parent_table_name":"sys_user","column_name":"email","choices":[{"order":0.0}],"usedInstances":{"5c81d4b2-7782-4bbf-b404-2f4c56bbc566":["ah_to"]}},{"name":"76fb128d-7d62-44c8-a1d6-7389b468e03b.item","label":"2 - For Each➛Approval Record","reference":"sysapproval_approver","reference_display":"Approval","type":"reference","base_type":"reference","usedInstances":{},"attributes":{"pills_draggable_inside_block":"true","pills_draggable_outside_block":"false"}},{"name":"432f0d27-89fb-4509-b96a-23b80958baf7.Records","label":"1 - Look Up Records➛Approval Records","reference":"sysapproval_approver","reference_display":"Approval","type":"records","base_type":"records","usedInstances":{"76fb128d-7d62-44c8-a1d6-7389b468e03b":["items"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"Daily_1.run_start_date_time","label":"Trigger - Run Daily ➛Run Start Date/Time","type":"glide_date_time","base_type":"glide_date_time","usedInstances":{"b69a9b4e-f3cb-4fe2-9d10-a9863875e472":["condition"]},"attributes":{"test_input_hidden":"true"}},{"name":"76fb128d-7d62-44c8-a1d6-7389b468e03b.item.sys_created_on","label":"2 - For Each➛Approval Record➛Created","reference":"","reference_display":"Created","type":"glide_date_time","base_type":"glide_date_time","parent_table_name":"sysapproval_approver","column_name":"sys_created_on","usedInstances":{"bdaa6fa2-26a2-447d-99ab-19dbf851d8b7":["condition"],"b69a9b4e-f3cb-4fe2-9d10-a9863875e472":["condition"]}}]</label_cache>
+        <master_snapshot>91e9e690c57243107f44493b2130cc46</master_snapshot>
+        <master_snapshot_digest/>
+        <name>Environmental Approval Escalation Monitor</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id>6de9e690c57243107f44493b2130cc82</remote_trigger_id>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>published</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-15 12:03:34</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>beab1654c5fe03107f44493b2130cc34</sys_id>
+        <sys_mod_count>29</sys_mod_count>
+        <sys_name>Environmental Approval Escalation Monitor</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>sys_hub_flow_beab1654c5fe03107f44493b2130cc34</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-19 03:36:25</sys_updated_on>
+        <type>flow</type>
+        <updation_source/>
+        <version>2</version>
+        <version_record>d1fd4d652132c3107f443754fb88d4b2</version_record>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=beab1654c5fe03107f44493b2130cc34"/>
+    <sys_variable_value action="delete_multiple" query="document_key=beab1654c5fe03107f44493b2130cc34"/>
+    <sys_flow_timer_trigger action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <day_of_month>1</day_of_month>
+        <day_of_week/>
+        <name/>
+        <published_version/>
+        <run_period/>
+        <run_start>2026-08-15 13:05:44</run_start>
+        <sys_class_name>sys_flow_timer_trigger</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-15 13:05:44</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>6de9e690c57243107f44493b2130cc82</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-15 13:05:44</sys_updated_on>
+        <time>1970-01-01 18:00:00</time>
+        <timer_type>11</timer_type>
+        <trigger_definition display_value="Daily">89142dc0c32222002841b63b12d3ae8a</trigger_definition>
+    </sys_flow_timer_trigger>
+    <sys_flow_trigger_auto_script action="delete_multiple" query="name=Trigger:6de9e690c57243107f44493b2130cc82^sys_idNOT INe5e9e690c57243107f44493b2130cc83"/>
+    <sys_flow_trigger_auto_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <advanced>false</advanced>
+        <business_calendar/>
+        <condition/>
+        <conditional>false</conditional>
+        <entered_run_end/>
+        <entered_run_start/>
+        <entered_time/>
+        <max_drift/>
+        <name>Trigger:6de9e690c57243107f44493b2130cc82</name>
+        <offset/>
+        <offset_type>0</offset_type>
+        <repeat_every/>
+        <run_as display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</run_as>
+        <run_as_tz/>
+        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofweek/>
+        <run_daysofweek/>
+        <run_end/>
+        <run_month/>
+        <run_period/>
+        <run_start>2026-08-15 13:05:44</run_start>
+        <run_time>1970-01-01 18:00:00</run_time>
+        <run_type>daily</run_type>
+        <run_weekinmonth/>
+        <script><![CDATA[sn_flow_trigger.FlowTriggerAPI.fireTimerTrigger('6de9e690c57243107f44493b2130cc82');]]></script>
+        <sys_class_name>sys_flow_trigger_auto_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-15 13:05:44</sys_created_on>
+        <sys_id>e5e9e690c57243107f44493b2130cc83</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-15 13:05:44</sys_updated_on>
+        <time_zone/>
+        <trigger display_value="">6de9e690c57243107f44493b2130cc82</trigger>
+        <upgrade_safe>true</upgrade_safe>
+    </sys_flow_trigger_auto_script>
+    <sys_trigger_runner_mapping action="delete_multiple" query="identifier=beab1654c5fe03107f44493b2130cc34"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=beab1654c5fe03107f44493b2130cc34"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=beab1654c5fe03107f44493b2130cc34^sys_idNOT IN36ab1654c5fe03107f44493b2130cc36"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>beab1654c5fe03107f44493b2130cc34</id>
+        <name>Environmental Approval Escalation Monitor</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-15 12:03:34</sys_created_on>
+        <sys_id>36ab1654c5fe03107f44493b2130cc36</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-15 12:03:34</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=36ab1654c5fe03107f44493b2130cc36"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=beab1654c5fe03107f44493b2130cc34"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=beab1654c5fe03107f44493b2130cc34"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=beab1654c5fe03107f44493b2130cc34"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=beab1654c5fe03107f44493b2130cc34^sys_idNOT IN1e2c1e94c5fe03107f44493b2130cc6d"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Environmental Approval Escalation Monitor">beab1654c5fe03107f44493b2130cc34</flow>
+        <generation_source/>
+        <name>Daily</name>
+        <published_version/>
+        <remote_sys_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-15 12:05:43</sys_created_on>
+        <sys_id>1e2c1e94c5fe03107f44493b2130cc6d</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-15 13:05:41</sys_updated_on>
+        <trigger_definition display_value="Daily">89142dc0c32222002841b63b12d3ae8a</trigger_definition>
+        <trigger_inputs>H4sIAAAAAAAA/31STUvDQBD9K7LnGjatn7kJInhQQUsvRcJkd9Iu7JebTTWW/ndnk7RoFcNe5s3Mm/ceWW6Zhgo1K9hcGWQTpmzEYEHPO4+ErrSSWMahZ8BKiC50rIihxQmrgzNzNF5DpOEadEOgCxIDK3LOJ2wDusWXrrmXxEUMFkxiHfn6LpX59SU/5Tm9k/yq4JwedaVqiLhb/Dsk1krLgJYVy9cJ8xDoQEznt0ctlRTMQJ6hFFzMpvRxPr06y6uLWZVP5QwQz4nwKI6fguMfoXy3ix8RrUR5yOJXYgFBPlndHSbWFPiQjYGPRn3iSBWwRhIvcGgeynKMZYDF2imBTz4qZwckQqXHHeF0a+zj4CAFijW0Ou4DJaRtiA990pxUjJLql7V7f94fvFO2Nzg2tROgDxXEGFTVRmxS4qjREFFpwHtlV6UPbqP6ZdJisj62rNbunY42amUzEEl4RhFBdkf4bQ8vIKjk4oFoaHnXuy/f2nR38DEqLgfTNNCIoHy8IbrN/kfcvX4BC31NbN0CAAA=</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>daily</trigger_type>
+        <updation_source/>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=beab1654c5fe03107f44493b2130cc34^sys_idNOT IN93ac1250c5be03107f44493b2130ccfb,5254a294c53243107f44493b2130ccc0,17e5a764fdba03107f44ed6bc0951279"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Records">43400a1587003300663ca1bb36cb0b4b</action_type>
+        <action_type_parent display_value="Look Up Records">d1c56ec50b30030085c083eb37673a50</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>43400a1587003300663ca1bb36cb0b4b</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Environmental Approval Escalation Monitor">beab1654c5fe03107f44493b2130cc34</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-15 12:07:58</sys_created_on>
+        <sys_id>93ac1250c5be03107f44493b2130ccfb</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-20 08:35:33</sys_updated_on>
+        <ui_id>432f0d27-89fb-4509-b96a-23b80958baf7</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VX207jMBD9lSrPUZWQUljeEAhpJS4SIF7YleU4TmutawfboZSq/77j2EmjNmUbqUigfavnYp+ZOcdOn5cBy4Kz4DQfRRGOj09PoihJomg8TgiO0zQZkzRKR2kQBgLPKEQanHIKy1fMS7vWC42LQklYI/eDKnBnTBccL5581LkPAQ+ZMp4pKoKz599hUGAF+xrIOVtuuPYFxnFKOYQ+emQbQM2iaJao8jnbdTttcOscUmUWShQG9M1QkVHAkGOuaRjMsMiwkWrRWBTF2Z3ga8OUCQM7Bjb4TbN3OPc0snE5haoIdb5miXyTnDm/xAY/GFUSUyofSqaSEapdPzKa45Kbi7bNBdwVhknhUlzZLlvyciZuXTuCZoN6JmApNYCghS3UIvdl5A9TOb+vUV4xUfXEO7kkMMZ6hY1RLC2NxbMMKKcz2AjNgAhMTJCdOauSActsOOGwGOZczuFQzSZiiIkFPoS+4uEV2C8r8xNWzFZxA9tUZMoZB4YgN0ItS1W18hURXurKobDQbq9gFVpKXnCs9bpyaDl6KS1u1wdfMXJNsylEscKcwxav1Be3CvfSxnG0phyRImMWhW4LxGBDf5WQC9R+KSkgzrYFsiPqkGKpkNZiuWhD7YLvZbNlu+7awMsmPphsoI7vJBw4/Ovppr8SXAv+IQdy8iHJjtd80lIZ5HrZ0sM293vzfA8INc/vLDMH6WIXKk/znFGedb0OV9ax8Toc/Z+vw5ckOQDKkJseE5yJ6qkHoJ/F/ujjK/bHBs8qerXeAmvDmmxrAA+MHLz3VsIecGolPMDZg0eHpwNifd9XlNm862ujF0ByMAEkR4cRwLIps2lkR8/rrzs7zTr+3cbjzXigYCshXnUJrNeZcd8zj1bbAk56KbhNNue53MG5A38G7lBk+JlXwBRS/XnI6RfNWTahZn16HZVJM8f8T5ffMw7Vg6rK+4RPytGHsh3Ha4mCUpCiGobX/qaMo2j7CnHGfvfHHkDqXtzgt8F9g6QTnr9DQOZ0Ug2mfYn8bKye4aMDfi1+2WcUhhLtFGAcOu+3+Bt2OBX8/gv3H33YdhAAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=93ac1250c5be03107f44493b2130ccfb"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Environmental Approval Escalation Monitor">beab1654c5fe03107f44493b2130cc34</flow>
+        <generation_source/>
+        <order>4</order>
+        <parent_ui_id>b69a9b4e-f3cb-4fe2-9d10-a9863875e472</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-15 12:41:29</sys_created_on>
+        <sys_id>5254a294c53243107f44493b2130ccc0</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-20 08:35:33</sys_updated_on>
+        <ui_id>3d1c5723-a6d4-414d-8496-f1cbf78e7826</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVTU/jMBD9K5HPbZQ0JZTeEF2klViQYMUFUDSJJ9SS4wTbAbpV//uOE6etALEgcUHbUz1ffu9lXnKzZoKzOZsij+KjOC2SOEkmUTSZTeM8TfJ4whNAjNmIKaiQKjUWteZ0fgTZusB6fZiWVDjj40OeTsbTaTEbQ8zT8WEyO8qn6QyjJA+FxWqzoT4uTCNhde3bKVIsheQaFZvf3I1YA5pusqjZfP0i9VGoEnKUVHo5YH2J3a4ad+Z10VaobCaG4JnvXPhM8HNBGWpycOJoxPDZouJIQEqQBkesAsXB1nrF5la3FNAI/ELJ1bZiKZTtiVbwbMQfunkauboSiVnhRdgeMy9QHy4XYOGKJhe21Vu9alGg6TXhWEIr7cl+rC+4aKyoVd9iIZdDdy3bSp33irDtgL3n0RoCgY3j6ZD3tMqrZf10OYA8FaqTxFOUdQFyewJrtchb6+CsGUrsNK6gaYS6zxpdP4qumaBU4b2kQ1jK+onuNOJehVA43CGpCuEpxRdd+Bq0cCR+0Rhq3oyYWZkTCcbsqJCG2UPrkPTEPIWsU6GTIOs2wTUXWjT2mK56RA98M/JmyA/e27DiaLdQezN3hiBchJFYgsz6P4T31d4f+5JP7/8H0A37/7t76m+j9RZ4FTvb7w3O+4Q3wMGXGWD2nQzgaXx7B/xr76PJu2/WvU3qVt3s7TzxcBTNbRtFCR92O3DXE+OgrHVQ1RoDuwQVTAIOKxMGPwxpBo5qoPGhFRp5+NooXzn6c077gB6D004FSm7eEGiwGVbEyWLWC/bCaj4ZXPvk9nvzZX6L06j7fSPX/Tefnbu/wGdBD4UJAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=5254a294c53243107f44493b2130ccc0"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Send Email">c1806bf4a70323008299b39f087901cb</action_type>
+        <action_type_parent/>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>c1806bf4a70323008299b39f087901cb</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Environmental Approval Escalation Monitor">beab1654c5fe03107f44493b2130cc34</flow>
+        <generation_source/>
+        <order>5</order>
+        <parent_ui_id>b69a9b4e-f3cb-4fe2-9d10-a9863875e472</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-16 12:06:29</sys_created_on>
+        <sys_id>17e5a764fdba03107f44ed6bc0951279</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-20 08:35:33</sys_updated_on>
+        <ui_id>5c81d4b2-7782-4bbf-b404-2f4c56bbc566</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Z227jNhD9FULPjiNLti55S+OmDZC9IAm2D8nCoEQqZlcSFZJK1hsE6D/0D/slHUmULNuq18qlmwXylPA6Z4bncEb05b3BiHFgTHzPdIJojF3TtmzT9CzfD2w/Mj3XN0cEGwMjxQmFmXg+UxyatzjOi/b9vetEwcjyyJ5LHGtvPA69PTwizp5re34wdjxq2sGQKZoMcZYJfkvFkCaYxQ8PCPYhTGYxXnx6pu3COYuJoKlxcPl5YGRYAGpFhXFwvza0q9sxDmgMUy/4ZgzUIiuaUgmWXuv2qZ5/XndyQQr79sCgXxVNCQXDEY4lHRgJTglWXCyMAyVy6BAUkw9pvGjN+CrZNzDimaZZjEcUPAgLq0arOdNRrLqjKVYY7OehyoWeGs45C6msfCc0wnmsjtp91YQPmWI8rZYoHMT1ah7nSfq+8t5oNqgPDXpyCSBoVviXqgZ+dD7nd2c1ymOWlqHQgzEPcdy0sIKABbkq8NwbNKYJbDRL4IwhjLPioFm5GLAkw+sYGsMo5ndgVLLrdIjDAvgQwomHx9A/Lbs/YcEKL97BNrC4AB6zhJWEMIqQGw8DQy7kUYylXLoHcZ3d5AW4ylnt1qyKTLEkFCxTh2DzlmoPHgZaSqbjBIETTFx7ySk/jIgbRA52Q3tJozsMQBIsvsxKArdENdoURom2L793wFLz+yQN45xQ9EcNahtOTfyA85jidI35F4B0/7iIyZL91nb2654N+s9ZQSajYiVSHME5xguEUQOp6FRzikpk8B9WiEkk4bSG6IIjpr1qrRigBc9RkksF0xSMKCyu4R9BQwA7NFqiG79eyWk66N5pJ1d+Ck0+vwBHZNulTp2VezwIw5buNmXXW3I7WK8l98vRUQeWPkll8jhZvWWVny6rjLfSKiRLIlX32OMqtIeHZ1DADlCboqq6es9qyOsuaC0QHublwTGyJoipHkEn06UqzCclm0MpecggW8hWYrljag6poiNH2NaqgCDjsJKt3UI6WQ6/AkFVVWcPPUXnFItwfsxoXBx1midBqYBVnYVQFYjZGsN1UnotWaQM26wk3Hekh7fyObJW73BOFi3tXeWmaYcZCgtkZYNcGR+nN1b220xCKErfDlM4VXHEU4VZSsWVgQpn9yQUJqpe47ijuh+8aHo996qyQacQcnSov4gGld39rBq7SmscHRv7VsfGruPXGx+miKa3TPC0ODccIzimLGYYqIKqLzDom2OJAkpTVMQYjhVFXKCEC1qUZCmywMBCDndH5brjDlSe3aD6CBSTFAR5y+gdAnFDGfeFlooV9CZnghJUMQcBNMmrvxmXksG590DijbuQ+KbXxKeOwftSDAfosump7jVUqeRzZSMQXUa8SZe7XmPkXMGFdAAb3uRUKkp2x++P7C78k4Y4Z/QaCyIHW+D5Vhf5fGtc7/HrCkGOlgQ5XwDaZBXtZop5nEp68P7/YvJLcvOxbNvvxaD/4MT+4865X+Gww0XblM7VNbtx7+qCYa6SeK1S+P3i3emyRHCfWDg7k4ntvFXOT66csztiEcGzTPv2QtXzaPs733hJpVZZsMzigKa+H2b1o+PmLVYLsf8n4/fRLQvmIk7daDX3N/pO22vR+2pA62DUUwdVwagr5Qu40FYeT5DS8FofmG8iebJImJxV5Na+lcZfQCWT7U8X4cqFK/PgT0jMLZWsJocmLX3UefSfv/5GJ0lCSfFthQ6r/Hem8+Gmmp64W8/fAb7vea3A88bvrlj0ebxx3n4R+OHien4Rka2XOTVXiPPcj487GK95vPb22Pvpcfz29Pjj6fuiT4+f/wU0japAHR4AAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=17e5a764fdba03107f44ed6bc0951279"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=beab1654c5fe03107f44493b2130cc34"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=beab1654c5fe03107f44493b2130cc34^sys_idNOT IN8a40629cc5fe03107f44493b2130ccc6,d7622290c53243107f44493b2130cc5f"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">44382a5cc53243107f44493b2130cce1</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Environmental Approval Escalation Monitor">beab1654c5fe03107f44493b2130cc34</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="For Each">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-15 12:23:43</sys_created_on>
+        <sys_id>8a40629cc5fe03107f44493b2130ccc6</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-19 03:36:22</sys_updated_on>
+        <ui_id>76fb128d-7d62-44c8-a1d6-7389b468e03b</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/51STW/bMAz9Lzonhj/SNM6twFCgh61AV/QyFAYtUYkwWdIkOaln+L+Pip1s6HEnm4/k43siR2b76PoYXu1DCOpg2P7H+4opkzD6H5mBDtmeqYhdYCt2At2neBw3VSlzUd6vd7Vs15u7vF639RbWZdXu8vpu14K8z16QWy/CNFGrUMFpGN7+n4EflRYeF5EOPGmL6Nl+/JSKg8NGQ4uaBi0M1K8EhUUtZF3kNa/KbVXmebnbFO22aotSVIBiS3XXzqfF9Kc3SOwU+hsvfZKKMl8x/IhoBNIgCTrginVgBETrB7aPvifAI4hno4dbxVGZSHQs1X4E9Zu4izxPhRLJEcc5eQub5SFnmB+t4vjsorJmRiK0eunhVved+TbLTytACb2O1xUQ0gfiQ5c0JxWLJPn9aM8v14GPylz8LUltOehbBDF61fYRQ1oDauyIqOnAOWUOjfP2pC7NpKXLDpqCTGp7pqHp3DLgSXhGTwTZI+FfLvAbeJVcfCUaap4u7ptffZo7+1gUN7NpKgjcKxcfiO6Ei7jpPd3rzBTmwxDIVaCBrwl7ul55Sgy0ZMX/hc7W/0xS/2LTH9w9odYvAwAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">48382a5cc53243107f44493b2130cce3</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Environmental Approval Escalation Monitor">beab1654c5fe03107f44493b2130cc34</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>3</order>
+        <outputs_assigned/>
+        <parent_ui_id>76fb128d-7d62-44c8-a1d6-7389b468e03b</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-15 12:33:06</sys_created_on>
+        <sys_id>d7622290c53243107f44493b2130cc5f</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-19 03:36:22</sys_updated_on>
+        <ui_id>b69a9b4e-f3cb-4fe2-9d10-a9863875e472</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VTW/bMAz9K4HPieGPxElzK1YUGLCtw1r0shYCLdGNMNnyJLmpZ/i/j7KdtFhbrBiGnXaznijyPZIP7gLduLpx9kqfWivvqmD79XYeyMpj9N0FFZQYbAOuKyGd1BUbgHlwD6rxF6d1bTQdZp+RIqq72U0TRSnOktkZtJYChbS1gvb6rfF8J5UwODGpwVA9hybYdr9cubZGpiBHRWkvnaFk9FwKOhURFPEJj3maZGkSRclmGedZmseJSAEhpbjDw3cHYbMPAzJ/VbGvR7g9VNJGeFpxNA/wwZEapNIFKIvzoIRKgNOmPSIGQVxU6hHYycpRusAHP1j5g3Inq5UPLJA0chwvj0c2NXKE+U5Ljhe1JzgiDnI1veFaNWX1adThR4AFNModRkBIYykf1p60ZzFRKi53ev/lUPBcVoPA6VJpDup4AkdtyBuH1g8GFZaUiJVQ19Qc5kcsh8fEpQzvFB3CQuk9FfVbFgL3xEPqEYTnhJ8N8DUY6VV8pDT0eKSZg5WcDRtJ6ZwhCf3QFva98YRGgZMUNnaDAiw3snanVOceJ9b9/Pk6P9nkrltnBa3IRizWIksWyyXfLCAW2WKdbk7yZbbBKM1D6bAMbWsZp5E6FFSy74cl5l13BlK1LA5NUzHrwDhGEpE5WWLfPzfDvyj5N/x0AqtiFUerl/20zF7y0wtOet1EyW9M5Mf+Rg9FUfTfRE9NJC0bzTBpG4r/sYduvWHGCnbcG4FcWiJy5bH3hz+Hv2hpASR/Cu21+eYlPGL9T87Jua2DBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=beab1654c5fe03107f44493b2130cc34"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=beab1654c5fe03107f44493b2130cc34"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_beab1654c5fe03107f44493b2130cc34"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_beab1654c5fe03107f44493b2130cc34"/>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <allow_high_security_roles>false</allow_high_security_roles>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>29000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Monitor pending environmental compliance approvals, identify delayed or overdue approvals, and notify the appropriate higher authority for timely escalation.</description>
+        <flow_priority>MEDIUM</flow_priority>
+        <internal_name>environmental_approval_escalation_monitor</internal_name>
+        <label_cache>[{"name":"76fb128d-7d62-44c8-a1d6-7389b468e03b.item.approver.email","label":"2 - For Each➛Approval Record➛Approver➛Email","reference":"","reference_display":"Email","type":"email","base_type":"email","parent_table_name":"sys_user","column_name":"email","choices":[{"order":0.0}],"usedInstances":{"5c81d4b2-7782-4bbf-b404-2f4c56bbc566":["ah_to"]}},{"name":"76fb128d-7d62-44c8-a1d6-7389b468e03b.item","label":"2 - For Each➛Approval Record","reference":"sysapproval_approver","reference_display":"Approval","type":"reference","base_type":"reference","usedInstances":{},"attributes":{"pills_draggable_inside_block":"true","pills_draggable_outside_block":"false"}},{"name":"432f0d27-89fb-4509-b96a-23b80958baf7.Records","label":"1 - Look Up Records➛Approval Records","reference":"sysapproval_approver","reference_display":"Approval","type":"records","base_type":"records","usedInstances":{"76fb128d-7d62-44c8-a1d6-7389b468e03b":["items"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"Daily_1.run_start_date_time","label":"Trigger - Run Daily ➛Run Start Date/Time","type":"glide_date_time","base_type":"glide_date_time","usedInstances":{"b69a9b4e-f3cb-4fe2-9d10-a9863875e472":["condition"]},"attributes":{"test_input_hidden":"true"}},{"name":"76fb128d-7d62-44c8-a1d6-7389b468e03b.item.sys_created_on","label":"2 - For Each➛Approval Record➛Created","reference":"","reference_display":"Created","type":"glide_date_time","base_type":"glide_date_time","parent_table_name":"sysapproval_approver","column_name":"sys_created_on","usedInstances":{"bdaa6fa2-26a2-447d-99ab-19dbf851d8b7":["condition"],"b69a9b4e-f3cb-4fe2-9d10-a9863875e472":["condition"]}}]</label_cache>
+        <master>true</master>
+        <name>Environmental Approval Escalation Monitor</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="Environmental Approval Escalation Monitor">beab1654c5fe03107f44493b2130cc34</parent_flow>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-15 13:05:43</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>91e9e690c57243107f44493b2130cc46</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-19 03:36:24</sys_updated_on>
+        <type>flow</type>
+        <version>2</version>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=91e9e690c57243107f44493b2130cc46"/>
+    <sys_variable_value action="delete_multiple" query="document_key=91e9e690c57243107f44493b2130cc46"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=91e9e690c57243107f44493b2130cc46"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=91e9e690c57243107f44493b2130cc46^sys_idNOT IN9de9e690c57243107f44493b2130cc46"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>91e9e690c57243107f44493b2130cc46</id>
+        <name>Environmental Approval Escalation Monitor</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-15 13:05:43</sys_created_on>
+        <sys_id>9de9e690c57243107f44493b2130cc46</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-15 13:05:43</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=9de9e690c57243107f44493b2130cc46"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=91e9e690c57243107f44493b2130cc46"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=91e9e690c57243107f44493b2130cc46"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=91e9e690c57243107f44493b2130cc46"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=91e9e690c57243107f44493b2130cc46^sys_idNOT INd9e9e690c57243107f44493b2130cc55"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Environmental Approval Escalation Monitor">91e9e690c57243107f44493b2130cc46</flow>
+        <generation_source/>
+        <name>Daily</name>
+        <published_version/>
+        <remote_sys_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-15 13:05:43</sys_created_on>
+        <sys_id>d9e9e690c57243107f44493b2130cc55</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-15 13:05:43</sys_updated_on>
+        <trigger_definition display_value="Daily">89142dc0c32222002841b63b12d3ae8a</trigger_definition>
+        <trigger_inputs>H4sIAAAAAAAA/31STUvDQBD9K7LnGjatn7kJInhQQUsvRcJkd9Iu7JebTTWW/ndnk7RoFcNe5s3Mm/ceWW6Zhgo1K9hcGWQTpmzEYEHPO4+ErrSSWMahZ8BKiC50rIihxQmrgzNzNF5DpOEadEOgCxIDK3LOJ2wDusWXrrmXxEUMFkxiHfn6LpX59SU/5Tm9k/yq4JwedaVqiLhb/Dsk1krLgJYVy9cJ8xDoQEznt0ctlRTMQJ6hFFzMpvRxPr06y6uLWZVP5QwQz4nwKI6fguMfoXy3ix8RrUR5yOJXYgFBPlndHSbWFPiQjYGPRn3iSBWwRhIvcGgeynKMZYDF2imBTz4qZwckQqXHHeF0a+zj4CAFijW0Ou4DJaRtiA990pxUjJLql7V7f94fvFO2Nzg2tROgDxXEGFTVRmxS4qjREFFpwHtlV6UPbqP6ZdJisj62rNbunY42amUzEEl4RhFBdkf4bQ8vIKjk4oFoaHnXuy/f2nR38DEqLgfTNNCIoHy8IbrN/kfcvX4BC31NbN0CAAA=</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>daily</trigger_type>
+        <updation_source/>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=91e9e690c57243107f44493b2130cc46^sys_idNOT IN15e9e690c57243107f44493b2130cc53,11e9e690c57243107f44493b2130cc54,2cfd0d652132c3107f443754fb88d4e9"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Records">43400a1587003300663ca1bb36cb0b4b</action_type>
+        <action_type_parent display_value="Look Up Records">d1c56ec50b30030085c083eb37673a50</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>43400a1587003300663ca1bb36cb0b4b</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Environmental Approval Escalation Monitor">91e9e690c57243107f44493b2130cc46</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-15 13:05:43</sys_created_on>
+        <sys_id>15e9e690c57243107f44493b2130cc53</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-15 13:05:43</sys_updated_on>
+        <ui_id>432f0d27-89fb-4509-b96a-23b80958baf7</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VX207jMBD9lSrPUZWQUljeEAhpJS4SIF7YleU4TmutawfboZSq/77j2EmjNmUbqUigfavnYp+ZOcdOn5cBy4Kz4DQfRRGOj09PoihJomg8TgiO0zQZkzRKR2kQBgLPKEQanHIKy1fMS7vWC42LQklYI/eDKnBnTBccL5581LkPAQ+ZMp4pKoKz599hUGAF+xrIOVtuuPYFxnFKOYQ+emQbQM2iaJao8jnbdTttcOscUmUWShQG9M1QkVHAkGOuaRjMsMiwkWrRWBTF2Z3ga8OUCQM7Bjb4TbN3OPc0snE5haoIdb5miXyTnDm/xAY/GFUSUyofSqaSEapdPzKa45Kbi7bNBdwVhknhUlzZLlvyciZuXTuCZoN6JmApNYCghS3UIvdl5A9TOb+vUV4xUfXEO7kkMMZ6hY1RLC2NxbMMKKcz2AjNgAhMTJCdOauSActsOOGwGOZczuFQzSZiiIkFPoS+4uEV2C8r8xNWzFZxA9tUZMoZB4YgN0ItS1W18hURXurKobDQbq9gFVpKXnCs9bpyaDl6KS1u1wdfMXJNsylEscKcwxav1Be3CvfSxnG0phyRImMWhW4LxGBDf5WQC9R+KSkgzrYFsiPqkGKpkNZiuWhD7YLvZbNlu+7awMsmPphsoI7vJBw4/Ovppr8SXAv+IQdy8iHJjtd80lIZ5HrZ0sM293vzfA8INc/vLDMH6WIXKk/znFGedb0OV9ax8Toc/Z+vw5ckOQDKkJseE5yJ6qkHoJ/F/ujjK/bHBs8qerXeAmvDmmxrAA+MHLz3VsIecGolPMDZg0eHpwNifd9XlNm862ujF0ByMAEkR4cRwLIps2lkR8/rrzs7zTr+3cbjzXigYCshXnUJrNeZcd8zj1bbAk56KbhNNue53MG5A38G7lBk+JlXwBRS/XnI6RfNWTahZn16HZVJM8f8T5ffMw7Vg6rK+4RPytGHsh3Ha4mCUpCiGobX/qaMo2j7CnHGfvfHHkDqXtzgt8F9g6QTnr9DQOZ0Ug2mfYn8bKye4aMDfi1+2WcUhhLtFGAcOu+3+Bt2OBX8/gv3H33YdhAAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=15e9e690c57243107f44493b2130cc53"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Environmental Approval Escalation Monitor">91e9e690c57243107f44493b2130cc46</flow>
+        <generation_source/>
+        <order>4</order>
+        <parent_ui_id>b69a9b4e-f3cb-4fe2-9d10-a9863875e472</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-15 13:05:43</sys_created_on>
+        <sys_id>11e9e690c57243107f44493b2130cc54</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-15 13:05:43</sys_updated_on>
+        <ui_id>3d1c5723-a6d4-414d-8496-f1cbf78e7826</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVTU/jMBD9K5HPbZQ0JZTeEF2klViQYMUFUDSJJ9SS4wTbAbpV//uOE6etALEgcUHbUz1ffu9lXnKzZoKzOZsij+KjOC2SOEkmUTSZTeM8TfJ4whNAjNmIKaiQKjUWteZ0fgTZusB6fZiWVDjj40OeTsbTaTEbQ8zT8WEyO8qn6QyjJA+FxWqzoT4uTCNhde3bKVIsheQaFZvf3I1YA5pusqjZfP0i9VGoEnKUVHo5YH2J3a4ad+Z10VaobCaG4JnvXPhM8HNBGWpycOJoxPDZouJIQEqQBkesAsXB1nrF5la3FNAI/ELJ1bZiKZTtiVbwbMQfunkauboSiVnhRdgeMy9QHy4XYOGKJhe21Vu9alGg6TXhWEIr7cl+rC+4aKyoVd9iIZdDdy3bSp33irDtgL3n0RoCgY3j6ZD3tMqrZf10OYA8FaqTxFOUdQFyewJrtchb6+CsGUrsNK6gaYS6zxpdP4qumaBU4b2kQ1jK+onuNOJehVA43CGpCuEpxRdd+Bq0cCR+0Rhq3oyYWZkTCcbsqJCG2UPrkPTEPIWsU6GTIOs2wTUXWjT2mK56RA98M/JmyA/e27DiaLdQezN3hiBchJFYgsz6P4T31d4f+5JP7/8H0A37/7t76m+j9RZ4FTvb7w3O+4Q3wMGXGWD2nQzgaXx7B/xr76PJu2/WvU3qVt3s7TzxcBTNbRtFCR92O3DXE+OgrHVQ1RoDuwQVTAIOKxMGPwxpBo5qoPGhFRp5+NooXzn6c077gB6D004FSm7eEGiwGVbEyWLWC/bCaj4ZXPvk9nvzZX6L06j7fSPX/Tefnbu/wGdBD4UJAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=11e9e690c57243107f44493b2130cc54"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Send Email">c1806bf4a70323008299b39f087901cb</action_type>
+        <action_type_parent display_value="Send Email">98c181d20b100300d97d8bf637673ab5</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>c1806bf4a70323008299b39f087901cb</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Environmental Approval Escalation Monitor">91e9e690c57243107f44493b2130cc46</flow>
+        <generation_source/>
+        <order>5</order>
+        <parent_ui_id>b69a9b4e-f3cb-4fe2-9d10-a9863875e472</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-19 03:36:24</sys_created_on>
+        <sys_id>2cfd0d652132c3107f443754fb88d4e9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-19 03:36:24</sys_updated_on>
+        <ui_id>5c81d4b2-7782-4bbf-b404-2f4c56bbc566</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Z227jNhD9FULPjiNLti55S+OmDZC9IAm2D8nCoEQqZlcSFZJK1hsE6D/0D/slHUmULNuq18qlmwXylPA6Z4bncEb05b3BiHFgTHzPdIJojF3TtmzT9CzfD2w/Mj3XN0cEGwMjxQmFmXg+UxyatzjOi/b9vetEwcjyyJ5LHGtvPA69PTwizp5re34wdjxq2sGQKZoMcZYJfkvFkCaYxQ8PCPYhTGYxXnx6pu3COYuJoKlxcPl5YGRYAGpFhXFwvza0q9sxDmgMUy/4ZgzUIiuaUgmWXuv2qZ5/XndyQQr79sCgXxVNCQXDEY4lHRgJTglWXCyMAyVy6BAUkw9pvGjN+CrZNzDimaZZjEcUPAgLq0arOdNRrLqjKVYY7OehyoWeGs45C6msfCc0wnmsjtp91YQPmWI8rZYoHMT1ah7nSfq+8t5oNqgPDXpyCSBoVviXqgZ+dD7nd2c1ymOWlqHQgzEPcdy0sIKABbkq8NwbNKYJbDRL4IwhjLPioFm5GLAkw+sYGsMo5ndgVLLrdIjDAvgQwomHx9A/Lbs/YcEKL97BNrC4AB6zhJWEMIqQGw8DQy7kUYylXLoHcZ3d5AW4ylnt1qyKTLEkFCxTh2DzlmoPHgZaSqbjBIETTFx7ySk/jIgbRA52Q3tJozsMQBIsvsxKArdENdoURom2L793wFLz+yQN45xQ9EcNahtOTfyA85jidI35F4B0/7iIyZL91nb2654N+s9ZQSajYiVSHME5xguEUQOp6FRzikpk8B9WiEkk4bSG6IIjpr1qrRigBc9RkksF0xSMKCyu4R9BQwA7NFqiG79eyWk66N5pJ1d+Ck0+vwBHZNulTp2VezwIw5buNmXXW3I7WK8l98vRUQeWPkll8jhZvWWVny6rjLfSKiRLIlX32OMqtIeHZ1DADlCboqq6es9qyOsuaC0QHublwTGyJoipHkEn06UqzCclm0MpecggW8hWYrljag6poiNH2NaqgCDjsJKt3UI6WQ6/AkFVVWcPPUXnFItwfsxoXBx1midBqYBVnYVQFYjZGsN1UnotWaQM26wk3Hekh7fyObJW73BOFi3tXeWmaYcZCgtkZYNcGR+nN1b220xCKErfDlM4VXHEU4VZSsWVgQpn9yQUJqpe47ijuh+8aHo996qyQacQcnSov4gGld39rBq7SmscHRv7VsfGruPXGx+miKa3TPC0ODccIzimLGYYqIKqLzDom2OJAkpTVMQYjhVFXKCEC1qUZCmywMBCDndH5brjDlSe3aD6CBSTFAR5y+gdAnFDGfeFlooV9CZnghJUMQcBNMmrvxmXksG590DijbuQ+KbXxKeOwftSDAfosump7jVUqeRzZSMQXUa8SZe7XmPkXMGFdAAb3uRUKkp2x++P7C78k4Y4Z/QaCyIHW+D5Vhf5fGtc7/HrCkGOlgQ5XwDaZBXtZop5nEp68P7/YvJLcvOxbNvvxaD/4MT+4865X+Gww0XblM7VNbtx7+qCYa6SeK1S+P3i3emyRHCfWDg7k4ntvFXOT66csztiEcGzTPv2QtXzaPs733hJpVZZsMzigKa+H2b1o+PmLVYLsf8n4/fRLQvmIk7daDX3N/pO22vR+2pA62DUUwdVwagr5Qu40FYeT5DS8FofmG8iebJImJxV5Na+lcZfQCWT7U8X4cqFK/PgT0jMLZWsJocmLX3UefSfv/5GJ0lCSfFthQ6r/Hem8+Gmmp64W8/fAb7vea3A88bvrlj0ebxx3n4R+OHien4Rka2XOTVXiPPcj487GK95vPb22Pvpcfz29Pjj6fuiT4+f/wU0japAHR4AAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=2cfd0d652132c3107f443754fb88d4e9"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=91e9e690c57243107f44493b2130cc46"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=91e9e690c57243107f44493b2130cc46^sys_idNOT IN59e9e690c57243107f44493b2130cc50,11e9e690c57243107f44493b2130cc52"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">44382a5cc53243107f44493b2130cce1</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Environmental Approval Escalation Monitor">91e9e690c57243107f44493b2130cc46</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="For Each">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-15 13:05:43</sys_created_on>
+        <sys_id>59e9e690c57243107f44493b2130cc50</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-19 03:36:24</sys_updated_on>
+        <ui_id>76fb128d-7d62-44c8-a1d6-7389b468e03b</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/51TXU/jMBD8L35Oo3yU0vQNgZCQ7kAqiJcTqja201rn2D7baQlR/vutGzcgHnlKdrw7OzNxBqI7bzrvXvSNc2KvyObPW0KEChi+D0RBy8mGCM9bRxJyBNmFehiWZdFkrLherKumXiyvsmpRVytYFGW9zqqrdQ3NdbrlVFvmxhFHmXBGQv/6cwZ6EJJZHkUasKjNc0s2w7cjwXBBXrGmyrOKlsWqLLKsWC/zelXWecFK4GyFhBJqLrH1Ibr7Ztb3JpR2khCBX3FmO6P4CCKKLCH83XPFOK5vQDqekBYUA69tTzbedghYDuxJyX7uOAjlkY6E3ncnPnBjnmWhseFoiPLpcC53MccJbu7AwzNSU9/Z2EoPWlDupigYb6CT/vYrNjU8GS+0mkY81PIyrWXXqscpCTITXD4bIp1DEdwEo0F69NE8H/Rpe1F5L9Q5lHgoNQU5V+C9FXXng56BcMlbJNq1YIxQ+52x+ijOw6ilTfcSi7SR+oRLwxVNgQbhKeYK6T3id2f4FawILn4jDQ6PCXG9u5Xg3KcXDHH3rwtKJmfRw26KIYxQK4y/wQVHHuWOb+HWT9xzplQ4lPASsIfLvxIOerxBgn6FTtr+DeI/sfE/1pYos3UDAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">48382a5cc53243107f44493b2130cce3</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Environmental Approval Escalation Monitor">91e9e690c57243107f44493b2130cc46</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>3</order>
+        <outputs_assigned/>
+        <parent_ui_id>76fb128d-7d62-44c8-a1d6-7389b468e03b</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-15 13:05:43</sys_created_on>
+        <sys_id>11e9e690c57243107f44493b2130cc52</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-19 03:36:24</sys_updated_on>
+        <ui_id>b69a9b4e-f3cb-4fe2-9d10-a9863875e472</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Vy27bMBD8FYNnWdDDlh3fghgBCqRN0QS5tAGxIqmYKCWqJJVEFfTvXUqyEzQumqBFT72Zw+XuzGgH7ohuXN04e61PrZV3Fdl8vg2IrDyGvztSQSnIhjBdcemkrugABOQeVOMvTuvaaDzMPgqsqO5mX5ooSsUsmW2htVjIpa0VtDevrWc7qbgRE5MaDM5zwpBN99OV5NiuiKCIT1jM0iRLkyhK1os4z9I8TngKAlJsqCAXCkvP9hJmFwMS/FKba2uPW2eQ4HS+mLpc7UFtuGcVRwERjw7FCORTgLIiICVUHJw27QExAvhlpZ6AnawctiO++NHK7zgwWS59YSFQIhPj5eFIJx9HuNiCA6TSMNeYqZTttGTCjuZwUUCj3NlzbCy4rL3U8YmDXO1fa9WU1YfREXJosP9siDQWSYjaK/XUJx3F1U4/fNqzPJfV4Mp0qTQDdTiBQ+/yxnk+HRFKlNiIllDX6Cj1ayGHx8ilDO8UHsJC6Qcc6jczBOaJh2gshOeIbwf4Boz0Kt5jG3w80szBSkaHLcZ2aJMgfUBsa88UWPskEt2l3xpPcZQ8iaOjP/4JM7J2pzj5Xkw6+uBlKJ7loetWWYHrt+bzFc+S+WLB1nOIeTZfpeuTfJGtRZTmoXSiDJEQZbgZTnAc2fdDFFjXbUGqlsahaSpqHRhHUbSgTpai719G6l+MfFsqT2BZLONoeTyVi+xYKo/k8Y1RTH4TRb8Hr0xiFEX/o/jHUZSWjgGatA3D/2ISb33sxpkHr5m0SO3aY+/2/2L+osXlkuw59KDNVy/qCet/ADh6pkIPBwAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=91e9e690c57243107f44493b2130cc46"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=91e9e690c57243107f44493b2130cc46"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_91e9e690c57243107f44493b2130cc46"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_91e9e690c57243107f44493b2130cc46"/>
+    <sys_hub_flow action="UPDATE">
+        <sys_id>beab1654c5fe03107f44493b2130cc34</sys_id>
+        <latest_snapshot>91e9e690c57243107f44493b2130cc46</latest_snapshot>
+        <compiler_build>glide-australia-02-11-2026__patch2-04-17-2026_04-29-2026_2044.zip</compiler_build>
+        <version_record/>
+    </sys_hub_flow>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=beab1654c5fe03107f44493b2130cc34^sys_idNOT INa9e9e690c57243107f44493b2130cc85"/>
+    <sys_flow_trigger_plan action="INSERT_OR_UPDATE">
+        <binding_strategy>com.snc.process_flow.engine.binding.RunAlways</binding_strategy>
+        <plan>{"@class":"com.snc.process_flow.engine.serialization.plan_data.ChunkingPlanData","chunk_data":{"table":"sys_flow_trigger_plan","id":"a9e9e690c57243107f44493b2130cc85","name":"plan","plan_signature":null},"plan_data":"CHUNKING_PLAN"}</plan>
+        <plan_id>beab1654c5fe03107f44493b2130cc34</plan_id>
+        <snapshot>3bfb1bfd883203107f440cf2be7f1dbe</snapshot>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-15 13:05:44</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>a9e9e690c57243107f44493b2130cc85</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-19 03:36:25</sys_updated_on>
+        <trigger display_value="">6de9e690c57243107f44493b2130cc82</trigger>
+    </sys_flow_trigger_plan>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=beab1654c5fe03107f44493b2130cc34"/>
+</record_update>

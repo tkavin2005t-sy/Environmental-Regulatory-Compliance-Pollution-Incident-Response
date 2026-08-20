@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="d5022a4bf06643107f4476c906d6788a" extends="sys_import_set_row" label="AI Pollution Training Data" max_length="40" name="x_snc_environmen_0_ai_pollution_training_data" type="collection">
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=complaint_title" label="complaint_title" max_length="42" name="u_complaint_title" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=pollution_category" label="pollution_category" max_length="40" name="u_pollution_category" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=location" label="location" max_length="40" name="u_location" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=pollution_source" label="pollution_source" max_length="40" name="u_pollution_source" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=landmark" label="landmark" max_length="40" name="u_landmark" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=risk_level" label="risk_level" max_length="40" name="u_risk_level" type="string"/>
+    </element>
+</database>

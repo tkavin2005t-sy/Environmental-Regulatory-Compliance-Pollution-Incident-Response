@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_form_sections form_id="63a436d1916603107f441961e66ff885" sys_domain="global" table="x_snc_environmen_0_complaint" version="3">
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-06 06:11:04</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>67a436d1916603107f441961e66ff88a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_snc_environmen_0_complaint" name="x_snc_environmen_0_complaint" sys_domain="global" view="Default view">63a436d1916603107f441961e66ff885</sys_ui_form>
+            <sys_ui_section caption="NULL" display_value="" name="x_snc_environmen_0_complaint" sys_domain="global" view="Default view">20f46305692203107f4481675b470efb</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-06 06:11:04</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-06 06:11:04</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>6fa436d1916603107f441961e66ff88b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_snc_environmen_0_complaint" name="x_snc_environmen_0_complaint" sys_domain="global" view="Default view">63a436d1916603107f441961e66ff885</sys_ui_form>
+            <sys_ui_section caption="Citizen" display_value="Citizen" name="x_snc_environmen_0_complaint" sys_domain="global" view="Default view">d7a436d1916603107f441961e66ff81e</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-06 06:11:04</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-06 06:11:04</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>27a436d1916603107f441961e66ff891</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_snc_environmen_0_complaint" name="x_snc_environmen_0_complaint" sys_domain="global" view="Default view">63a436d1916603107f441961e66ff885</sys_ui_form>
+            <sys_ui_section caption="Pollution Informtion" display_value="Pollution Informtion" name="x_snc_environmen_0_complaint" sys_domain="global" view="Default view">2fa436d1916603107f441961e66ff883</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-06 06:11:04</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-06 06:15:39</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>26b5b255916603107f441961e66ff81e</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_snc_environmen_0_complaint" name="x_snc_environmen_0_complaint" sys_domain="global" view="Default view">63a436d1916603107f441961e66ff885</sys_ui_form>
+            <sys_ui_section caption="Location Information" display_value="Location Information" name="x_snc_environmen_0_complaint" sys_domain="global" view="Default view">aab57255916603107f441961e66ff8f0</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-07 05:38:18</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-07 05:38:18</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>9dc6f3ada8e203107f44c5b727ce25d8</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_snc_environmen_0_complaint" name="x_snc_environmen_0_complaint" sys_domain="global" view="Default view">63a436d1916603107f441961e66ff885</sys_ui_form>
+            <sys_ui_section caption="Processing Information" display_value="Processing Information" name="x_snc_environmen_0_complaint" sys_domain="global" view="Default view">85c6f3ada8e203107f44c5b727ce25ad</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-07 05:38:18</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form action="INSERT_OR_UPDATE">
+            <name>x_snc_environmen_0_complaint</name>
+            <roles/>
+            <sys_class_name>sys_ui_form</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-06 06:11:04</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>63a436d1916603107f441961e66ff885</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_snc_environmen_0_complaint</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+            <sys_update_name>sys_ui_form_sections_63a436d1916603107f441961e66ff885</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-06 06:11:04</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_form>
+    </sys_ui_form_sections>
+</record_update>

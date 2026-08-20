@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_agent">
+    <sn_aia_agent action="INSERT_OR_UPDATE">
+        <advanced_mode>false</advanced_mode>
+        <agent_type>internal</agent_type>
+        <applicability_script><![CDATA[/** 
+ * Function to process inputs related to ServiceNow change request operations 
+ * 
+ * @param {Object} inputs - The input parameters object 
+ * @param {string} inputs.objective - The purpose or goal of the operation 
+ * @param {string} inputs.execution_plan_id - Unique identifier for the execution plan 
+ * @param {Object} inputs.context - Context information about the ServiceNow change request 
+ * @param {string} inputs.context.url - The URL of the change request in Service Operations Workspace 
+ * @param {string} inputs.context.table - The ServiceNow table name (e.g., 'change_request') 
+ * @param {string} inputs.context.record_sys_id - The sys ID of the record 
+ * @param {string} inputs.context.route - The route type (e.g., 'record') 
+ * @param {string} inputs.context.additional_context - Additional contextual information in JSON format 
+ * @param {string} inputs.context.experience - The UI experience name (e.g., 'Service Operations Workspace') 
+ * @param {string} inputs.context.number - The request number 
+ * @param {string} inputs.context.portal - The portal ID 
+ * @param {string} inputs.context.device_type - The device type from which the experience is accessed, e.g.'mweb' 
+ * @param {string} inputs.context.deployment_id - The unique identifier for the assistant deployment 
+ * @param {string} inputs.context.assistant_type - The type of assistant, e.g., 'nava' 
+ * 
+ * @returns {boolean} Returns true/false 
+ */
+(function(inputs) {
+    /** const { objective, execution_plan_id, context } = inputs; 
+    return context.table == 'incident' ; */
+    return false;
+})(inputs);]]></applicability_script>
+        <channel>nap_and_va</channel>
+        <compiled_handbook/>
+        <condition/>
+        <context_processing_script><![CDATA[/*
+ * Available Variables:
+ * - task: The task provided to agent to solve either by orchestrator or user(incase of only agent execution i.e agent is invoked as seperate entity instead from a workflow).
+ * - user_utterance: The user utterance provided. and task = user_utterance in case of individual agent execution.
+ * - agent_id: The agent id.
+ * - context: An object that carries additional contextual information for the agent.
+ *          It always includes a "pageContext" and may include a "triggerContext",
+ *          depending on how and from where the agent is invoked.
+ *
+ *          Behavior by invocation type:
+ *          ---------------------------------
+ *          - When invoked via the startAiAgentConversation API:
+ *                If a "contextMemory" parameter is provided in the API request,
+ *                it will be available here as the "triggerContext".
+ *                The "pageContext" is always present in this call, regardless
+ *                of whether the agent is executed individually or as part of a use case.
+ *                Example:
+ *                    {
+ *                        pageContext: { ... },
+ *                        triggerContext: { ... } // Derived from contextMemory (if passed)
+ *                    }
+ *
+ *          - When invoked as part of a use case or workflow:
+ *                The "pageContext" and "triggerContext" objects available here
+ *                may have been *modified* by the use case’s context processing script.
+ *                This means the use case may alter, extend, or overwrite values
+ *                from the original "pageContext" or "triggerContext"
+ *                before the context reaches the agent.
+ *                If the use case was originally triggered via the API,
+ *                the initial "triggerContext" is still derived from the
+ *                "contextMemory" parameter, but its contents may have been updated
+ *                by the use case logic.
+ *
+ *          - When executed directly (standalone agent execution):
+ *                The "pageContext" will always be present (default or empty),
+ *                and the "triggerContext" will only be populated if explicitly
+ *                passed through the API call.
+ * Return an modified context like: { pageContext : {},triggerContext:{} }
+ */
+(function(task, user_utterance, agent_id, context) {
+    return {
+        pageContext : context?.pageContext,
+		triggerContext : context?.triggerContext
+    };
+})(task,user_utterance, agent_id, context);]]></context_processing_script>
+        <description>An AI agent that continuously monitors environmental compliance records, pollution incidents, inspections, and pending approvals. It identifies abnormal pollution conditions, detects delayed approvals and SLA breaches, assesses compliance risk, and initiates escalation and notification to the appropriate higher authority.</description>
+        <extends/>
+        <extension_configuration/>
+        <external_agent_configuration/>
+        <inputs>{}</inputs>
+        <instructions>Review environmental pollution and compliance records.
+Identify abnormal pollution levels, high-risk incidents, or regulatory concerns.
+Check pending inspections, approvals, and compliance actions against their due dates and SLA requirements.
+Detect delayed or overdue approvals and determine the severity of the delay.
+Identify the responsible authority and determine whether escalation is required.
+Initiate the appropriate escalation and notification for delayed or high-risk compliance issues.
+Record the monitoring result, escalation reason, and recommended next action.</instructions>
+        <internal_name>global.x_snc_environmen_0.Environmental Compliance Monitoring AI Agent</internal_name>
+        <name>Environmental Compliance Monitoring AI Agent</name>
+        <outputs>""</outputs>
+        <parent/>
+        <post_processing_message/>
+        <processing_message/>
+        <proficiency>- Expert in environmental compliance monitoring, specializing in the analysis of environmental records, pollution incidents, inspection activities, compliance approvals, and deadlines. Capable of identifying high-risk conditions, overdue approvals, SLA breaches, and regulatory compliance issues, and determining when escalation is required. Provides clear reasons and recommended next actions for compliance-related concerns, ensuring regulatory adherence and risk mitigation.
+- Proficient in monitoring and analyzing environmental compliance records using structured data inputs, including complaint details, pollution sources, compliance status, risk levels, severity, suspected regulation violations, and responsible authority information. Able to identify pollution risks, pending actions, overdue approvals, SLA breaches, and compliance issues by systematically reviewing and interpreting environmental complaint, inspection, and approval records. Supports escalation and notification processes for delayed or high-risk compliance issues based on real-time record analysis.
+- Skilled in executing structured environmental compliance monitoring workflows, including reviewing pollution and compliance records, identifying abnormal pollution levels, high-risk incidents, and regulatory concerns, checking pending inspections and approvals against due dates and SLA requirements, and detecting delayed or overdue approvals. Capable of determining the severity of compliance delays, identifying responsible authorities, and initiating appropriate escalation and notification procedures. Records monitoring results, escalation reasons, and recommended next actions to ensure comprehensive compliance management.</proficiency>
+        <record_type>custom</record_type>
+        <required_translations>[]</required_translations>
+        <research>false</research>
+        <role>You are an environmental compliance monitoring specialist. Analyze environmental records, pollution incidents, inspection activities, compliance approvals, and deadlines. Identify high-risk conditions, overdue approvals, SLA breaches, and regulatory compliance issues. Determine when escalation is required and provide clear reasons and recommended next actions.</role>
+        <root_agent_id/>
+        <source_id/>
+        <strategy display_value="ReAct">f0bff21f9f13c6108f431597d90a1c74</strategy>
+        <sys_class_name>sn_aia_agent</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-15 10:47:18</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>3dd94698c53e03107f44493b2130cccb</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Environmental Compliance Monitoring AI Agent</sys_name>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>sn_aia_agent_3dd94698c53e03107f44493b2130cccb</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-15 11:06:26</sys_updated_on>
+    </sn_aia_agent>
+</record_update>

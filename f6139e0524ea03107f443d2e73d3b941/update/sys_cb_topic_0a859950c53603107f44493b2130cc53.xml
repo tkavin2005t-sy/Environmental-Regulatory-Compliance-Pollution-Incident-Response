@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="INSERT_OR_UPDATE">
+        <applicability/>
+        <applicability_mode>query</applicability_mode>
+        <autopilot_topic>false</autopilot_topic>
+        <category/>
+        <channels/>
+        <connect_queue/>
+        <context_profiles/>
+        <description>This topic helps citizens, employees, and environmental inspectors report environmental pollution incidents. The assistant collects information about the pollution category, pollution source, incident location, severity, number of people affected, and incident description. It supports reporting air pollution, water pollution, noise pollution, soil pollution, industrial waste, chemical leakage, plastic waste, illegal dumping, and other environmental incidents. The topic helps submit the incident to the Environmental Compliance application for further risk assessment, inspector assignment, monitoring, and response.</description>
+        <dialog_acts_enabled>false</dialog_acts_enabled>
+        <expose_on_palette>false</expose_on_palette>
+        <flexible_conversation_switching>false</flexible_conversation_switching>
+        <foundational>false</foundational>
+        <graph>{"graph_api_version":"1.0.82","variables":{},"goals":{"primary":{"id":"primary","trigger":{"type":"primary"},"name":"primary","applicability":"","description":"","nodes":{"214ffd22607b4623ac1d4ba5beeb49a7":{"id":"214ffd22607b4623ac1d4ba5beeb49a7","stepType":"Start","name":"Start","greetingResponse":{"mode":"simple","value":""}},"17deabc52fd64d9aa02d0ab444052336":{"id":"17deabc52fd64d9aa02d0ab444052336","stepType":"TerminateGoal","name":"End","confirmationMessage":{"mode":"simple","value":""}}},"edges":[{"id":"65c0fa89e4794187b106710cc11a920c","edgeType":"Edge","source":"214ffd22607b4623ac1d4ba5beeb49a7","target":"17deabc52fd64d9aa02d0ab444052336","sourcePort":"","targetPort":""}]}}}</graph>
+        <key_phrases/>
+        <library>false</library>
+        <live_agent>false</live_agent>
+        <model_type>llm</model_type>
+        <modify_confirmation_enabled>false</modify_confirmation_enabled>
+        <name>environmental_pollution_incident_reporti</name>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider/>
+        <palette_label/>
+        <roles/>
+        <root_topic_id/>
+        <secure_custom_input_control>false</secure_custom_input_control>
+        <source_topic_id/>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-15 06:57:08</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>0a859950c53603107f44493b2130cc53</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>environmental_pollution_incident_reporti</sys_name>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>sys_cb_topic_0a859950c53603107f44493b2130cc53</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-15 06:57:08</sys_updated_on>
+        <title>environmental_pollution_incident_reporti</title>
+        <triggerable_by_notification>false</triggerable_by_notification>
+        <type>STANDARD</type>
+    </sys_cb_topic>
+    <sys_translated_text action="delete_multiple" query="documentkey=0a859950c53603107f44493b2130cc53"/>
+</record_update>

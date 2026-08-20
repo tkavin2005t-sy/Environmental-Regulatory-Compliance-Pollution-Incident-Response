@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="DELETE">
+        <active>true</active>
+        <advanced_placeholder_dimensions>false</advanced_placeholder_dimensions>
+        <async_load>false</async_load>
+        <async_load_device_type>desktop,tablet,mobile</async_load_device_type>
+        <async_load_trigger>viewport</async_load_trigger>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <placeholder_dimensions>{&#13;	"mobile": {&#13;		"height": "250px",&#13;		"width": "100%"&#13;	},&#13;	"desktop": {&#13;		"height": "250px",&#13;		"width": "100%"&#13;	},&#13;	"tablet": {&#13;		"height": "250px",&#13;		"width": "100%"&#13;	}&#13;}</placeholder_dimensions>
+        <placeholder_dimensions_script><![CDATA[function evaluateConfig(options) { return {	"mobile": {		"height": "250px",		"width": "100%"	},	"desktop": {		"height": "250px",		"width": "100%"	},	"tablet": {		"height": "250px",		"width": "100%"	}}; }]]></placeholder_dimensions_script>
+        <placeholder_template>&lt;!-- 
+	AngularJS template with configurable options.
+	Use the `options` object to control dynamic behavior.
+	Example: Display an element when max row count is 10:
+	&lt;div ng-if="options.maxRowCount === 10"&gt;&lt;/div&gt;
+	The `skeleton-container` class is used for loading placeholders.
+--&gt;
+	&lt;div class="skeleton-container"&gt;
+	&lt;!-- Header Skeleton --&gt;
+	&lt;div class="skeleton-box skeleton-header"&gt;&lt;/div&gt;
+	&lt;!-- Body Skeleton --&gt;
+	&lt;div class="skeleton-box skeleton-line"&gt;&lt;/div&gt;
+	&lt;div class="skeleton-box skeleton-line small"&gt;&lt;/div&gt;
+	&lt;div class="skeleton-box skeleton-line medium"&gt;&lt;/div&gt;
+&lt;/div&gt;</placeholder_template>
+        <preserve_placeholder_size>false</preserve_placeholder_size>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">1f55e374fdbe83107f44ed6bc0951271</sp_column>
+        <sp_widget display_value="HTML">8679ef89cb21120000f8d856634c9c4f</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 06:47:14</sys_created_on>
+        <sys_id>6476a338fdbe83107f44ed6bc0951206</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Environmental Compliance KPI</sys_name>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_update_name>sp_instance_6476a338fdbe83107f44ed6bc0951206</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 06:48:23</sys_updated_on>
+        <title>Environmental Compliance KPI</title>
+        <url/>
+        <widget_parameters><![CDATA[{
+	"html": {
+		"value": "<div style=\"display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; padding: 20px; background: #f4f8f7;\">\r\n<div style=\"background: #fff; padding: 20px; border-radius: 12px; text-align: center; box-shadow: 0 3px 10px rgba(0,0,0,.10); border-left: 5px solid #007f73;\">\r\n<div style=\"font-size: 14px; color: #607d7a; font-weight: 600;\">TOTAL COMPLAINTS</div>\r\n<div style=\"font-size: 32px; font-weight: bold; color: #007f73; margin-top: 8px;\">24</div>\r\n<div style=\"font-size: 12px; color: #777; margin-top: 4px;\">Reported incidents</div>\r\n</div>\r\n<div style=\"background: #fff; padding: 20px; border-radius: 12px; text-align: center; box-shadow: 0 3px 10px rgba(0,0,0,.10); border-left: 5px solid #e67e22;\">\r\n<div style=\"font-size: 14px; color: #607d7a; font-weight: 600;\">HIGH RISK</div>\r\n<div style=\"font-size: 32px; font-weight: bold; color: #e67e22; margin-top: 8px;\">06</div>\r\n<div style=\"font-size: 12px; color: #777; margin-top: 4px;\">Requires attention</div>\r\n</div>\r\n<div style=\"background: #fff; padding: 20px; border-radius: 12px; text-align: center; box-shadow: 0 3px 10px rgba(0,0,0,.10); border-left: 5px solid #2980b9;\">\r\n<div style=\"font-size: 14px; color: #607d7a; font-weight: 600;\">ACTIVE INSPECTIONS</div>\r\n<div style=\"font-size: 32px; font-weight: bold; color: #2980b9; margin-top: 8px;\">12</div>\r\n<div style=\"font-size: 12px; color: #777; margin-top: 4px;\">Currently assigned</div>\r\n</div>\r\n<div style=\"background: #fff; padding: 20px; border-radius: 12px; text-align: center; box-shadow: 0 3px 10px rgba(0,0,0,.10); border-left: 5px solid #27ae60;\">\r\n<div style=\"font-size: 14px; color: #607d7a; font-weight: 600;\">RESOLVED CASES</div>\r\n<div style=\"font-size: 32px; font-weight: bold; color: #27ae60; margin-top: 8px;\">18</div>\r\n<div style=\"font-size: 12px; color: #777; margin-top: 4px;\">Successfully closed</div>\r\n</div>\r\n</div>",
+		"displayValue": "<div style=\"display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; padding: 20px; background: #f4f8f7;\">\n<div style=\"background: #fff; padding: 20px; border-radius: 12px; text-align: center; box-shadow: 0 3px 10px rgba(0,0,0,.10); border-left: 5px solid #007f73;\">\n<div style=\"font-size: 14px; color: #607d7a; font-weight: 600;\">TOTAL COMPLAINTS</div>\n<div style=\"font-size: 32px; font-weight: bold; color: #007f73; margin-top: 8px;\">24</div>\n<div style=\"font-size: 12px; color: #777; margin-top: 4px;\">Reported incidents</div>\n</div>\n<div style=\"background: #fff; padding: 20px; border-radius: 12px; text-align: center; box-shadow: 0 3px 10px rgba(0,0,0,.10); border-left: 5px solid #e67e22;\">\n<div style=\"font-size: 14px; color: #607d7a; font-weight: 600;\">HIGH RISK</div>\n<div style=\"font-size: 32px; font-weight: bold; color: #e67e22; margin-top: 8px;\">06</div>\n<div style=\"font-size: 12px; color: #777; margin-top: 4px;\">Requires attention</div>\n</div>\n<div style=\"background: #fff; padding: 20px; border-radius: 12px; text-align: center; box-shadow: 0 3px 10px rgba(0,0,0,.10); border-left: 5px solid #2980b9;\">\n<div style=\"font-size: 14px; color: #607d7a; font-weight: 600;\">ACTIVE INSPECTIONS</div>\n<div style=\"font-size: 32px; font-weight: bold; color: #2980b9; margin-top: 8px;\">12</div>\n<div style=\"font-size: 12px; color: #777; margin-top: 4px;\">Currently assigned</div>\n</div>\n<div style=\"background: #fff; padding: 20px; border-radius: 12px; text-align: center; box-shadow: 0 3px 10px rgba(0,0,0,.10); border-left: 5px solid #27ae60;\">\n<div style=\"font-size: 14px; color: #607d7a; font-weight: 600;\">RESOLVED CASES</div>\n<div style=\"font-size: 32px; font-weight: bold; color: #27ae60; margin-top: 8px;\">18</div>\n<div style=\"font-size: 12px; color: #777; margin-top: 4px;\">Successfully closed</div>\n</div>\n</div>"
+	}
+}]]></widget_parameters>
+    </sp_instance>
+    <sys_translated_text action="DELETE" query="documentkey=6476a338fdbe83107f44ed6bc0951206"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</application>
+        <file_path/>
+        <instance_id>57b1043093560750fb38f8284dba10f5</instance_id>
+        <instance_name>dlt-hck-8017-0040</instance_name>
+        <name>sp_instance_6476a338fdbe83107f44ed6bc0951206</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_instance"&gt;&lt;sp_instance action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;advanced_placeholder_dimensions&gt;false&lt;/advanced_placeholder_dimensions&gt;&lt;async_load&gt;false&lt;/async_load&gt;&lt;async_load_device_type&gt;desktop,tablet,mobile&lt;/async_load_device_type&gt;&lt;async_load_trigger&gt;viewport&lt;/async_load_trigger&gt;&lt;class_name/&gt;&lt;color&gt;default&lt;/color&gt;&lt;css/&gt;&lt;glyph/&gt;&lt;id/&gt;&lt;order&gt;1&lt;/order&gt;&lt;placeholder_dimensions&gt;{&amp;#13;	"mobile": {&amp;#13;		"height": "250px",&amp;#13;		"width": "100%"&amp;#13;	},&amp;#13;	"desktop": {&amp;#13;		"height": "250px",&amp;#13;		"width": "100%"&amp;#13;	},&amp;#13;	"tablet": {&amp;#13;		"height": "250px",&amp;#13;		"width": "100%"&amp;#13;	}&amp;#13;}&lt;/placeholder_dimensions&gt;&lt;placeholder_dimensions_script&gt;&lt;![CDATA[function evaluateConfig(options) { return {	"mobile": {		"height": "250px",		"width": "100%"	},	"desktop": {		"height": "250px",		"width": "100%"	},	"tablet": {		"height": "250px",		"width": "100%"	}}; }]]&gt;&lt;/placeholder_dimensions_script&gt;&lt;placeholder_template&gt;&amp;lt;!-- 
+	AngularJS template with configurable options.
+	Use the `options` object to control dynamic behavior.
+	Example: Display an element when max row count is 10:
+	&amp;lt;div ng-if="options.maxRowCount === 10"&amp;gt;&amp;lt;/div&amp;gt;
+	The `skeleton-container` class is used for loading placeholders.
+--&amp;gt;
+	&amp;lt;div class="skeleton-container"&amp;gt;
+	&amp;lt;!-- Header Skeleton --&amp;gt;
+	&amp;lt;div class="skeleton-box skeleton-header"&amp;gt;&amp;lt;/div&amp;gt;
+	&amp;lt;!-- Body Skeleton --&amp;gt;
+	&amp;lt;div class="skeleton-box skeleton-line"&amp;gt;&amp;lt;/div&amp;gt;
+	&amp;lt;div class="skeleton-box skeleton-line small"&amp;gt;&amp;lt;/div&amp;gt;
+	&amp;lt;div class="skeleton-box skeleton-line medium"&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;&lt;/placeholder_template&gt;&lt;preserve_placeholder_size&gt;false&lt;/preserve_placeholder_size&gt;&lt;roles/&gt;&lt;short_description/&gt;&lt;size&gt;md&lt;/size&gt;&lt;sp_column display_value="1"&gt;1f55e374fdbe83107f44ed6bc0951271&lt;/sp_column&gt;&lt;sp_widget display_value="HTML"&gt;8679ef89cb21120000f8d856634c9c4f&lt;/sp_widget&gt;&lt;sys_class_name&gt;sp_instance&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-08-17 06:47:14&lt;/sys_created_on&gt;&lt;sys_id&gt;6476a338fdbe83107f44ed6bc0951206&lt;/sys_id&gt;&lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;&lt;sys_name&gt;Environmental Compliance KPI&lt;/sys_name&gt;&lt;sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0"&gt;f6139e0524ea03107f443d2e73d3b941&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Environmental Compliance Scoped App"&gt;f6139e0524ea03107f443d2e73d3b941&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_instance_6476a338fdbe83107f44ed6bc0951206&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-08-17 06:48:23&lt;/sys_updated_on&gt;&lt;title&gt;Environmental Compliance KPI&lt;/title&gt;&lt;url/&gt;&lt;widget_parameters&gt;&lt;![CDATA[{
+	"html": {
+		"value": "&lt;div style=\"display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; padding: 20px; background: #f4f8f7;\"&gt;\r\n&lt;div style=\"background: #fff; padding: 20px; border-radius: 12px; text-align: center; box-shadow: 0 3px 10px rgba(0,0,0,.10); border-left: 5px solid #007f73;\"&gt;\r\n&lt;div style=\"font-size: 14px; color: #607d7a; font-weight: 600;\"&gt;TOTAL COMPLAINTS&lt;/div&gt;\r\n&lt;div style=\"font-size: 32px; font-weight: bold; color: #007f73; margin-top: 8px;\"&gt;24&lt;/div&gt;\r\n&lt;div style=\"font-size: 12px; color: #777; margin-top: 4px;\"&gt;Reported incidents&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;div style=\"background: #fff; padding: 20px; border-radius: 12px; text-align: center; box-shadow: 0 3px 10px rgba(0,0,0,.10); border-left: 5px solid #e67e22;\"&gt;\r\n&lt;div style=\"font-size: 14px; color: #607d7a; font-weight: 600;\"&gt;HIGH RISK&lt;/div&gt;\r\n&lt;div style=\"font-size: 32px; font-weight: bold; color: #e67e22; margin-top: 8px;\"&gt;06&lt;/div&gt;\r\n&lt;div style=\"font-size: 12px; color: #777; margin-top: 4px;\"&gt;Requires attention&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;div style=\"background: #fff; padding: 20px; border-radius: 12px; text-align: center; box-shadow: 0 3px 10px rgba(0,0,0,.10); border-left: 5px solid #2980b9;\"&gt;\r\n&lt;div style=\"font-size: 14px; color: #607d7a; font-weight: 600;\"&gt;ACTIVE INSPECTIONS&lt;/div&gt;\r\n&lt;div style=\"font-size: 32px; font-weight: bold; color: #2980b9; margin-top: 8px;\"&gt;12&lt;/div&gt;\r\n&lt;div style=\"font-size: 12px; color: #777; margin-top: 4px;\"&gt;Currently assigned&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;div style=\"background: #fff; padding: 20px; border-radius: 12px; text-align: center; box-shadow: 0 3px 10px rgba(0,0,0,.10); border-left: 5px solid #27ae60;\"&gt;\r\n&lt;div style=\"font-size: 14px; color: #607d7a; font-weight: 600;\"&gt;RESOLVED CASES&lt;/div&gt;\r\n&lt;div style=\"font-size: 32px; font-weight: bold; color: #27ae60; margin-top: 8px;\"&gt;18&lt;/div&gt;\r\n&lt;div style=\"font-size: 12px; color: #777; margin-top: 4px;\"&gt;Successfully closed&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;/div&gt;",
+		"displayValue": "&lt;div style=\"display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; padding: 20px; background: #f4f8f7;\"&gt;\n&lt;div style=\"background: #fff; padding: 20px; border-radius: 12px; text-align: center; box-shadow: 0 3px 10px rgba(0,0,0,.10); border-left: 5px solid #007f73;\"&gt;\n&lt;div style=\"font-size: 14px; color: #607d7a; font-weight: 600;\"&gt;TOTAL COMPLAINTS&lt;/div&gt;\n&lt;div style=\"font-size: 32px; font-weight: bold; color: #007f73; margin-top: 8px;\"&gt;24&lt;/div&gt;\n&lt;div style=\"font-size: 12px; color: #777; margin-top: 4px;\"&gt;Reported incidents&lt;/div&gt;\n&lt;/div&gt;\n&lt;div style=\"background: #fff; padding: 20px; border-radius: 12px; text-align: center; box-shadow: 0 3px 10px rgba(0,0,0,.10); border-left: 5px solid #e67e22;\"&gt;\n&lt;div style=\"font-size: 14px; color: #607d7a; font-weight: 600;\"&gt;HIGH RISK&lt;/div&gt;\n&lt;div style=\"font-size: 32px; font-weight: bold; color: #e67e22; margin-top: 8px;\"&gt;06&lt;/div&gt;\n&lt;div style=\"font-size: 12px; color: #777; margin-top: 4px;\"&gt;Requires attention&lt;/div&gt;\n&lt;/div&gt;\n&lt;div style=\"background: #fff; padding: 20px; border-radius: 12px; text-align: center; box-shadow: 0 3px 10px rgba(0,0,0,.10); border-left: 5px solid #2980b9;\"&gt;\n&lt;div style=\"font-size: 14px; color: #607d7a; font-weight: 600;\"&gt;ACTIVE INSPECTIONS&lt;/div&gt;\n&lt;div style=\"font-size: 32px; font-weight: bold; color: #2980b9; margin-top: 8px;\"&gt;12&lt;/div&gt;\n&lt;div style=\"font-size: 12px; color: #777; margin-top: 4px;\"&gt;Currently assigned&lt;/div&gt;\n&lt;/div&gt;\n&lt;div style=\"background: #fff; padding: 20px; border-radius: 12px; text-align: center; box-shadow: 0 3px 10px rgba(0,0,0,.10); border-left: 5px solid #27ae60;\"&gt;\n&lt;div style=\"font-size: 14px; color: #607d7a; font-weight: 600;\"&gt;RESOLVED CASES&lt;/div&gt;\n&lt;div style=\"font-size: 32px; font-weight: bold; color: #27ae60; margin-top: 8px;\"&gt;18&lt;/div&gt;\n&lt;div style=\"font-size: 12px; color: #777; margin-top: 4px;\"&gt;Successfully closed&lt;/div&gt;\n&lt;/div&gt;\n&lt;/div&gt;"
+	}
+}]]&gt;&lt;/widget_parameters&gt;&lt;/sp_instance&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=6476a338fdbe83107f44ed6bc0951206"/&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-267762203</payload_hash>
+        <record_name>Environmental Compliance KPI</record_name>
+        <reverted_from/>
+        <source>be139e0524ea03107f443d2e73d3b944</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 06:48:23</sys_created_on>
+        <sys_id>a1b6e378fdbe83107f44ed6bc0951263</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a00e7a7ce90000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 06:48:23</sys_updated_on>
+        <type>Instance</type>
+        <update_guid>e5b6e3788abe831056ad158383c52662</update_guid>
+        <update_guid_history>e5b6e3788abe831056ad158383c52662:-267762203,a476a338f2be8310bd02ca62f95af508:1704608492</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Environmental Compliance KPI">27a76f3cfdbe83107f44ed6bc09512f5</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-17 06:52:38</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance">sp_instance</sys_db_object>
+        <sys_id>067817f47596488280affece8fe790b1</sys_id>
+        <sys_metadata>6476a338fdbe83107f44ed6bc0951206</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Environmental Compliance KPI</sys_name>
+        <sys_package display_value="Environmental Compliance Scoped App" source="x_snc_environmen_0">f6139e0524ea03107f443d2e73d3b941</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Environmental Compliance Scoped App">f6139e0524ea03107f443d2e73d3b941</sys_scope>
+        <sys_scope_delete display_value="">57bcfbaf4a844eb88d8c57ea65d55310</sys_scope_delete>
+        <sys_update_name>sp_instance_6476a338fdbe83107f44ed6bc0951206</sys_update_name>
+        <sys_update_version display_value="sp_instance_6476a338fdbe83107f44ed6bc0951206">a1b6e378fdbe83107f44ed6bc0951263</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-17 06:52:38</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
